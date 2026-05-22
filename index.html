@@ -118,6 +118,7 @@ nav{
 }
 
 .logo{display:flex;align-items:center;gap:12px}
+.logo-img{height:48px;width:auto;display:block}
 .logo-mark{width:38px;height:38px;flex-shrink:0}
 .logo-texts{display:flex;flex-direction:column;line-height:1.2}
 .logo-en{
@@ -800,25 +801,14 @@ footer{background:var(--navy)}
 <nav id="nav">
   <div class="nav-inner">
     <a href="#" class="logo">
-      <svg class="logo-mark" viewBox="0 0 38 38" fill="none">
-        <path d="M5 10 L15 10 L26 19 L15 19 L5 28" stroke="url(#nlg)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <path d="M19 12 L32 12 L32 26 M32 26 L26 20 M32 26 L38 20" stroke="#0D1B3E" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        <defs>
-          <linearGradient id="nlg" x1="0" y1="0" x2="38" y2="38" gradientUnits="userSpaceOnUse">
-            <stop stop-color="#0EA5D8"/><stop offset="1" stop-color="#1565C0"/>
-          </linearGradient>
-        </defs>
-      </svg>
-      <div class="logo-texts">
-        <div class="logo-en">SMART<span>WEB</span></div>
-        <div class="logo-ja">ホームページ作成代行サービス</div>
-      </div>
+      <img src="logo1.png" alt="スマートWEB ホームページ作成代行サービス" class="logo-img"/>
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#why">About</a></li>
       <li><a href="#reviews">Reviews</a></li>
+      <li><a href="diagnosis.html" style="color:var(--accent);border-color:var(--accent)">無料診断</a></li>
       <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
@@ -847,7 +837,7 @@ footer{background:var(--navy)}
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">無料で相談する →</a>
-        <a href="#services" class="btn-outline">料金プランを見る</a>
+        <a href="diagnosis.html" class="btn-outline">無料ホームページ診断 →</a>
       </div>
     </div>
     <div class="hero-right reveal reveal-d1">
