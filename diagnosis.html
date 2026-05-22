@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>ホームページ無料診断 | スマートWEB</title>
+<meta name="description" content="今のホームページ、集客できていますか？プロが無料で診断。改善ポイントと新デザイン案をセットでご提案します。"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:'Noto Sans JP',sans-serif;
+  background:#fff;
+  color:#1A2235;
+  font-weight:400;
+  line-height:1.75;
+  font-size:16px;
+  overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+.en{font-family:'Barlow Condensed',sans-serif;letter-spacing:.04em}
+
+:root{
+  --navy:#0D1B3E;
+  --blue:#1565C0;
+  --cyan:#0EA5D8;
+  --accent:#0284C7;
+  --red:#E53E3E;
+  --green:#16A34A;
+  --text:#1A2235;
+  --muted:#5A6A88;
+  --light:#F0F5FA;
+  --border:#E2E8F2;
+  --grad:linear-gradient(135deg,#0EA5D8,#1565C0);
+  --grad-warn:linear-gradient(135deg,#F59E0B,#EF4444);
+}
+
+.inner{max-width:860px;margin:0 auto;padding:0 2rem}
+
+/* =============================================
+   HEADER — 送信者信頼バー
+============================================= */
+.sender-bar{
+  background:var(--navy);
+  padding:12px 2rem;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.sb-logo{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:18px;font-weight:800;letter-spacing:.06em;
+  color:#fff;
+}
+.sb-logo span{color:var(--cyan)}
+.sb-contact{
+  font-size:13px;color:rgba(255,255,255,.6);
+  display:flex;align-items:center;gap:16px;
+}
+.sb-contact a{color:rgba(255,255,255,.8);transition:color .2s}
+.sb-contact a:hover{color:#fff}
+
+/* =============================================
+   HERO — キャッチコピー
+============================================= */
+.hero{
+  background:var(--light);
+  border-bottom:4px solid var(--navy);
+  padding:64px 2rem 56px;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';position:absolute;
+  top:0;right:0;width:40%;height:100%;
+  background:linear-gradient(135deg,rgba(14,165,216,.06),rgba(21,101,192,.06));
+  clip-path:polygon(15% 0,100% 0,100% 100%,0 100%);
+}
+
+.hero-inner{
+  max-width:860px;margin:0 auto;
+  position:relative;z-index:1;
+}
+
+.hero-badge{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;border:1px solid var(--border);
+  border-left:3px solid var(--accent);
+  color:var(--accent);
+  font-size:12px;font-weight:700;letter-spacing:.14em;
+  padding:7px 16px;margin-bottom:28px;
+  font-family:'Barlow Condensed',sans-serif;
+  text-transform:uppercase;
+}
+.badge-dot{
+  width:7px;height:7px;border-radius:50%;
+  background:var(--accent);animation:blink 1.8s infinite;
+}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.2}}
+
+.hero-pre{
+  font-size:15px;color:var(--muted);font-weight:500;
+  margin-bottom:10px;letter-spacing:.06em;
+}
+
+.hero-title{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:clamp(28px,4.5vw,50px);
+  font-weight:700;color:var(--navy);
+  line-height:1.3;margin-bottom:20px;
+}
+.hero-title .hl{
+  background:var(--grad);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+.hero-title .warn{color:var(--red)}
+
+.hero-sub{
+  font-size:17px;color:var(--muted);
+  line-height:1.85;margin-bottom:36px;
+  max-width:600px;
+}
+
+.hero-cta-wrap{
+  display:flex;align-items:center;gap:16px;flex-wrap:wrap;
+}
+.cta-main{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--navy);color:#fff;
+  font-size:16px;font-weight:700;
+  padding:16px 36px;
+  border:none;cursor:pointer;font-family:inherit;
+  transition:background .2s,transform .15s;
+  letter-spacing:.04em;
+}
+.cta-main:hover{background:var(--blue);transform:translateY(-1px)}
+.cta-free{
+  font-size:13px;color:var(--muted);
+  display:flex;align-items:center;gap:6px;
+}
+.cta-free strong{color:var(--green);font-weight:700}
+
+/* =============================================
+   PAIN — 課題提示
+============================================= */
+.pain{
+  padding:72px 2rem;
+  background:#fff;
+}
+.sec-eyebrow{
+  display:block;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:12px;
+}
+.sec-title{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:clamp(22px,3vw,34px);
+  font-weight:700;color:var(--navy);
+  line-height:1.3;margin-bottom:14px;
+}
+.sec-line{width:40px;height:4px;background:var(--grad);margin:14px 0 32px}
+.sec-desc{font-size:16px;color:var(--muted);line-height:1.9;margin-bottom:36px}
+
+.pain-grid{
+  display:grid;grid-template-columns:repeat(2,1fr);gap:16px;
+  margin-bottom:36px;
+}
+.pain-item{
+  display:flex;align-items:flex-start;gap:14px;
+  background:var(--light);border:1px solid var(--border);
+  border-left:4px solid var(--red);
+  padding:18px 20px;
+}
+.pain-icon{font-size:22px;flex-shrink:0;margin-top:2px}
+.pain-text{font-size:15px;color:var(--text);font-weight:500;line-height:1.6}
+
+.pain-note{
+  background:#FFF5F5;border:1px solid #FED7D7;
+  border-left:4px solid var(--red);
+  padding:16px 20px;
+  font-size:15px;color:#C53030;
+  font-weight:500;line-height:1.7;
+}
+
+/* =============================================
+   SOLUTION — 提供内容
+============================================= */
+.solution{
+  background:var(--light);
+  padding:72px 2rem;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border)}
+
+.sol-item{
+  background:#fff;
+  border-right:1px solid var(--border);
+  padding:32px 28px;
+  position:relative;
+  transition:background .2s;
+}
+.sol-item:last-child{border-right:none}
+.sol-item::before{
+  content:'';position:absolute;
+  top:0;left:0;right:0;height:3px;
+  background:var(--grad);
+}
+.sol-item:hover{background:var(--light)}
+
+.sol-step{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:48px;font-weight:800;
+  color:var(--border);line-height:1;margin-bottom:12px;
+}
+.sol-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.sol-desc{font-size:14px;color:var(--muted);line-height:1.75}
+.sol-tag{
+  display:inline-block;margin-top:14px;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:11px;font-weight:700;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--green);
+  background:#F0FDF4;border:1px solid #BBF7D0;
+  padding:3px 10px;
+}
+
+/* =============================================
+   BEFORE / AFTER
+============================================= */
+.bfaf{
+  padding:72px 2rem;
+  background:#fff;
+}
+.bfaf-wrap{
+  display:grid;grid-template-columns:1fr auto 1fr;
+  gap:0;align-items:stretch;
+  border:1px solid var(--border);
+  overflow:hidden;
+}
+.bfaf-col{padding:32px 28px}
+.bfaf-before{background:#FFF8F8;border-right:1px solid var(--border)}
+.bfaf-arrow{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--navy);
+  color:#fff;font-size:24px;
+  width:56px;
+  writing-mode:initial;
+}
+.bfaf-after{background:#F0FDF4}
+
+.bfaf-label{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:13px;font-weight:700;letter-spacing:.18em;
+  text-transform:uppercase;margin-bottom:20px;
+  display:flex;align-items:center;gap:8px;
+}
+.label-before{color:var(--red)}
+.label-after{color:var(--green)}
+
+.bfaf-list{display:flex;flex-direction:column;gap:12px}
+.bfaf-row{display:flex;align-items:flex-start;gap:10px;font-size:14px;line-height:1.6}
+.bi{color:var(--red);font-size:16px;flex-shrink:0;margin-top:1px}
+.ai{color:var(--green);font-size:16px;flex-shrink:0;margin-top:1px}
+
+/* =============================================
+   DEMO PREVIEW MOCK
+============================================= */
+.demo-sec{
+  background:var(--navy);
+  padding:72px 2rem;
+}
+.demo-title{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:clamp(22px,3vw,34px);
+  font-weight:700;color:#fff;
+  line-height:1.3;margin-bottom:12px;
+  text-align:center;
+}
+.demo-sub{
+  font-size:15px;color:rgba(255,255,255,.55);
+  text-align:center;margin-bottom:40px;line-height:1.8;
+}
+.demo-browser{
+  background:#1A2A4A;
+  border-radius:8px 8px 0 0;
+  overflow:hidden;
+  max-width:760px;margin:0 auto;
+  box-shadow:0 20px 60px rgba(0,0,0,.4);
+}
+.browser-bar{
+  background:#0D1B3E;
+  padding:12px 16px;
+  display:flex;align-items:center;gap:10px;
+}
+.br-dots{display:flex;gap:6px}
+.br-dot{width:10px;height:10px;border-radius:50%}
+.br-url{
+  flex:1;background:rgba(255,255,255,.1);
+  border-radius:4px;padding:6px 14px;
+  font-size:12px;color:rgba(255,255,255,.5);
+  font-family:monospace;
+}
+.demo-content{
+  background:#fff;
+  padding:28px;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:16px;
+}
+.demo-block{background:var(--light);height:80px;border-radius:4px}
+.demo-block.tall{height:140px}
+.demo-block.full{grid-column:1/-1;height:60px}
+.demo-block.accent{background:linear-gradient(135deg,rgba(14,165,216,.2),rgba(21,101,192,.2));border:1px solid rgba(14,165,216,.3)}
+.demo-label{
+  text-align:center;
+  padding:16px;
+  font-size:13px;color:rgba(255,255,255,.5);
+  font-family:'Barlow Condensed',sans-serif;
+  letter-spacing:.12em;text-transform:uppercase;
+}
+
+/* =============================================
+   PROCESS — 申し込みの流れ
+============================================= */
+.how{
+  padding:72px 2rem;
+  background:var(--light);
+  border-top:1px solid var(--border);
+}
+.how-steps{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:0;border:1px solid var(--border);
+  position:relative;
+}
+.how-steps::before{
+  content:'';position:absolute;
+  top:36px;left:12%;right:12%;
+  height:1px;background:var(--grad);opacity:.4;z-index:0;
+}
+.how-step{
+  background:#fff;padding:32px 20px;text-align:center;
+  border-right:1px solid var(--border);
+  position:relative;z-index:1;
+}
+.how-step:last-child{border-right:none}
+.how-num{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--grad);
+  color:#fff;
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:22px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;
+  box-shadow:0 4px 14px rgba(14,165,216,.3);
+}
+.how-title{font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.how-desc{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* =============================================
+   TRUST — 実績・信頼
+============================================= */
+.trust{
+  padding:64px 2rem;
+  background:#fff;
+  border-top:1px solid var(--border);
+}
+.trust-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:0;border:1px solid var(--border);
+}
+.trust-item{
+  padding:32px 24px;text-align:center;
+  border-right:1px solid var(--border);
+}
+.trust-item:last-child{border-right:none}
+.trust-num{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:48px;font-weight:800;
+  color:var(--navy);line-height:1;margin-bottom:8px;
+}
+.trust-num span{
+  font-size:24px;
+  background:var(--grad);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.trust-label{font-size:13px;color:var(--muted);letter-spacing:.06em}
+
+/* =============================================
+   CTA FINAL
+============================================= */
+.cta-sec{
+  background:var(--navy);
+  padding:80px 2rem;
+  text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-sec::before{
+  content:'';position:absolute;
+  top:-80px;right:-80px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(14,165,216,.12),transparent 65%);
+}
+.cta-label{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:.2em;
+  text-transform:uppercase;color:rgba(255,255,255,.45);
+  margin-bottom:16px;display:block;
+}
+.cta-title{
+  font-family:'Noto Sans JP',sans-serif;
+  font-size:clamp(24px,3.5vw,40px);
+  font-weight:700;color:#fff;
+  line-height:1.35;margin-bottom:20px;
+}
+.cta-title span{
+  background:linear-gradient(135deg,#38D9F5,#60A5FA);
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.cta-desc{
+  font-size:16px;color:rgba(255,255,255,.6);
+  margin-bottom:40px;line-height:1.85;
+}
+.cta-btn{
+  display:inline-flex;align-items:center;gap:8px;
+  background:#fff;color:var(--navy);
+  font-size:17px;font-weight:700;
+  padding:18px 44px;
+  border:none;cursor:pointer;font-family:inherit;
+  transition:background .2s,transform .15s;
+  letter-spacing:.04em;
+}
+.cta-btn:hover{background:var(--light);transform:translateY(-2px)}
+
+.cta-sub{
+  margin-top:20px;font-size:13px;
+  color:rgba(255,255,255,.4);
+}
+.cta-sub strong{color:rgba(255,255,255,.7)}
+
+/* =============================================
+   FOOTER
+============================================= */
+footer{
+  background:#07090F;
+  padding:32px 2rem;
+}
+.footer-inner{
+  max-width:860px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:12px;
+}
+.f-logo{
+  font-family:'Barlow Condensed',sans-serif;
+  font-size:17px;font-weight:800;color:#fff;letter-spacing:.06em;
+}
+.f-logo span{color:var(--cyan)}
+.f-copy{font-size:12px;color:rgba(255,255,255,.3)}
+.f-links{display:flex;gap:16px}
+.f-links a{font-size:12px;color:rgba(255,255,255,.4);transition:color .2s}
+.f-links a:hover{color:#fff}
+
+/* =============================================
+   REVEAL ANIMATION
+============================================= */
+.reveal{
+  opacity:0;transform:translateY(20px);
+  transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);
+}
+.reveal.visible{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+/* =============================================
+   RESPONSIVE
+============================================= */
+@media(max-width:700px){
+  .pain-grid{grid-template-columns:1fr}
+  .sol-grid{grid-template-columns:1fr;border-right:none}
+  .sol-item{border-right:none;border-bottom:1px solid var(--border)}
+  .bfaf-wrap{grid-template-columns:1fr}
+  .bfaf-arrow{display:none}
+  .bfaf-before{border-right:none;border-bottom:1px solid var(--border)}
+  .demo-content{grid-template-columns:1fr}
+  .how-steps{grid-template-columns:1fr 1fr}
+  .how-steps::before{display:none}
+  .how-step{border-bottom:1px solid var(--border)}
+  .trust-grid{grid-template-columns:1fr;border-right:none}
+  .trust-item{border-right:none;border-bottom:1px solid var(--border)}
+  .footer-inner{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- 送信者信頼バー -->
+<div class="sender-bar">
+  <div class="sb-logo">SMART<span>WEB</span></div>
+  <div class="sb-contact">
+    <span>大阪発・全国対応のWeb制作会社</span>
+    <a href="mailto:info@smartweb.jp">info@smartweb.jp</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-badge">
+      <span class="badge-dot"></span>
+      Free Diagnosis — 完全無料・返信不要
+    </div>
+    <div class="hero-pre">〇〇様のホームページを拝見して、ご連絡しました。</div>
+    <h1 class="hero-title">
+      そのホームページ、<br>
+      <span class="warn">お客様を逃しているかも</span>しれません。<br>
+      <span class="hl">無料で診断＋新デザイン案を作りました。</span>
+    </h1>
+    <p class="hero-sub">
+      貴社のサイトを実際に拝見し、改善できるポイントを具体的にまとめました。<br>
+      さらに、新しいデザイン案を無料でご用意しています。<br>
+      ご興味があれば、お気軽にご返信ください。
+    </p>
+    <div class="hero-cta-wrap">
+      <a href="#contact" class="cta-main">診断結果を受け取る →</a>
+      <div class="cta-free"><strong>✓ 完全無料</strong>　<strong>✓ 返信不要</strong>　<strong>✓ 押し売りなし</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <div class="inner">
+    <div class="reveal">
+      <span class="sec-eyebrow">Current Issues</span>
+      <div class="sec-title">こんな状態になっていませんか？</div>
+      <div class="sec-line"></div>
+      <p class="sec-desc">現代のユーザーは、サイトを見た瞬間に「信頼できる会社かどうか」を判断します。<br>古いデザインは、それだけで機会損失につながっています。</p>
+    </div>
+    <div class="pain-grid reveal">
+      <div class="pain-item">
+        <div class="pain-icon">📱</div>
+        <div class="pain-text">スマートフォンで見ると文字が小さくて読みにくい</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">🐢</div>
+        <div class="pain-text">ページの読み込みが遅く、途中で離脱されている</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">🔍</div>
+        <div class="pain-text">Googleで検索しても上位に表示されない</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">💬</div>
+        <div class="pain-text">問い合わせボタンが見つかりにくい</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">🎨</div>
+        <div class="pain-text">デザインが10年前のまま更新されていない</div>
+      </div>
+      <div class="pain-item">
+        <div class="pain-icon">📊</div>
+        <div class="pain-text">アクセス数や問い合わせ数が把握できていない</div>
+      </div>
+    </div>
+    <div class="pain-note reveal">
+      ⚠️ スマートフォンからのWeb検索が全体の<strong>70%以上</strong>を占める現在、モバイル対応していないサイトはGoogleの評価が下がり、<strong>検索結果に表示されにくくなっています。</strong>
+    </div>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <div class="inner">
+    <div class="reveal">
+      <span class="sec-eyebrow">Our Offer</span>
+      <div class="sec-title">スマートWEBが<br>無料でご提供するもの</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="sol-grid reveal">
+      <div class="sol-item">
+        <div class="sol-step">01</div>
+        <div class="sol-title">現状サイトの<br>無料診断レポート</div>
+        <div class="sol-desc">デザイン・スマホ対応・SEO・導線の4点を専門家が診断。改善ポイントを具体的にお伝えします。</div>
+        <div class="sol-tag">✓ 無料</div>
+      </div>
+      <div class="sol-item">
+        <div class="sol-step">02</div>
+        <div class="sol-title">新デザイン案の<br>デモサイト提供</div>
+        <div class="sol-desc">実際に閲覧できるURLをご用意します。「こんなサイトになります」をリアルに体験いただけます。</div>
+        <div class="sol-tag">✓ 無料</div>
+      </div>
+      <div class="sol-item">
+        <div class="sol-step">03</div>
+        <div class="sol-title">お見積もり・<br>ご提案資料</div>
+        <div class="sol-desc">費用・期間・制作内容を明記した見積書をご提供。ご納得いただいてから、はじめて制作を開始します。</div>
+        <div class="sol-tag">✓ 無料・押し売りなし</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER -->
+<section class="bfaf">
+  <div class="inner">
+    <div class="reveal">
+      <span class="sec-eyebrow">Before / After</span>
+      <div class="sec-title">リニューアルで<br>ここが変わります</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="bfaf-wrap reveal">
+      <div class="bfaf-col bfaf-before">
+        <div class="bfaf-label label-before">✗ &nbsp;Before（現状）</div>
+        <div class="bfaf-list">
+          <div class="bfaf-row"><span class="bi">✗</span>スマホで文字が小さく読みにくい</div>
+          <div class="bfaf-row"><span class="bi">✗</span>問い合わせボタンが目立たない</div>
+          <div class="bfaf-row"><span class="bi">✗</span>デザインが古くて信頼感が薄い</div>
+          <div class="bfaf-row"><span class="bi">✗</span>写真が少なくサービス内容が伝わらない</div>
+          <div class="bfaf-row"><span class="bi">✗</span>更新が止まっていて活動実感がない</div>
+          <div class="bfaf-row"><span class="bi">✗</span>読み込みが遅くすぐ離脱される</div>
+        </div>
+      </div>
+      <div class="bfaf-arrow">→</div>
+      <div class="bfaf-col bfaf-after">
+        <div class="bfaf-label label-after">✓ &nbsp;After（リニューアル後）</div>
+        <div class="bfaf-list">
+          <div class="bfaf-row"><span class="ai">✓</span>スマホ・PC・タブレット完全対応</div>
+          <div class="bfaf-row"><span class="ai">✓</span>「今すぐ連絡」ボタンが常に表示</div>
+          <div class="bfaf-row"><span class="ai">✓</span>プロのデザインで第一印象が変わる</div>
+          <div class="bfaf-row"><span class="ai">✓</span>サービス内容・強みが一目で伝わる</div>
+          <div class="bfaf-row"><span class="ai">✓</span>ブログ・お知らせで最新情報を発信</div>
+          <div class="bfaf-row"><span class="ai">✓</span>高速表示でストレスなく閲覧できる</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DEMO PREVIEW -->
+<section class="demo-sec">
+  <div class="inner">
+    <span class="sec-eyebrow" style="color:rgba(255,255,255,.45);text-align:center;display:block;margin-bottom:12px">Demo Preview</span>
+    <div class="demo-title">実際に動くデモサイトを<br>無料でご用意します</div>
+    <p class="demo-sub">
+      文章だけの提案ではなく、実際のURLでリニューアル後のイメージを<br>
+      ご確認いただけます。スマホでもPCでもそのままご覧いただけます。
+    </p>
+    <div class="demo-browser">
+      <div class="browser-bar">
+        <div class="br-dots">
+          <div class="br-dot" style="background:#FF5F57"></div>
+          <div class="br-dot" style="background:#FEBC2E"></div>
+          <div class="br-dot" style="background:#28C840"></div>
+        </div>
+        <div class="br-url">https://demo.smartweb.jp/your-company</div>
+      </div>
+      <div class="demo-content">
+        <div class="demo-block full accent"></div>
+        <div class="demo-block tall"></div>
+        <div class="demo-block tall accent"></div>
+        <div class="demo-block"></div>
+        <div class="demo-block"></div>
+        <div class="demo-block full"></div>
+      </div>
+      <div class="demo-label">↑ このようなデモページのURLをご送付します</div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="how">
+  <div class="inner">
+    <div class="reveal">
+      <span class="sec-eyebrow">How It Works</span>
+      <div class="sec-title">ご返信から制作まで<br>たった4ステップ</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="how-steps reveal">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-title">ご返信・ご連絡</div>
+        <div class="how-desc">このメールにご返信、またはLINE・電話でご連絡ください。</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-title">デモサイト送付</div>
+        <div class="how-desc">24時間以内に診断レポートとデモサイトURLをお送りします。</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-title">お見積もり確認</div>
+        <div class="how-desc">費用・期間・内容をご説明。納得いただいてから契約書を発行します。</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">4</div>
+        <div class="how-title">制作・公開</div>
+        <div class="how-desc">最短7日で完成。納品後3ヶ月間は無料でサポートします。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<section class="trust">
+  <div class="inner">
+    <div class="reveal" style="text-align:center;margin-bottom:40px">
+      <span class="sec-eyebrow" style="text-align:center;display:block">Track Record</span>
+      <div class="sec-title">スマートWEBの実績</div>
+      <div class="sec-line" style="margin:14px auto 0"></div>
+    </div>
+    <div class="trust-grid reveal">
+      <div class="trust-item">
+        <div class="trust-num">150<span>+</span></div>
+        <div class="trust-label">累計制作実績</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">98<span>%</span></div>
+        <div class="trust-label">顧客満足度</div>
+      </div>
+      <div class="trust-item">
+        <div class="trust-num">2.4<span>×</span></div>
+        <div class="trust-label">平均問い合わせ増加倍率</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-sec" id="contact">
+  <div class="inner" style="position:relative;z-index:1">
+    <span class="cta-label">Free — No Obligation</span>
+    <div class="cta-title">
+      まずは<span>無料診断</span>だけでも<br>
+      お気軽にどうぞ。
+    </div>
+    <p class="cta-desc">
+      返信不要・押し売り一切なし。<br>
+      「診断だけ見てみたい」という方も大歓迎です。<br>
+      ご興味があればお気軽にご連絡ください。
+    </p>
+    <a href="mailto:info@smartweb.jp?subject=ホームページ無料診断を希望します" class="cta-btn">
+      診断を申し込む（無料） →
+    </a>
+    <div class="cta-sub">
+      メール：<strong>info@smartweb.jp</strong>　／　
+      Instagram DM：<strong>@SsilingMedia</strong>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="f-logo">SMART<span>WEB</span></div>
+    <div class="f-links">
+      <a href="#">会社概要</a>
+      <a href="#">プライバシーポリシー</a>
+      <a href="#">特定商取引法に基づく表記</a>
+    </div>
+    <div class="f-copy">© 2025 スマートWEB 株式会社. All Rights Reserved.</div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>{
+  e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})
+},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
