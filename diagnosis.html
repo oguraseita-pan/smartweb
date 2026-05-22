@@ -467,6 +467,68 @@ footer{
 /* =============================================
    REVEAL ANIMATION
 ============================================= */
+/* =============================================
+   DIAGNOSIS NAV
+============================================= */
+.diag-nav{
+  position:sticky;top:0;z-index:200;
+  background:rgba(255,255,255,.97);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--border);
+  box-shadow:0 1px 12px rgba(13,27,62,.06);
+}
+.diag-nav-inner{
+  max-width:860px;margin:0 auto;
+  padding:0 1.5rem;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+}
+.diag-logo-img{height:44px;width:auto;display:block}
+.diag-nav-right{display:flex;align-items:center;gap:16px}
+
+.back-btn{
+  display:inline-flex;align-items:center;gap:6px;
+  font-size:13px;font-weight:500;
+  color:var(--muted);
+  padding:8px 16px;
+  border:1px solid var(--border);
+  border-radius:4px;
+  transition:color .2s,border-color .2s,background .2s;
+  white-space:nowrap;
+}
+.back-btn:hover{color:var(--navy);border-color:var(--navy);background:var(--light)}
+
+.diag-cta-btn{
+  display:inline-flex;align-items:center;
+  background:var(--navy);color:#fff;
+  font-size:13px;font-weight:600;
+  padding:10px 20px;border-radius:4px;
+  white-space:nowrap;
+  transition:background .2s;
+}
+.diag-cta-btn:hover{background:var(--blue)}
+
+.diag-hamburger{
+  display:none;flex-direction:column;gap:5px;
+  cursor:pointer;background:none;border:none;padding:4px;
+}
+.diag-hamburger span{
+  display:block;width:24px;height:2px;
+  background:var(--navy);border-radius:2px;transition:.3s;
+}
+
+.diag-menu{
+  display:none;flex-direction:column;
+  position:fixed;top:68px;left:0;right:0;bottom:0;
+  background:#fff;padding:2rem 1.5rem;gap:1.6rem;
+  border-top:1px solid var(--border);
+  overflow-y:auto;z-index:199;
+}
+.diag-menu.open{display:flex}
+.diag-menu a{font-size:18px;color:var(--navy);font-weight:500}
+
+/* =============================================
+   REVEAL ANIMATION
+============================================= */
 .reveal{
   opacity:0;transform:translateY(20px);
   transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .6s cubic-bezier(.22,1,.36,1);
@@ -478,32 +540,93 @@ footer{
    RESPONSIVE
 ============================================= */
 @media(max-width:700px){
+  /* 共通余白 */
+  .inner{padding:0 1rem}
+
+  /* NAV */
+  .diag-nav-right{display:none}
+  .diag-hamburger{display:flex}
+
+  /* HERO */
+  .hero{padding:28px 1rem 40px}
+  .hero-title{font-size:clamp(20px,5.5vw,28px)}
+  .hero-sub{font-size:14px}
+  .hero-cta-wrap{flex-direction:column;align-items:flex-start;gap:12px}
+  .cta-main{width:100%;text-align:center;justify-content:center}
+  .cta-free{font-size:12px}
+
+  /* PAIN */
+  .pain{padding:48px 1rem}
   .pain-grid{grid-template-columns:1fr}
+  .sec-title{font-size:clamp(20px,5.5vw,28px)}
+  .sec-desc{font-size:14px}
+
+  /* SOLUTION */
+  .solution{padding:48px 1rem}
   .sol-grid{grid-template-columns:1fr;border-right:none}
   .sol-item{border-right:none;border-bottom:1px solid var(--border)}
+
+  /* BEFORE/AFTER */
+  .bfaf{padding:48px 1rem}
   .bfaf-wrap{grid-template-columns:1fr}
   .bfaf-arrow{display:none}
   .bfaf-before{border-right:none;border-bottom:1px solid var(--border)}
+  .bfaf-col{padding:24px 18px}
+
+  /* DEMO */
+  .demo-sec{padding:48px 1rem}
   .demo-content{grid-template-columns:1fr}
+  .demo-title{font-size:clamp(20px,5vw,28px)}
+
+  /* HOW */
+  .how{padding:48px 1rem}
   .how-steps{grid-template-columns:1fr 1fr}
   .how-steps::before{display:none}
-  .how-step{border-bottom:1px solid var(--border)}
+  .how-step{border-bottom:1px solid var(--border);padding:20px 12px}
+  .how-num{width:44px;height:44px;font-size:18px}
+
+  /* TRUST */
+  .trust{padding:48px 1rem}
   .trust-grid{grid-template-columns:1fr;border-right:none}
   .trust-item{border-right:none;border-bottom:1px solid var(--border)}
-  .footer-inner{flex-direction:column;align-items:flex-start}
+  .trust-num{font-size:38px}
+
+  /* CTA */
+  .cta-sec{padding:56px 1rem}
+  .cta-title{font-size:clamp(22px,5.5vw,32px)}
+  .cta-btn{width:100%;justify-content:center;padding:16px 24px;font-size:15px}
+  .cta-sub{font-size:12px}
+
+  /* FOOTER */
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:14px;padding:0 1rem}
+  footer{padding:28px 0}
+  .f-links{flex-wrap:wrap;gap:10px}
 }
 </style>
 </head>
 <body>
 
-<!-- 送信者信頼バー -->
-<div class="sender-bar">
-  <div class="sb-logo">SMART<span>WEB</span></div>
-  <div class="sb-contact">
-    <span>大阪発・全国対応のWeb制作会社</span>
-    <a href="mailto:info@smartweb.jp">info@smartweb.jp</a>
+<!-- NAV -->
+<nav class="diag-nav" id="diag-nav">
+  <div class="diag-nav-inner">
+    <a href="index.html" class="diag-logo">
+      <img src="logo1.png" alt="スマートWEB" class="diag-logo-img"/>
+    </a>
+    <div class="diag-nav-right">
+      <a href="index.html" class="back-btn">
+        ← スマートWEBトップへ戻る
+      </a>
+      <a href="#contact" class="diag-cta-btn">無料診断を申し込む</a>
+    </div>
+    <button class="diag-hamburger" id="diag-hamburger" aria-label="メニュー">
+      <span></span><span></span><span></span>
+    </button>
   </div>
-</div>
+  <ul class="diag-menu" id="diag-menu">
+    <li><a href="index.html">← スマートWEBトップへ戻る</a></li>
+    <li><a href="#contact">無料診断を申し込む</a></li>
+  </ul>
+</nav>
 
 <!-- HERO -->
 <section class="hero">
@@ -764,6 +887,13 @@ footer{
 </footer>
 
 <script>
+// ハンバーガーメニュー
+const dBurger = document.getElementById('diag-hamburger');
+const dMenu   = document.getElementById('diag-menu');
+dBurger.addEventListener('click', () => dMenu.classList.toggle('open'));
+dMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => dMenu.classList.remove('open')));
+
+// スクロールリビール
 const obs=new IntersectionObserver(e=>{
   e.forEach(el=>{if(el.isIntersecting){el.target.classList.add('visible');obs.unobserve(el.target)}})
 },{threshold:0.1});

@@ -761,37 +761,73 @@ footer{background:var(--navy)}
    RESPONSIVE
 ============================================= */
 @media(max-width:900px){
+  /* --- 共通余白 --- */
+  .inner{padding:0 1rem}
+
+  /* --- NAV --- */
   .hamburger{display:flex}
   .nav-links{
     display:none;flex-direction:column;
     position:fixed;top:72px;left:0;right:0;bottom:0;
-    background:#fff;padding:3rem 2.5rem;gap:2rem;
+    background:#fff;padding:2rem 1.5rem;gap:1.6rem;
     border-top:1px solid var(--border);
-    overflow-y:auto;
+    overflow-y:auto;z-index:199;
   }
   .nav-links.open{display:flex}
-  .nav-links a{font-size:18px;color:var(--navy)}
+  .nav-links a{font-size:20px;color:var(--navy);border-bottom:none}
+  .nav-links .nav-cta{text-align:center;padding:14px!important;font-size:16px!important}
 
+  /* --- HERO --- */
+  .hero{padding:100px 1rem 56px}
   .hero-inner{grid-template-columns:1fr}
   .hero::after{display:none}
+  .hero-title{font-size:clamp(36px,9vw,56px)}
+  .hero-title-ja{font-size:clamp(20px,5vw,30px)}
+  .hero-desc{font-size:15px;max-width:100%}
+  .hero-btns{flex-direction:column;gap:10px}
+  .hero-btns a{width:100%;text-align:center;justify-content:center}
   .hero-right{margin-top:2rem}
 
+  /* --- STATS --- */
   .stats-inner{grid-template-columns:1fr 1fr}
   .stat-item:nth-child(2){border-right:none}
+  .stat-num{font-size:38px}
+  .stat-num span{font-size:20px}
 
+  /* --- SECTIONS --- */
+  .sec{padding:64px 1rem}
+  .sec-title{font-size:clamp(24px,6vw,38px)}
+  .sec-title-ja{font-size:clamp(16px,4vw,22px)}
+  .sec-desc{font-size:15px;margin-bottom:32px}
+
+  /* --- SERVICES --- */
   .svc-grid{grid-template-columns:1fr;border-right:1px solid var(--border)}
   .svc-card{border-right:none;border-bottom:1px solid var(--border)}
 
+  /* --- PROCESS --- */
   .process-wrap{grid-template-columns:1fr 1fr;gap:0}
-  .proc-item{border-bottom:1px solid var(--border)}
+  .proc-item{border-bottom:1px solid var(--border);padding:24px 16px}
   .proc-arrow{display:none}
+  .proc-num{font-size:48px}
 
-  .why-grid{grid-template-columns:1fr}
+  /* --- WHY --- */
+  .why-grid{grid-template-columns:1fr;gap:2rem}
+
+  /* --- TESTI --- */
   .testi-grid{grid-template-columns:1fr}
-  .g-inner{flex-direction:column}
+
+  /* --- GUARANTEE --- */
+  .g-inner{flex-direction:column;gap:1.5rem}
+  .guarantee{padding:44px 1rem}
+
+  /* --- CONTACT --- */
   .contact-grid{grid-template-columns:1fr}
   .f-row{grid-template-columns:1fr}
-  .footer-top{grid-template-columns:1fr}
+  .c-form-box{padding:24px 16px}
+
+  /* --- FOOTER --- */
+  .footer-top{grid-template-columns:1fr;padding:40px 1rem 32px}
+  .footer-bottom{padding:16px 1rem;flex-direction:column;gap:6px;text-align:center}
 }
 </style>
 </head>
