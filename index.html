@@ -3,829 +3,274 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>スマートWEB | ホームページ作成代行サービス</title>
-<meta name="description" content="AI×プロデザイナーが融合。最短7日・明朗料金・納品後3ヶ月無料サポート。大阪発・全国対応のホームページ制作代行。"/>
+<title>スマートWEB | ホームページ作成代行サービス｜大阪・全国対応</title>
+<meta name="description" content="最短7日・追加費用なし・納品後3ヶ月無料サポート。AI×プロデザイナーが融合したホームページ制作代行。大阪発・全国対応。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"/>
 <style>
-/* =============================================
-   RESET & BASE
-============================================= */
+/* ===== RESET ===== */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{
-  font-family:'Noto Sans JP','Barlow',sans-serif;
-  background:#fff;
-  color:#1A2235;
-  font-weight:400;
-  line-height:1.75;
-  font-size:16px;
-  overflow-x:hidden;
-}
+body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:#1A2235;font-weight:400;line-height:1.75;font-size:16px;overflow-x:hidden}
 img{max-width:100%;display:block}
 a{text-decoration:none;color:inherit}
 ul{list-style:none}
 
-/* =============================================
-   CSS VARIABLES
-============================================= */
+/* ===== VARIABLES ===== */
 :root{
-  --navy:    #0D1B3E;
-  --navy2:   #162952;
-  --blue:    #1565C0;
-  --cyan:    #0EA5D8;
-  --accent:  #0284C7;
-  --text:    #1A2235;
-  --muted:   #5A6A88;
-  --light:   #F0F5FA;
-  --border:  #E2E8F2;
-  --white:   #ffffff;
-  --grad:    linear-gradient(135deg,#0EA5D8,#1565C0);
-  --radius:  12px;
+  --navy:#0D1B3E;--navy2:#162952;--blue:#1565C0;--cyan:#0EA5D8;--accent:#0284C7;
+  --text:#1A2235;--muted:#5A6A88;--light:#F0F5FA;--border:#E2E8F2;
+  --grad:linear-gradient(135deg,#0EA5D8,#1565C0);
 }
-
-/* =============================================
-   LAYOUT
-============================================= */
 .inner{max-width:1080px;margin:0 auto;padding:0 2.5rem}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 
-/* =============================================
-   TYPOGRAPHY UTILITIES
-============================================= */
-.en{font-family:'Barlow Condensed',sans-serif;letter-spacing:.04em}
-.grad-text{
-  background:var(--grad);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-
-/* =============================================
-   BUTTONS
-============================================= */
-.btn-primary{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--navy);
-  color:#fff;font-weight:600;font-size:15px;
-  padding:14px 32px;border-radius:4px;
-  border:none;cursor:pointer;font-family:inherit;
-  transition:background .2s,transform .15s;
-  letter-spacing:.04em;
-}
+/* ===== BUTTONS ===== */
+.btn-primary{display:inline-flex;align-items:center;gap:8px;background:var(--navy);color:#fff;font-weight:600;font-size:15px;padding:14px 32px;border:none;cursor:pointer;font-family:inherit;transition:background .2s,transform .15s;letter-spacing:.04em}
 .btn-primary:hover{background:var(--navy2);transform:translateY(-1px)}
-
-.btn-outline{
-  display:inline-flex;align-items:center;gap:8px;
-  background:transparent;
-  color:var(--navy);font-size:15px;font-weight:500;
-  padding:13px 30px;border-radius:4px;
-  border:2px solid var(--navy);
-  cursor:pointer;font-family:inherit;
-  transition:background .2s,color .2s;
-}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--navy);font-size:15px;font-weight:500;padding:13px 30px;border:2px solid var(--navy);cursor:pointer;font-family:inherit;transition:background .2s,color .2s}
 .btn-outline:hover{background:var(--navy);color:#fff}
 
-.btn-accent{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--grad);
-  color:#fff;font-weight:600;font-size:15px;
-  padding:14px 32px;border-radius:4px;
-  border:none;cursor:pointer;font-family:inherit;
-  box-shadow:0 4px 20px rgba(21,101,192,.25);
-  transition:opacity .2s,transform .15s;
-}
-.btn-accent:hover{opacity:.9;transform:translateY(-1px)}
-
-/* =============================================
-   NAV
-============================================= */
-nav{
-  position:fixed;
-  top:0;left:0;right:0;
-  z-index:200;
-  background:rgba(255,255,255,.97);
-  backdrop-filter:blur(12px);
-  border-bottom:1px solid var(--border);
-  height:72px;
-  display:flex;align-items:center;
-  box-shadow:0 1px 12px rgba(13,27,62,.06);
-}
-.nav-inner{
-  width:100%;max-width:1080px;margin:0 auto;
-  padding:0 2.5rem;
-  display:flex;align-items:center;justify-content:space-between;
-}
-
-.logo{display:flex;align-items:center;gap:12px}
-.logo-img{height:48px;width:auto;display:block}
-.logo-mark{width:38px;height:38px;flex-shrink:0}
-.logo-texts{display:flex;flex-direction:column;line-height:1.2}
-.logo-en{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:21px;font-weight:800;
-  color:var(--navy);letter-spacing:.05em;
-}
-.logo-en span{color:var(--accent)}
-.logo-ja{font-size:10px;color:var(--muted);letter-spacing:.1em;font-weight:300}
-
-.nav-links{display:flex;align-items:center;gap:2.5rem}
-.nav-links a{
-  font-size:13px;font-weight:500;color:var(--muted);
-  letter-spacing:.06em;transition:color .2s;
-  font-family:'Barlow Condensed',sans-serif;
-  text-transform:uppercase;
-  padding-bottom:2px;
-  border-bottom:2px solid transparent;
-  transition:color .2s,border-color .2s;
-}
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:72px;display:flex;align-items:center;box-shadow:0 1px 12px rgba(13,27,62,.06)}
+.nav-inner{width:100%;max-width:1080px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center}
+.logo-img{height:46px;width:auto}
+.nav-links{display:flex;align-items:center;gap:2rem}
+.nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;padding-bottom:2px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
 .nav-links a:hover{color:var(--navy);border-color:var(--accent)}
-.nav-cta{
-  background:var(--navy)!important;
-  color:#fff!important;
-  padding:10px 22px!important;
-  border-radius:4px!important;
-  border:none!important;
-  font-size:13px!important;
-  transition:background .2s!important;
-}
-.nav-cta:hover{background:var(--blue)!important;border-color:transparent!important}
-
+.nav-diag{color:var(--accent)!important;border-color:var(--accent)!important}
+.nav-cta{background:var(--navy)!important;color:#fff!important;padding:10px 22px;border:none!important;font-size:13px!important;letter-spacing:.06em!important;transition:background .2s!important}
+.nav-cta:hover{background:var(--blue)!important}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
 
-/* =============================================
-   HERO
-============================================= */
-.hero{
-  padding:120px 2.5rem 80px;
-  background:#fff;
-  border-bottom:4px solid var(--navy);
-  position:relative;
-  overflow:hidden;
-}
-.hero::after{
-  content:'';position:absolute;
-  top:0;right:0;
-  width:45%;height:100%;
-  background:var(--light);
-  clip-path:polygon(12% 0,100% 0,100% 100%,0 100%);
-  z-index:0;
-}
-
-.hero-inner{
-  max-width:1080px;margin:0 auto;
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:4rem;align-items:center;
-  position:relative;z-index:1;
-}
-
-.hero-eyebrow{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--light);border:1px solid var(--border);
-  color:var(--accent);
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12px;font-weight:700;letter-spacing:.18em;
-  padding:6px 16px;margin-bottom:24px;
-  text-transform:uppercase;
-}
-.ey-dot{
-  width:6px;height:6px;border-radius:50%;
-  background:var(--accent);
-  animation:blink 2s infinite;
-}
-@keyframes blink{0%,100%{opacity:1}50%{opacity:.3}}
-
-.hero-title{
-  font-family:'Barlow Condensed','Noto Sans JP',sans-serif;
-  font-size:clamp(42px,5vw,70px);
-  font-weight:800;
-  color:var(--navy);
-  line-height:1.05;
-  letter-spacing:.02em;
-  margin-bottom:10px;
-}
-.hero-title-ja{
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:clamp(24px,3vw,38px);
-  font-weight:700;
-  color:var(--navy);
-  line-height:1.3;
-  margin-bottom:24px;
-}
-.hero-title-ja span{
-  background:var(--grad);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-
-.hero-desc{
-  font-size:16px;color:var(--muted);
-  line-height:1.9;margin-bottom:36px;
-  max-width:460px;
-}
-
+/* ===== HERO ===== */
+.hero{padding:120px 2rem 80px;background:#fff;border-bottom:4px solid var(--navy);position:relative;overflow:hidden}
+.hero::after{content:'';position:absolute;top:0;right:0;width:44%;height:100%;background:var(--light);clip-path:polygon(12% 0,100% 0,100% 100%,0 100%);z-index:0}
+.hero-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;position:relative;z-index:1}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--light);border:1px solid var(--border);border-left:3px solid var(--accent);color:var(--accent);font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;padding:6px 16px;margin-bottom:24px;text-transform:uppercase}
+.ey-dot{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:blink 2s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+.hero-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(44px,5.5vw,72px);font-weight:800;color:var(--navy);line-height:1.0;letter-spacing:.02em;margin-bottom:8px}
+.hero-title-ja{font-family:'Noto Sans JP',sans-serif;font-size:clamp(22px,3vw,36px);font-weight:700;color:var(--navy);line-height:1.35;margin-bottom:24px}
+.hero-title-ja span{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero-desc{font-size:16px;color:var(--muted);line-height:1.9;margin-bottom:36px;max-width:460px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
 
-/* Hero right */
-.hero-right{
-  background:#fff;
-  border:1px solid var(--border);
-  border-top:4px solid var(--navy);
-  padding:32px;
-  box-shadow:0 8px 32px rgba(13,27,62,.08);
-}
-.hr-title{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:14px;font-weight:700;letter-spacing:.18em;
-  text-transform:uppercase;color:var(--accent);
-  margin-bottom:20px;
-  padding-bottom:12px;border-bottom:1px solid var(--border);
-}
-
-.hc-item{
-  display:flex;align-items:flex-start;gap:14px;
-  padding:16px 0;border-bottom:1px solid var(--border);
-}
+/* Hero right card */
+.hero-card{background:#fff;border:1px solid var(--border);border-top:4px solid var(--navy);padding:32px;box-shadow:0 8px 32px rgba(13,27,62,.08)}
+.hc-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;padding-bottom:12px;border-bottom:1px solid var(--border)}
+.hc-item{display:flex;align-items:flex-start;gap:16px;padding:16px 0;border-bottom:1px solid var(--border)}
 .hc-item:last-child{border-bottom:none}
-.hc-num{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:28px;font-weight:800;
-  color:var(--border);
-  line-height:1;flex-shrink:0;width:32px;
-}
+.hc-index{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;color:var(--accent);width:24px;flex-shrink:0;padding-top:2px;letter-spacing:.1em}
 .hc-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:4px}
 .hc-desc{font-size:13px;color:var(--muted);line-height:1.65}
 
-/* =============================================
-   STATS BAR
-============================================= */
-.stats-bar{
-  background:var(--navy);
-  padding:0;
-}
-.stats-inner{
-  max-width:1080px;margin:0 auto;
-  display:grid;grid-template-columns:repeat(4,1fr);
-}
-.stat-item{
-  padding:36px 24px;text-align:center;
-  border-right:1px solid rgba(255,255,255,.1);
-  position:relative;
-}
+/* ===== STATS ===== */
+.stats-bar{background:var(--navy)}
+.stats-inner{max-width:1080px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr)}
+.stat-item{padding:36px 24px;text-align:center;border-right:1px solid rgba(255,255,255,.1)}
 .stat-item:last-child{border-right:none}
-.stat-num{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:52px;font-weight:800;
-  color:#fff;line-height:1;margin-bottom:6px;
-  letter-spacing:.02em;
-}
-.stat-num span{
-  font-size:26px;
-  background:var(--grad);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.stat-label{
-  font-size:12px;color:rgba(255,255,255,.55);
-  letter-spacing:.1em;font-weight:400;
-}
+.stat-num{font-family:'Barlow Condensed',sans-serif;font-size:52px;font-weight:800;color:#fff;line-height:1;margin-bottom:6px}
+.stat-num span{font-size:26px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.stat-label{font-size:12px;color:rgba(255,255,255,.5);letter-spacing:.1em}
 
-/* =============================================
-   SECTION SHARED
-============================================= */
-.sec{padding:100px 2.5rem;position:relative}
+/* ===== SECTION SHARED ===== */
+.sec{padding:96px 2rem;position:relative}
 .sec-light{background:var(--light)}
-.sec-navy{background:var(--navy)}
-
-.sec-eyebrow{
-  display:block;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12px;font-weight:700;letter-spacing:.2em;
-  text-transform:uppercase;color:var(--accent);
-  margin-bottom:12px;
-}
-.sec-eyebrow-w{color:rgba(255,255,255,.5)}
-
-.sec-title{
-  font-family:'Barlow Condensed','Noto Sans JP',sans-serif;
-  font-size:clamp(30px,4vw,48px);
-  font-weight:800;color:var(--navy);
-  line-height:1.1;letter-spacing:.02em;
-  margin-bottom:16px;
-}
-.sec-title-w{color:#fff}
-.sec-title-ja{
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:clamp(18px,2.5vw,26px);
-  font-weight:700;color:var(--navy);margin-bottom:14px;line-height:1.3;
-}
-.sec-title-ja-w{color:#fff}
-
+.sec-eyebrow{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+.sec-title{font-family:'Barlow Condensed',sans-serif;font-size:clamp(28px,4vw,46px);font-weight:800;color:var(--navy);line-height:1.1;letter-spacing:.02em;margin-bottom:14px}
+.sec-title-ja{font-family:'Noto Sans JP',sans-serif;font-size:clamp(16px,2.5vw,24px);font-weight:700;color:var(--navy);margin-bottom:14px;line-height:1.35}
+.sec-line{width:40px;height:4px;background:var(--grad);margin:14px 0 32px}
 .sec-desc{font-size:16px;color:var(--muted);line-height:1.9;max-width:560px;margin-bottom:48px}
-.sec-desc-w{color:rgba(255,255,255,.65)}
 
-/* Divider line */
-.sec-line{
-  width:48px;height:4px;
-  background:var(--grad);
-  margin:16px 0 32px;
-}
-
-/* =============================================
-   SERVICES
-============================================= */
-.svc-grid{
-  display:grid;grid-template-columns:repeat(3,1fr);gap:0;
-  border:1px solid var(--border);
-}
-
-.svc-card{
-  padding:36px 32px;
-  border-right:1px solid var(--border);
-  background:#fff;
-  position:relative;overflow:hidden;
-  transition:background .25s;
-}
+/* ===== SERVICES ===== */
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--border)}
+.svc-card{padding:36px 30px;border-right:1px solid var(--border);background:#fff;position:relative;overflow:hidden;transition:background .25s}
 .svc-card:last-child{border-right:none}
-.svc-card::before{
-  content:'';position:absolute;
-  top:0;left:0;right:0;height:4px;
-  background:var(--border);transition:background .3s;
-}
+.svc-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--border);transition:background .3s}
 .svc-card:hover{background:var(--light)}
 .svc-card:hover::before{background:var(--grad)}
-.svc-card.featured::before{background:var(--grad)}
 .svc-card.featured{background:var(--light)}
-
-.plan-tag{
-  display:inline-block;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:11px;font-weight:700;letter-spacing:.15em;
-  text-transform:uppercase;
-  background:var(--navy);color:#fff;
-  padding:3px 12px;margin-bottom:16px;
-}
-
-.svc-number{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:64px;font-weight:800;
-  color:var(--border);line-height:1;
-  margin-bottom:8px;
-}
-.svc-name{
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:20px;font-weight:700;color:var(--navy);margin-bottom:10px;
-}
+.svc-card.featured::before{background:var(--grad)}
+.plan-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.15em;text-transform:uppercase;background:var(--navy);color:#fff;padding:3px 12px;margin-bottom:16px}
+.svc-number{font-family:'Barlow Condensed',sans-serif;font-size:60px;font-weight:800;color:var(--border);line-height:1;margin-bottom:8px}
+.svc-name{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:10px}
 .svc-desc{font-size:14px;color:var(--muted);line-height:1.8;margin-bottom:24px}
-
 .svc-list{margin-bottom:28px}
-.svc-list li{
-  display:flex;align-items:center;gap:10px;
-  font-size:14px;color:var(--text);
-  padding:7px 0;border-bottom:1px solid var(--border);
-}
+.svc-list li{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text);padding:8px 0;border-bottom:1px solid var(--border)}
 .svc-list li:last-child{border-bottom:none}
-.svc-check{
-  width:18px;height:18px;border-radius:50%;
-  background:var(--grad);
-  display:flex;align-items:center;justify-content:center;
-  color:#fff;font-size:10px;font-weight:700;flex-shrink:0;
-}
-
-.svc-price{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:36px;font-weight:800;
-  color:var(--navy);margin-bottom:4px;
-  letter-spacing:.02em;
-}
+.svc-check{width:18px;height:18px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:10px;font-weight:700;flex-shrink:0}
+.svc-price{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;color:var(--navy);margin-bottom:4px}
 .svc-price-note{font-size:12px;color:var(--muted)}
 
-/* =============================================
-   PROCESS
-============================================= */
-.process-wrap{
-  display:grid;grid-template-columns:repeat(4,1fr);
-  gap:0;border:1px solid var(--border);
-  position:relative;
-}
-.proc-item{
-  padding:36px 28px;
-  border-right:1px solid var(--border);
-  background:#fff;
-  position:relative;
-  transition:background .25s;
-}
+/* ===== WORKS — 実績 ===== */
+.works-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.work-card{background:#fff;border:1px solid var(--border);overflow:hidden;transition:box-shadow .25s,transform .25s}
+.work-card:hover{box-shadow:0 8px 28px rgba(13,27,62,.1);transform:translateY(-4px)}
+.work-thumb{height:180px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.work-thumb-inner{width:100%;height:100%;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:8px}
+.work-industry{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+.work-site-name{font-size:18px;font-weight:700;color:#fff}
+.work-body{padding:20px 22px}
+.work-tag{display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);background:var(--light);border:1px solid var(--border);padding:3px 10px;margin-bottom:10px}
+.work-title{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:6px}
+.work-desc{font-size:13px;color:var(--muted);line-height:1.7}
+.work-result{display:flex;align-items:center;gap:8px;margin-top:14px;padding-top:14px;border-top:1px solid var(--border)}
+.wr-num{font-family:'Barlow Condensed',sans-serif;font-size:24px;font-weight:800;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1}
+.wr-label{font-size:12px;color:var(--muted);line-height:1.4}
+
+/* ===== PROCESS ===== */
+.process-wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--border);position:relative}
+.proc-item{padding:36px 24px;border-right:1px solid var(--border);background:#fff;position:relative;transition:background .25s}
 .proc-item:last-child{border-right:none}
 .proc-item:hover{background:var(--light)}
-
-.proc-arrow{
-  position:absolute;
-  right:-16px;top:50%;transform:translateY(-50%);
-  width:32px;height:32px;
-  background:#fff;border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:16px;color:var(--accent);
-  z-index:2;
-}
-
-.proc-num{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:72px;font-weight:800;
-  color:var(--border);line-height:1;
-  margin-bottom:16px;
-}
-.proc-title{
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:16px;font-weight:700;color:var(--navy);
-  margin-bottom:8px;
-}
+.proc-arrow{position:absolute;right:-16px;top:48px;width:32px;height:32px;background:#fff;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;font-size:14px;color:var(--accent);z-index:2;font-family:'Barlow Condensed',sans-serif;font-weight:700}
+.proc-num{font-family:'Barlow Condensed',sans-serif;font-size:64px;font-weight:800;color:var(--border);line-height:1;margin-bottom:16px}
+.proc-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:8px}
 .proc-desc{font-size:13px;color:var(--muted);line-height:1.75}
-.proc-days{
-  margin-top:16px;
-  display:inline-block;
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12px;font-weight:700;letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--accent);
-  border-top:2px solid var(--accent);
-  padding-top:6px;
-}
+.proc-days{margin-top:14px;display:inline-block;font-family:'Barlow Condensed',sans-serif;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);border-top:2px solid var(--accent);padding-top:6px}
 
-/* =============================================
-   WHY
-============================================= */
-.why-grid{
-  display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start;
-}
-
-.why-list{margin-top:40px;display:flex;flex-direction:column;gap:0}
-
-.why-item{
-  display:flex;gap:20px;align-items:flex-start;
-  padding:24px 0;border-bottom:1px solid var(--border);
-  transition:padding-left .2s;
-}
-.why-item:hover{padding-left:8px}
+/* ===== WHY ===== */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
+.why-list{margin-top:40px;display:flex;flex-direction:column}
+.why-item{display:flex;gap:20px;align-items:flex-start;padding:22px 0;border-bottom:1px solid var(--border);transition:padding-left .2s}
 .why-item:first-child{border-top:1px solid var(--border)}
-
-.wi-num{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:36px;font-weight:800;
-  line-height:1;flex-shrink:0;width:40px;
-  background:var(--grad);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
+.why-item:hover{padding-left:6px}
+.wi-num{font-family:'Barlow Condensed',sans-serif;font-size:32px;font-weight:800;line-height:1;flex-shrink:0;width:38px;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
 .wi-title{font-size:16px;font-weight:700;color:var(--navy);margin-bottom:6px}
 .wi-desc{font-size:14px;color:var(--muted);line-height:1.75}
-
-/* Results panel */
-.results-panel{
-  border:1px solid var(--border);
-  border-top:4px solid var(--navy);
-  overflow:hidden;
-}
-.rp-header{
-  background:var(--navy);
-  padding:28px 32px;
-}
-.rp-header-label{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12px;font-weight:700;letter-spacing:.18em;
-  text-transform:uppercase;color:rgba(255,255,255,.5);
-  margin-bottom:10px;display:block;
-}
-.rp-big{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:72px;font-weight:800;
-  line-height:1;
-  background:linear-gradient(135deg,#38D9F5,#60A5FA);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-  background-clip:text;
-}
-.rp-big-label{font-size:14px;color:rgba(255,255,255,.6);margin-top:4px}
-
-.rp-body{padding:28px 32px;background:#fff}
-
-.rp-item{
-  display:flex;align-items:flex-start;gap:12px;
-  padding:14px 0;border-bottom:1px solid var(--border);
-}
+.results-panel{border:1px solid var(--border);border-top:4px solid var(--navy);overflow:hidden}
+.rp-header{background:var(--navy);padding:28px 30px}
+.rp-label{font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:10px;display:block}
+.rp-big{font-family:'Barlow Condensed',sans-serif;font-size:68px;font-weight:800;line-height:1;background:linear-gradient(135deg,#38D9F5,#60A5FA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.rp-big-sub{font-size:14px;color:rgba(255,255,255,.55);margin-top:4px}
+.rp-body{padding:24px 30px;background:#fff}
+.rp-item{display:flex;align-items:flex-start;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
 .rp-item:last-of-type{border-bottom:none}
-.rp-bar{
-  width:3px;background:var(--grad);
-  flex-shrink:0;align-self:stretch;min-height:36px;
-}
+.rp-bar{width:3px;background:var(--grad);flex-shrink:0;align-self:stretch;min-height:32px}
 .rp-text{font-size:14px;color:var(--text);line-height:1.65}
-
-.rp-cta{
-  display:block;
-  background:var(--navy);color:#fff;
-  font-weight:600;font-size:14px;
-  padding:16px;text-align:center;
-  border:none;cursor:pointer;font-family:inherit;
-  transition:background .2s;letter-spacing:.04em;
-  font-family:'Noto Sans JP',sans-serif;
-}
+.rp-cta{display:block;background:var(--navy);color:#fff;font-weight:600;font-size:14px;padding:16px;text-align:center;border:none;cursor:pointer;font-family:inherit;transition:background .2s;letter-spacing:.04em}
 .rp-cta:hover{background:var(--blue)}
 
-/* =============================================
-   TESTIMONIALS
-============================================= */
-.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-
-.testi-card{
-  background:#fff;
-  border:1px solid var(--border);
-  padding:28px;
-  position:relative;
-  transition:box-shadow .25s,transform .25s;
-}
-.testi-card:hover{
-  box-shadow:0 8px 32px rgba(13,27,62,.1);
-  transform:translateY(-4px);
-}
-.testi-card::before{
-  content:'';position:absolute;
-  top:0;left:0;right:0;height:3px;
-  background:var(--grad);
-}
-
-.stars{display:flex;gap:3px;margin-bottom:16px}
-.star{font-size:16px;color:#F59E0B}
-
-.testi-quote{
-  font-size:15px;color:var(--text);
-  line-height:1.85;margin-bottom:24px;
-  font-weight:300;
-}
-.testi-author{
-  display:flex;align-items:center;gap:12px;
-  padding-top:18px;border-top:1px solid var(--border);
-}
-.t-avatar{
-  width:42px;height:42px;
-  background:var(--navy);
-  color:#fff;font-family:'Barlow Condensed',sans-serif;
-  font-size:18px;font-weight:700;
-  display:flex;align-items:center;justify-content:center;
-  flex-shrink:0;
-}
+/* ===== TESTIMONIALS ===== */
+.testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.testi-card{background:#fff;border:1px solid var(--border);padding:28px;position:relative;transition:box-shadow .25s,transform .25s}
+.testi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:var(--grad)}
+.testi-card:hover{box-shadow:0 8px 28px rgba(13,27,62,.08);transform:translateY(-3px)}
+.stars{color:#F59E0B;font-size:14px;letter-spacing:2px;margin-bottom:16px}
+.testi-quote{font-size:15px;color:var(--text);line-height:1.85;margin-bottom:24px}
+.testi-author{display:flex;align-items:center;gap:12px;padding-top:18px;border-top:1px solid var(--border)}
+.t-avatar{width:42px;height:42px;background:var(--navy);color:#fff;font-family:'Barlow Condensed',sans-serif;font-size:18px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .t-name{font-size:14px;font-weight:700;color:var(--navy)}
 .t-role{font-size:12px;color:var(--muted);margin-top:2px}
 
-/* =============================================
-   GUARANTEE BANNER
-============================================= */
-.guarantee{
-  background:var(--light);
-  border-top:1px solid var(--border);
-  border-bottom:1px solid var(--border);
-  padding:64px 2.5rem;
-}
-.g-inner{
-  max-width:1080px;margin:0 auto;
-  display:flex;align-items:center;gap:3rem;
-}
-.g-badge{
-  flex-shrink:0;
-  width:110px;height:110px;
-  border:3px solid var(--navy);
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;
-  text-align:center;
-}
-.g-num{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:36px;font-weight:800;
-  color:var(--navy);line-height:1;
-}
-.g-unit{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:13px;font-weight:700;letter-spacing:.1em;
-  color:var(--navy);
-}
+/* ===== FAQ ===== */
+.faq-list{max-width:760px;display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--border)}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:22px 0;cursor:pointer}
+.faq-q-text{font-size:16px;font-weight:700;color:var(--navy);line-height:1.5;flex:1}
+.faq-q-mark{font-family:'Barlow Condensed',sans-serif;font-size:20px;font-weight:800;color:var(--accent);flex-shrink:0;margin-right:8px}
+.faq-icon{width:28px;height:28px;border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:16px;color:var(--muted);transition:transform .3s;margin-top:2px}
+.faq-item.open .faq-icon{transform:rotate(45deg);color:var(--navy);border-color:var(--navy)}
+.faq-a{display:none;padding:0 0 22px 28px;font-size:15px;color:var(--muted);line-height:1.9}
+.faq-item.open .faq-a{display:block}
+
+/* ===== GUARANTEE ===== */
+.guarantee{background:var(--light);padding:56px 2rem;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.g-inner{max-width:1080px;margin:0 auto;display:flex;align-items:center;gap:2.5rem}
+.g-badge{flex-shrink:0;width:108px;height:108px;border:3px solid var(--navy);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.g-num{font-family:'Barlow Condensed',sans-serif;font-size:36px;font-weight:800;color:var(--navy);line-height:1}
+.g-unit{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:.08em;color:var(--navy)}
 .g-body{flex:1}
-.g-title{
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:22px;font-weight:700;color:var(--navy);margin-bottom:10px;
-}
-.g-desc{font-size:15px;color:var(--muted);line-height:1.85;max-width:600px}
+.g-title{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:10px}
+.g-desc{font-size:15px;color:var(--muted);line-height:1.85;max-width:620px}
 
-/* =============================================
-   CONTACT
-============================================= */
-.contact-grid{
-  display:grid;grid-template-columns:1.2fr 0.8fr;gap:4rem;align-items:start;
-}
-
-.c-form-box{
-  background:#fff;border:1px solid var(--border);
-  border-top:4px solid var(--navy);
-  padding:40px;
-  box-shadow:0 4px 24px rgba(13,27,62,.06);
-}
-.form-title{
-  font-family:'Noto Sans JP',sans-serif;
-  font-size:22px;font-weight:700;color:var(--navy);
-  margin-bottom:28px;
-}
-
+/* ===== CONTACT ===== */
+.contact-grid{display:grid;grid-template-columns:1.2fr 0.8fr;gap:4rem;align-items:start}
+.c-form-box{background:#fff;border:1px solid var(--border);border-top:4px solid var(--navy);padding:40px;box-shadow:0 4px 24px rgba(13,27,62,.06)}
+.form-title{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:28px}
 .f-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
 .f-group{margin-bottom:16px}
-.f-label{
-  display:block;font-size:12px;font-weight:700;letter-spacing:.1em;
-  text-transform:uppercase;color:var(--muted);margin-bottom:7px;
-  font-family:'Barlow Condensed',sans-serif;
-}
-.f-input{
-  width:100%;padding:12px 16px;
-  background:#fff;
-  border:1px solid var(--border);
-  font-size:15px;font-family:inherit;
-  color:var(--text);outline:none;
-  transition:border-color .2s;border-radius:0;
-  appearance:none;
-}
+.f-label{display:block;font-family:'Barlow Condensed',sans-serif;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:7px}
+.f-input{width:100%;padding:12px 14px;background:#fff;border:1px solid var(--border);font-size:15px;font-family:inherit;color:var(--text);outline:none;transition:border-color .2s;appearance:none;border-radius:0}
 .f-input::placeholder{color:#B0BAC9}
 .f-input:focus{border-color:var(--navy)}
 select.f-input{cursor:pointer}
 textarea.f-input{min-height:110px;resize:vertical}
-
-.f-btn{
-  width:100%;
-  background:var(--navy);color:#fff;
-  border:none;padding:16px;
-  font-size:16px;font-weight:700;font-family:inherit;
-  cursor:pointer;letter-spacing:.08em;
-  transition:background .2s;margin-top:4px;
-}
+.f-btn{width:100%;background:var(--navy);color:#fff;border:none;padding:16px;font-size:16px;font-weight:700;font-family:inherit;cursor:pointer;transition:background .2s;letter-spacing:.06em;margin-top:4px}
 .f-btn:hover{background:var(--blue)}
-
-.security-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
-.sec-badge{
-  display:inline-flex;align-items:center;gap:6px;
-  background:var(--light);border:1px solid var(--border);
-  color:var(--muted);font-size:12px;padding:5px 12px;
-}
-
-/* Contact info side */
+.security-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.sec-badge{display:inline-flex;align-items:center;gap:5px;background:var(--light);border:1px solid var(--border);color:var(--muted);font-size:12px;padding:5px 12px}
 .c-info{display:flex;flex-direction:column;gap:0}
-
-.ci-card{
-  display:flex;gap:16px;align-items:flex-start;
-  padding:20px 0;border-bottom:1px solid var(--border);
-}
+.ci-card{display:flex;gap:14px;align-items:flex-start;padding:18px 0;border-bottom:1px solid var(--border)}
 .ci-card:first-child{border-top:1px solid var(--border)}
-.ci-icon{
-  width:40px;height:40px;flex-shrink:0;
-  background:var(--light);border:1px solid var(--border);
-  display:flex;align-items:center;justify-content:center;
-  font-size:18px;
-}
+.ci-icon-box{width:38px;height:38px;flex-shrink:0;background:var(--light);border:1px solid var(--border);display:flex;align-items:center;justify-content:center}
+.ci-icon-svg{width:18px;height:18px;color:var(--accent)}
 .ci-title{font-size:13px;font-weight:700;color:var(--navy);margin-bottom:4px;letter-spacing:.04em}
 .ci-val{font-size:14px;color:var(--muted);line-height:1.6}
-
-.company-table{
-  margin-top:24px;
-  border:1px solid var(--border);
-  border-top:3px solid var(--navy);
-  overflow:hidden;
-}
-.ct-row{
-  display:flex;font-size:14px;
-  border-bottom:1px solid var(--border);
-}
+.company-table{margin-top:20px;border:1px solid var(--border);border-top:3px solid var(--navy)}
+.ct-row{display:flex;font-size:14px;border-bottom:1px solid var(--border)}
 .ct-row:last-child{border-bottom:none}
-.ct-key{
-  background:var(--light);padding:12px 16px;
-  color:var(--muted);font-weight:500;
-  width:90px;flex-shrink:0;font-size:13px;
-}
-.ct-val{padding:12px 16px;color:var(--text);flex:1}
+.ct-key{background:var(--light);padding:12px 14px;color:var(--muted);font-weight:500;width:88px;flex-shrink:0;font-size:13px}
+.ct-val{padding:12px 14px;color:var(--text);flex:1}
 
-/* =============================================
-   FOOTER
-============================================= */
+/* ===== FOOTER ===== */
 footer{background:var(--navy)}
-.footer-top{
-  max-width:1080px;margin:0 auto;padding:60px 2.5rem 48px;
-  display:grid;grid-template-columns:1.8fr 1fr 1fr;
-  gap:3rem;
-  border-bottom:1px solid rgba(255,255,255,.1);
-}
-.f-brand-en{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:22px;font-weight:800;
-  color:#fff;letter-spacing:.06em;margin-bottom:4px;
-}
-.f-brand-en span{color:var(--cyan)}
-.f-brand-ja{font-size:11px;color:rgba(255,255,255,.35);letter-spacing:.12em;margin-bottom:16px}
-.f-tagline{font-size:14px;color:rgba(255,255,255,.5);line-height:1.85}
-
-.f-col h5{
-  font-family:'Barlow Condensed',sans-serif;
-  font-size:12px;letter-spacing:.18em;text-transform:uppercase;
-  color:rgba(255,255,255,.4);font-weight:700;margin-bottom:18px;
-}
-.f-col a{
-  display:block;color:rgba(255,255,255,.6);font-size:14px;
-  margin-bottom:11px;transition:color .2s;
-}
+.footer-top{max-width:1080px;margin:0 auto;padding:56px 2rem 44px;display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:3rem;border-bottom:1px solid rgba(255,255,255,.1)}
+.f-brand-logo{height:44px;width:auto;margin-bottom:16px;filter:brightness(0) invert(1);opacity:.85}
+.f-tagline{font-size:14px;color:rgba(255,255,255,.45);line-height:1.85}
+.f-col h5{font-family:'Barlow Condensed',sans-serif;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);font-weight:700;margin-bottom:18px}
+.f-col a{display:block;color:rgba(255,255,255,.58);font-size:14px;margin-bottom:10px;transition:color .2s}
 .f-col a:hover{color:#fff}
+.footer-bottom{max-width:1080px;margin:0 auto;padding:22px 2rem;display:flex;justify-content:space-between;align-items:center;font-size:13px;color:rgba(255,255,255,.25)}
 
-.footer-bottom{
-  max-width:1080px;margin:0 auto;
-  padding:22px 2.5rem;
-  display:flex;justify-content:space-between;align-items:center;
-  font-size:13px;color:rgba(255,255,255,.3);
-}
-
-/* =============================================
-   SCROLL REVEAL
-============================================= */
-.reveal{
-  opacity:0;transform:translateY(24px);
-  transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1);
-}
+/* ===== REVEAL ===== */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .65s cubic-bezier(.22,1,.36,1),transform .65s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:none}
-.reveal-d1{transition-delay:.1s}.reveal-d2{transition-delay:.2s}
-.reveal-d3{transition-delay:.3s}.reveal-d4{transition-delay:.4s}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}.rd4{transition-delay:.4s}
 
-/* =============================================
-   RESPONSIVE
-============================================= */
+/* ===== RESPONSIVE ===== */
 @media(max-width:900px){
-  /* --- 共通余白 --- */
   .inner{padding:0 1rem}
-
-  /* --- NAV --- */
   .hamburger{display:flex}
-  .nav-links{
-    display:none;flex-direction:column;
-    position:fixed;top:72px;left:0;right:0;bottom:0;
-    background:#fff;padding:2rem 1.5rem;gap:1.6rem;
-    border-top:1px solid var(--border);
-    overflow-y:auto;z-index:199;
-  }
+  .nav-links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;padding:2rem 1.5rem;gap:1.4rem;border-top:1px solid var(--border);overflow-y:auto;z-index:199}
   .nav-links.open{display:flex}
   .nav-links a{font-size:20px;color:var(--navy);border-bottom:none}
   .nav-links .nav-cta{text-align:center;padding:14px!important;font-size:16px!important}
-
-  /* --- HERO --- */
-  .hero{padding:100px 1rem 56px}
+  .hero{padding:96px 1rem 52px}
   .hero-inner{grid-template-columns:1fr}
   .hero::after{display:none}
-  .hero-title{font-size:clamp(36px,9vw,56px)}
+  .hero-title{font-size:clamp(38px,10vw,58px)}
   .hero-title-ja{font-size:clamp(20px,5vw,30px)}
   .hero-desc{font-size:15px;max-width:100%}
   .hero-btns{flex-direction:column;gap:10px}
   .hero-btns a{width:100%;text-align:center;justify-content:center}
-  .hero-right{margin-top:2rem}
-
-  /* --- STATS --- */
+  .hero-card{margin-top:2rem}
   .stats-inner{grid-template-columns:1fr 1fr}
   .stat-item:nth-child(2){border-right:none}
   .stat-num{font-size:38px}
-  .stat-num span{font-size:20px}
-
-  /* --- SECTIONS --- */
-  .sec{padding:64px 1rem}
-  .sec-title{font-size:clamp(24px,6vw,38px)}
+  .sec{padding:60px 1rem}
+  .sec-title{font-size:clamp(22px,6vw,36px)}
   .sec-title-ja{font-size:clamp(16px,4vw,22px)}
   .sec-desc{font-size:15px;margin-bottom:32px}
-
-  /* --- SERVICES --- */
   .svc-grid{grid-template-columns:1fr;border-right:1px solid var(--border)}
   .svc-card{border-right:none;border-bottom:1px solid var(--border)}
-
-  /* --- PROCESS --- */
-  .process-wrap{grid-template-columns:1fr 1fr;gap:0}
+  .works-grid{grid-template-columns:1fr}
+  .process-wrap{grid-template-columns:1fr 1fr}
   .proc-item{border-bottom:1px solid var(--border);padding:24px 16px}
   .proc-arrow{display:none}
-  .proc-num{font-size:48px}
-
-  /* --- WHY --- */
+  .proc-num{font-size:44px}
   .why-grid{grid-template-columns:1fr;gap:2rem}
-
-  /* --- TESTI --- */
   .testi-grid{grid-template-columns:1fr}
-
-  /* --- GUARANTEE --- */
   .g-inner{flex-direction:column;gap:1.5rem}
   .guarantee{padding:44px 1rem}
-
-  /* --- CONTACT --- */
   .contact-grid{grid-template-columns:1fr}
   .f-row{grid-template-columns:1fr}
   .c-form-box{padding:24px 16px}
-
-  /* --- FOOTER --- */
   .footer-top{grid-template-columns:1fr;padding:40px 1rem 32px}
   .footer-bottom{padding:16px 1rem;flex-direction:column;gap:6px;text-align:center}
 }
@@ -833,18 +278,19 @@ footer{background:var(--navy)}
 </head>
 <body>
 
-<!-- ========== NAV ========== -->
+<!-- NAV -->
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#" class="logo">
-      <img src="logo1.png" alt="スマートWEB ホームページ作成代行サービス" class="logo-img"/>
+    <a href="#top" class="logo">
+      <img src="logo1.png" alt="スマートWEB" class="logo-img"/>
     </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#works">Works</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#why">About</a></li>
-      <li><a href="#reviews">Reviews</a></li>
-      <li><a href="diagnosis.html" style="color:var(--accent);border-color:var(--accent)">無料診断</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="diagnosis.html" class="nav-diag">無料診断</a></li>
       <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
     </ul>
     <button class="hamburger" id="hamburger" aria-label="メニュー">
@@ -853,18 +299,17 @@ footer{background:var(--navy)}
   </div>
 </nav>
 
-<!-- ========== HERO ========== -->
+<!-- HERO -->
 <section class="hero" id="top">
-  <div class="hero-inner inner">
+  <div class="hero-inner">
     <div>
       <div class="hero-eyebrow">
         <span class="ey-dot"></span>
-        AI × Professional Design
+        AI × Professional Design — 大阪発・全国対応
       </div>
       <div class="hero-title">SMART WEB</div>
       <div class="hero-title-ja">
-        集客できる<br>
-        ホームページを<span>スマートに</span>届ける。
+        集客できる<br>ホームページを<br><span>スマートに</span>届ける。
       </div>
       <p class="hero-desc">
         最新AIと熟練のデザイナーが協働。<br>
@@ -873,27 +318,27 @@ footer{background:var(--navy)}
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn-primary">無料で相談する →</a>
-        <a href="diagnosis.html" class="btn-outline">無料ホームページ診断 →</a>
+        <a href="diagnosis.html" class="btn-outline">無料ホームページ診断</a>
       </div>
     </div>
-    <div class="hero-right reveal reveal-d1">
-      <div class="hr-title">Why Smart Web?</div>
+    <div class="hero-card reveal rd1">
+      <div class="hc-label">Why Smart Web ?</div>
       <div class="hc-item">
-        <div class="hc-num">01</div>
+        <div class="hc-index">01</div>
         <div>
           <div class="hc-title">追加費用ゼロ・契約書発行</div>
-          <div class="hc-desc">見積もりが最終金額。後からの追加請求は一切ありません。</div>
+          <div class="hc-desc">お見積もりが最終金額。後からの追加請求は一切ありません。</div>
         </div>
       </div>
       <div class="hc-item">
-        <div class="hc-num">02</div>
+        <div class="hc-index">02</div>
         <div>
           <div class="hc-title">最短7日で公開</div>
           <div class="hc-desc">AI活用の高速制作で、業界最速クラスの納期を実現します。</div>
         </div>
       </div>
       <div class="hc-item">
-        <div class="hc-num">03</div>
+        <div class="hc-index">03</div>
         <div>
           <div class="hc-title">納品後3ヶ月サポート無料</div>
           <div class="hc-desc">修正・更新・質問を3ヶ月間、追加料金なしで対応します。</div>
@@ -903,29 +348,17 @@ footer{background:var(--navy)}
   </div>
 </section>
 
-<!-- ========== STATS ========== -->
+<!-- STATS -->
 <div class="stats-bar">
   <div class="stats-inner inner">
-    <div class="stat-item reveal">
-      <div class="stat-num">150<span>+</span></div>
-      <div class="stat-label">累計制作実績</div>
-    </div>
-    <div class="stat-item reveal reveal-d1">
-      <div class="stat-num">98<span>%</span></div>
-      <div class="stat-label">顧客満足度</div>
-    </div>
-    <div class="stat-item reveal reveal-d2">
-      <div class="stat-num">7<span>日〜</span></div>
-      <div class="stat-label">最短納期</div>
-    </div>
-    <div class="stat-item reveal reveal-d3">
-      <div class="stat-num">3<span>ヶ月</span></div>
-      <div class="stat-label">無料サポート</div>
-    </div>
+    <div class="stat-item reveal"><div class="stat-num">150<span>+</span></div><div class="stat-label">累計制作実績</div></div>
+    <div class="stat-item reveal rd1"><div class="stat-num">98<span>%</span></div><div class="stat-label">顧客満足度</div></div>
+    <div class="stat-item reveal rd2"><div class="stat-num">7<span>日〜</span></div><div class="stat-label">最短納期</div></div>
+    <div class="stat-item reveal rd3"><div class="stat-num">3<span>ヶ月</span></div><div class="stat-label">無料サポート</div></div>
   </div>
 </div>
 
-<!-- ========== SERVICES ========== -->
+<!-- SERVICES -->
 <section class="sec" id="services">
   <div class="inner">
     <div class="reveal">
@@ -933,18 +366,19 @@ footer{background:var(--navy)}
       <div class="sec-title">PRICE PLAN</div>
       <div class="sec-title-ja">料金プラン</div>
       <div class="sec-line"></div>
-      <p class="sec-desc">業種・規模・目的に合わせて選べる3つのプラン。<br>すべて税込・追加費用なし。</p>
+      <p class="sec-desc">業種・規模・目的に合わせて選べる3つのプラン。すべて税込・追加費用なし。</p>
     </div>
     <div class="svc-grid reveal">
       <div class="svc-card">
         <div class="svc-number">01</div>
         <div class="svc-name">スタンダード</div>
-        <div class="svc-desc">個人事業主・スタートアップ向け。必要な要素を凝縮した効果的なサイト。</div>
+        <div class="svc-desc">個人事業主・スタートアップ向け。集客に必要な要素を凝縮した、シンプルで効果的なサイト。</div>
         <ul class="svc-list">
           <li><span class="svc-check">✓</span>最大5ページ</li>
-          <li><span class="svc-check">✓</span>スマホ・PC対応</li>
+          <li><span class="svc-check">✓</span>スマホ・PC完全対応</li>
           <li><span class="svc-check">✓</span>お問い合わせフォーム</li>
           <li><span class="svc-check">✓</span>Google Analytics 設定</li>
+          <li><span class="svc-check">✓</span>納品後1ヶ月修正無料</li>
         </ul>
         <div class="svc-price grad-text">¥88,000〜</div>
         <div class="svc-price-note">税込 / 追加費用なし</div>
@@ -953,12 +387,13 @@ footer{background:var(--navy)}
         <div class="plan-tag">人気 No.1</div>
         <div class="svc-number">02</div>
         <div class="svc-name">ビジネス</div>
-        <div class="svc-desc">中小企業・士業・飲食店など。SEO・ブログで集客力を本格強化するプラン。</div>
+        <div class="svc-desc">中小企業・士業・飲食店など。SEO・ブログ機能で集客力を本格的に強化するプラン。</div>
         <ul class="svc-list">
           <li><span class="svc-check">✓</span>最大10ページ</li>
           <li><span class="svc-check">✓</span>SEO基本対策込み</li>
           <li><span class="svc-check">✓</span>ブログ・更新機能</li>
-          <li><span class="svc-check">✓</span>SNS連携・地図埋め込み</li>
+          <li><span class="svc-check">✓</span>SNS連携・Google Maps</li>
+          <li><span class="svc-check">✓</span>納品後3ヶ月修正無料</li>
         </ul>
         <div class="svc-price grad-text">¥165,000〜</div>
         <div class="svc-price-note">税込 / 追加費用なし</div>
@@ -966,12 +401,13 @@ footer{background:var(--navy)}
       <div class="svc-card">
         <div class="svc-number">03</div>
         <div class="svc-name">エンタープライズ</div>
-        <div class="svc-desc">大規模サイト・EC・予約システム連携など、フルオーダーで対応。</div>
+        <div class="svc-desc">大規模サイト・EC・予約システム連携など、要件に合わせたフルオーダー開発。</div>
         <ul class="svc-list">
           <li><span class="svc-check">✓</span>ページ数無制限</li>
           <li><span class="svc-check">✓</span>CMS・管理画面構築</li>
           <li><span class="svc-check">✓</span>EC機能・決済連携</li>
           <li><span class="svc-check">✓</span>保守・運用プラン付き</li>
+          <li><span class="svc-check">✓</span>専任担当者アサイン</li>
         </ul>
         <div class="svc-price grad-text">¥330,000〜</div>
         <div class="svc-price-note">税込 / 要件に応じてお見積もり</div>
@@ -980,50 +416,116 @@ footer{background:var(--navy)}
   </div>
 </section>
 
-<!-- ========== PROCESS ========== -->
-<section class="sec sec-light" id="process">
+<!-- WORKS -->
+<section class="sec sec-light" id="works">
+  <div class="inner">
+    <div class="reveal">
+      <span class="sec-eyebrow">Works</span>
+      <div class="sec-title">CASE STUDIES</div>
+      <div class="sec-title-ja">制作実績・導入事例</div>
+      <div class="sec-line"></div>
+      <p class="sec-desc">業種を問わず、集客につながるサイトを制作しています。</p>
+    </div>
+    <div class="works-grid">
+      <div class="work-card reveal">
+        <div class="work-thumb" style="background:linear-gradient(135deg,#1A3A6B,#0EA5D8)">
+          <div class="work-thumb-inner">
+            <div class="work-industry">Healthcare</div>
+            <div class="work-site-name">整体院 田中接骨院</div>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-tag">ビジネスプラン</div>
+          <div class="work-title">スマホ対応＋SEO強化で<br>月の問い合わせが急増</div>
+          <div class="work-desc">旧サイトはPC専用で検索上位に出ていなかった。リニューアル後6ヶ月でGoogle検索1ページ目に表示。</div>
+          <div class="work-result">
+            <div class="wr-num">4.6×</div>
+            <div class="wr-label">月間問い合わせ数<br>5件 → 23件に増加</div>
+          </div>
+        </div>
+      </div>
+      <div class="work-card reveal rd1">
+        <div class="work-thumb" style="background:linear-gradient(135deg,#1B4332,#10B981)">
+          <div class="work-thumb-inner">
+            <div class="work-industry">Beauty</div>
+            <div class="work-site-name">nail salon Yuka</div>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-tag">スタンダードプラン</div>
+          <div class="work-title">Instagram連携とWeb予約で<br>集客チャネルを拡大</div>
+          <div class="work-desc">SNSからの流入を最大化するLP設計と予約フォームを設置。Web経由の新規予約が大幅に増加。</div>
+          <div class="work-result">
+            <div class="wr-num">70%</div>
+            <div class="wr-label">新規予約のうち<br>Web経由の割合</div>
+          </div>
+        </div>
+      </div>
+      <div class="work-card reveal rd2">
+        <div class="work-thumb" style="background:linear-gradient(135deg,#3B1F6A,#7C3AED)">
+          <div class="work-thumb-inner">
+            <div class="work-industry">Legal</div>
+            <div class="work-site-name">木村行政書士事務所</div>
+          </div>
+        </div>
+        <div class="work-body">
+          <div class="work-tag">ビジネスプラン</div>
+          <div class="work-title">士業の信頼感を高める<br>プロフェッショナルデザイン</div>
+          <div class="work-desc">「依頼しやすい雰囲気」を重視したデザインと、よくある質問ページの充実で問い合わせ数が増加。</div>
+          <div class="work-result">
+            <div class="wr-num">1位</div>
+            <div class="wr-label">「京都 行政書士」<br>Google検索順位</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="sec" id="process">
   <div class="inner">
     <div class="reveal">
       <span class="sec-eyebrow">Process</span>
       <div class="sec-title">HOW WE WORK</div>
       <div class="sec-title-ja">制作の流れ</div>
       <div class="sec-line"></div>
-      <p class="sec-desc">全工程を可視化。いつ・何をするか、常に把握できる透明なプロセスです。</p>
+      <p class="sec-desc">全工程を可視化。いつ何をするか、常に把握できる透明なプロセスです。</p>
     </div>
     <div class="process-wrap reveal">
       <div class="proc-item">
         <div class="proc-num">01</div>
         <div class="proc-title">お問い合わせ</div>
-        <div class="proc-desc">フォームまたはSNSからお気軽にご連絡ください。</div>
+        <div class="proc-desc">フォームまたはSNSからお気軽にご連絡ください。ご返信は24時間以内。</div>
         <div class="proc-days">Day 1</div>
         <div class="proc-arrow">→</div>
       </div>
       <div class="proc-item">
         <div class="proc-num">02</div>
         <div class="proc-title">お見積もり・ご契約</div>
-        <div class="proc-desc">詳細な見積書・契約書を発行。ご納得後に作業を開始します。</div>
+        <div class="proc-desc">詳細な見積書・契約書を発行。ご納得いただいてから作業を開始します。</div>
         <div class="proc-days">Day 2〜3</div>
         <div class="proc-arrow">→</div>
       </div>
       <div class="proc-item">
         <div class="proc-num">03</div>
         <div class="proc-title">デザイン・制作</div>
-        <div class="proc-desc">AI×職人技術で高品質なサイトを高速制作します。</div>
+        <div class="proc-desc">AI×職人技術で高品質なサイトを制作。途中経過もご確認いただけます。</div>
         <div class="proc-days">Day 4〜10</div>
         <div class="proc-arrow">→</div>
       </div>
       <div class="proc-item">
         <div class="proc-num">04</div>
         <div class="proc-title">確認・納品・公開</div>
-        <div class="proc-desc">最大3回修正対応。入金後にサーバー公開します。</div>
+        <div class="proc-desc">最大3回修正対応。入金確認後にサーバー公開し、操作説明もご提供。</div>
         <div class="proc-days">Day 11〜14</div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== WHY ========== -->
-<section class="sec" id="why">
+<!-- WHY -->
+<section class="sec sec-light" id="why">
   <div class="inner">
     <div class="why-grid">
       <div>
@@ -1037,63 +539,54 @@ footer{background:var(--navy)}
           <div class="why-item reveal">
             <div class="wi-num">01</div>
             <div>
-              <div class="wi-title">AI × 職人技術</div>
-              <div class="wi-desc">最新AIで制作を効率化しながら、人の目で細部を磨く。速くて美しい仕上がりを実現します。</div>
+              <div class="wi-title">AI × 職人技術の融合</div>
+              <div class="wi-desc">最新AIで制作を効率化しながら、人の目で細部を丁寧に磨く。速くて美しい仕上がりを低コストで実現します。</div>
             </div>
           </div>
-          <div class="why-item reveal reveal-d1">
+          <div class="why-item reveal rd1">
             <div class="wi-num">02</div>
             <div>
-              <div class="wi-title">集客に特化した設計</div>
-              <div class="wi-desc">見た目だけでなく、問い合わせ・予約・購入につながる動線設計を徹底します。</div>
+              <div class="wi-title">集客・売上に直結する設計</div>
+              <div class="wi-desc">見た目の美しさだけでなく、問い合わせ・予約・購入につながる動線設計を徹底。作って終わりではありません。</div>
             </div>
           </div>
-          <div class="why-item reveal reveal-d2">
+          <div class="why-item reveal rd2">
             <div class="wi-num">03</div>
             <div>
-              <div class="wi-title">完全明朗会計</div>
-              <div class="wi-desc">最初に提示した金額が最終金額。追加費用は一切なし。契約書も必ず発行します。</div>
+              <div class="wi-title">完全明朗会計・契約書発行</div>
+              <div class="wi-desc">最初に提示した金額が最終金額。追加費用は一切発生しません。すべての取引で契約書を発行します。</div>
             </div>
           </div>
-          <div class="why-item reveal reveal-d3">
+          <div class="why-item reveal rd3">
             <div class="wi-num">04</div>
             <div>
-              <div class="wi-title">Ssiling Media と連動</div>
-              <div class="wi-desc">SNS集客・コンテンツ制作との一貫サポートで、オンラインの存在感を最大化します。</div>
+              <div class="wi-title">Ssiling Media との一貫支援</div>
+              <div class="wi-desc">SNS集客・コンテンツ制作との連動サポートで、サイト公開後の集客まで一貫してお手伝いします。</div>
             </div>
           </div>
         </div>
       </div>
-      <div class="reveal reveal-d2">
+      <div class="reveal rd2">
         <div class="results-panel">
           <div class="rp-header">
-            <span class="rp-header-label">Customer Results</span>
+            <span class="rp-label">Customer Results</span>
             <div class="rp-big">2.4×</div>
-            <div class="rp-big-label">制作後6ヶ月で問い合わせ数が平均2.4倍に増加</div>
+            <div class="rp-big-sub">制作後6ヶ月で問い合わせ数が平均2.4倍に増加</div>
           </div>
           <div class="rp-body">
-            <div class="rp-item">
-              <div class="rp-bar"></div>
-              <div class="rp-text">整体院（大阪）：月5件 → 月23件に増加</div>
-            </div>
-            <div class="rp-item">
-              <div class="rp-bar"></div>
-              <div class="rp-text">ネイルサロン（神戸）：予約の70%がWeb経由に</div>
-            </div>
-            <div class="rp-item">
-              <div class="rp-bar"></div>
-              <div class="rp-text">行政書士（京都）：Google検索1ページ目に表示</div>
-            </div>
+            <div class="rp-item"><div class="rp-bar"></div><div class="rp-text">整体院（大阪）：月5件 → 月23件に増加</div></div>
+            <div class="rp-item"><div class="rp-bar"></div><div class="rp-text">ネイルサロン（神戸）：新規予約の70%がWeb経由に</div></div>
+            <div class="rp-item"><div class="rp-bar"></div><div class="rp-text">行政書士（京都）：指名キーワードで検索1位に表示</div></div>
           </div>
-          <a href="#contact" class="rp-cta">制作実績をすべて見る →</a>
+          <a href="#works" class="rp-cta">制作実績をすべて見る →</a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== TESTIMONIALS ========== -->
-<section class="sec sec-light" id="reviews">
+<!-- TESTIMONIALS -->
+<section class="sec" id="reviews">
   <div class="inner">
     <div class="reveal">
       <span class="sec-eyebrow">Reviews</span>
@@ -1105,56 +598,109 @@ footer{background:var(--navy)}
     <div class="testi-grid">
       <div class="testi-card reveal">
         <div class="stars">★★★★★</div>
-        <div class="testi-quote">「料金が最初から明確で、安心して発注できました。デザインも想像以上で、問い合わせ数が約2倍になりました。」</div>
+        <div class="testi-quote">「料金が最初から明確で、安心して発注できました。デザインも想像以上のクオリティで、問い合わせ数が約2倍になりました。」</div>
         <div class="testi-author">
           <div class="t-avatar">田</div>
-          <div>
-            <div class="t-name">田中 洋介 様</div>
-            <div class="t-role">整体院 院長 / 大阪市</div>
-          </div>
+          <div><div class="t-name">田中 洋介 様</div><div class="t-role">整体院 院長 / 大阪市</div></div>
         </div>
       </div>
-      <div class="testi-card reveal reveal-d1">
+      <div class="testi-card reveal rd1">
         <div class="stars">★★★★★</div>
-        <div class="testi-quote">「他社より大幅にコストを抑えられ、品質は逆に高かったです。SNSとの連携も提案してもらえ、集客が安定しています。」</div>
+        <div class="testi-quote">「他社より大幅にコストを抑えられて、品質は逆に高かったです。InstagramとWebの連携も提案してもらえ、集客が安定しました。」</div>
         <div class="testi-author">
           <div class="t-avatar">山</div>
-          <div>
-            <div class="t-name">山下 美咲 様</div>
-            <div class="t-role">ネイルサロン 経営 / 神戸市</div>
-          </div>
+          <div><div class="t-name">山下 美咲 様</div><div class="t-role">ネイルサロン 経営 / 神戸市</div></div>
         </div>
       </div>
-      <div class="testi-card reveal reveal-d2">
+      <div class="testi-card reveal rd2">
         <div class="stars">★★★★★</div>
-        <div class="testi-quote">「急ぎの依頼にも対応してもらい、10日で公開できました。納品後のフォローも丁寧で大変助かっています。」</div>
+        <div class="testi-quote">「急ぎの依頼にも対応してもらい、10日で公開できました。納品後のサポートも丁寧で、困ったことをすぐに解決してもらえます。」</div>
         <div class="testi-author">
           <div class="t-avatar">木</div>
-          <div>
-            <div class="t-name">木村 健太郎 様</div>
-            <div class="t-role">行政書士事務所 / 京都市</div>
-          </div>
+          <div><div class="t-name">木村 健太郎 様</div><div class="t-role">行政書士事務所 / 京都市</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== GUARANTEE ========== -->
+<!-- FAQ -->
+<section class="sec sec-light" id="faq">
+  <div class="inner">
+    <div class="reveal">
+      <span class="sec-eyebrow">FAQ</span>
+      <div class="sec-title">FREQUENTLY ASKED</div>
+      <div class="sec-title-ja">よくある質問</div>
+      <div class="sec-line"></div>
+    </div>
+    <div class="faq-list reveal">
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">制作期間はどのくらいかかりますか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">スタンダードプランで最短7日〜2週間、ビジネスプランで2〜4週間が目安です。お急ぎの場合はご相談ください。お伺いした内容をもとに最短スケジュールをご提案します。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">追加費用は本当に発生しませんか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">はい、最初にお見積もりした金額が最終金額です。ただし、ご依頼後に追加ページや機能を新たにご要望された場合は、その分のお見積もりを改めてご提示します。変更の際は必ず事前にご相談・ご確認のうえ進めますのでご安心ください。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">サーバーやドメインの契約は自分でするのですか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">サーバー・ドメインの契約はお客様名義でご取得いただきますが、取得方法や設定のサポートも対応しています。初めての方でも安心してお任せください。月額費用の目安はサーバーが約1,000〜2,000円、ドメインが年額1,000〜2,000円程度です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">納品後に自分でページを更新できますか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">ビジネスプラン以上にはCMS（更新管理システム）を搭載しており、ブログ・お知らせなどをご自身で更新できます。操作マニュアルも納品時にお渡しします。スタンダードプランでも更新作業を月額でお請けするプランをご用意しています。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">今あるホームページをリニューアルすることはできますか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">はい、リニューアルのご依頼も多く承っています。現在のサイトのURLをお知らせいただければ、無料で診断・改善提案をお送りします。既存ドメインをそのまま引き継ぐことも可能です。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          <span class="faq-q-mark">Q.</span>
+          <span class="faq-q-text">大阪以外でも対応していますか？</span>
+          <span class="faq-icon">+</span>
+        </div>
+        <div class="faq-a">はい、全国対応しています。ヒアリング・打ち合わせはZoomやメールで対応しておりますので、北海道から沖縄まで、どこからでもお気軽にご相談ください。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEE -->
 <div class="guarantee">
-  <div class="g-inner">
+  <div class="g-inner inner">
     <div class="g-badge reveal">
       <div class="g-num">30</div>
       <div class="g-unit">日間保証</div>
     </div>
-    <div class="reveal reveal-d1">
+    <div class="reveal rd1">
       <div class="g-title">30日間・品質返金保証</div>
-      <p class="g-desc">納品後30日以内であれば、デザイン・機能に関するご不満を無料で修正対応。万一ご満足いただけない場合は、条件に応じて全額返金保証をご提供します。安心してご発注ください。</p>
+      <p class="g-desc">納品後30日以内であれば、デザイン・機能に関するご不満を無料で修正対応いたします。万一ご満足いただけない場合は、条件に応じて全額返金保証をご提供します。安心してご発注ください。</p>
     </div>
   </div>
 </div>
 
-<!-- ========== CONTACT ========== -->
+<!-- CONTACT -->
 <section class="sec" id="contact">
   <div class="inner">
     <div class="reveal">
@@ -1167,14 +713,14 @@ footer{background:var(--navy)}
     <div class="contact-grid">
       <div class="c-form-box reveal">
         <div class="form-title">無料で相談する</div>
-        <form action="#" method="POST">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
           <div class="f-row">
             <div class="f-group">
               <label class="f-label" for="name">お名前 *</label>
               <input class="f-input" type="text" id="name" name="name" placeholder="山田 太郎" required/>
             </div>
             <div class="f-group">
-              <label class="f-label" for="company">会社名</label>
+              <label class="f-label" for="company">会社名・屋号</label>
               <input class="f-input" type="text" id="company" name="company" placeholder="株式会社〇〇"/>
             </div>
           </div>
@@ -1183,44 +729,64 @@ footer{background:var(--navy)}
             <input class="f-input" type="email" id="email" name="email" placeholder="example@email.com" required/>
           </div>
           <div class="f-group">
+            <label class="f-label" for="tel">電話番号</label>
+            <input class="f-input" type="tel" id="tel" name="tel" placeholder="06-0000-0000"/>
+          </div>
+          <div class="f-group">
             <label class="f-label" for="plan">ご希望のプラン</label>
             <select class="f-input" id="plan" name="plan">
               <option value="">未定（まず相談したい）</option>
               <option value="standard">スタンダード（¥88,000〜）</option>
               <option value="business">ビジネス（¥165,000〜）</option>
               <option value="enterprise">エンタープライズ（¥330,000〜）</option>
+              <option value="renewal">既存サイトのリニューアル</option>
               <option value="maintenance">保守・運用のみ</option>
             </select>
           </div>
           <div class="f-group">
             <label class="f-label" for="message">ご要望・ご質問</label>
-            <textarea class="f-input" id="message" name="message" placeholder="業種・目的・お急ぎの場合はその旨もご記入ください…"></textarea>
+            <textarea class="f-input" id="message" name="message" placeholder="業種・目的・現状のお悩みなど、お気軽にご記入ください。"></textarea>
           </div>
           <button type="submit" class="f-btn">送信する →</button>
         </form>
         <div class="security-row">
-          <span class="sec-badge">🔒 SSL暗号化</span>
-          <span class="sec-badge">🛡️ 個人情報保護</span>
-          <span class="sec-badge">⚡ 24h以内返信</span>
+          <span class="sec-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            SSL暗号化通信
+          </span>
+          <span class="sec-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            個人情報保護
+          </span>
+          <span class="sec-badge">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            24時間以内返信
+          </span>
         </div>
       </div>
-      <div class="c-info reveal reveal-d1">
+      <div class="c-info reveal rd1">
         <div class="ci-card">
-          <div class="ci-icon">✉️</div>
+          <div class="ci-icon-box">
+            <svg class="ci-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
           <div>
             <div class="ci-title">メール</div>
             <div class="ci-val">info@smartweb.jp<br>24時間受付</div>
           </div>
         </div>
         <div class="ci-card">
-          <div class="ci-icon">📸</div>
+          <div class="ci-icon-box">
+            <svg class="ci-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          </div>
           <div>
-            <div class="ci-title">Instagram / SNS</div>
-            <div class="ci-val">@SsilingMedia<br>DM受付中</div>
+            <div class="ci-title">Instagram / DM</div>
+            <div class="ci-val">@SsilingMedia<br>DMでもご相談受付中</div>
           </div>
         </div>
         <div class="ci-card">
-          <div class="ci-icon">📍</div>
+          <div class="ci-icon-box">
+            <svg class="ci-icon-svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
           <div>
             <div class="ci-title">所在地</div>
             <div class="ci-val">大阪府大阪市<br>オンライン対応・全国OK</div>
@@ -1229,35 +795,36 @@ footer{background:var(--navy)}
         <div class="company-table">
           <div class="ct-row"><div class="ct-key">会社名</div><div class="ct-val">スマートWEB 株式会社</div></div>
           <div class="ct-row"><div class="ct-key">設立</div><div class="ct-val">2025年</div></div>
-          <div class="ct-row"><div class="ct-key">事業</div><div class="ct-val">Web制作・運用・集客支援</div></div>
-          <div class="ct-row"><div class="ct-key">関連</div><div class="ct-val">Ssiling Media</div></div>
+          <div class="ct-row"><div class="ct-key">事業内容</div><div class="ct-val">Web制作・運用・集客支援</div></div>
+          <div class="ct-row"><div class="ct-key">関連会社</div><div class="ct-val">Ssiling Media</div></div>
+          <div class="ct-row"><div class="ct-key">対応地域</div><div class="ct-val">全国（オンライン対応）</div></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ========== FOOTER ========== -->
+<!-- FOOTER -->
 <footer>
   <div class="footer-top">
     <div>
-      <div class="f-brand-en">SMART<span>WEB</span></div>
-      <div class="f-brand-ja">ホームページ作成代行サービス</div>
-      <p class="f-tagline">AIと人の技術を掛け合わせた次世代のWeb制作。<br>Ssiling Mediaと連動した一貫集客支援を提供します。</p>
+      <img src="logo1.png" alt="スマートWEB" class="f-brand-logo"/>
+      <p class="f-tagline">AIと人の技術を掛け合わせた次世代のWeb制作会社。<br>Ssiling Mediaと連動した一貫集客支援を提供します。</p>
     </div>
     <div class="f-col">
       <h5>Services</h5>
       <a href="#services">ホームページ制作</a>
-      <a href="#services">LP制作</a>
-      <a href="#services">EC構築</a>
-      <a href="#services">保守・運用</a>
+      <a href="#services">LP・ランディングページ</a>
+      <a href="#services">EC・ネットショップ構築</a>
+      <a href="#services">保守・運用サポート</a>
       <a href="#services">SEO対策</a>
     </div>
     <div class="f-col">
       <h5>Company</h5>
-      <a href="#">会社概要</a>
-      <a href="#">制作実績</a>
-      <a href="#">よくある質問</a>
+      <a href="#why">会社概要</a>
+      <a href="#works">制作実績</a>
+      <a href="#faq">よくある質問</a>
+      <a href="diagnosis.html">無料ホームページ診断</a>
       <a href="#">プライバシーポリシー</a>
       <a href="#">特定商取引法に基づく表記</a>
     </div>
@@ -1269,16 +836,26 @@ footer{background:var(--navy)}
 </footer>
 
 <script>
-  const nav=document.getElementById('nav');
-  window.addEventListener('scroll',()=>nav.style.boxShadow=window.scrollY>20?'0 2px 20px rgba(13,27,62,.1)':'0 1px 12px rgba(13,27,62,.06)');
-  const burger=document.getElementById('hamburger');
-  const links=document.getElementById('nav-links');
-  burger.addEventListener('click',()=>links.classList.toggle('open'));
-  links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
-  const obs=new IntersectionObserver(entries=>{
-    entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}});
-  },{threshold:0.1});
-  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// Nav scroll
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.style.boxShadow=window.scrollY>20?'0 2px 20px rgba(13,27,62,.12)':'0 1px 12px rgba(13,27,62,.06)'});
+// Hamburger
+const burger=document.getElementById('hamburger');
+const links=document.getElementById('nav-links');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+// Reveal
+const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:0.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(q=>{
+  q.addEventListener('click',()=>{
+    const item=q.parentElement;
+    const isOpen=item.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(i=>i.classList.remove('open'));
+    if(!isOpen)item.classList.add('open');
+  });
+});
 </script>
 </body>
 </html>
