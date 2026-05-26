@@ -33,13 +33,23 @@ ul{list-style:none}
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);height:72px;display:flex;align-items:center;box-shadow:0 1px 12px rgba(13,27,62,.06)}
 .nav-inner{width:100%;max-width:1080px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center}
-.logo-img{height:46px;width:auto}
-.nav-links{display:flex;align-items:center;gap:2rem}
-.nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;padding-bottom:2px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none}
+.logo-icon{height:44px;width:auto;flex-shrink:0}
+.logo-text{height:28px;width:auto;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:1.6rem}
+.nav-links a{font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:600;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;padding-bottom:2px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--navy);border-color:var(--accent)}
 .nav-diag{color:var(--accent)!important;border-color:var(--accent)!important}
-.nav-cta{background:var(--navy)!important;color:#fff!important;padding:10px 22px;border:none!important;font-size:13px!important;transition:background .2s!important}
+.nav-cta{
+  background:var(--navy)!important;color:#fff!important;
+  padding:0 20px!important;height:38px!important;
+  border:none!important;font-size:13px!important;
+  letter-spacing:.06em!important;
+  display:inline-flex!important;align-items:center!important;
+  white-space:nowrap!important;
+  transition:background .2s!important;
+  border-bottom:none!important;
+}
 .nav-cta:hover{background:var(--blue)!important}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
 .hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
@@ -260,7 +270,10 @@ footer{background:var(--navy)}
 
 <nav id="nav">
   <div class="nav-inner">
-    <a href="#top" class="logo"><img src="logo1.png" alt="NEXIA" class="logo-img"/></a>
+    <a href="#top" class="logo">
+      <img src="logo2.png" alt="スマートWEB アイコン" class="logo-icon"/>
+      <img src="logo3.png" alt="スマートWEB" class="logo-text"/>
+    </a>
     <ul class="nav-links" id="nav-links">
       <li><a href="#services">Services</a></li>
       <li><a href="#process">Process</a></li>
@@ -277,7 +290,7 @@ footer{background:var(--navy)}
   <div class="hero-inner">
     <div>
       <div class="hero-eyebrow"><span class="ey-dot"></span>AI × Professional Design — オンライン対応・全国OK</div>
-      <div class="hero-title">NEXIA</div>
+      <div class="hero-title">SMART WEB</div>
       <div class="hero-title-ja">集客できる<br>ホームページを<br><span>スマートに届ける。</span></div>
       <p class="hero-desc">最新AIと熟練のデザイナーが協働。<br>明朗な料金・最短7日納品・丁寧なサポートで、あなたのビジネスをオンラインで成長させます。</p>
       <div class="hero-btns">
@@ -286,7 +299,7 @@ footer{background:var(--navy)}
       </div>
     </div>
     <div class="hero-card reveal rd1">
-      <div class="hc-label">Why NEXIA ?</div>
+      <div class="hc-label">Why Smart Web ?</div>
       <div class="hc-item"><div class="hc-index">01</div><div><div class="hc-title">追加費用ゼロ・契約書発行</div><div class="hc-desc">お見積もりが最終金額。後からの追加請求は一切ありません。</div></div></div>
       <div class="hc-item"><div class="hc-index">02</div><div><div class="hc-title">最短7日で公開</div><div class="hc-desc">AI活用の高速制作で、業界最速クラスの納期を実現します。</div></div></div>
       <div class="hc-item"><div class="hc-index">03</div><div><div class="hc-title">納品後3ヶ月サポート無料</div><div class="hc-desc">修正・更新・質問を3ヶ月間、追加料金なしで対応します。</div></div></div>
@@ -383,7 +396,7 @@ footer{background:var(--navy)}
     <div class="why-grid">
       <div>
         <div class="reveal">
-          <span class="sec-eyebrow">Why NEXIA</span>
+          <span class="sec-eyebrow">Why Smart Web</span>
           <div class="sec-title">OUR STRENGTHS</div>
           <div class="sec-title-ja">選ばれる理由</div>
           <div class="sec-line"></div>
@@ -400,7 +413,7 @@ footer{background:var(--navy)}
           <div class="rp-header">
             <span class="rp-label">Why We're Different</span>
             <div class="rp-big grad-text" style="font-size:48px;line-height:1.2">AI +<br>Human</div>
-            <div class="rp-big-sub">AIの速さと人のセンスを掛け合わせた、NEXIAだけの制作スタイル</div>
+            <div class="rp-big-sub">AIの速さと人のセンスを掛け合わせた、スマートWEBだけの制作スタイル</div>
           </div>
           <div class="rp-body">
             <div class="rp-item"><div class="rp-bar"></div><div class="rp-text">AIで構成・コーディングを高速化し、コストを抑える</div></div>
@@ -518,8 +531,11 @@ footer{background:var(--navy)}
 <footer>
   <div class="footer-top">
     <div>
-      <img src="logo1.png" alt="NEXIA" class="f-brand-logo"/>
-      <p class="f-tagline">AIと人の技術を掛け合わせた次世代のWeb制作。<br>オンライン完結・全国対応でビジネスの成長を支援します。</p>
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+        <img src="logo2.png" alt="スマートWEB" style="height:40px;width:auto;filter:brightness(0) invert(1);opacity:.85"/>
+        <img src="logo3.png" alt="スマートWEB" style="height:26px;width:auto;filter:brightness(0) invert(1);opacity:.8"/>
+      </div>
+      <p class="f-tagline">AIと人の技術を掛け合わせた次世代のWeb制作。<br>オンライン完結・全国対応でビジネスの成長を支援します。<br><small style="opacity:.6">運営：NEXIA</small></p>
     </div>
     <div class="f-col">
       <h5>Services</h5>
@@ -540,7 +556,7 @@ footer{background:var(--navy)}
     </div>
   </div>
   <div class="footer-bottom">
-    <div>© 2025 NEXIA. All Rights Reserved.</div>
+    <div>© 2025 スマートWEB（運営：NEXIA）. All Rights Reserved.</div>
     <div>ホームページ作成代行サービス</div>
   </div>
 </footer>
