@@ -157,12 +157,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;mix-blend-mode:difference}
 /* mini preview renders */
 .scp{width:100%;height:100%;display:flex;flex-direction:column}
 .scp-food{background:#1A1310}
-.scp-food .scp-body{flex:1;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:30px;background:radial-gradient(ellipse 70% 60% at 50% 45%,rgba(200,99,63,.4),transparent 70%)}
+.scp-food .scp-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;align-items:center;text-align:center;padding:38px 30px;background:radial-gradient(ellipse 70% 60% at 50% 30%,rgba(200,99,63,.4),transparent 70%)}
 .scp-eyebrow{font-size:9px;font-weight:700;letter-spacing:.2em;margin-bottom:12px}
 .scp-title-pf{font-family:'Playfair Display',serif;font-size:42px;font-weight:700;color:#F5EDE3;line-height:.95}
 .scp-title-pf em{font-style:italic;color:#E08B5F;display:block}
 .scp-edu{background:linear-gradient(165deg,#EAF2FF,#FFF9F0)}
-.scp-edu .scp-body{flex:1;display:flex;flex-direction:column;justify-content:center;padding:36px;gap:12px}
+.scp-edu .scp-body{flex:1;display:flex;flex-direction:column;justify-content:flex-start;padding:38px 36px;gap:12px}
 .scp-pill{font-size:10px;font-weight:700;background:#fff;border-radius:100px;padding:5px 14px;width:fit-content;color:#2D6CDF;box-shadow:0 4px 12px rgba(45,108,223,.12)}
 .scp-title-round{font-family:'Archivo',sans-serif;font-weight:800;font-size:32px;color:#1B2A4A;line-height:1.2}
 .samples-more{margin-top:36px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:20px;padding-top:36px;border-top:1px solid rgba(255,255,255,.15)}
@@ -249,8 +249,11 @@ footer{background:var(--ink);color:#fff;padding:80px 40px 40px}
   .nav-cta-wrap{display:none}
   .hamburger{display:flex}
   .hero{padding:120px 22px 60px;min-height:auto}
+  .hero-h1{font-size:clamp(44px,13vw,70px)}
   .hero-foot{margin-top:40px}
   .hero-scroll{display:none}
+  .cta-h{font-size:clamp(40px,14vw,80px)}
+  .sec-title{font-size:clamp(30px,8vw,52px)}
   .sec{padding:80px 22px}
   .intro-grid{grid-template-columns:1fr;gap:40px}
   .app-row{grid-template-columns:1fr;gap:12px;padding:32px 0}
@@ -259,6 +262,12 @@ footer{background:var(--ink);color:#fff;padding:80px 40px 40px}
   .price-card{border-right:none;border-bottom:1px solid var(--ink)}
   .price-card:last-child{border-bottom:none}
   .sample-row{grid-template-columns:1fr;gap:18px}
+  .sample-card{aspect-ratio:3/2}
+  .sc-overlay{padding:24px;background:linear-gradient(to top,rgba(0,0,0,.82),rgba(0,0,0,.2) 50%,transparent 75%)}
+  .sc-name{font-size:22px}
+  .scp-food .scp-body,.scp-edu .scp-body{padding:26px 24px}
+  .scp-title-pf{font-size:34px}
+  .scp-title-round{font-size:26px}
   .samples-more{flex-direction:column;align-items:flex-start}
   .cp-grid{grid-template-columns:1fr;gap:40px}
   .cp-visual{transform:none}

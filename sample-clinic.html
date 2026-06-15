@@ -6,144 +6,263 @@
 <title>そら整骨院 | Clinic（サンプル）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Zen+Maru+Gothic:wght@500;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700;900&family=Jost:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:#1B3A2E;line-height:1.85;font-weight:400;overflow-x:hidden;font-size:16px}
+body{font-family:'Noto Sans JP',sans-serif;background:#FAFCFB;color:#1C3329;line-height:1.9;font-weight:400;overflow-x:hidden;font-size:16px}
 a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
-:root{--green:#0F8A5F;--green-l:#34D399;--green-d:#0C6B49;--ink:#1B3A2E;--muted:#5F7A6C;--line:#DCECE4;--bg2:#F0F9F5;--cream:#F7FBF9;--grad:linear-gradient(120deg,#34D399,#0F8A5F)}
-.maru{font-family:'Zen Maru Gothic',sans-serif}
-.samplebar{position:fixed;top:0;left:0;right:0;z-index:999;background:#0F8A5F;color:#fff;font-size:13px;font-weight:500;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
-.samplebar a{background:#fff;color:#0F8A5F;padding:6px 16px;border-radius:100px;font-size:12px;white-space:nowrap;font-weight:700}
-.wrap{max-width:1140px;margin:0 auto;padding:0 40px}
-nav{position:fixed;top:37px;left:0;right:0;z-index:500;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1140px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Zen Maru Gothic',sans-serif;font-size:23px;font-weight:700;color:var(--green);letter-spacing:.04em;display:flex;align-items:center;gap:9px}
-.logo-mark{width:36px;height:36px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff}
+button{font-family:inherit;cursor:pointer}
+::selection{background:#1CA37A;color:#fff}
+:root{--bg:#FAFCFB;--mint:#EAF7F1;--green:#1CA37A;--green-d:#0F7D5B;--green-l:#5FD3AC;--ink:#1C3329;--muted:#5E7A6E;--line:#DCEDE5;--sun:#FFB547;--maru:'Zen Maru Gothic',sans-serif;--sans:'Jost',sans-serif}
+.maru{font-family:var(--maru)}
+.wrap{max-width:1160px;margin:0 auto;padding:0 44px}
+
+.samplebar{position:fixed;top:0;left:0;right:0;z-index:999;background:#1CA37A;color:#fff;font-size:12px;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
+.samplebar a{background:#fff;color:#0F7D5B;padding:5px 15px;border-radius:100px;font-size:11px;white-space:nowrap;font-weight:700}
+
+nav{position:fixed;top:36px;left:0;right:0;z-index:500;background:rgba(250,252,251,.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);transition:padding .3s}
+.nav-in{max-width:1160px;margin:0 auto;padding:14px 44px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:var(--maru);font-size:23px;font-weight:700;color:var(--green-d);display:flex;align-items:center;gap:10px}
+.logo-mark{width:40px;height:40px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;color:#fff}
 .nav-links{display:flex;gap:30px;align-items:center}
 .nav-links a{font-size:14px;color:var(--muted);font-weight:500}
-.nav-cta{background:var(--green);color:#fff!important;padding:11px 24px;border-radius:100px;font-size:13px!important;display:inline-flex;align-items:center;gap:7px}
-.menu-btn{display:none;background:none;border:none;font-size:24px;color:var(--green);cursor:pointer}
-.hero{padding:150px 40px 100px;background:linear-gradient(160deg,#F0F9F5 0%,#fff 100%);position:relative;overflow:hidden}
-.hero::after{content:'';position:absolute;top:10%;right:-5%;width:520px;height:520px;border-radius:50%;background:var(--grad);opacity:.1;filter:blur(20px)}
-.hero-in{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:7px 18px;margin-bottom:26px;font-size:13px;color:var(--green-d);font-weight:500}
+.nav-links a:hover{color:var(--green-d)}
+.nav-cta{background:var(--green);color:#fff!important;padding:12px 26px;border-radius:100px;font-size:13px!important;font-weight:700;display:inline-flex;align-items:center;gap:7px;box-shadow:0 6px 16px rgba(28,163,122,.25);transition:transform .2s}
+.nav-cta:hover{transform:translateY(-2px)}
+.menu-btn{display:none;background:none;border:none;font-size:22px;color:var(--green-d);cursor:pointer}
+
+/* hero */
+.hero{padding:150px 44px 110px;position:relative;overflow:hidden;background:linear-gradient(165deg,#EAF7F1 0%,#FAFCFB 65%)}
+.hero-blob{position:absolute;border-radius:50%;z-index:0}
+.hb1{width:480px;height:480px;background:radial-gradient(circle,rgba(95,211,172,.3),transparent 70%);top:-120px;right:-80px}
+.hb2{width:300px;height:300px;background:radial-gradient(circle,rgba(255,181,71,.18),transparent 70%);bottom:-60px;left:20%}
+.hero-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:2}
+.hero-pill{display:inline-flex;align-items:center;gap:9px;background:#fff;border-radius:100px;padding:9px 20px;margin-bottom:28px;font-size:13px;color:var(--green-d);font-weight:600;box-shadow:0 6px 18px rgba(28,163,122,.1)}
 .hero-pill svg{color:var(--green)}
-.hero-title{font-family:'Zen Maru Gothic',sans-serif;font-size:clamp(32px,5vw,56px);font-weight:700;line-height:1.4;color:var(--ink);margin-bottom:26px}
-.hero-title span{color:var(--green)}
-.hero-desc{font-size:16px;color:var(--muted);line-height:2.05;margin-bottom:38px;max-width:440px}
+.hero-title{font-family:var(--maru);font-size:clamp(36px,5.4vw,62px);font-weight:700;line-height:1.45;color:var(--ink);margin-bottom:26px}
+.hero-title span{color:var(--green);position:relative;display:inline-block}
+.hero-title span::after{content:'';position:absolute;left:0;right:0;bottom:2px;height:10px;background:rgba(95,211,172,.35);z-index:-1}
+.hero-desc{font-size:16px;color:var(--muted);line-height:2.1;margin-bottom:38px;max-width:440px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-fill{background:var(--green);color:#fff;padding:16px 36px;border-radius:100px;font-size:15px;font-weight:700;transition:background .3s,transform .2s;display:inline-flex;align-items:center;gap:8px}
-.btn-fill:hover{background:var(--green-d);transform:translateY(-2px)}
-.btn-out{background:#fff;border:1.5px solid var(--line);color:var(--ink);padding:15px 32px;border-radius:100px;font-size:15px;font-weight:600;transition:border-color .3s}
+.btn-fill{background:var(--green);color:#fff;padding:17px 38px;border-radius:100px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:9px;box-shadow:0 12px 28px rgba(28,163,122,.28);transition:transform .2s}
+.btn-fill:hover{transform:translateY(-3px)}
+.btn-out{background:#fff;border:2px solid var(--line);color:var(--ink);padding:15px 32px;border-radius:100px;font-size:15px;font-weight:700;transition:border-color .3s}
 .btn-out:hover{border-color:var(--green)}
-.hero-visual{position:relative;height:480px}
-.hv-main{position:absolute;inset:0;border-radius:30px;background:linear-gradient(160deg,#A7F3D0,#0F8A5F);overflow:hidden}
-.hv-main::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 30%,rgba(255,255,255,.4),transparent 55%)}
-.hv-card{position:absolute;background:#fff;border-radius:16px;padding:18px 22px;box-shadow:0 16px 40px rgba(15,138,95,.18);display:flex;align-items:center;gap:13px}
-.hv-card1{top:30px;left:-28px}
-.hv-card2{bottom:36px;right:-24px}
-.hvc-ic{width:42px;height:42px;border-radius:12px;background:var(--bg2);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0}
-.hvc-t{font-size:14px;font-weight:700;color:var(--ink)}
-.hvc-s{font-size:11px;color:var(--muted)}
-.hours-bar{background:var(--green);color:#fff}
-.hours-in{max-width:1140px;margin:0 auto;padding:30px 40px;display:flex;align-items:center;justify-content:space-around;flex-wrap:wrap;gap:20px}
-.hours-item{display:flex;align-items:center;gap:12px}
-.hours-item svg{opacity:.8;flex-shrink:0}
-.hours-lbl{font-size:12px;opacity:.7}
+.hero-art{position:relative;height:480px}
+.ha-main{position:absolute;inset:0;border-radius:50% 50% 48% 52%/55% 55% 45% 45%;background:linear-gradient(160deg,#5FD3AC,#1CA37A);overflow:hidden;animation:morph 12s ease-in-out infinite}
+@keyframes morph{0%,100%{border-radius:50% 50% 48% 52%/55% 55% 45% 45%}50%{border-radius:46% 54% 52% 48%/48% 50% 50% 52%}}
+.ha-main::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 65% 30%,rgba(255,255,255,.4),transparent 55%)}
+.ha-emoji{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:110px;z-index:2}
+.ha-card{position:absolute;background:#fff;border-radius:18px;padding:16px 20px;box-shadow:0 16px 40px rgba(28,163,122,.18);display:flex;align-items:center;gap:12px;z-index:3}
+.ha-card1{top:30px;left:-26px}
+.ha-card2{bottom:36px;right:-22px}
+.hac-ic{width:42px;height:42px;border-radius:12px;background:var(--mint);display:flex;align-items:center;justify-content:center;color:var(--green);flex-shrink:0}
+.hac-t{font-size:14px;font-weight:700;color:var(--ink)}
+.hac-s{font-size:11px;color:var(--muted)}
+
+/* hours bar */
+.hours{background:var(--green);color:#fff}
+.hours-in{max-width:1160px;margin:0 auto;padding:30px 44px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px}
+.hours-item{display:flex;align-items:center;gap:13px}
+.hours-item svg{opacity:.85;flex-shrink:0}
+.hours-lbl{font-size:11px;opacity:.7}
 .hours-val{font-size:16px;font-weight:700}
-.sec{padding:110px 40px}
-.sec-bg{background:var(--cream)}
-.sec-c{text-align:center;max-width:620px;margin:0 auto 60px}
-.sec-eyebrow{font-family:'Inter',sans-serif;font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);font-weight:700;margin-bottom:16px}
-.sec-h{font-family:'Zen Maru Gothic',sans-serif;font-size:clamp(28px,4vw,42px);font-weight:700;color:var(--ink);line-height:1.4;margin-bottom:18px}
-.sec-p{font-size:15px;color:var(--muted);line-height:2}
-.symp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.symp-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:34px 30px;text-align:center;transition:transform .3s,box-shadow .3s}
-.symp-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(15,138,95,.12)}
-.symp-ic{width:64px;height:64px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;margin:0 auto 20px;color:var(--green)}
-.symp-h{font-size:18px;font-weight:700;color:var(--ink);margin-bottom:10px}
-.symp-d{font-size:14px;color:var(--muted);line-height:1.85}
+
+.sec{padding:120px 44px}
+.sec-bg{background:#fff}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 64px}
+.sec-eyebrow{display:inline-block;font-family:var(--sans);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--green);font-weight:500;background:var(--mint);padding:7px 18px;border-radius:100px;margin-bottom:18px}
+.sec-h{font-family:var(--maru);font-size:clamp(28px,4vw,46px);font-weight:700;color:var(--ink);line-height:1.5;margin-bottom:18px}
+.sec-p{font-size:15px;color:var(--muted);line-height:2.1}
+
+/* symptoms */
+.symp-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.symp-card{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:38px 32px;transition:transform .3s,box-shadow .3s}
+.symp-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(28,163,122,.12);background:#fff}
+.symp-ic{width:68px;height:68px;border-radius:20px;background:var(--mint);display:flex;align-items:center;justify-content:center;margin-bottom:22px;color:var(--green);transform:rotate(-5deg)}
+.symp-h{font-family:var(--maru);font-size:19px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.symp-d{font-size:14px;color:var(--muted);line-height:1.9}
+
+/* reason / message */
+.reason{background:var(--mint)}
+.reason-in{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;max-width:1160px;margin:0 auto}
+.reason-img{height:440px;border-radius:30px;background:linear-gradient(160deg,#5FD3AC,#0F7D5B);position:relative;overflow:hidden}
+.reason-img::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 60% 35%,rgba(255,255,255,.35),transparent 55%)}
+.reason-txt .sec-eyebrow{background:#fff}
+.reason-txt h2{font-family:var(--maru);font-size:clamp(26px,3.6vw,40px);font-weight:700;color:var(--ink);line-height:1.5;margin-bottom:22px}
+.reason-txt p{font-size:15px;color:var(--muted);line-height:2.1;margin-bottom:16px}
+.reason-list{margin-top:20px}
+.rl-item{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:15px;font-weight:500;color:var(--ink)}
+.rl-item .ck{width:24px;height:24px;border-radius:50%;background:var(--green);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+
+/* flow */
 .flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.flow-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 24px;text-align:center;position:relative}
-.flow-num{width:48px;height:48px;border-radius:50%;background:var(--grad);color:#fff;font-family:'Inter';font-size:18px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
-.flow-h{font-size:15px;font-weight:700;color:var(--ink);margin-bottom:8px}
-.flow-d{font-size:13px;color:var(--muted);line-height:1.75}
-.cta{text-align:center;padding:120px 40px;background:linear-gradient(135deg,#0F8A5F,#0C6B49);color:#fff;position:relative;overflow:hidden}
-.cta::before{content:'';position:absolute;top:-100px;right:-50px;width:400px;height:400px;border-radius:50%;background:rgba(52,211,153,.2);filter:blur(40px)}
-.cta-h{font-family:'Zen Maru Gothic',sans-serif;font-size:clamp(28px,4.4vw,46px);font-weight:700;line-height:1.4;margin-bottom:20px;position:relative;z-index:1}
-.cta-p{font-size:15px;color:rgba(255,255,255,.8);margin-bottom:38px;position:relative;z-index:1;line-height:2}
+.flow-card{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:34px 24px;text-align:center}
+.flow-num{width:56px;height:56px;border-radius:18px;background:var(--green);color:#fff;font-family:var(--sans);font-size:22px;font-weight:500;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;transform:rotate(-6deg)}
+.flow-emoji{font-size:28px;margin-bottom:8px}
+.flow-h{font-family:var(--maru);font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.flow-d{font-size:13px;color:var(--muted);line-height:1.8}
+
+/* voice */
+.voice{background:#fff}
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.voice-card{background:var(--bg);border:1px solid var(--line);border-radius:24px;padding:32px 28px}
+.voice-stars{color:var(--sun);font-size:16px;letter-spacing:2px;margin-bottom:14px}
+.voice-txt{font-size:14px;color:var(--ink);line-height:1.95;margin-bottom:18px}
+.voice-who{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.voice-av{width:44px;height:44px;border-radius:50%;background:var(--mint);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.voice-name{font-size:14px;font-weight:700;color:var(--ink)}
+.voice-role{font-size:12px;color:var(--muted)}
+
+/* cta */
+.cta{text-align:center;padding:130px 44px;background:linear-gradient(135deg,#1CA37A,#0F7D5B);color:#fff;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-100px;right:-50px;width:420px;height:420px;border-radius:50%;background:rgba(95,211,172,.3);filter:blur(30px)}
+.cta-h{font-family:var(--maru);font-size:clamp(28px,4.4vw,46px);font-weight:700;line-height:1.5;margin-bottom:20px;position:relative;z-index:1}
+.cta-p{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:40px;position:relative;z-index:1;line-height:2}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-.cta .btn-fill{background:#fff;color:var(--green-d)}
-.cta .btn-fill:hover{background:var(--cream)}
-.cta-phone{background:transparent;border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:15px 32px;border-radius:100px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:8px}
-footer{background:var(--ink);color:#fff;padding:54px 40px;text-align:center}
-.foot-logo{font-family:'Zen Maru Gothic',sans-serif;font-size:24px;font-weight:700;margin-bottom:12px}
-.foot-copy{font-size:12px;color:rgba(255,255,255,.5)}
-@media(max-width:860px){
-  .wrap,.nav-in{padding-left:20px;padding-right:20px}
+.cta .btn-fill{background:#fff;color:var(--green-d);box-shadow:0 12px 28px rgba(0,0,0,.12)}
+.cta .btn-fill:hover{background:var(--bg)}
+.cta-phone{background:transparent;border:2px solid rgba(255,255,255,.5);color:#fff;padding:15px 32px;border-radius:100px;font-size:15px;font-weight:700;display:inline-flex;align-items:center;gap:9px}
+
+footer{background:var(--ink);color:#fff;padding:60px 44px 34px;text-align:center}
+.foot-logo{font-family:var(--maru);font-size:24px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:10px;justify-content:center}
+.foot-logo .logo-mark{width:36px;height:36px}
+.foot-info{font-size:13px;color:rgba(255,255,255,.5);line-height:2;margin-bottom:22px}
+.foot-copy{font-size:11px;color:rgba(255,255,255,.3);padding-top:22px;border-top:1px solid rgba(255,255,255,.1)}
+
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}.rd3{transition-delay:.3s}
+
+@media(max-width:880px){
+  .wrap,.nav-in{padding-left:22px;padding-right:22px}
   .nav-links{display:none}.menu-btn{display:block}
-  .hero{padding:130px 20px 70px}
+  .hero{padding:130px 22px 80px}
   .hero-in{grid-template-columns:1fr;gap:50px}
-  .hero-visual{height:360px}
-  .hv-card1{left:8px}.hv-card2{right:8px}
-  .sec,.cta{padding:70px 20px}
-  .symp-grid{grid-template-columns:1fr}
+  .hero-art{height:340px}
+  .ha-card1{left:6px}.ha-card2{right:6px}
+  .sec{padding:80px 22px}
+  .symp-grid,.voice-grid{grid-template-columns:1fr}
+  .reason-in{grid-template-columns:1fr;gap:40px}
+  .reason-img{height:300px;order:-1}
   .flow-grid{grid-template-columns:1fr 1fr}
-  .hours-in{padding:24px 20px;gap:16px}
+  .hours-in{padding:24px 22px;gap:16px}
 }
 @media(max-width:560px){.flow-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 <div class="samplebar"><span>これはスマートWEBの制作サンプル（整体・クリニック系）です</span><a href="catalog.html">← カタログに戻る</a></div>
+
 <nav><div class="nav-in">
-  <div class="logo"><span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>そら整骨院</div>
-  <div class="nav-links"><a href="#symptoms">症状</a><a href="#flow">施術の流れ</a><a href="#hours">診療時間</a><a href="#contact" class="nav-cta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>WEB予約</a></div>
-  <button class="menu-btn">☰</button>
+  <div class="logo"><span class="logo-mark"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>そら整骨院</div>
+  <div class="nav-links"><a href="#symptoms">お悩み</a><a href="#reason">選ばれる理由</a><a href="#flow">施術の流れ</a><a href="#contact" class="nav-cta"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>WEB予約</a></div>
+  <button class="menu-btn" onclick="alert('サンプルのためメニューは省略しています')">☰</button>
 </div></nav>
-<header class="hero"><div class="hero-in">
-  <div>
-    <div class="hero-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>地域に根ざして15年・国家資格者が施術</div>
-    <h1 class="hero-title">その<span>痛み</span>、<br>あきらめないで。</h1>
-    <p class="hero-desc">肩こり・腰痛・スポーツ外傷まで。国家資格を持つ施術者が、あなたの身体に合わせた施術で根本改善を目指します。</p>
-    <div class="hero-btns"><a href="#contact" class="btn-fill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>WEBで予約する</a><a href="#symptoms" class="btn-out">症状から探す</a></div>
+
+<header class="hero">
+  <div class="hero-blob hb1"></div><div class="hero-blob hb2"></div>
+  <div class="hero-in">
+    <div>
+      <div class="hero-pill"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><polyline points="20 6 9 17 4 12"/></svg>地域に根ざして15年・国家資格者が施術</div>
+      <h1 class="hero-title">その<span>痛み</span>、<br>あきらめないで。</h1>
+      <p class="hero-desc">肩こり・腰痛からスポーツ外傷まで。国家資格を持つ施術者が、あなたの身体に合わせた施術で「根本改善」を目指します。</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-fill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>WEBで予約する</a>
+        <a href="#symptoms" class="btn-out">お悩みから探す</a>
+      </div>
+    </div>
+    <div class="hero-art">
+      <div class="ha-main"></div>
+      <div class="ha-emoji">💪</div>
+      <div class="ha-card ha-card1"><div class="hac-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="hac-t">当日予約OK</div><div class="hac-s">急な痛みにも対応</div></div></div>
+      <div class="ha-card ha-card2"><div class="hac-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21l2.3-7.4-6-4.6h7.6z"/></svg></div><div><div class="hac-t">口コミ ★4.8</div><div class="hac-s">地域で高評価</div></div></div>
+    </div>
   </div>
-  <div class="hero-visual">
-    <div class="hv-main"></div>
-    <div class="hv-card hv-card1"><div class="hvc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div><div class="hvc-t">当日予約OK</div><div class="hvc-s">急な痛みにも対応</div></div></div>
-    <div class="hv-card hv-card2"><div class="hvc-ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21l2.3-7.4-6-4.6h7.6z"/></svg></div><div><div class="hvc-t">口コミ4.8</div><div class="hvc-s">地域評価多数</div></div></div>
+</header>
+
+<div class="hours">
+  <div class="hours-in">
+    <div class="hours-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><div class="hours-lbl">平日</div><div class="hours-val">9:00 - 20:00</div></div></div>
+    <div class="hours-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><div class="hours-lbl">土曜</div><div class="hours-val">9:00 - 17:00</div></div></div>
+    <div class="hours-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg><div><div class="hours-lbl">定休日</div><div class="hours-val">日曜・祝日</div></div></div>
+    <div class="hours-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg><div><div class="hours-lbl">ご予約</div><div class="hours-val">000-0000-0000</div></div></div>
   </div>
-</div></header>
-<div class="hours-bar" id="hours"><div class="hours-in">
-  <div class="hours-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><div class="hours-lbl">平日</div><div class="hours-val">9:00 - 20:00</div></div></div>
-  <div class="hours-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg><div><div class="hours-lbl">土曜</div><div class="hours-val">9:00 - 17:00</div></div></div>
-  <div class="hours-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg><div><div class="hours-lbl">定休日</div><div class="hours-val">日曜・祝日</div></div></div>
-  <div class="hours-item"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg><div><div class="hours-lbl">ご予約</div><div class="hours-val">000-0000-0000</div></div></div>
-</div></div>
+</div>
+
 <section class="sec" id="symptoms">
-  <div class="sec-c"><div class="sec-eyebrow">Symptoms</div><h2 class="sec-h">こんなお悩み、<br>ありませんか？</h2><p class="sec-p">つらい症状は、我慢せずご相談ください。</p></div>
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow">Symptoms</div>
+    <h2 class="sec-h">こんなお悩み、<br>ありませんか？</h2>
+    <p class="sec-p">つらい症状は、我慢せずにご相談ください。</p>
+  </div>
   <div class="symp-grid">
-    <div class="symp-card"><div class="symp-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="3"/><path d="M12 8v8M8 12h8M9 21l3-5 3 5"/></svg></div><div class="symp-h">肩こり・首の痛み</div><div class="symp-d">デスクワークやスマホによる慢性的なこり・痛みを根本からケアします。</div></div>
-    <div class="symp-card"><div class="symp-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M7 7l5-5 5 5M7 17l5 5 5-5"/></svg></div><div class="symp-h">腰痛・ぎっくり腰</div><div class="symp-d">急な腰の痛みから慢性腰痛まで、原因に合わせて施術します。</div></div>
-    <div class="symp-card"><div class="symp-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></div><div class="symp-h">スポーツ外傷</div><div class="symp-d">捻挫・打撲・肉離れなど、競技復帰までしっかりサポートします。</div></div>
+    <div class="symp-card reveal"><div class="symp-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="5" r="3"/><path d="M12 8v8M8 12h8M9 21l3-5 3 5"/></svg></div><div class="symp-h">肩こり・首の痛み</div><div class="symp-d">デスクワークやスマホによる慢性的なこり・痛みを、根本からケアします。</div></div>
+    <div class="symp-card reveal rd1"><div class="symp-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v20M7 7l5-5 5 5M7 17l5 5 5-5"/></svg></div><div class="symp-h">腰痛・ぎっくり腰</div><div class="symp-d">急な腰の痛みから慢性腰痛まで、原因に合わせた施術で改善へ。</div></div>
+    <div class="symp-card reveal rd2"><div class="symp-ic"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M13 2L3 14h9l-1 8 10-12h-9z"/></svg></div><div class="symp-h">スポーツ外傷</div><div class="symp-d">捻挫・打撲・肉離れなど、競技復帰まで全力でサポートします。</div></div>
   </div>
 </section>
+
+<section class="sec reason" id="reason">
+  <div class="reason-in">
+    <div class="reason-img reveal"></div>
+    <div class="reason-txt reveal">
+      <div class="sec-eyebrow">Why そら整骨院</div>
+      <h2>その場しのぎではない、<br>「根本改善」を。</h2>
+      <p>痛みを取るだけでなく、なぜ痛むのか。原因を丁寧に見極め、再発しない身体づくりまでサポートします。</p>
+      <div class="reason-list">
+        <div class="rl-item"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>国家資格を持つ施術者が担当</div>
+        <div class="rl-item"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>カウンセリングと検査を重視</div>
+        <div class="rl-item"><span class="ck"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg></span>セルフケアまで丁寧にアドバイス</div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <section class="sec sec-bg" id="flow">
-  <div class="sec-c"><div class="sec-eyebrow">Flow</div><h2 class="sec-h">施術の流れ</h2></div>
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow">Flow</div>
+    <h2 class="sec-h">施術の流れ</h2>
+  </div>
   <div class="flow-grid">
-    <div class="flow-card"><div class="flow-num">1</div><div class="flow-h">受付・問診</div><div class="flow-d">お悩みを丁寧にお伺いします。</div></div>
-    <div class="flow-card"><div class="flow-num">2</div><div class="flow-h">検査・説明</div><div class="flow-d">原因を特定し分かりやすく説明。</div></div>
-    <div class="flow-card"><div class="flow-num">3</div><div class="flow-h">施術</div><div class="flow-d">お一人に合わせた施術を実施。</div></div>
-    <div class="flow-card"><div class="flow-num">4</div><div class="flow-h">アフターケア</div><div class="flow-d">セルフケアもアドバイスします。</div></div>
+    <div class="flow-card reveal"><div class="flow-num">1</div><div class="flow-emoji">📋</div><div class="flow-h">受付・問診</div><div class="flow-d">お悩みを丁寧にお伺いします。</div></div>
+    <div class="flow-card reveal rd1"><div class="flow-num">2</div><div class="flow-emoji">🔍</div><div class="flow-h">検査・説明</div><div class="flow-d">原因を特定し分かりやすくご説明。</div></div>
+    <div class="flow-card reveal rd2"><div class="flow-num">3</div><div class="flow-emoji">🙌</div><div class="flow-h">施術</div><div class="flow-d">お一人に合わせた施術を実施。</div></div>
+    <div class="flow-card reveal rd3"><div class="flow-num">4</div><div class="flow-emoji">🌱</div><div class="flow-h">アフターケア</div><div class="flow-d">セルフケアもアドバイスします。</div></div>
   </div>
 </section>
+
+<section class="sec voice">
+  <div class="sec-head reveal">
+    <div class="sec-eyebrow">Voice</div>
+    <h2 class="sec-h">患者さまの声</h2>
+  </div>
+  <div class="voice-grid">
+    <div class="voice-card reveal"><div class="voice-stars">★★★★★</div><div class="voice-txt">長年の腰痛が、通ううちに本当に楽になりました。原因から説明してくれるので安心して任せられます。</div><div class="voice-who"><div class="voice-av">👩</div><div><div class="voice-name">M.S 様</div><div class="voice-role">40代・事務職</div></div></div></div>
+    <div class="voice-card reveal rd1"><div class="voice-stars">★★★★★</div><div class="voice-txt">部活でのケガを診てもらいました。復帰までのケアまで考えてくれて、すぐ競技に戻れました。</div><div class="voice-who"><div class="voice-av">🧑</div><div><div class="voice-name">K.T 様</div><div class="voice-role">10代・学生</div></div></div></div>
+    <div class="voice-card reveal rd2"><div class="voice-stars">★★★★★</div><div class="voice-txt">肩こりがひどく駆け込みました。先生が優しく、施術後はすっきり。通うのが楽しみです。</div><div class="voice-who"><div class="voice-av">👨</div><div><div class="voice-name">Y.N 様</div><div class="voice-role">30代・会社員</div></div></div></div>
+  </div>
+</section>
+
 <section class="cta" id="contact">
   <h2 class="cta-h">まずはお気軽に<br>ご相談ください。</h2>
   <p class="cta-p">WEB予約は24時間受付。当日のご予約もお電話で承ります。</p>
-  <div class="cta-btns"><a href="#" class="btn-fill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>WEBで予約する</a><a href="#" class="cta-phone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>電話で予約</a></div>
+  <div class="cta-btns">
+    <a href="#" class="btn-fill"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>WEBで予約する</a>
+    <a href="#" class="cta-phone"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.13.96.36 1.9.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0122 16.92z"/></svg>電話で予約</a>
+  </div>
 </section>
-<footer><div class="foot-logo">そら整骨院</div><div class="foot-copy">© 2025 そら整骨院（サンプル） — Designed by スマートWEB</div></footer>
+
+<footer>
+  <div class="foot-logo"><span class="logo-mark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></span>そら整骨院</div>
+  <div class="foot-info">東京都〇〇区〇〇 1-2-3　/　TEL 000-0000-0000<br>平日 9:00-20:00 / 土 9:00-17:00（日祝休）</div>
+  <div class="foot-copy">© 2025 そら整骨院（サンプル） — Designed by スマートWEB</div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
 </body>
 </html>
