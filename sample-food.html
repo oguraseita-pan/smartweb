@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>TRATTORIA SOLE | Restaurant（サンプル）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,500&family=Noto+Sans+JP:wght@300;400;500;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:#1A1310;color:#F5EDE3;line-height:1.85;font-weight:300;overflow-x:hidden;font-size:16px}
+a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
+:root{--bg:#1A1310;--bg2:#23191420;--terra:#C8633F;--terra-l:#E08B5F;--gold:#D4A84B;--cream:#F5EDE3;--muted:#A8978A;--line:rgba(245,237,227,.12)}
+.pf{font-family:'Playfair Display',serif}
+.samplebar{position:fixed;top:0;left:0;right:0;z-index:999;background:#C8633F;color:#fff;font-size:13px;font-weight:500;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
+.samplebar a{background:#fff;color:#C8633F;padding:6px 16px;border-radius:100px;font-size:12px;white-space:nowrap;font-weight:700}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+nav{position:fixed;top:37px;left:0;right:0;z-index:500;background:rgba(26,19,16,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Playfair Display',serif;font-size:24px;font-weight:700;letter-spacing:.1em;color:var(--cream)}
+.logo span{color:var(--gold)}
+.nav-links{display:flex;gap:32px;align-items:center}
+.nav-links a{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.nav-cta{border:1px solid var(--gold);color:var(--gold)!important;padding:9px 22px;border-radius:100px;font-size:12px!important}
+.menu-btn{display:none;background:none;border:none;font-size:24px;color:var(--cream);cursor:pointer}
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:160px 40px 90px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 60% at 50% 40%,rgba(200,99,63,.25),transparent 70%);z-index:-1}
+.hero-eyebrow{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.4em;text-transform:uppercase;color:var(--gold);margin-bottom:30px}
+.hero-title{font-family:'Playfair Display',serif;font-size:clamp(52px,10vw,150px);font-weight:700;line-height:.95;margin-bottom:30px;letter-spacing:.01em}
+.hero-title em{font-style:italic;color:var(--terra-l);display:block}
+.hero-desc{font-size:16px;color:var(--muted);max-width:480px;line-height:2.1;margin-bottom:42px}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
+.btn-fill{background:var(--terra);color:#fff;padding:17px 42px;border-radius:100px;font-size:15px;letter-spacing:.04em;transition:background .3s}
+.btn-fill:hover{background:var(--terra-l)}
+.btn-out{border:1px solid var(--line);color:var(--cream);padding:16px 38px;border-radius:100px;font-size:15px;transition:border-color .3s}
+.btn-out:hover{border-color:var(--gold)}
+.sec{padding:120px 40px}
+.sec-c{text-align:center;max-width:620px;margin:0 auto 64px}
+.sec-eyebrow{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:18px}
+.sec-h{font-family:'Playfair Display',serif;font-size:clamp(36px,5.5vw,62px);font-weight:600;line-height:1.15;margin-bottom:18px}
+.sec-h em{font-style:italic;color:var(--terra-l)}
+.sec-p{font-size:15px;color:var(--muted);line-height:2}
+.menu-cats{display:grid;grid-template-columns:1fr 1fr;gap:60px 80px;max-width:980px;margin:0 auto}
+.menu-cat-h{font-family:'Playfair Display',serif;font-size:26px;font-style:italic;color:var(--gold);margin-bottom:28px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:24px}
+.mi-name{font-size:17px;color:var(--cream);font-weight:400}
+.mi-desc{font-size:12px;color:var(--muted);margin-top:3px}
+.mi-price{font-family:'Playfair Display',serif;font-size:20px;color:var(--terra-l);white-space:nowrap}
+.feature{background:#23191A;padding:120px 40px}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;max-width:1100px;margin:0 auto;text-align:center}
+.feat-ic{width:64px;height:64px;border-radius:50%;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;color:var(--gold)}
+.feat-h{font-family:'Playfair Display',serif;font-size:22px;margin-bottom:12px}
+.feat-d{font-size:14px;color:var(--muted);line-height:1.9}
+.cta{text-align:center;padding:140px 40px;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(200,99,63,.2),transparent 70%)}
+.cta-h{font-family:'Playfair Display',serif;font-size:clamp(40px,7vw,90px);font-weight:700;line-height:1;margin-bottom:24px;position:relative;z-index:1}
+.cta-h em{font-style:italic;color:var(--terra-l)}
+.cta-info{font-size:15px;color:var(--muted);margin-bottom:36px;position:relative;z-index:1;line-height:2}
+.cta .btn-fill{position:relative;z-index:1}
+footer{border-top:1px solid var(--line);padding:56px 40px;text-align:center}
+.foot-logo{font-family:'Playfair Display',serif;font-size:26px;font-weight:700;letter-spacing:.1em;margin-bottom:14px}
+.foot-logo span{color:var(--gold)}
+.foot-copy{font-size:12px;color:var(--muted)}
+@media(max-width:860px){
+  .wrap,.nav-in{padding-left:20px;padding-right:20px}
+  .nav-links{display:none}.menu-btn{display:block}
+  .hero{padding:140px 20px 70px}
+  .sec,.feature,.cta{padding:70px 20px}
+  .menu-cats{grid-template-columns:1fr;gap:48px}
+  .feat-grid{grid-template-columns:1fr;gap:48px}
+}
+</style>
+</head>
+<body>
+<div class="samplebar"><span>これはスマートWEBの制作サンプル（飲食店系）です</span><a href="catalog.html">← カタログに戻る</a></div>
+<nav><div class="nav-in">
+  <div class="logo">Trattoria <span>Sole</span></div>
+  <div class="nav-links"><a href="#menu">Menu</a><a href="#about">About</a><a href="#access">Access</a><a href="#contact" class="nav-cta">ご予約</a></div>
+  <button class="menu-btn">☰</button>
+</div></nav>
+<header class="hero">
+  <div class="hero-eyebrow">Italian Restaurant · Since 2010</div>
+  <h1 class="hero-title">Buon<em>Appetito</em></h1>
+  <p class="hero-desc">薪窯で焼く本格ナポリピッツァと、旬の素材を活かした一皿を。陽だまりのような温かい空間で、特別なひとときをお過ごしください。</p>
+  <div class="hero-btns"><a href="#contact" class="btn-fill">ご予約はこちら</a><a href="#menu" class="btn-out">メニューを見る</a></div>
+</header>
+<section class="sec" id="menu">
+  <div class="sec-c"><div class="sec-eyebrow">Our Menu</div><h2 class="sec-h"><em>こだわり</em>の品々</h2></div>
+  <div class="menu-cats">
+    <div>
+      <div class="menu-cat-h">Pizza</div>
+      <div class="menu-item"><div><div class="mi-name">マルゲリータ D.O.C.</div><div class="mi-desc">水牛モッツァレラ・バジル</div></div><div class="mi-price">¥1,800</div></div>
+      <div class="menu-item"><div><div class="mi-name">クアトロフォルマッジ</div><div class="mi-desc">4種チーズ・蜂蜜</div></div><div class="mi-price">¥2,100</div></div>
+      <div class="menu-item"><div><div class="mi-name">マリナーラ</div><div class="mi-desc">トマト・ニンニク・オレガノ</div></div><div class="mi-price">¥1,500</div></div>
+    </div>
+    <div>
+      <div class="menu-cat-h">Pasta</div>
+      <div class="menu-item"><div><div class="mi-name">ボロネーゼ</div><div class="mi-desc">自家製生パスタ・牛ほほ肉</div></div><div class="mi-price">¥1,900</div></div>
+      <div class="menu-item"><div><div class="mi-name">ペスカトーレ</div><div class="mi-desc">魚介の旨み・トマトソース</div></div><div class="mi-price">¥2,200</div></div>
+      <div class="menu-item"><div><div class="mi-name">カルボナーラ</div><div class="mi-desc">グアンチャーレ・卵黄</div></div><div class="mi-price">¥1,800</div></div>
+    </div>
+  </div>
+</section>
+<section class="feature" id="about">
+  <div class="sec-c"><div class="sec-eyebrow">Our Commitment</div><h2 class="sec-h"><em>本物</em>へのこだわり</h2></div>
+  <div class="feat-grid">
+    <div><div class="feat-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2C8 2 5 5 5 9c0 3 2 5 2 8h10c0-3 2-5 2-8 0-4-3-7-7-7z"/><line x1="9" y1="21" x2="15" y2="21"/></svg></div><div class="feat-h">薪窯焼き</div><div class="feat-d">450℃の薪窯で一気に焼き上げる、本場ナポリの味。</div></div>
+    <div><div class="feat-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg></div><div class="feat-h">産地直送</div><div class="feat-d">契約農家から届く、旬の新鮮な野菜を使用。</div></div>
+    <div><div class="feat-ic"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M6 2v6a6 6 0 0012 0V2M9 22h6M12 14v8"/></svg></div><div class="feat-h">厳選ワイン</div><div class="feat-d">イタリア各地から取り寄せた約50種のワイン。</div></div>
+  </div>
+</section>
+<section class="cta" id="contact">
+  <h2 class="cta-h">Ci <em>vediamo</em></h2>
+  <p class="cta-info">ご予約・お問い合わせはお電話またはWEBから<br>営業時間 11:30-14:30 / 17:30-22:00（月曜定休）</p>
+  <a href="#" class="btn-fill">WEBで予約する</a>
+</section>
+<footer>
+  <div class="foot-logo">Trattoria <span>Sole</span></div>
+  <div class="foot-copy">© 2025 Trattoria Sole（サンプル） — Designed by スマートWEB</div>
+</footer>
+</body>
+</html>

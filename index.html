@@ -121,11 +121,14 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 .chip2{bottom:-18px;right:-26px;animation-delay:2.5s}
 @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
 
-/* ============ MARQUEE STRIP ============ */
-.strip{background:var(--navy);padding:18px 0;overflow:hidden;white-space:nowrap}
-.strip-track{display:inline-flex;gap:48px;animation:marquee 28s linear infinite;padding-left:48px}
-.strip-item{display:inline-flex;align-items:center;gap:10px;font-family:var(--en);font-size:13px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.55);text-transform:uppercase}
-.strip-dot{width:5px;height:5px;border-radius:50%;background:var(--cyan)}
+/* ============ STAT BAND ============ */
+.statband{background:var(--navy);padding:0}
+.statband-inner{display:flex;align-items:center;justify-content:space-between}
+.sb-item{flex:1;text-align:center;padding:38px 16px}
+.sb-num{font-family:var(--en);font-size:44px;font-weight:800;color:#fff;line-height:1}
+.sb-num span{font-size:20px;background:linear-gradient(120deg,#22D3EE,#60A5FA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-left:2px}
+.sb-label{font-size:13px;color:rgba(255,255,255,.5);margin-top:8px;letter-spacing:.04em}
+.sb-div{width:1px;align-self:stretch;background:rgba(255,255,255,.1);margin:24px 0}
 @keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
 /* ============ SECTIONS ============ */
@@ -304,6 +307,10 @@ footer{background:var(--navy);margin-top:110px}
 
 /* ============ RESPONSIVE ============ */
 @media(max-width:960px){
+  .statband-inner{flex-wrap:wrap}
+  .sb-item{flex:1 1 50%;padding:24px 12px}
+  .sb-num{font-size:34px}
+  .sb-div{display:none}
   .inner{padding:0 1.2rem}
   .hamburger{display:flex}
   .nav-links{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;padding:2.4rem 1.6rem;gap:1.7rem;border-top:1px solid var(--border);overflow-y:auto;z-index:299;align-items:flex-start}
@@ -428,19 +435,16 @@ footer{background:var(--navy);margin-top:110px}
   </div>
 </header>
 
-<!-- MARQUEE STRIP -->
-<div class="strip">
-  <div class="strip-track">
-    <span class="strip-item"><span class="strip-dot"></span>AI × DESIGNER</span>
-    <span class="strip-item"><span class="strip-dot"></span>7 DAYS DELIVERY</span>
-    <span class="strip-item"><span class="strip-dot"></span>NO HIDDEN FEES</span>
-    <span class="strip-item"><span class="strip-dot"></span>FULL ONLINE</span>
-    <span class="strip-item"><span class="strip-dot"></span>3 MONTHS SUPPORT</span>
-    <span class="strip-item"><span class="strip-dot"></span>AI × DESIGNER</span>
-    <span class="strip-item"><span class="strip-dot"></span>7 DAYS DELIVERY</span>
-    <span class="strip-item"><span class="strip-dot"></span>NO HIDDEN FEES</span>
-    <span class="strip-item"><span class="strip-dot"></span>FULL ONLINE</span>
-    <span class="strip-item"><span class="strip-dot"></span>3 MONTHS SUPPORT</span>
+<!-- STAT BAND -->
+<div class="statband">
+  <div class="statband-inner inner">
+    <div class="sb-item"><div class="sb-num">7<span>日〜</span></div><div class="sb-label">最短納期</div></div>
+    <div class="sb-div"></div>
+    <div class="sb-item"><div class="sb-num">3<span>ヶ月</span></div><div class="sb-label">無料サポート</div></div>
+    <div class="sb-div"></div>
+    <div class="sb-item"><div class="sb-num">0<span>円</span></div><div class="sb-label">追加費用</div></div>
+    <div class="sb-div"></div>
+    <div class="sb-item"><div class="sb-num">100<span>%</span></div><div class="sb-label">オンライン完結</div></div>
   </div>
 </div>
 

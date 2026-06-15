@@ -184,8 +184,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:color-mix(in srgb
 .cat-filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
 .cat-filter:hover:not(.active){border-color:var(--accent);color:var(--text)}
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1120px;margin:0 auto}
-.cat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:pointer}
+.cat-card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:pointer}
 .cat-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px color-mix(in srgb,var(--navy) 12%,transparent)}
+.cat-view{display:flex;align-items:center;gap:7px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;font-weight:700;color:var(--accent);transition:gap .25s}
+.cat-card:hover .cat-view{gap:12px}
 .cat-thumb{height:170px;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:20px}
 .cat-thumb-nav{display:flex;gap:6px;margin-bottom:auto}
 .ctn-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6)}
@@ -433,7 +435,7 @@ footer{background:var(--navy);padding:40px 2rem}
     <button class="cat-filter" data-cat="corp">企業・法人</button>
   </div>
   <div class="cat-grid" id="catGrid">
-    <div class="cat-card reveal" data-cat="store">
+    <a class="cat-card reveal" data-cat="store" href="sample-salon.html">
       <div class="cat-thumb" style="background:linear-gradient(135deg,#E5557F,#F59EB5)">
         <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
         <div class="cat-thumb-title">Beauty Salon</div>
@@ -445,10 +447,11 @@ footer{background:var(--navy);padding:40px 2rem}
         <h3>サロン・美容系</h3>
         <p>やわらかな色使いと余白で、上質感と清潔感を演出。予約導線を重視した設計です。</p>
         <div class="cat-tags"><span class="cat-tag">予約フォーム</span><span class="cat-tag">Instagram連携</span></div>
+        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </div>
-    </div>
-    <div class="cat-card reveal rd1" data-cat="pro">
-      <div class="cat-thumb" style="background:linear-gradient(135deg,#0F1729,#1E3A8A)">
+    </a>
+    <a class="cat-card reveal rd1" data-cat="pro" href="sample-legal.html">
+      <div class="cat-thumb" style="background:linear-gradient(135deg,#1A2332,#A8884E)">
         <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
         <div class="cat-thumb-title">Law Office</div>
         <div class="cat-thumb-bar"></div>
@@ -458,11 +461,12 @@ footer{background:var(--navy);padding:40px 2rem}
         <span class="cat-badge">士業・専門職</span>
         <h3>士業・コンサル系</h3>
         <p>信頼感と誠実さを伝える端正なデザイン。問い合わせのハードルを下げる構成です。</p>
-        <div class="cat-tags"><span class="cat-tag">相談予約</span><span class="cat-tag">実績紹介</span></div>
+        <div class="cat-tags"><span class="cat-tag">相談予約</span><span class="cat-tag">取扱業務</span></div>
+        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </div>
-    </div>
-    <div class="cat-card reveal rd2" data-cat="food">
-      <div class="cat-thumb" style="background:linear-gradient(135deg,#EA580C,#F59E0B)">
+    </a>
+    <a class="cat-card reveal rd2" data-cat="food" href="sample-food.html">
+      <div class="cat-thumb" style="background:linear-gradient(135deg,#1A1310,#C8633F)">
         <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
         <div class="cat-thumb-title">Restaurant</div>
         <div class="cat-thumb-bar"></div>
@@ -473,9 +477,10 @@ footer{background:var(--navy);padding:40px 2rem}
         <h3>飲食・カフェ系</h3>
         <p>料理の魅力を引き立てる写真主役のレイアウト。メニュー・地図・予約を分かりやすく。</p>
         <div class="cat-tags"><span class="cat-tag">メニュー表</span><span class="cat-tag">Google Maps</span></div>
+        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </div>
-    </div>
-    <div class="cat-card reveal" data-cat="corp">
+    </a>
+    <a class="cat-card reveal" data-cat="corp" href="sample-corp.html">
       <div class="cat-thumb" style="background:linear-gradient(135deg,#2563EB,#06B6D4)">
         <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
         <div class="cat-thumb-title">Corporate</div>
@@ -487,9 +492,10 @@ footer{background:var(--navy);padding:40px 2rem}
         <h3>企業・コーポレート系</h3>
         <p>事業内容と強みを整理して伝える王道構成。採用・IR・お知らせにも対応します。</p>
         <div class="cat-tags"><span class="cat-tag">採用ページ</span><span class="cat-tag">お知らせ</span></div>
+        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </div>
-    </div>
-    <div class="cat-card reveal rd1" data-cat="store">
+    </a>
+    <a class="cat-card reveal rd1" data-cat="store" href="sample-clinic.html">
       <div class="cat-thumb" style="background:linear-gradient(135deg,#0F8A5F,#34D399)">
         <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
         <div class="cat-thumb-title">Clinic</div>
@@ -501,10 +507,11 @@ footer{background:var(--navy);padding:40px 2rem}
         <h3>整体・クリニック系</h3>
         <p>安心感を与える清潔なデザイン。症状・施術・アクセスを分かりやすく整理します。</p>
         <div class="cat-tags"><span class="cat-tag">WEB予約</span><span class="cat-tag">症状別ページ</span></div>
+        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </div>
-    </div>
-    <div class="cat-card reveal rd2" data-cat="corp">
-      <div class="cat-thumb" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">
+    </a>
+    <a class="cat-card reveal rd2" data-cat="corp" href="sample-creative.html">
+      <div class="cat-thumb" style="background:linear-gradient(135deg,#0A0A0A,#7B2FF7)">
         <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
         <div class="cat-thumb-title">Creative</div>
         <div class="cat-thumb-bar"></div>
@@ -515,8 +522,9 @@ footer{background:var(--navy);padding:40px 2rem}
         <h3>クリエイティブ系</h3>
         <p>個性と世界観を前面に出した大胆なデザイン。作品・ポートフォリオを魅せます。</p>
         <div class="cat-tags"><span class="cat-tag">ギャラリー</span><span class="cat-tag">アニメーション</span></div>
+        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </div>
-    </div>
+    </a>
   </div>
 </section>
 

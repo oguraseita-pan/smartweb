@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>STUDIO NOVA | Creative Agency（サンプル）</title>
+<meta name="description" content="クリエイティブ系サンプルサイト。スマートWEBの制作イメージをご覧いただけます。"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@400;500;700;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Space Grotesk','Noto Sans JP',sans-serif;background:#0A0A0A;color:#fff;line-height:1.7;overflow-x:hidden;font-size:16px}
+a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
+:root{--bg:#0A0A0A;--ink:#fff;--muted:#8B8B8B;--line:rgba(255,255,255,.12);--accent:#D6FF3F;--accent2:#FF4D6D}
+
+/* sample banner */
+.samplebar{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;color:#0A0A0A;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:700;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
+.samplebar a{background:#0A0A0A;color:#fff;padding:6px 16px;border-radius:100px;font-size:12px;white-space:nowrap}
+
+.wrap{max-width:1280px;margin:0 auto;padding:0 40px}
+/* nav */
+nav{position:fixed;top:37px;left:0;right:0;z-index:500;mix-blend-mode:difference}
+.nav-in{max-width:1280px;margin:0 auto;padding:24px 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Anton',sans-serif;font-size:24px;letter-spacing:.04em;color:#fff}
+.nav-links{display:flex;gap:36px}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.menu-btn{display:none;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:none;border:none;color:#fff;cursor:pointer}
+
+/* hero */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 40px 80px;position:relative;overflow:hidden}
+.hero-eyebrow{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:30px;display:flex;align-items:center;gap:12px}
+.hero-eyebrow::before{content:'';width:50px;height:1px;background:var(--accent)}
+.hero-title{font-family:'Anton',sans-serif;font-size:clamp(56px,13vw,200px);line-height:.92;letter-spacing:-.01em;text-transform:uppercase;margin-bottom:36px}
+.hero-title .out{-webkit-text-stroke:2px #fff;color:transparent}
+.hero-title .it{font-style:italic;color:var(--accent)}
+.hero-foot{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
+.hero-desc{font-family:'Noto Sans JP',sans-serif;font-size:17px;color:var(--muted);max-width:420px;line-height:1.9}
+.hero-scroll{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;z-index:-1}
+.blob1{width:500px;height:500px;background:#FF4D6D;top:-100px;right:-100px;animation:drift 14s ease-in-out infinite}
+.blob2{width:400px;height:400px;background:#3F6BFF;bottom:-80px;left:10%;animation:drift 18s ease-in-out infinite reverse}
+@keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}}
+
+/* marquee headline */
+.bigmarq{padding:50px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap}
+.bigmarq-track{display:inline-flex;gap:40px;animation:scroll 24s linear infinite}
+.bigmarq span{font-family:'Anton',sans-serif;font-size:clamp(40px,7vw,90px);text-transform:uppercase;letter-spacing:.02em}
+.bigmarq .ghost{-webkit-text-stroke:1.5px var(--muted);color:transparent}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+
+/* work grid */
+.sec{padding:120px 40px;position:relative}
+.sec-label{font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.sec-h{font-family:'Anton',sans-serif;font-size:clamp(40px,6vw,80px);text-transform:uppercase;line-height:1;margin-bottom:60px}
+.works{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.work{position:relative;border-radius:8px;overflow:hidden;cursor:pointer;aspect-ratio:4/3}
+.work:nth-child(3){margin-top:-80px}.work:nth-child(4){margin-top:-80px}
+.work-bg{position:absolute;inset:0;transition:transform .8s cubic-bezier(.22,1,.36,1)}
+.work:hover .work-bg{transform:scale(1.06)}
+.work-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:36px}
+.work-num{font-size:13px;letter-spacing:.2em;color:var(--accent);margin-bottom:10px}
+.work-title{font-family:'Anton',sans-serif;font-size:32px;text-transform:uppercase;line-height:1.05;margin-bottom:8px}
+.work-tag{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:rgba(255,255,255,.7)}
+.work-arrow{position:absolute;top:30px;right:30px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s}
+.work:hover .work-arrow{background:var(--accent);transform:rotate(45deg)}
+.work:hover .work-arrow svg{color:#0A0A0A}
+
+/* services */
+.serv-sec{background:#111;padding:120px 40px}
+.serv-list{border-top:1px solid var(--line)}
+.serv-row{display:grid;grid-template-columns:80px 1fr auto;gap:30px;align-items:center;padding:36px 0;border-bottom:1px solid var(--line);transition:padding-left .4s,background .4s;cursor:pointer}
+.serv-row:hover{padding-left:24px}
+.serv-row:hover .serv-name{color:var(--accent)}
+.serv-no{font-size:14px;color:var(--muted);font-family:'Space Grotesk'}
+.serv-name{font-family:'Anton',sans-serif;font-size:clamp(28px,4vw,52px);text-transform:uppercase;transition:color .3s;line-height:1}
+.serv-desc{font-family:'Noto Sans JP',sans-serif;font-size:14px;color:var(--muted);max-width:280px;text-align:right}
+
+/* cta */
+.cta{padding:160px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-h{font-family:'Anton',sans-serif;font-size:clamp(48px,11vw,160px);text-transform:uppercase;line-height:.9;margin-bottom:40px}
+.cta-h .it{font-style:italic;color:var(--accent)}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;font-family:'Noto Sans JP',sans-serif;background:var(--accent);color:#0A0A0A;font-size:17px;font-weight:700;padding:22px 50px;border-radius:100px;transition:transform .3s}
+.cta-btn:hover{transform:scale(1.05)}
+
+footer{padding:60px 40px;border-top:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+.foot-logo{font-family:'Anton',sans-serif;font-size:22px}
+.foot-copy{font-family:'Noto Sans JP',sans-serif;font-size:12px;color:var(--muted)}
+
+@media(max-width:860px){
+  .wrap,.nav-in{padding-left:20px;padding-right:20px}
+  .nav-links{display:none}.menu-btn{display:block}
+  .hero{padding:120px 20px 60px}
+  .sec,.serv-sec,.cta{padding:70px 20px}
+  .works{grid-template-columns:1fr;gap:20px}
+  .work:nth-child(n){margin-top:0}
+  .serv-row{grid-template-columns:40px 1fr;gap:14px}
+  .serv-desc{display:none}
+  .hero-foot{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+<div class="samplebar">
+  <span>これはスマートWEBの制作サンプル（クリエイティブ系）です</span>
+  <a href="catalog.html">← カタログに戻る</a>
+</div>
+
+<nav>
+  <div class="nav-in">
+    <div class="logo">STUDIO NOVA</div>
+    <div class="nav-links">
+      <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </div>
+    <button class="menu-btn">Menu</button>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-blob blob1"></div>
+  <div class="hero-blob blob2"></div>
+  <div class="hero-eyebrow">Creative Agency / Tokyo</div>
+  <h1 class="hero-title">We make<br><span class="it">bold</span> <span class="out">ideas</span><br>move.</h1>
+  <div class="hero-foot">
+    <p class="hero-desc">ブランドの世界観を、感性とテクノロジーで形にする。私たちは、見る人の心を動かすクリエイティブを生み出すデザインスタジオです。</p>
+    <div class="hero-scroll">Scroll ↓</div>
+  </div>
+</header>
+
+<div class="bigmarq">
+  <div class="bigmarq-track">
+    <span>Branding</span><span class="ghost">●</span><span>Web Design</span><span class="ghost">●</span><span>Motion</span><span class="ghost">●</span>
+    <span>Branding</span><span class="ghost">●</span><span>Web Design</span><span class="ghost">●</span><span>Motion</span><span class="ghost">●</span>
+  </div>
+</div>
+
+<section class="sec" id="work">
+  <div class="sec-label">Selected Work</div>
+  <h2 class="sec-h">Projects</h2>
+  <div class="works">
+    <div class="work">
+      <div class="work-bg" style="background:linear-gradient(135deg,#FF4D6D,#7B2FF7)"></div>
+      <div class="work-overlay">
+        <div class="work-num">01 — Branding</div>
+        <div class="work-title">AURORA<br>Cosmetics</div>
+        <div class="work-tag">ブランドアイデンティティ / パッケージ</div>
+      </div>
+      <div class="work-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+    </div>
+    <div class="work">
+      <div class="work-bg" style="background:linear-gradient(135deg,#3F6BFF,#00D9C0)"></div>
+      <div class="work-overlay">
+        <div class="work-num">02 — Web</div>
+        <div class="work-title">FLUX<br>Tech</div>
+        <div class="work-tag">コーポレートサイト / UI/UX</div>
+      </div>
+      <div class="work-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+    </div>
+    <div class="work">
+      <div class="work-bg" style="background:linear-gradient(135deg,#D6FF3F,#00B894)"></div>
+      <div class="work-overlay">
+        <div class="work-num">03 — Motion</div>
+        <div class="work-title">PULSE<br>Festival</div>
+        <div class="work-tag">プロモーション映像 / モーション</div>
+      </div>
+      <div class="work-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+    </div>
+    <div class="work">
+      <div class="work-bg" style="background:linear-gradient(135deg,#FFA84D,#FF4D6D)"></div>
+      <div class="work-overlay">
+        <div class="work-num">04 — Branding</div>
+        <div class="work-title">MONO<br>Coffee</div>
+        <div class="work-tag">ロゴ / 店舗ブランディング</div>
+      </div>
+      <div class="work-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+    </div>
+  </div>
+</section>
+
+<section class="serv-sec" id="services">
+  <div class="sec-label">What We Do</div>
+  <h2 class="sec-h">Services</h2>
+  <div class="serv-list">
+    <div class="serv-row"><div class="serv-no">01</div><div class="serv-name">Branding</div><div class="serv-desc">ロゴ・VI・ブランド戦略の策定からトータルで設計します。</div></div>
+    <div class="serv-row"><div class="serv-no">02</div><div class="serv-name">Web Design</div><div class="serv-desc">体験価値を最大化するUI/UX設計とサイト制作。</div></div>
+    <div class="serv-row"><div class="serv-no">03</div><div class="serv-name">Motion</div><div class="serv-desc">映像・アニメーションで世界観を動かします。</div></div>
+    <div class="serv-row"><div class="serv-no">04</div><div class="serv-name">Strategy</div><div class="serv-desc">マーケティング視点でクリエイティブを成果に。</div></div>
+  </div>
+</section>
+
+<section class="cta" id="contact">
+  <div class="hero-blob blob1" style="opacity:.3"></div>
+  <h2 class="cta-h">Let's <span class="it">talk.</span></h2>
+  <a href="#" class="cta-btn">プロジェクトを相談する →</a>
+</section>
+
+<footer>
+  <div class="foot-logo">STUDIO NOVA</div>
+  <div class="foot-copy">© 2025 STUDIO NOVA（サンプル） — Designed by スマートWEB</div>
+</footer>
+</body>
+</html>

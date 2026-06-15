@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>SALON LUNÉ | Beauty Salon（サンプル）</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Noto+Sans+JP:wght@300;400;500;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;background:#FBF7F4;color:#3A2E2A;line-height:1.85;font-weight:300;overflow-x:hidden;font-size:16px}
+a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
+:root{--bg:#FBF7F4;--rose:#C9A98C;--rose-d:#A67C52;--ink:#3A2E2A;--muted:#8C7A70;--line:#E8DDD3;--cream:#F3EBE3}
+.serif{font-family:'Cormorant Garamond',serif}
+.samplebar{position:fixed;top:0;left:0;right:0;z-index:999;background:#3A2E2A;color:#fff;font-size:13px;font-weight:500;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
+.samplebar a{background:#fff;color:#3A2E2A;padding:6px 16px;border-radius:100px;font-size:12px;white-space:nowrap}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+nav{position:fixed;top:37px;left:0;right:0;z-index:500;background:rgba(251,247,244,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;letter-spacing:.12em;color:var(--ink)}
+.logo span{color:var(--rose-d)}
+.nav-links{display:flex;gap:34px;align-items:center}
+.nav-links a{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.nav-cta{border:1px solid var(--rose-d);color:var(--rose-d)!important;padding:9px 22px;border-radius:100px;font-size:12px!important}
+.menu-btn{display:none;background:none;border:none;font-size:24px;color:var(--ink);cursor:pointer}
+.hero{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:50px;padding:160px 40px 90px;max-width:1180px;margin:0 auto;position:relative}
+.hero-eyebrow{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--rose-d);margin-bottom:26px}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,92px);font-weight:500;line-height:1.05;color:var(--ink);margin-bottom:30px}
+.hero-title em{font-style:italic;color:var(--rose-d)}
+.hero-desc{font-size:16px;color:var(--muted);line-height:2.1;margin-bottom:40px;max-width:420px}
+.hero-btns{display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+.btn-fill{background:var(--rose-d);color:#fff;padding:16px 38px;border-radius:100px;font-size:14px;letter-spacing:.06em;transition:background .3s}
+.btn-fill:hover{background:var(--ink)}
+.btn-text{font-family:'Jost',sans-serif;font-size:14px;letter-spacing:.1em;color:var(--ink);display:inline-flex;align-items:center;gap:8px;border-bottom:1px solid var(--rose);padding-bottom:4px}
+.hero-visual{position:relative;height:560px}
+.hv-main{position:absolute;inset:0;border-radius:200px 200px 12px 12px;background:linear-gradient(160deg,#E8D5C4,#C9A98C);overflow:hidden}
+.hv-main::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 30% 20%,rgba(255,255,255,.4),transparent 50%)}
+.hv-badge{position:absolute;bottom:30px;left:-30px;background:#fff;border-radius:16px;padding:22px 26px;box-shadow:0 20px 50px rgba(166,124,82,.2);z-index:2}
+.hv-badge-num{font-family:'Cormorant Garamond',serif;font-size:42px;font-weight:600;color:var(--rose-d);line-height:1}
+.hv-badge-txt{font-size:12px;color:var(--muted);letter-spacing:.05em}
+.sec{padding:110px 40px}
+.sec-c{text-align:center;max-width:620px;margin:0 auto 70px}
+.sec-eyebrow{font-family:'Jost',sans-serif;font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--rose-d);margin-bottom:18px}
+.sec-h{font-family:'Cormorant Garamond',serif;font-size:clamp(34px,5vw,56px);font-weight:500;color:var(--ink);line-height:1.2;margin-bottom:18px}
+.sec-p{font-size:15px;color:var(--muted);line-height:2}
+.menu-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 70px;max-width:900px;margin:0 auto}
+.menu-item{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:26px 0;border-bottom:1px solid var(--line)}
+.mi-left{flex:1}
+.mi-name{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--ink);margin-bottom:4px}
+.mi-desc{font-size:13px;color:var(--muted)}
+.mi-dots{flex:1;border-bottom:1px dotted var(--line);margin:0 8px;transform:translateY(-6px)}
+.mi-price{font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--rose-d);white-space:nowrap}
+.gallery{background:var(--cream)}
+.gal-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gal-item{aspect-ratio:3/4;border-radius:10px;overflow:hidden}
+.gal-item:nth-child(1){background:linear-gradient(160deg,#E8D5C4,#C9A98C)}
+.gal-item:nth-child(2){background:linear-gradient(160deg,#D9C3B0,#A67C52);margin-top:30px}
+.gal-item:nth-child(3){background:linear-gradient(160deg,#EADBC8,#C9A98C)}
+.gal-item:nth-child(4){background:linear-gradient(160deg,#D4BBA0,#8C6543);margin-top:30px}
+.cta{text-align:center;padding:130px 40px;background:linear-gradient(160deg,#C9A98C,#A67C52);color:#fff}
+.cta-h{font-family:'Cormorant Garamond',serif;font-size:clamp(38px,6vw,68px);font-weight:500;line-height:1.1;margin-bottom:22px}
+.cta-h em{font-style:italic}
+.cta-p{font-size:15px;color:rgba(255,255,255,.85);margin-bottom:40px}
+.cta .btn-fill{background:#fff;color:var(--rose-d)}
+.cta .btn-fill:hover{background:var(--ink);color:#fff}
+footer{background:var(--ink);color:#fff;padding:60px 40px;text-align:center}
+.foot-logo{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:600;letter-spacing:.12em;margin-bottom:14px}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.5)}
+@media(max-width:860px){
+  .wrap,.nav-in{padding-left:20px;padding-right:20px}
+  .nav-links{display:none}.menu-btn{display:block}
+  .hero{grid-template-columns:1fr;padding:130px 20px 60px;gap:40px}
+  .hero-visual{height:400px}
+  .hv-badge{left:10px}
+  .sec,.cta{padding:70px 20px}
+  .menu-grid{grid-template-columns:1fr;gap:0}
+  .gal-grid{grid-template-columns:1fr 1fr;gap:10px}
+  .gal-item:nth-child(n){margin-top:0}
+}
+</style>
+</head>
+<body>
+<div class="samplebar"><span>これはスマートWEBの制作サンプル（サロン系）です</span><a href="catalog.html">← カタログに戻る</a></div>
+<nav><div class="nav-in">
+  <div class="logo">Salon <span>Luné</span></div>
+  <div class="nav-links"><a href="#menu">Menu</a><a href="#gallery">Gallery</a><a href="#about">About</a><a href="#contact" class="nav-cta">ご予約</a></div>
+  <button class="menu-btn">☰</button>
+</div></nav>
+<header class="hero">
+  <div>
+    <div class="hero-eyebrow">Total Beauty Salon</div>
+    <h1 class="hero-title">あなたの<em>美しさ</em>に、<br>そっと寄り添う。</h1>
+    <p class="hero-desc">日々の疲れを忘れ、自分だけの特別な時間を。経験豊かなスタイリストが、一人ひとりに合わせた施術でお迎えします。</p>
+    <div class="hero-btns"><a href="#contact" class="btn-fill">WEB予約はこちら</a><a href="#menu" class="btn-text">メニューを見る →</a></div>
+  </div>
+  <div class="hero-visual">
+    <div class="hv-main"></div>
+    <div class="hv-badge"><div class="hv-badge-num">4.9</div><div class="hv-badge-txt">★ お客様満足度</div></div>
+  </div>
+</header>
+<section class="sec" id="menu">
+  <div class="sec-c"><div class="sec-eyebrow">Menu</div><h2 class="sec-h">メニュー</h2><p class="sec-p">厳選された上質なメニューをご用意しています。</p></div>
+  <div class="menu-grid">
+    <div class="menu-item"><div class="mi-left"><div class="mi-name">Cut & Style</div><div class="mi-desc">カット・スタイリング</div></div><div class="mi-dots"></div><div class="mi-price">¥5,500</div></div>
+    <div class="menu-item"><div class="mi-left"><div class="mi-name">Color</div><div class="mi-desc">カラーリング</div></div><div class="mi-dots"></div><div class="mi-price">¥7,700</div></div>
+    <div class="menu-item"><div class="mi-left"><div class="mi-name">Treatment</div><div class="mi-desc">髪質改善トリートメント</div></div><div class="mi-dots"></div><div class="mi-price">¥6,600</div></div>
+    <div class="menu-item"><div class="mi-left"><div class="mi-name">Head Spa</div><div class="mi-desc">ヘッドスパ 60分</div></div><div class="mi-dots"></div><div class="mi-price">¥8,800</div></div>
+    <div class="menu-item"><div class="mi-left"><div class="mi-name">Perm</div><div class="mi-desc">デジタルパーマ</div></div><div class="mi-dots"></div><div class="mi-price">¥9,900</div></div>
+    <div class="menu-item"><div class="mi-left"><div class="mi-name">Bridal</div><div class="mi-desc">ブライダルセット</div></div><div class="mi-dots"></div><div class="mi-price">¥15,000</div></div>
+  </div>
+</section>
+<section class="sec gallery" id="gallery">
+  <div class="sec-c"><div class="sec-eyebrow">Gallery</div><h2 class="sec-h">スタイル集</h2></div>
+  <div class="wrap"><div class="gal-grid"><div class="gal-item"></div><div class="gal-item"></div><div class="gal-item"></div><div class="gal-item"></div></div></div>
+</section>
+<section class="cta" id="contact">
+  <h2 class="cta-h">特別な<em>時間</em>を、<br>あなたに。</h2>
+  <p class="cta-p">ご予約はWEBから24時間受付中です。</p>
+  <a href="#" class="btn-fill">WEBで予約する</a>
+</section>
+<footer><div class="foot-logo">Salon Luné</div><div class="foot-copy">© 2025 Salon Luné（サンプル） — Designed by スマートWEB</div></footer>
+</body>
+</html>
