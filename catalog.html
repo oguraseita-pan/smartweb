@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>デザインカタログ | スマートWEB</title>
+<meta name="description" content="テーマ・フォント・カラーをその場で切り替え。あなたのビジネスにぴったりのデザインをカタログから選べます。"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Murecho:wght@400;500;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--font-body,'Noto Sans JP',sans-serif);background:var(--bg,#fff);color:var(--text,#0F1729);line-height:1.75;font-size:16px;overflow-x:hidden;transition:background .4s,color .4s}
+img{max-width:100%;display:block}
+a{text-decoration:none;color:inherit}
+ul{list-style:none}
+button{font-family:inherit;cursor:pointer}
+
+/* ===== THEME VARIABLES (default: Aqua) ===== */
+:root{
+  --accent:#2563EB;
+  --accent2:#06B6D4;
+  --grad:linear-gradient(120deg,#06B6D4,#2563EB);
+  --bg:#fff;
+  --bg2:#F8FAFC;
+  --surface:#fff;
+  --text:#0F1729;
+  --muted:#64748B;
+  --border:#E2E8F0;
+  --navy:#0F1729;
+  --font-head:'Noto Sans JP',sans-serif;
+  --font-body:'Noto Sans JP',sans-serif;
+  --radius:18px;
+  --radius-sm:10px;
+  --radius-full:100px;
+  --en:'Inter',sans-serif;
+}
+
+/* ===== THEME PRESETS ===== */
+body[data-theme="aqua"]{--accent:#2563EB;--accent2:#06B6D4;--grad:linear-gradient(120deg,#06B6D4,#2563EB);--bg:#fff;--bg2:#F8FAFC;--surface:#fff;--text:#0F1729;--muted:#64748B;--border:#E2E8F0;--navy:#0F1729}
+body[data-theme="midnight"]{--accent:#60A5FA;--accent2:#22D3EE;--grad:linear-gradient(120deg,#22D3EE,#60A5FA);--bg:#0B1120;--bg2:#111827;--surface:#151E31;--text:#E8EDF5;--muted:#94A3B8;--border:#243049;--navy:#060A14}
+body[data-theme="sakura"]{--accent:#E5557F;--accent2:#F59EB5;--grad:linear-gradient(120deg,#F59EB5,#E5557F);--bg:#FFFBFC;--bg2:#FDF1F5;--surface:#fff;--text:#3D2530;--muted:#9B7886;--border:#F3DCE4;--navy:#5A2A3C}
+body[data-theme="forest"]{--accent:#0F8A5F;--accent2:#34D399;--grad:linear-gradient(120deg,#34D399,#0F8A5F);--bg:#FBFDFB;--bg2:#EEF7F1;--surface:#fff;--text:#16261D;--muted:#5F7A6C;--border:#D6E8DD;--navy:#0C3D29}
+body[data-theme="sunset"]{--accent:#EA580C;--accent2:#F59E0B;--grad:linear-gradient(120deg,#F59E0B,#EA580C);--bg:#FFFCF8;--bg2:#FDF3E9;--surface:#fff;--text:#3A2415;--muted:#9C7E63;--border:#F2E1CD;--navy:#5A3315}
+body[data-theme="mono"]{--accent:#1A1A1A;--accent2:#525252;--grad:linear-gradient(120deg,#525252,#1A1A1A);--bg:#fff;--bg2:#F5F5F4;--surface:#fff;--text:#1A1A1A;--muted:#737373;--border:#E5E5E5;--navy:#0A0A0A}
+body[data-theme="royal"]{--accent:#7C3AED;--accent2:#A78BFA;--grad:linear-gradient(120deg,#A78BFA,#7C3AED);--bg:#FDFCFF;--bg2:#F4F0FE;--surface:#fff;--text:#241A3D;--muted:#7C6F95;--border:#E5DCF7;--navy:#2E1065}
+
+/* ===== FONT PRESETS ===== */
+body[data-font="gothic"]{--font-head:'Noto Sans JP',sans-serif;--font-body:'Noto Sans JP',sans-serif}
+body[data-font="mincho"]{--font-head:'Shippori Mincho',serif;--font-body:'Noto Serif JP',serif}
+body[data-font="maru"]{--font-head:'Zen Maru Gothic',sans-serif;--font-body:'Zen Maru Gothic',sans-serif}
+body[data-font="modern"]{--font-head:'Murecho',sans-serif;--font-body:'Murecho',sans-serif}
+
+.inner{max-width:1120px;margin:0 auto;padding:0 2rem}
+.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+
+/* ===== NAV ===== */
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:70px;display:flex;align-items:center}
+.nav-inner{width:100%;max-width:1120px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:8px;font-family:var(--en);font-weight:800;font-size:20px;color:var(--text)}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;flex-shrink:0}
+.nav-links{display:flex;align-items:center;gap:1.8rem}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--navy);color:#fff!important;padding:10px 22px;border-radius:var(--radius-full);font-size:14px!important;font-weight:700!important}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}
+.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+
+/* ===== HERO ===== */
+.hero{padding:140px 2rem 70px;text-align:center;position:relative;overflow:hidden;background:
+  radial-gradient(ellipse 700px 400px at 50% -10%,color-mix(in srgb,var(--accent2) 14%,transparent),transparent 60%),var(--bg)}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-full);padding:7px 18px;margin-bottom:26px;font-size:13px;font-weight:500;color:var(--muted)}
+.pill-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.8s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
+.hero h1{font-family:var(--font-head);font-size:clamp(32px,5vw,56px);font-weight:900;color:var(--text);line-height:1.3;letter-spacing:-.01em;margin-bottom:22px}
+.hero h1 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.hero p{font-size:17px;color:var(--muted);line-height:1.95;max-width:600px;margin:0 auto 38px}
+.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;border:none;transition:all .25s;letter-spacing:.01em}
+.btn-grad{background:var(--grad);color:#fff;padding:15px 32px;border-radius:var(--radius-full)}
+.btn-grad:hover{transform:translateY(-2px);filter:brightness(1.05)}
+.btn-ghost{background:var(--surface);color:var(--text);padding:14px 30px;border-radius:var(--radius-full);border:1.5px solid var(--border)}
+.btn-ghost:hover{border-color:var(--accent)}
+
+/* ===== CUSTOMIZER BAR ===== */
+.customizer{position:sticky;top:70px;z-index:250;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0}
+.cust-inner{max-width:1120px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
+.cust-group{display:flex;align-items:center;gap:12px}
+.cust-label{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+.swatches{display:flex;gap:8px}
+.swatch{width:30px;height:30px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .2s,border-color .2s;position:relative}
+.swatch:hover{transform:scale(1.12)}
+.swatch.active{border-color:var(--text)}
+.swatch.active::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid var(--bg)}
+.sw-aqua{background:linear-gradient(120deg,#06B6D4,#2563EB)}
+.sw-midnight{background:linear-gradient(120deg,#22D3EE,#1E293B)}
+.sw-sakura{background:linear-gradient(120deg,#F59EB5,#E5557F)}
+.sw-forest{background:linear-gradient(120deg,#34D399,#0F8A5F)}
+.sw-sunset{background:linear-gradient(120deg,#F59E0B,#EA580C)}
+.sw-mono{background:linear-gradient(120deg,#525252,#1A1A1A)}
+.sw-royal{background:linear-gradient(120deg,#A78BFA,#7C3AED)}
+.font-btns{display:flex;gap:6px;flex-wrap:wrap}
+.font-btn{padding:7px 16px;border-radius:var(--radius-full);border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;transition:all .2s}
+.font-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.font-btn:hover:not(.active){border-color:var(--accent);color:var(--text)}
+.cust-hint{margin-left:auto;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+
+/* ===== LIVE PREVIEW CARD ===== */
+.preview-sec{padding:70px 2rem;background:var(--bg2)}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
+.sec-tag{display:inline-block;background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent);font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:var(--radius-full);margin-bottom:18px}
+.sec-head h2{font-family:var(--font-head);font-size:clamp(24px,3.4vw,38px);font-weight:900;color:var(--text);line-height:1.4;margin-bottom:14px}
+.sec-head p{font-size:15px;color:var(--muted);line-height:1.9}
+
+.preview-frame{max-width:900px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 60px color-mix(in srgb,var(--navy) 10%,transparent)}
+.pf-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;gap:10px}
+.pf-dots{display:flex;gap:6px}
+.pf-dot{width:11px;height:11px;border-radius:50%}
+.pf-url{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 14px;font-family:var(--en);font-size:11px;color:var(--muted);text-align:center}
+
+.pf-hero{padding:48px 40px;text-align:center;background:
+  radial-gradient(ellipse 400px 200px at 50% 0%,color-mix(in srgb,var(--accent2) 12%,transparent),transparent 70%)}
+.pf-badge{display:inline-block;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:12px;font-weight:700;padding:5px 14px;border-radius:var(--radius-full);margin-bottom:18px}
+.pf-hero h3{font-family:var(--font-head);font-size:clamp(24px,3.5vw,36px);font-weight:900;color:var(--text);line-height:1.35;margin-bottom:14px}
+.pf-hero h3 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.pf-hero p{font-size:15px;color:var(--muted);line-height:1.9;max-width:480px;margin:0 auto 26px}
+.pf-hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.pf-btn-main{background:var(--grad);color:#fff;padding:13px 28px;border-radius:var(--radius-full);font-size:14px;font-weight:700;border:none}
+.pf-btn-sub{background:var(--surface);color:var(--text);padding:12px 26px;border-radius:var(--radius-full);font-size:14px;font-weight:600;border:1.5px solid var(--border)}
+
+.pf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 40px 40px}
+.pf-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:22px}
+.pf-card-ic{width:42px;height:42px;border-radius:11px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:#fff}
+.pf-card h4{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
+.pf-card p{font-size:13px;color:var(--muted);line-height:1.7}
+
+/* ===== BEFORE/AFTER SLIDER ===== */
+.compare-sec{padding:80px 2rem;background:var(--bg)}
+.compare-wrap{max-width:860px;margin:0 auto;position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px color-mix(in srgb,var(--navy) 10%,transparent);user-select:none}
+.compare-pane{height:480px;position:relative}
+.compare-before,.compare-after{position:absolute;inset:0;height:100%;overflow:hidden}
+.compare-before{z-index:1}
+.compare-after{z-index:2;width:50%;border-right:3px solid #fff}
+.cmp-content{width:860px;height:480px;padding:36px;position:absolute;top:0;left:0}
+.cmp-tag{position:absolute;top:18px;z-index:5;font-size:12px;font-weight:700;padding:6px 16px;border-radius:var(--radius-full);color:#fff}
+.cmp-tag-before{left:18px;background:#94A3B8}
+.cmp-tag-after{right:18px;background:var(--accent)}
+/* BEFORE design (old/plain) */
+.old-site{background:#EDEDED;height:100%;font-family:'MS PGothic','Noto Sans JP',sans-serif}
+.old-header{background:#7A8B99;padding:14px 20px;color:#fff;font-size:18px;font-weight:700;border-bottom:3px solid #5A6B79}
+.old-nav{background:#dfe3e6;padding:8px 20px;display:flex;gap:16px;font-size:12px;color:#456}
+.old-body{padding:24px 20px}
+.old-title{font-size:20px;color:#333;margin-bottom:14px;border-left:5px solid #7A8B99;padding-left:10px}
+.old-text{font-size:12px;color:#555;line-height:1.8;margin-bottom:8px}
+.old-img{width:100%;height:90px;background:repeating-linear-gradient(45deg,#ccc,#ccc 10px,#d8d8d8 10px,#d8d8d8 20px);margin:12px 0;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px}
+.old-btn{display:inline-block;background:#7A8B99;color:#fff;padding:8px 18px;font-size:12px;border:2px outset #95a5b3}
+/* AFTER design (new/modern) */
+.new-site{background:var(--surface);height:100%}
+.new-hero{padding:36px;text-align:center;background:radial-gradient(ellipse 400px 200px at 50% 0%,color-mix(in srgb,var(--accent2) 14%,transparent),transparent 70%)}
+.new-badge{display:inline-block;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:11px;font-weight:700;padding:4px 13px;border-radius:var(--radius-full);margin-bottom:14px}
+.new-title{font-family:var(--font-head);font-size:26px;font-weight:900;color:var(--text);line-height:1.3;margin-bottom:12px}
+.new-title .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.new-text{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:20px}
+.new-btn{display:inline-block;background:var(--grad);color:#fff;padding:11px 26px;border-radius:var(--radius-full);font-size:13px;font-weight:700}
+.new-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 36px}
+.new-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:left}
+.new-card-ic{width:32px;height:32px;border-radius:8px;background:var(--grad);margin-bottom:10px}
+.new-card-line{height:7px;border-radius:4px;background:var(--border);margin-bottom:6px}
+.new-card-line.short{width:60%}
+.compare-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;z-index:4;cursor:ew-resize;transform:translateX(-50%)}
+.compare-knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;cursor:ew-resize;z-index:5}
+.compare-knob svg{color:var(--navy)}
+.compare-caption{text-align:center;margin-top:24px;font-size:13px;color:var(--muted)}
+
+/* ===== CATALOG GRID ===== */
+.catalog-sec{padding:80px 2rem;background:var(--bg2)}
+.cat-filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
+.cat-filter{padding:9px 20px;border-radius:var(--radius-full);border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;transition:all .2s}
+.cat-filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.cat-filter:hover:not(.active){border-color:var(--accent);color:var(--text)}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1120px;margin:0 auto}
+.cat-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:pointer}
+.cat-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px color-mix(in srgb,var(--navy) 12%,transparent)}
+.cat-thumb{height:170px;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:20px}
+.cat-thumb-nav{display:flex;gap:6px;margin-bottom:auto}
+.ctn-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6)}
+.cat-thumb-title{font-size:18px;font-weight:800;color:#fff;margin-bottom:6px}
+.cat-thumb-bar{width:54px;height:6px;border-radius:3px;background:rgba(255,255,255,.7);margin-bottom:10px}
+.cat-thumb-pill{display:inline-block;width:fit-content;background:rgba(255,255,255,.25);color:#fff;font-size:10px;font-weight:700;padding:4px 12px;border-radius:var(--radius-full)}
+.cat-body{padding:22px 24px}
+.cat-badge{display:inline-block;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);padding:4px 11px;border-radius:6px;margin-bottom:12px}
+.cat-card h3{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
+.cat-card p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:16px}
+.cat-tags{display:flex;gap:6px;flex-wrap:wrap}
+.cat-tag{font-size:11px;font-weight:600;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:var(--radius-full)}
+
+/* ===== CTA ===== */
+.cta-sec{padding:90px 2rem}
+.cta-band{max-width:1120px;margin:0 auto;background:var(--navy);border-radius:var(--radius);padding:64px 48px;text-align:center;position:relative;overflow:hidden}
+.cta-band::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:320px;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent2) 22%,transparent),transparent 65%)}
+.cta-band h2{font-family:var(--font-head);font-size:clamp(24px,3.4vw,38px);font-weight:900;color:#fff;line-height:1.4;margin-bottom:16px;position:relative;z-index:1}
+.cta-band h2 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cta-band p{font-size:15px;color:rgba(255,255,255,.65);margin-bottom:34px;line-height:1.9;position:relative;z-index:1}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.btn-white{background:#fff;color:var(--navy);padding:15px 34px;border-radius:var(--radius-full);font-weight:700;font-size:15px;border:none}
+.btn-line2{background:transparent;color:#fff;padding:14px 32px;border-radius:var(--radius-full);border:1.5px solid rgba(255,255,255,.25);font-weight:600;font-size:15px}
+
+/* ===== FOOTER ===== */
+footer{background:var(--navy);padding:40px 2rem}
+.foot-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
+.foot-logo{display:flex;align-items:center;gap:8px;font-family:var(--en);font-weight:800;font-size:18px;color:#fff}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s}
+.foot-links a:hover{color:#fff}
+.foot-copy{font-size:12px;color:rgba(255,255,255,.3);width:100%;text-align:center;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);margin-top:8px}
+
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+.rd1{transition-delay:.08s}.rd2{transition-delay:.16s}.rd3{transition-delay:.24s}
+
+@media(max-width:960px){
+  .inner{padding:0 1.2rem}
+  .hamburger{display:flex}
+  .nav-links{display:none;flex-direction:column;position:fixed;top:70px;left:0;right:0;bottom:0;background:var(--bg);padding:2rem 1.6rem;gap:1.6rem;border-top:1px solid var(--border);align-items:flex-start}
+  .nav-links.open{display:flex}
+  .nav-links a{font-size:19px;color:var(--text)}
+  .hero{padding:104px 1.2rem 50px}
+  .customizer{top:70px}
+  .cust-inner{gap:18px;padding:0 1.2rem}
+  .cust-hint{display:none}
+  .preview-sec,.compare-sec,.catalog-sec{padding:56px 1.2rem}
+  .pf-cards{grid-template-columns:1fr}
+  .compare-pane{height:420px}
+  .cmp-content{padding:24px}
+  .cat-grid{grid-template-columns:1fr}
+  .cta-sec{padding:60px 1.2rem}
+  .cta-band{padding:44px 24px}
+  .foot-inner{flex-direction:column;text-align:center}
+}
+@media(max-width:560px){
+  .pf-cards{padding:0 24px 30px}
+  .new-cards{grid-template-columns:1fr;gap:8px}
+}
+</style>
+</head>
+<body data-theme="aqua" data-font="gothic">
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <a href="index.html" class="logo"><span class="logo-mark">SW</span>スマートWEB</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#preview">プレビュー</a></li>
+      <li><a href="#compare">比較</a></li>
+      <li><a href="#catalog">カタログ</a></li>
+      <li><a href="index.html">トップへ戻る</a></li>
+      <li><a href="index.html#contact" class="nav-cta">お問い合わせ</a></li>
+    </ul>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="hero-pill"><span class="pill-dot"></span>Design Catalog — テーマを選んで、その場でプレビュー</div>
+  <h1>あなたのビジネスに、<br><span class="gr">ぴったりのデザイン</span>を。</h1>
+  <p>テーマ・フォント・カラーをその場で切り替えて、完成イメージを体感。下のバーから選ぶと、ページ全体がリアルタイムで変わります。</p>
+  <div class="hero-btns">
+    <a href="#preview" class="btn btn-grad">デザインを試す ↓</a>
+    <a href="#catalog" class="btn btn-ghost">カタログを見る</a>
+  </div>
+</header>
+
+<!-- CUSTOMIZER -->
+<div class="customizer" id="customizer">
+  <div class="cust-inner">
+    <div class="cust-group">
+      <span class="cust-label">Theme</span>
+      <div class="swatches" id="swatches">
+        <div class="swatch sw-aqua active" data-theme="aqua" title="アクア"></div>
+        <div class="swatch sw-midnight" data-theme="midnight" title="ミッドナイト"></div>
+        <div class="swatch sw-sakura" data-theme="sakura" title="サクラ"></div>
+        <div class="swatch sw-forest" data-theme="forest" title="フォレスト"></div>
+        <div class="swatch sw-sunset" data-theme="sunset" title="サンセット"></div>
+        <div class="swatch sw-royal" data-theme="royal" title="ロイヤル"></div>
+        <div class="swatch sw-mono" data-theme="mono" title="モノクロ"></div>
+      </div>
+    </div>
+    <div class="cust-group">
+      <span class="cust-label">Font</span>
+      <div class="font-btns" id="font-btns">
+        <button class="font-btn active" data-font="gothic">ゴシック</button>
+        <button class="font-btn" data-font="mincho">明朝</button>
+        <button class="font-btn" data-font="maru">丸ゴシック</button>
+        <button class="font-btn" data-font="modern">モダン</button>
+      </div>
+    </div>
+    <div class="cust-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>選ぶと下のページがすぐ変わります</div>
+  </div>
+</div>
+
+<!-- LIVE PREVIEW -->
+<section class="preview-sec" id="preview">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Live Preview</span>
+    <h2>選んだデザインを、<br>リアルタイムでプレビュー</h2>
+    <p>上のバーでテーマとフォントを切り替えると、このサンプルページの見た目が即座に変化します。納品前に完成イメージを掴めます。</p>
+  </div>
+  <div class="preview-frame reveal rd1">
+    <div class="pf-bar">
+      <div class="pf-dots"><span class="pf-dot" style="background:#FF5F57"></span><span class="pf-dot" style="background:#FEBC2E"></span><span class="pf-dot" style="background:#28C840"></span></div>
+      <div class="pf-url">https://your-business.com</div>
+    </div>
+    <div class="pf-hero">
+      <span class="pf-badge">YOUR BUSINESS</span>
+      <h3>選ばれる理由がある、<br><span class="gr">わたしたちのサービス。</span></h3>
+      <p>お客様一人ひとりに寄り添い、確かな品質とまごころでお応えします。まずはお気軽にご相談ください。</p>
+      <div class="pf-hero-btns">
+        <span class="pf-btn-main">お問い合わせ →</span>
+        <span class="pf-btn-sub">サービスを見る</span>
+      </div>
+    </div>
+    <div class="pf-cards">
+      <div class="pf-card">
+        <div class="pf-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
+        <h4>スピード対応</h4>
+        <p>お問い合わせには迅速に対応。お待たせしません。</p>
+      </div>
+      <div class="pf-card">
+        <div class="pf-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
+        <h4>確かな品質</h4>
+        <p>経験豊富なスタッフが高品質をお約束します。</p>
+      </div>
+      <div class="pf-card">
+        <div class="pf-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <h4>安心サポート</h4>
+        <p>アフターフォローも充実。末永くお付き合いします。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BEFORE / AFTER COMPARE -->
+<section class="compare-sec" id="compare">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Before / After</span>
+    <h2>古いサイトが、こう変わる。</h2>
+    <p>中央のつまみを左右にドラッグすると、リニューアル前後を比較できます。<br>右側のデザインは、上のバーで選んだテーマが反映されます。</p>
+  </div>
+  <div class="compare-wrap reveal rd1" id="compareWrap">
+    <span class="cmp-tag cmp-tag-before">BEFORE</span>
+    <span class="cmp-tag cmp-tag-after">AFTER</span>
+    <div class="compare-pane">
+      <!-- BEFORE (old site) -->
+      <div class="compare-before">
+        <div class="cmp-content" style="padding:0">
+          <div class="old-site">
+            <div class="old-header">◆ 株式会社サンプル商店</div>
+            <div class="old-nav"><span>ホーム</span><span>会社案内</span><span>事業内容</span><span>お問い合わせ</span></div>
+            <div class="old-body">
+              <div class="old-title">ようこそ当社のホームページへ</div>
+              <p class="old-text">当社は創業以来、地域に密着したサービスを提供してまいりました。お客様のご要望にお応えいたします。</p>
+              <div class="old-img">画像はこちら</div>
+              <p class="old-text">詳しくは下記までお問い合わせください。TEL：000-0000-0000</p>
+              <div class="old-btn">お問い合わせはこちら</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- AFTER (new site) -->
+      <div class="compare-after" id="compareAfter">
+        <div class="cmp-content" style="padding:0">
+          <div class="new-site">
+            <div class="new-hero">
+              <span class="new-badge">SAMPLE SHOTEN</span>
+              <div class="new-title">地域に愛されて、<br><span class="gr">創業60年。</span></div>
+              <p class="new-text">確かな品質とまごころのサービスで、<br>お客様の暮らしに寄り添います。</p>
+              <span class="new-btn">お問い合わせ →</span>
+            </div>
+            <div class="new-cards">
+              <div class="new-card"><div class="new-card-ic"></div><div class="new-card-line"></div><div class="new-card-line short"></div></div>
+              <div class="new-card"><div class="new-card-ic"></div><div class="new-card-line"></div><div class="new-card-line short"></div></div>
+              <div class="new-card"><div class="new-card-ic"></div><div class="new-card-line"></div><div class="new-card-line short"></div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="compare-handle" id="compareHandle">
+        <div class="compare-knob">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 3 12 9 6" transform="translate(12 0)"/></svg>
+        </div>
+      </div>
+    </div>
+  </div>
+  <p class="compare-caption">← つまみをドラッグして比較 →</p>
+</section>
+
+<!-- CATALOG -->
+<section class="catalog-sec" id="catalog">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Design Catalog</span>
+    <h2>業種別 デザインカタログ</h2>
+    <p>業種・目的に合わせたデザインテンプレートをご用意。<br>気になるものを選んで、そのイメージで制作を進められます。</p>
+  </div>
+  <div class="cat-filters reveal" id="catFilters">
+    <button class="cat-filter active" data-cat="all">すべて</button>
+    <button class="cat-filter" data-cat="store">店舗・サロン</button>
+    <button class="cat-filter" data-cat="pro">士業・専門職</button>
+    <button class="cat-filter" data-cat="food">飲食店</button>
+    <button class="cat-filter" data-cat="corp">企業・法人</button>
+  </div>
+  <div class="cat-grid" id="catGrid">
+    <div class="cat-card reveal" data-cat="store">
+      <div class="cat-thumb" style="background:linear-gradient(135deg,#E5557F,#F59EB5)">
+        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
+        <div class="cat-thumb-title">Beauty Salon</div>
+        <div class="cat-thumb-bar"></div>
+        <span class="cat-thumb-pill">SALON</span>
+      </div>
+      <div class="cat-body">
+        <span class="cat-badge">店舗・サロン</span>
+        <h3>サロン・美容系</h3>
+        <p>やわらかな色使いと余白で、上質感と清潔感を演出。予約導線を重視した設計です。</p>
+        <div class="cat-tags"><span class="cat-tag">予約フォーム</span><span class="cat-tag">Instagram連携</span></div>
+      </div>
+    </div>
+    <div class="cat-card reveal rd1" data-cat="pro">
+      <div class="cat-thumb" style="background:linear-gradient(135deg,#0F1729,#1E3A8A)">
+        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
+        <div class="cat-thumb-title">Law Office</div>
+        <div class="cat-thumb-bar"></div>
+        <span class="cat-thumb-pill">LEGAL</span>
+      </div>
+      <div class="cat-body">
+        <span class="cat-badge">士業・専門職</span>
+        <h3>士業・コンサル系</h3>
+        <p>信頼感と誠実さを伝える端正なデザイン。問い合わせのハードルを下げる構成です。</p>
+        <div class="cat-tags"><span class="cat-tag">相談予約</span><span class="cat-tag">実績紹介</span></div>
+      </div>
+    </div>
+    <div class="cat-card reveal rd2" data-cat="food">
+      <div class="cat-thumb" style="background:linear-gradient(135deg,#EA580C,#F59E0B)">
+        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
+        <div class="cat-thumb-title">Restaurant</div>
+        <div class="cat-thumb-bar"></div>
+        <span class="cat-thumb-pill">FOOD</span>
+      </div>
+      <div class="cat-body">
+        <span class="cat-badge">飲食店</span>
+        <h3>飲食・カフェ系</h3>
+        <p>料理の魅力を引き立てる写真主役のレイアウト。メニュー・地図・予約を分かりやすく。</p>
+        <div class="cat-tags"><span class="cat-tag">メニュー表</span><span class="cat-tag">Google Maps</span></div>
+      </div>
+    </div>
+    <div class="cat-card reveal" data-cat="corp">
+      <div class="cat-thumb" style="background:linear-gradient(135deg,#2563EB,#06B6D4)">
+        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
+        <div class="cat-thumb-title">Corporate</div>
+        <div class="cat-thumb-bar"></div>
+        <span class="cat-thumb-pill">CORP</span>
+      </div>
+      <div class="cat-body">
+        <span class="cat-badge">企業・法人</span>
+        <h3>企業・コーポレート系</h3>
+        <p>事業内容と強みを整理して伝える王道構成。採用・IR・お知らせにも対応します。</p>
+        <div class="cat-tags"><span class="cat-tag">採用ページ</span><span class="cat-tag">お知らせ</span></div>
+      </div>
+    </div>
+    <div class="cat-card reveal rd1" data-cat="store">
+      <div class="cat-thumb" style="background:linear-gradient(135deg,#0F8A5F,#34D399)">
+        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
+        <div class="cat-thumb-title">Clinic</div>
+        <div class="cat-thumb-bar"></div>
+        <span class="cat-thumb-pill">CLINIC</span>
+      </div>
+      <div class="cat-body">
+        <span class="cat-badge">店舗・サロン</span>
+        <h3>整体・クリニック系</h3>
+        <p>安心感を与える清潔なデザイン。症状・施術・アクセスを分かりやすく整理します。</p>
+        <div class="cat-tags"><span class="cat-tag">WEB予約</span><span class="cat-tag">症状別ページ</span></div>
+      </div>
+    </div>
+    <div class="cat-card reveal rd2" data-cat="corp">
+      <div class="cat-thumb" style="background:linear-gradient(135deg,#7C3AED,#A78BFA)">
+        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
+        <div class="cat-thumb-title">Creative</div>
+        <div class="cat-thumb-bar"></div>
+        <span class="cat-thumb-pill">CREATIVE</span>
+      </div>
+      <div class="cat-body">
+        <span class="cat-badge">企業・法人</span>
+        <h3>クリエイティブ系</h3>
+        <p>個性と世界観を前面に出した大胆なデザイン。作品・ポートフォリオを魅せます。</p>
+        <div class="cat-tags"><span class="cat-tag">ギャラリー</span><span class="cat-tag">アニメーション</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-sec">
+  <div class="cta-band reveal">
+    <h2>気に入ったデザインで、<br><span class="gr">あなたのサイトを作りませんか？</span></h2>
+    <p>選んだテーマ・フォント・カタログをそのまま制作に反映できます。<br>まずはお気軽にご相談ください。</p>
+    <div class="cta-btns">
+      <a href="index.html#contact" class="btn-white">このデザインで相談する →</a>
+      <a href="diagnosis.html" class="btn-line2">無料ホームページ診断</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="foot-inner">
+    <div class="foot-logo"><span class="logo-mark">SW</span>スマートWEB</div>
+    <div class="foot-links">
+      <a href="index.html">トップ</a>
+      <a href="#preview">プレビュー</a>
+      <a href="#catalog">カタログ</a>
+      <a href="diagnosis.html">無料診断</a>
+      <a href="index.html#contact">お問い合わせ</a>
+    </div>
+  </div>
+  <div class="foot-copy">© 2025 スマートWEB（運営：NEXIA）. All Rights Reserved.</div>
+</footer>
+
+<script>
+const body=document.body;
+// theme swatches
+document.querySelectorAll('.swatch').forEach(sw=>{
+  sw.addEventListener('click',()=>{
+    document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));
+    sw.classList.add('active');
+    body.setAttribute('data-theme',sw.dataset.theme);
+  });
+});
+// font buttons
+document.querySelectorAll('.font-btn').forEach(fb=>{
+  fb.addEventListener('click',()=>{
+    document.querySelectorAll('.font-btn').forEach(f=>f.classList.remove('active'));
+    fb.classList.add('active');
+    body.setAttribute('data-font',fb.dataset.font);
+  });
+});
+// catalog filter
+document.querySelectorAll('.cat-filter').forEach(cf=>{
+  cf.addEventListener('click',()=>{
+    document.querySelectorAll('.cat-filter').forEach(c=>c.classList.remove('active'));
+    cf.classList.add('active');
+    const cat=cf.dataset.cat;
+    document.querySelectorAll('.cat-card').forEach(card=>{
+      card.style.display=(cat==='all'||card.dataset.cat===cat)?'':'none';
+    });
+  });
+});
+// before/after slider
+(function(){
+  const wrap=document.getElementById('compareWrap');
+  const after=document.getElementById('compareAfter');
+  const handle=document.getElementById('compareHandle');
+  let dragging=false;
+  function setPos(x){
+    const rect=wrap.getBoundingClientRect();
+    let pct=((x-rect.left)/rect.width)*100;
+    pct=Math.max(6,Math.min(94,pct));
+    after.style.width=pct+'%';
+    handle.style.left=pct+'%';
+  }
+  handle.addEventListener('mousedown',()=>dragging=true);
+  window.addEventListener('mouseup',()=>dragging=false);
+  window.addEventListener('mousemove',e=>{if(dragging)setPos(e.clientX)});
+  handle.addEventListener('touchstart',()=>dragging=true,{passive:true});
+  window.addEventListener('touchend',()=>dragging=false);
+  window.addEventListener('touchmove',e=>{if(dragging)setPos(e.touches[0].clientX)},{passive:true});
+  wrap.addEventListener('click',e=>{if(e.target.closest('.compare-handle'))return;setPos(e.clientX)});
+})();
+// hamburger
+const burger=document.getElementById('hamburger');
+const links=document.getElementById('nav-links');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+// reveal
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
