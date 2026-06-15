@@ -10,7 +10,7 @@
 <meta property="og:type" content="website"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700;800&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Playfair+Display:ital,wght@0,700;1,700&display=swap" rel="stylesheet"/>
 <style>
 /* ============ RESET ============ */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -186,6 +186,44 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 .pc-check{width:19px;height:19px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .pc-btn{width:100%;text-align:center;justify-content:center}
 
+/* ============ FEATURED SAMPLES ============ */
+.feat-samples{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-bottom:40px}
+.fs-card{display:block;background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;transition:transform .3s,box-shadow .3s}
+.fs-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.fs-prev{height:230px;padding:20px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.fs-prev>div:not(.fsp-nav):not(.fsp-body){width:100%}
+.fsp-food,.fsp-edu{width:100%;height:100%;border-radius:12px;overflow:hidden;box-shadow:0 12px 32px rgba(15,23,41,.18);display:flex;flex-direction:column;transition:transform .4s}
+.fs-card:hover .fsp-food,.fs-card:hover .fsp-edu{transform:scale(1.03)}
+.fsp-food{background:#1A1310}
+.fsp-edu{background:#fff}
+.fsp-nav{display:flex;align-items:center;justify-content:space-between;padding:11px 16px;flex-shrink:0}
+.fsp-edu .fsp-nav{background:#F4F8FF;border-bottom:1px solid #E8EDF6}
+.fsp-food .fsp-nav{border-bottom:1px solid rgba(255,255,255,.08)}
+.fsp-logo{font-size:13px;font-weight:800;color:#fff}
+.fsp-edu .fsp-logo{font-family:'Baloo 2',sans-serif}
+.fsp-food .fsp-logo{font-family:'Playfair Display',serif}
+.fsp-dots{display:flex;gap:5px}
+.fsp-dots i{width:6px;height:6px;border-radius:50%;display:block}
+.fsp-body{flex:1;padding:18px 22px;display:flex;flex-direction:column;justify-content:center;gap:10px}
+.fsp-food .fsp-body{background:radial-gradient(ellipse 80% 70% at 50% 50%,rgba(200,99,63,.32),transparent 70%)}
+.fsp-edu .fsp-body{background:linear-gradient(160deg,#F4F8FF,#fff)}
+.fsp-eyebrow{font-size:8px;font-weight:700;letter-spacing:.2em}
+.fsp-pill{font-size:9px;font-weight:700;background:#fff;border:1px solid #E8EDF6;border-radius:100px;padding:4px 12px;width:fit-content;color:#2D6CDF}
+.fsp-title-pf{font-family:'Playfair Display',serif;font-size:30px;font-weight:700;color:#F5EDE3;line-height:1}
+.fsp-title-pf em{font-style:italic;color:#E08B5F;display:block}
+.fsp-title-round{font-family:'Baloo 2',sans-serif;font-size:20px;font-weight:800;color:#1B2A4A;line-height:1.4}
+.fsp-row{display:flex;gap:8px;margin-top:4px}
+.fsp-btn{font-size:9px;font-weight:700;color:#fff;padding:6px 14px;border-radius:100px}
+.fsp-btn-o{font-size:9px;font-weight:700;color:#F5EDE3;border:1px solid rgba(255,255,255,.3);padding:6px 14px;border-radius:100px}
+.fs-info{padding:26px 28px}
+.fs-cat{display:inline-block;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--blue);background:var(--grad-soft);padding:4px 12px;border-radius:6px;margin-bottom:12px}
+.fs-name{font-size:20px;font-weight:700;color:var(--navy);margin-bottom:8px}
+.fs-desc{font-size:14px;color:var(--muted);line-height:1.85;margin-bottom:16px}
+.fs-view{display:inline-flex;align-items:center;gap:7px;font-size:14px;font-weight:700;color:var(--blue);transition:gap .25s}
+.fs-card:hover .fs-view{gap:12px}
+.fs-more{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;background:var(--bg);border:1px dashed var(--border);border-radius:var(--r-lg);padding:28px 36px}
+.fs-more span{font-size:15px;color:var(--ink);font-weight:500}
+
 /* ============ CATALOG PROMO ============ */
 .catalog-promo{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--shadow-md)}
 .cp-left{padding:54px 48px}
@@ -329,6 +367,9 @@ footer{background:var(--navy);margin-top:110px}
   .feat-grid{grid-template-columns:1fr}
   .ai-band{grid-template-columns:1fr;padding:40px 26px;gap:2.4rem}
   .catalog-promo{grid-template-columns:1fr}
+  .feat-samples{grid-template-columns:1fr;gap:20px}
+  .fs-more{flex-direction:column;text-align:center;padding:24px}
+  .fs-more .btn{width:100%}
   .cp-left{padding:36px 24px}
   .cp-right{padding:32px 24px}
   .cp-feats{grid-template-columns:1fr}
@@ -360,7 +401,7 @@ footer{background:var(--navy);margin-top:110px}
     <ul class="nav-links" id="nav-links">
       <li><a href="#features">特徴</a></li>
       <li><a href="#pricing">料金</a></li>
-      <li><a href="#process">制作の流れ</a></li>
+      <li><a href="#samples">制作サンプル</a></li>
       <li><a href="#faq">FAQ</a></li>
       <li><a href="catalog.html" class="nav-catalog"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-2px;margin-right:4px"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="13.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>デザインを選ぶ</a></li>
       <li><a href="diagnosis.html" class="nav-diag">無料診断</a></li>
@@ -561,6 +602,55 @@ footer{background:var(--navy);margin-top:110px}
         </ul>
         <a href="#contact" class="btn btn-ghost pc-btn">このプランで相談する</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED SAMPLES -->
+<section class="sec" id="samples">
+  <div class="inner">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Sample Sites</span>
+      <h2 class="sec-h2">制作<span class="gr">サンプル</span>を見てみる</h2>
+      <p class="sec-p">実際にスマートWEBで制作できるデザインのサンプルです。<br>クリックすると、実物のデモサイトをご覧いただけます。</p>
+    </div>
+    <div class="feat-samples">
+      <a class="fs-card reveal" href="sample-food.html">
+        <div class="fs-prev fsp-food">
+          <div class="fsp-nav"><span class="fsp-logo" style="font-style:italic">Trattoria Sole</span><span class="fsp-dots"><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i></span></div>
+          <div class="fsp-body" style="text-align:center;align-items:center">
+            <div class="fsp-eyebrow" style="color:#D4A84B">ITALIAN · SINCE 2010</div>
+            <div class="fsp-title-pf">Buon<em>Appetito</em></div>
+            <div class="fsp-row" style="justify-content:center"><span class="fsp-btn" style="background:#C8633F">ご予約</span><span class="fsp-btn-o">メニュー</span></div>
+          </div>
+        </div>
+        <div class="fs-info">
+          <div class="fs-cat">飲食・カフェ系</div>
+          <div class="fs-name">Trattoria Sole</div>
+          <p class="fs-desc">写真を主役にした没入感のあるデザイン。メニュー・こだわり・予約までを美しく見せます。</p>
+          <span class="fs-view">デモサイトを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+      <a class="fs-card reveal rd1" href="sample-corp.html">
+        <div class="fs-prev fsp-edu">
+          <div class="fsp-nav"><span class="fsp-logo" style="color:#2D6CDF">🅑 BRIGHT</span><span class="fsp-btn" style="background:#FF8A3D;font-size:8px;padding:4px 10px">体験</span></div>
+          <div class="fsp-body">
+            <div class="fsp-pill">🎉 無料体験レッスン受付中</div>
+            <div class="fsp-title-round">英語が<span style="color:#2D6CDF">好き</span>になる。<br><span style="color:#FF8A3D">話せる</span>ようになる。</div>
+            <div class="fsp-row"><span class="fsp-btn" style="background:#FF8A3D">体験申込 🎈</span><span class="fsp-btn-o" style="border-color:#2D6CDF;color:#2D6CDF">コース</span></div>
+          </div>
+        </div>
+        <div class="fs-info">
+          <div class="fs-cat">教育・スクール系</div>
+          <div class="fs-name">BRIGHT English School</div>
+          <p class="fs-desc">明るく親しみやすいデザイン。コース紹介・無料体験・生徒の声で入会を後押しします。</p>
+          <span class="fs-view">デモサイトを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </div>
+      </a>
+    </div>
+    <div class="fs-more reveal">
+      <span>サロン・士業・整体・クリエイティブ系など、他の業種サンプルはカタログから</span>
+      <a href="catalog.html" class="btn btn-grad">デザインカタログで全部見る →</a>
     </div>
   </div>
 </section>

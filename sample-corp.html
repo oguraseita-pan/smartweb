@@ -3,187 +3,188 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
-<title>株式会社ミライズ | Corporate（サンプル）</title>
+<title>BRIGHT English School | 英会話教室（サンプル）</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:#0E1B2E;line-height:1.85;font-weight:400;overflow-x:hidden;font-size:16px}
+body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:#1B2A4A;line-height:1.85;font-weight:400;overflow-x:hidden;font-size:16px}
 a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
-:root{--blue:#2563EB;--blue-d:#1D4ED8;--cyan:#06B6D4;--ink:#0E1B2E;--muted:#5C6B82;--line:#E4E9F0;--bg2:#F5F8FC;--navy:#0E1B2E;--grad:linear-gradient(120deg,#06B6D4,#2563EB);--en:'Inter',sans-serif}
-.samplebar{position:fixed;top:0;left:0;right:0;z-index:999;background:#2563EB;color:#fff;font-size:13px;font-weight:500;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
-.samplebar a{background:#fff;color:#2563EB;padding:6px 16px;border-radius:6px;font-size:12px;white-space:nowrap;font-weight:700}
-.wrap{max-width:1200px;margin:0 auto;padding:0 40px}
+:root{--blue:#2D6CDF;--blue-d:#1E4FB0;--orange:#FF8A3D;--yellow:#FFC93C;--teal:#26C6B8;--ink:#1B2A4A;--muted:#647196;--line:#E8EDF6;--bg2:#F4F8FF;--cream:#FFF9F0;--grad:linear-gradient(120deg,#2D6CDF,#26C6B8);--en:'Baloo 2',sans-serif}
+.round{font-family:'Baloo 2','Noto Sans JP',sans-serif}
+.samplebar{position:fixed;top:0;left:0;right:0;z-index:999;background:#2D6CDF;color:#fff;font-size:13px;font-weight:500;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
+.samplebar a{background:#fff;color:#2D6CDF;padding:6px 16px;border-radius:100px;font-size:12px;white-space:nowrap;font-weight:700}
+.wrap{max-width:1160px;margin:0 auto;padding:0 40px}
 nav{position:fixed;top:37px;left:0;right:0;z-index:500;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1200px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:var(--en);font-size:22px;font-weight:800;color:var(--navy);display:flex;align-items:center;gap:9px;letter-spacing:-.01em}
-.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:15px;font-weight:800}
-.nav-links{display:flex;gap:30px;align-items:center}
+.nav-in{max-width:1160px;margin:0 auto;padding:16px 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Baloo 2',sans-serif;font-size:23px;font-weight:800;color:var(--blue);display:flex;align-items:center;gap:9px}
+.logo-mark{width:38px;height:38px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-size:20px;transform:rotate(-6deg)}
+.nav-links{display:flex;gap:28px;align-items:center}
 .nav-links a{font-size:14px;color:var(--muted);font-weight:500}
-.nav-cta{background:var(--navy);color:#fff!important;padding:11px 24px;border-radius:8px;font-size:13px!important;font-weight:700!important}
-.menu-btn{display:none;background:none;border:none;font-size:24px;color:var(--navy);cursor:pointer}
-.hero{padding:160px 40px 110px;position:relative;overflow:hidden;background:radial-gradient(ellipse 800px 500px at 80% -10%,rgba(6,182,212,.1),transparent 60%),radial-gradient(ellipse 600px 400px at 0% 110%,rgba(37,99,235,.07),transparent 60%),#fff}
-.hero-in{max-width:1200px;margin:0 auto;position:relative;z-index:1}
-.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:7px 8px 7px 18px;margin-bottom:28px;font-size:13px;color:var(--muted);font-weight:500;box-shadow:0 1px 3px rgba(14,27,46,.06)}
-.hero-pill .tag{background:var(--grad);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:100px}
-.hero-title{font-size:clamp(34px,5vw,64px);font-weight:900;line-height:1.3;color:var(--navy);letter-spacing:-.01em;margin-bottom:26px}
-.hero-title .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-desc{font-size:16px;color:var(--muted);line-height:2.05;margin-bottom:38px;max-width:460px}
+.nav-cta{background:var(--orange);color:#fff!important;padding:11px 26px;border-radius:100px;font-size:13px!important;font-weight:700!important;box-shadow:0 6px 16px rgba(255,138,61,.3)}
+.menu-btn{display:none;background:none;border:none;font-size:24px;color:var(--blue);cursor:pointer}
+.hero{padding:150px 40px 100px;position:relative;overflow:hidden;background:linear-gradient(160deg,#F4F8FF 0%,#fff 70%)}
+.hero::before{content:'';position:absolute;top:8%;right:-3%;width:340px;height:340px;border-radius:50%;background:var(--yellow);opacity:.18;filter:blur(10px)}
+.hero::after{content:'';position:absolute;bottom:10%;right:24%;width:120px;height:120px;border-radius:50%;background:var(--teal);opacity:.16}
+.hero-in{max-width:1160px;margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center;position:relative;z-index:1}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 20px;margin-bottom:26px;font-size:13px;color:var(--blue-d);font-weight:600;box-shadow:0 4px 12px rgba(45,108,223,.08)}
+.hero-title{font-family:'Baloo 2','Noto Sans JP',sans-serif;font-size:clamp(34px,5.2vw,60px);font-weight:800;line-height:1.3;color:var(--ink);margin-bottom:24px}
+.hero-title .bl{color:var(--blue)}.hero-title .or{color:var(--orange)}
+.hero-desc{font-size:16px;color:var(--muted);line-height:2.05;margin-bottom:36px;max-width:440px}
 .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
-.btn-grad{background:var(--grad);color:#fff;padding:16px 34px;border-radius:8px;font-size:15px;font-weight:700;box-shadow:0 8px 24px rgba(37,99,235,.25);transition:transform .2s}
-.btn-grad:hover{transform:translateY(-2px)}
-.btn-out{background:#fff;border:1.5px solid var(--line);color:var(--navy);padding:15px 30px;border-radius:8px;font-size:15px;font-weight:600;transition:border-color .3s}
-.btn-out:hover{border-color:var(--blue)}
-.hero-visual{position:relative;height:440px}
-.hv-grid{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:16px}
-.hv-box{border-radius:18px;padding:26px;display:flex;flex-direction:column;justify-content:space-between}
-.hv-box:nth-child(1){background:var(--grad);color:#fff}
-.hv-box:nth-child(2){background:var(--bg2);border:1px solid var(--line);margin-top:30px}
-.hv-box:nth-child(3){background:var(--navy);color:#fff;margin-top:-30px}
-.hv-box:nth-child(4){background:var(--bg2);border:1px solid var(--line)}
-.hv-num{font-family:var(--en);font-size:38px;font-weight:800;line-height:1}
-.hv-lbl{font-size:13px;opacity:.8}
-.hv-ic{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.15);display:flex;align-items:center;justify-content:center}
-.hv-box:nth-child(2) .hv-ic,.hv-box:nth-child(4) .hv-ic{background:#fff;color:var(--blue)}
-.logos-bar{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2)}
-.logos-in{max-width:1200px;margin:0 auto;padding:30px 40px;display:flex;align-items:center;gap:40px;flex-wrap:wrap;justify-content:center}
-.logos-label{font-size:13px;color:var(--muted)}
-.logo-item{font-family:var(--en);font-size:20px;font-weight:700;color:#A8B4C6}
+.btn-fill{background:var(--orange);color:#fff;padding:17px 38px;border-radius:100px;font-size:15px;font-weight:700;box-shadow:0 10px 24px rgba(255,138,61,.3);transition:transform .2s}
+.btn-fill:hover{transform:translateY(-2px)}
+.btn-out{background:#fff;border:2px solid var(--blue);color:var(--blue);padding:15px 32px;border-radius:100px;font-size:15px;font-weight:700;transition:background .3s,color .3s}
+.btn-out:hover{background:var(--blue);color:#fff}
+.hero-visual{position:relative;height:460px}
+.hv-main{position:absolute;inset:0;border-radius:40px 40px 40px 8px;background:var(--grad);overflow:hidden}
+.hv-main::after{content:'';position:absolute;inset:0;background:radial-gradient(circle at 70% 25%,rgba(255,255,255,.35),transparent 55%)}
+.hv-emoji{position:absolute;font-size:90px;top:32%;left:50%;transform:translate(-50%,-50%)}
+.hv-card{position:absolute;background:#fff;border-radius:18px;padding:16px 20px;box-shadow:0 16px 40px rgba(45,108,223,.18);display:flex;align-items:center;gap:12px}
+.hv-card1{top:26px;left:-26px}
+.hv-card2{bottom:30px;right:-22px}
+.hvc-ic{width:42px;height:42px;border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0;font-size:20px}
+.hvc-t{font-size:14px;font-weight:700;color:var(--ink)}
+.hvc-s{font-size:11px;color:var(--muted)}
+.feat-bar{background:var(--blue)}
+.feat-in{max-width:1160px;margin:0 auto;padding:30px 40px;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;color:#fff}
+.feat-it{text-align:center}
+.feat-num{font-family:var(--en);font-size:40px;font-weight:800;line-height:1}
+.feat-lbl{font-size:12px;opacity:.8;margin-top:4px}
 .sec{padding:110px 40px}
 .sec-bg{background:var(--bg2)}
+.sec-cream{background:var(--cream)}
 .sec-c{text-align:center;max-width:640px;margin:0 auto 60px}
-.sec-eyebrow{display:inline-block;font-family:var(--en);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--blue);font-weight:700;background:rgba(37,99,235,.08);padding:6px 16px;border-radius:100px;margin-bottom:18px}
-.sec-h{font-size:clamp(28px,4vw,42px);font-weight:900;color:var(--navy);line-height:1.4;margin-bottom:18px;letter-spacing:-.01em}
+.sec-eyebrow{display:inline-block;font-family:var(--en);font-size:13px;letter-spacing:.1em;color:var(--blue);font-weight:700;background:#fff;padding:6px 18px;border-radius:100px;margin-bottom:18px;box-shadow:0 4px 12px rgba(45,108,223,.08)}
+.sec-h{font-family:'Baloo 2','Noto Sans JP',sans-serif;font-size:clamp(28px,4vw,44px);font-weight:800;color:var(--ink);line-height:1.4;margin-bottom:18px}
 .sec-p{font-size:15px;color:var(--muted);line-height:2}
-.biz-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.biz-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:38px 32px;transition:transform .3s,box-shadow .3s;position:relative;overflow:hidden}
-.biz-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);opacity:0;transition:opacity .3s}
-.biz-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px rgba(14,27,46,.1)}
-.biz-card:hover::before{opacity:1}
-.biz-ic{width:56px;height:56px;border-radius:15px;background:rgba(37,99,235,.08);display:flex;align-items:center;justify-content:center;color:var(--blue);margin-bottom:22px}
-.biz-h{font-size:19px;font-weight:700;color:var(--navy);margin-bottom:10px}
-.biz-d{font-size:14px;color:var(--muted);line-height:1.9}
-.about{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;max-width:1200px;margin:0 auto}
-.about-visual{height:420px;border-radius:24px;background:linear-gradient(135deg,#0E1B2E,#2563EB);position:relative;overflow:hidden}
-.about-visual::after{content:'';position:absolute;top:-60px;right:-60px;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.4),transparent 65%)}
-.about-stat{position:absolute;bottom:30px;left:30px;color:#fff}
-.about-stat-num{font-family:var(--en);font-size:60px;font-weight:800;line-height:1}
-.about-stat-lbl{font-size:14px;opacity:.8}
-.news-list{max-width:840px;margin:0 auto}
-.news-item{display:flex;gap:28px;align-items:center;padding:24px 0;border-bottom:1px solid var(--line);transition:padding-left .3s}
-.news-item:hover{padding-left:10px}
-.news-date{font-family:var(--en);font-size:14px;color:var(--muted);width:110px;flex-shrink:0}
-.news-cat{font-size:11px;font-weight:700;color:var(--blue);background:rgba(37,99,235,.08);padding:4px 12px;border-radius:100px;flex-shrink:0}
-.news-title{font-size:15px;color:var(--ink);font-weight:500}
-.cta{max-width:1200px;margin:0 auto;background:var(--navy);border-radius:28px;padding:80px 48px;text-align:center;position:relative;overflow:hidden}
-.cta::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:700px;height:360px;background:radial-gradient(ellipse,rgba(6,182,212,.18),transparent 65%)}
-.cta-h{font-size:clamp(28px,4.4vw,46px);font-weight:900;color:#fff;line-height:1.4;margin-bottom:18px;position:relative;z-index:1}
-.cta-h .gr{background:linear-gradient(120deg,#22D3EE,#60A5FA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cta-p{font-size:15px;color:rgba(255,255,255,.65);margin-bottom:36px;position:relative;z-index:1;line-height:2}
+.course-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.course-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:36px 30px;text-align:center;transition:transform .3s,box-shadow .3s}
+.course-card:hover{transform:translateY(-8px);box-shadow:0 24px 50px rgba(45,108,223,.14)}
+.course-emoji{width:80px;height:80px;border-radius:24px;display:flex;align-items:center;justify-content:center;margin:0 auto 22px;font-size:40px}
+.ce1{background:#FFF1E6}.ce2{background:#E6F7F5}.ce3{background:#E9F1FF}
+.course-h{font-size:20px;font-weight:700;color:var(--ink);margin-bottom:10px}
+.course-d{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:18px}
+.course-price{font-family:var(--en);font-size:15px;color:var(--blue);font-weight:700}
+.course-price b{font-size:30px}
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.flow-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px 24px;text-align:center;position:relative}
+.flow-num{width:56px;height:56px;border-radius:50%;background:var(--grad);color:#fff;font-family:var(--en);font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 18px}
+.flow-h{font-size:16px;font-weight:700;color:var(--ink);margin-bottom:8px}
+.flow-d{font-size:13px;color:var(--muted);line-height:1.75}
+.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.voice-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px 28px;position:relative}
+.voice-stars{color:var(--yellow);font-size:15px;letter-spacing:2px;margin-bottom:14px}
+.voice-txt{font-size:14px;color:var(--ink);line-height:1.9;margin-bottom:18px}
+.voice-who{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
+.voice-av{width:44px;height:44px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:18px;flex-shrink:0}
+.voice-name{font-size:14px;font-weight:700;color:var(--ink)}
+.voice-role{font-size:12px;color:var(--muted)}
+.cta{max-width:1160px;margin:0 auto;background:var(--grad);border-radius:32px;padding:80px 48px;text-align:center;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-80px;right:-40px;width:300px;height:300px;border-radius:50%;background:rgba(255,201,60,.3);filter:blur(20px)}
+.cta::after{content:'🎈';position:absolute;bottom:20px;left:40px;font-size:60px;opacity:.3}
+.cta-h{font-family:'Baloo 2','Noto Sans JP',sans-serif;font-size:clamp(28px,4.4vw,46px);font-weight:800;color:#fff;line-height:1.4;margin-bottom:18px;position:relative;z-index:1}
+.cta-p{font-size:15px;color:rgba(255,255,255,.9);margin-bottom:36px;position:relative;z-index:1;line-height:2}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-.btn-white{background:#fff;color:var(--navy);padding:16px 36px;border-radius:8px;font-weight:700;font-size:15px}
-.btn-line{background:transparent;border:1.5px solid rgba(255,255,255,.3);color:#fff;padding:15px 32px;border-radius:8px;font-weight:600;font-size:15px}
-footer{background:var(--navy);color:#fff;padding:56px 40px 30px;margin-top:0}
-.foot-in{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
-.foot-logo{font-family:var(--en);font-size:20px;font-weight:800;display:flex;align-items:center;gap:9px;margin-bottom:14px}
+.cta .btn-fill{background:#fff;color:var(--orange)}
+.cta-line2{background:transparent;border:2px solid rgba(255,255,255,.6);color:#fff;padding:15px 32px;border-radius:100px;font-weight:700;font-size:15px}
+footer{background:var(--ink);color:#fff;padding:56px 40px 30px}
+.foot-in{max-width:1160px;margin:0 auto;display:flex;justify-content:space-between;flex-wrap:wrap;gap:24px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.1)}
+.foot-logo{font-family:'Baloo 2',sans-serif;font-size:22px;font-weight:800;display:flex;align-items:center;gap:9px;margin-bottom:14px}
 .foot-tag{font-size:13px;color:rgba(255,255,255,.5);line-height:1.9}
 .foot-links{display:flex;gap:40px}
-.foot-col h5{font-family:var(--en);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-bottom:14px}
+.foot-col h5{font-family:var(--en);font-size:12px;letter-spacing:.08em;color:rgba(255,255,255,.5);margin-bottom:14px}
 .foot-col a{display:block;font-size:13px;color:rgba(255,255,255,.6);margin-bottom:9px}
-.foot-copy{max-width:1200px;margin:0 auto;padding-top:20px;font-size:12px;color:rgba(255,255,255,.35);text-align:center}
+.foot-copy{max-width:1160px;margin:0 auto;padding-top:20px;font-size:12px;color:rgba(255,255,255,.35);text-align:center}
 @media(max-width:860px){
   .wrap,.nav-in{padding-left:20px;padding-right:20px}
   .nav-links{display:none}.menu-btn{display:block}
   .hero{padding:130px 20px 70px}
-  .hero-grid{grid-template-columns:1fr;gap:48px}
-  .hero-visual{height:360px}
+  .hero-in{grid-template-columns:1fr;gap:50px}
+  .hero-visual{height:340px}
+  .hv-card1{left:6px}.hv-card2{right:6px}
   .sec{padding:70px 20px}
-  .biz-grid{grid-template-columns:1fr}
-  .about{grid-template-columns:1fr;gap:40px}
-  .about-visual{height:300px}
-  .news-item{gap:12px;flex-wrap:wrap}
-  .news-date{width:auto}
-  .cta{padding:54px 24px;border-radius:20px}
+  .course-grid,.voice-grid{grid-template-columns:1fr}
+  .flow-grid{grid-template-columns:1fr 1fr}
+  .feat-in{padding:24px 20px;gap:16px}
+  .cta{padding:54px 24px;border-radius:24px}
   .foot-in{flex-direction:column}
-  .foot-links{gap:30px}
 }
+@media(max-width:560px){.flow-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
-<div class="samplebar"><span>これはスマートWEBの制作サンプル（企業・コーポレート系）です</span><a href="catalog.html">← カタログに戻る</a></div>
+<div class="samplebar"><span>これはスマートWEBの制作サンプル（教育・スクール系）です</span><a href="catalog.html">← カタログに戻る</a></div>
 <nav><div class="nav-in">
-  <div class="logo"><span class="logo-mark">M</span>MIRAIZE</div>
-  <div class="nav-links"><a href="#business">事業内容</a><a href="#about">会社案内</a><a href="#news">お知らせ</a><a href="#recruit">採用情報</a><a href="#contact" class="nav-cta">お問い合わせ</a></div>
+  <div class="logo"><span class="logo-mark">B</span>BRIGHT</div>
+  <div class="nav-links"><a href="#course">コース</a><a href="#flow">入会の流れ</a><a href="#voice">生徒の声</a><a href="#contact" class="nav-cta">無料体験レッスン</a></div>
   <button class="menu-btn">☰</button>
 </div></nav>
-<header class="hero"><div class="hero-in"><div class="hero-grid">
+<header class="hero"><div class="hero-in">
   <div>
-    <div class="hero-pill"><span class="tag">VISION</span>テクノロジーで、未来を創る</div>
-    <h1 class="hero-title">可能性を、<br><span class="gr">カタチ</span>にする。</h1>
-    <p class="hero-desc">私たちミライズは、最先端のテクノロジーとアイデアで、企業の課題解決と新たな価値創造を支援するソリューションカンパニーです。</p>
-    <div class="hero-btns"><a href="#business" class="btn-grad">事業内容を見る →</a><a href="#contact" class="btn-out">お問い合わせ</a></div>
+    <div class="hero-pill">🎉 無料体験レッスン受付中</div>
+    <h1 class="hero-title">英語が、<br><span class="bl">好き</span>になる。<br><span class="or">話せる</span>ようになる。</h1>
+    <p class="hero-desc">経験豊かなネイティブ講師と、楽しく学べる少人数レッスン。お子様から大人まで、一人ひとりのペースに合わせて「話せる英語」を育てます。</p>
+    <div class="hero-btns"><a href="#contact" class="btn-fill">無料体験を申し込む 🎈</a><a href="#course" class="btn-out">コースを見る</a></div>
   </div>
-  <div class="hero-visual"><div class="hv-grid">
-    <div class="hv-box"><div class="hv-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg></div><div><div class="hv-num">15+</div><div class="hv-lbl">年の実績</div></div></div>
-    <div class="hv-box"><div class="hv-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/></svg></div><div><div class="hv-num" style="color:var(--blue)">120</div><div class="hv-lbl" style="color:var(--muted)">プロフェッショナル</div></div></div>
-    <div class="hv-box"><div class="hv-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 010 20 15 15 0 010-20z"/></svg></div><div><div class="hv-num">8</div><div class="hv-lbl">海外拠点</div></div></div>
-    <div class="hv-box"><div class="hv-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><div><div class="hv-num" style="color:var(--blue)">500+</div><div class="hv-lbl" style="color:var(--muted)">導入企業</div></div></div>
-  </div></div>
-</div></div></header>
-<div class="logos-bar"><div class="logos-in">
-  <span class="logos-label">導入企業（サンプル）</span>
-  <span class="logo-item">ACME</span><span class="logo-item">NEXUS</span><span class="logo-item">VERTEX</span><span class="logo-item">ZENITH</span><span class="logo-item">ORBIT</span>
+  <div class="hero-visual">
+    <div class="hv-main"><div class="hv-emoji">🗣️</div></div>
+    <div class="hv-card hv-card1"><div class="hvc-ic" style="background:var(--orange)">😊</div><div><div class="hvc-t">満足度 98%</div><div class="hvc-s">楽しく続けられる</div></div></div>
+    <div class="hv-card hv-card2"><div class="hvc-ic" style="background:var(--teal)">🌎</div><div><div class="hvc-t">ネイティブ講師</div><div class="hvc-s">10カ国以上から</div></div></div>
+  </div>
+</div></header>
+<div class="feat-bar"><div class="feat-in">
+  <div class="feat-it"><div class="feat-num">15<span style="font-size:20px">年</span></div><div class="feat-lbl">地域で愛されて</div></div>
+  <div class="feat-it"><div class="feat-num">1,200<span style="font-size:20px">名+</span></div><div class="feat-lbl">卒業生</div></div>
+  <div class="feat-it"><div class="feat-num">4<span style="font-size:20px">名</span></div><div class="feat-lbl">少人数クラス</div></div>
+  <div class="feat-it"><div class="feat-num">98<span style="font-size:20px">%</span></div><div class="feat-lbl">継続率</div></div>
 </div></div>
-<section class="sec" id="business">
-  <div class="sec-c"><div class="sec-eyebrow">Business</div><h2 class="sec-h">事業内容</h2><p class="sec-p">3つの軸で、お客様のビジネスを成長へ導きます。</p></div>
-  <div class="biz-grid">
-    <div class="biz-card"><div class="biz-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="biz-h">DXコンサルティング</div><div class="biz-d">業務の課題を可視化し、デジタル技術で生産性向上を実現します。</div></div>
-    <div class="biz-card"><div class="biz-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div><div class="biz-h">システム開発</div><div class="biz-d">企画から開発・運用まで、ワンストップで高品質に対応します。</div></div>
-    <div class="biz-card"><div class="biz-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="biz-h">マーケティング支援</div><div class="biz-d">データドリブンな戦略で、成果につながる施策を実行します。</div></div>
+<section class="sec" id="course">
+  <div class="sec-c"><div class="sec-eyebrow">Course</div><h2 class="sec-h">選べる3つのコース</h2><p class="sec-p">年齢・目的に合わせたコースをご用意しています。</p></div>
+  <div class="course-grid">
+    <div class="course-card"><div class="course-emoji ce1">🧒</div><div class="course-h">キッズ英会話</div><div class="course-d">遊びながら英語に親しむ、3〜12歳向けのクラス。歌やゲームで楽しく学びます。</div><div class="course-price"><b>¥8,800</b>/月〜</div></div>
+    <div class="course-card"><div class="course-emoji ce2">🎓</div><div class="course-h">学生・受験対策</div><div class="course-d">中高生向け。学校の成績アップから英検・TOEIC対策まで幅広く対応します。</div><div class="course-price"><b>¥11,000</b>/月〜</div></div>
+    <div class="course-card"><div class="course-emoji ce3">💼</div><div class="course-h">大人・ビジネス</div><div class="course-d">日常英会話からビジネス英語まで。目的に合わせたカリキュラムで実践力を養成。</div><div class="course-price"><b>¥13,200</b>/月〜</div></div>
   </div>
 </section>
-<section class="sec sec-bg" id="about">
-  <div class="about">
-    <div class="about-visual"><div class="about-stat"><div class="about-stat-num">2008</div><div class="about-stat-lbl">年 創業 — 挑戦を続けて15年以上</div></div></div>
-    <div>
-      <div class="sec-eyebrow">About Us</div>
-      <h2 class="sec-h" style="text-align:left">私たちについて</h2>
-      <p style="font-size:15px;color:var(--muted);line-height:2.05;margin-bottom:24px">創業以来、「テクノロジーで未来を創る」という理念のもと、お客様と社会の課題解決に取り組んできました。変化の激しい時代だからこそ、本質を見極め、確かな価値を提供し続けます。</p>
-      <a href="#" class="btn-grad" style="display:inline-block">会社案内を見る →</a>
-    </div>
+<section class="sec sec-bg" id="flow">
+  <div class="sec-c"><div class="sec-eyebrow">Flow</div><h2 class="sec-h">入会までの流れ</h2></div>
+  <div class="flow-grid">
+    <div class="flow-card"><div class="flow-num">1</div><div class="flow-h">お問い合わせ</div><div class="flow-d">フォーム・お電話でお気軽に。</div></div>
+    <div class="flow-card"><div class="flow-num">2</div><div class="flow-h">無料体験レッスン</div><div class="flow-d">実際のレッスンを体験できます。</div></div>
+    <div class="flow-card"><div class="flow-num">3</div><div class="flow-h">カウンセリング</div><div class="flow-d">目標に合うコースをご提案。</div></div>
+    <div class="flow-card"><div class="flow-num">4</div><div class="flow-h">入会・レッスン開始</div><div class="flow-d">楽しい英語学習スタート！</div></div>
   </div>
 </section>
-<section class="sec" id="news">
-  <div class="sec-c"><div class="sec-eyebrow">News</div><h2 class="sec-h">お知らせ</h2></div>
-  <div class="news-list">
-    <div class="news-item"><span class="news-date">2025.01.15</span><span class="news-cat">プレスリリース</span><span class="news-title">新サービス「MIRAIZE Cloud」の提供を開始しました</span></div>
-    <div class="news-item"><span class="news-date">2024.12.20</span><span class="news-cat">お知らせ</span><span class="news-title">年末年始の営業についてのご案内</span></div>
-    <div class="news-item"><span class="news-date">2024.12.01</span><span class="news-cat">採用</span><span class="news-title">2026年度新卒採用エントリーを開始しました</span></div>
-    <div class="news-item"><span class="news-date">2024.11.10</span><span class="news-cat">メディア</span><span class="news-title">代表インタビューが業界誌に掲載されました</span></div>
+<section class="sec" id="voice">
+  <div class="sec-c"><div class="sec-eyebrow">Voice</div><h2 class="sec-h">生徒さん・保護者の声</h2></div>
+  <div class="voice-grid">
+    <div class="voice-card"><div class="voice-stars">★★★★★</div><div class="voice-txt">「人見知りだった娘が、英語が大好きになりました。先生がとても優しく、毎週通うのを楽しみにしています。」</div><div class="voice-who"><div class="voice-av">M</div><div><div class="voice-name">M.S 様</div><div class="voice-role">小学生の保護者</div></div></div></div>
+    <div class="voice-card"><div class="voice-stars">★★★★★</div><div class="voice-txt">「TOEICが半年で200点アップ！先生が弱点を的確に教えてくれて、効率よく学べました。」</div><div class="voice-who"><div class="voice-av">K</div><div><div class="voice-name">K.T 様</div><div class="voice-role">大学生</div></div></div></div>
+    <div class="voice-card"><div class="voice-stars">★★★★★</div><div class="voice-txt">「仕事で英語が必要になり通い始めました。少人数なので質問しやすく、着実に話せるようになっています。」</div><div class="voice-who"><div class="voice-av">Y</div><div><div class="voice-name">Y.N 様</div><div class="voice-role">会社員</div></div></div></div>
   </div>
 </section>
-<section class="sec sec-bg" id="contact">
+<section class="sec sec-cream" id="contact">
   <div class="cta">
-    <h2 class="cta-h">ともに、<span class="gr">未来</span>を創りませんか。</h2>
-    <p class="cta-p">ご相談・お見積もりはお気軽にどうぞ。専任の担当者が対応いたします。</p>
-    <div class="cta-btns"><a href="#" class="btn-white">お問い合わせ →</a><a href="#recruit" class="btn-line">採用情報を見る</a></div>
+    <h2 class="cta-h">まずは無料体験レッスンへ！</h2>
+    <p class="cta-p">楽しさを体験してから決められます。お気軽にお越しください。</p>
+    <div class="cta-btns"><a href="#" class="btn-fill">無料体験を申し込む 🎈</a><a href="#" class="cta-line2">資料請求はこちら</a></div>
   </div>
 </section>
 <footer>
   <div class="foot-in">
     <div>
-      <div class="foot-logo"><span class="logo-mark">M</span>MIRAIZE</div>
-      <p class="foot-tag">株式会社ミライズ<br>テクノロジーで、未来を創る。</p>
+      <div class="foot-logo"><span class="logo-mark">B</span>BRIGHT</div>
+      <p class="foot-tag">BRIGHT English School<br>英語が好きになる英会話教室。</p>
     </div>
     <div class="foot-links">
-      <div class="foot-col"><h5>Company</h5><a href="#about">会社案内</a><a href="#business">事業内容</a><a href="#news">お知らせ</a></div>
-      <div class="foot-col"><h5>Contact</h5><a href="#recruit">採用情報</a><a href="#contact">お問い合わせ</a></div>
+      <div class="foot-col"><h5>Course</h5><a href="#course">キッズ英会話</a><a href="#course">学生・受験対策</a><a href="#course">大人・ビジネス</a></div>
+      <div class="foot-col"><h5>School</h5><a href="#flow">入会の流れ</a><a href="#voice">生徒の声</a><a href="#contact">無料体験</a></div>
     </div>
   </div>
-  <div class="foot-copy">© 2025 MIRAIZE Inc.（サンプル） — Designed by スマートWEB</div>
+  <div class="foot-copy">© 2025 BRIGHT English School（サンプル） — Designed by スマートWEB</div>
 </footer>
 </body>
 </html>

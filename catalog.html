@@ -7,7 +7,7 @@
 <meta name="description" content="テーマ・フォント・カラーをその場で切り替え。あなたのビジネスにぴったりのデザインをカタログから選べます。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Murecho:wght@400;500;700&family=Playfair+Display:wght@600;700&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@700;800&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Murecho:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
@@ -188,12 +188,47 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:color-mix(in srgb
 .cat-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px color-mix(in srgb,var(--navy) 12%,transparent)}
 .cat-view{display:flex;align-items:center;gap:7px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;font-weight:700;color:var(--accent);transition:gap .25s}
 .cat-card:hover .cat-view{gap:12px}
-.cat-thumb{height:170px;position:relative;overflow:hidden;display:flex;flex-direction:column;padding:20px}
-.cat-thumb-nav{display:flex;gap:6px;margin-bottom:auto}
-.ctn-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.6)}
-.cat-thumb-title{font-size:18px;font-weight:800;color:#fff;margin-bottom:6px}
-.cat-thumb-bar{width:54px;height:6px;border-radius:3px;background:rgba(255,255,255,.7);margin-bottom:10px}
-.cat-thumb-pill{display:inline-block;width:fit-content;background:rgba(255,255,255,.25);color:#fff;font-size:10px;font-weight:700;padding:4px 12px;border-radius:var(--radius-full)}
+.cat-thumb{height:190px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px}
+/* mini preview = scaled-down demo */
+.mini{width:100%;height:100%;border-radius:8px;overflow:hidden;box-shadow:0 8px 24px rgba(15,23,41,.18);display:flex;flex-direction:column;transform:scale(1);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.cat-card:hover .mini{transform:scale(1.04)}
+.m-nav{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;flex-shrink:0}
+.m-logo{font-size:11px;font-weight:800}
+.m-navdots{display:flex;gap:4px}
+.m-navdots i{width:5px;height:5px;border-radius:50%;background:rgba(0,0,0,.2);display:block}
+.m-body{flex:1;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:7px}
+.m-eyebrow{font-size:6px;font-weight:700;letter-spacing:.18em}
+.m-pill-mini{font-size:6.5px;font-weight:700;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:100px;padding:3px 9px;width:fit-content;color:#2D6CDF}
+.m-btn-row{display:flex;gap:6px;margin-top:3px}
+.m-btn{font-size:6.5px;font-weight:700;color:#fff;padding:4px 11px;border-radius:100px;display:inline-block}
+.m-goldline{width:24px;height:2px;background:#C4A86A}
+.m-title-serif{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#3A2E2A;line-height:1.2}
+.m-title-serif em{font-style:italic;color:#A67C52}
+.m-title-mincho{font-family:'Shippori Mincho',serif;font-size:15px;font-weight:700;color:#fff;line-height:1.4}
+.m-title-pf{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#F5EDE3;line-height:1}
+.m-title-pf em{font-style:italic;color:#E08B5F;display:block}
+.m-title-round{font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:800;color:#1B2A4A;line-height:1.35}
+.m-title-anton{font-family:'Anton',sans-serif;font-size:17px;color:#fff;line-height:1;text-transform:uppercase;letter-spacing:.01em}
+/* per-theme mini backgrounds (match real demos) */
+.mini-salon{background:#FBF7F4}
+.mini-salon .m-nav{background:#FBF7F4;border-bottom:1px solid #E8DDD3}
+.mini-salon .m-logo{color:#3A2E2A;font-family:'Cormorant Garamond',serif;font-weight:600}
+.mini-salon .m-body{background:linear-gradient(160deg,#fff,#F3EBE3)}
+.mini-salon .m-eyebrow{color:#A67C52}
+.mini-legal{background:linear-gradient(120deg,#1A2332,#2C3A52)}
+.mini-legal .m-nav{border-bottom:1px solid rgba(255,255,255,.1)}
+.mini-legal .m-navdots i{background:rgba(255,255,255,.3)}
+.mini-food{background:#1A1310}
+.mini-food .m-body{background:radial-gradient(ellipse 80% 70% at 50% 50%,rgba(200,99,63,.3),transparent 70%)}
+.mini-edu{background:#fff}
+.mini-edu .m-nav{background:#F4F8FF;border-bottom:1px solid #E8EDF6}
+.mini-edu .m-body{background:linear-gradient(160deg,#F4F8FF,#fff)}
+.mini-edu .m-eyebrow{color:#2D6CDF}
+.mini-clinic{background:#fff}
+.mini-clinic .m-nav{background:#F0F9F5;border-bottom:1px solid #DCECE4}
+.mini-clinic .m-body{background:linear-gradient(160deg,#F0F9F5,#fff)}
+.mini-creative{background:#0A0A0A}
+.mini-creative .m-body{background:radial-gradient(ellipse 70% 60% at 70% 40%,rgba(123,47,247,.4),transparent 65%)}
 .cat-body{padding:22px 24px}
 .cat-badge{display:inline-block;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);padding:4px 11px;border-radius:6px;margin-bottom:12px}
 .cat-card h3{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
@@ -432,15 +467,19 @@ footer{background:var(--navy);padding:40px 2rem}
     <button class="cat-filter" data-cat="store">店舗・サロン</button>
     <button class="cat-filter" data-cat="pro">士業・専門職</button>
     <button class="cat-filter" data-cat="food">飲食店</button>
-    <button class="cat-filter" data-cat="corp">企業・法人</button>
+    <button class="cat-filter" data-cat="corp">教育・スクール</button>
   </div>
   <div class="cat-grid" id="catGrid">
     <a class="cat-card reveal" data-cat="store" href="sample-salon.html">
-      <div class="cat-thumb" style="background:linear-gradient(135deg,#E5557F,#F59EB5)">
-        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
-        <div class="cat-thumb-title">Beauty Salon</div>
-        <div class="cat-thumb-bar"></div>
-        <span class="cat-thumb-pill">SALON</span>
+      <div class="cat-thumb thumb-salon">
+        <div class="mini mini-salon">
+          <div class="m-nav"><span class="m-logo">Salon Luné</span><span class="m-navdots"><i></i><i></i><i></i></span></div>
+          <div class="m-body">
+            <div class="m-eyebrow">TOTAL BEAUTY SALON</div>
+            <div class="m-title-serif">あなたの<em>美しさ</em>に</div>
+            <div class="m-btn-row"><span class="m-btn" style="background:#A67C52">WEB予約</span></div>
+          </div>
+        </div>
       </div>
       <div class="cat-body">
         <span class="cat-badge">店舗・サロン</span>
@@ -451,11 +490,15 @@ footer{background:var(--navy);padding:40px 2rem}
       </div>
     </a>
     <a class="cat-card reveal rd1" data-cat="pro" href="sample-legal.html">
-      <div class="cat-thumb" style="background:linear-gradient(135deg,#1A2332,#A8884E)">
-        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
-        <div class="cat-thumb-title">Law Office</div>
-        <div class="cat-thumb-bar"></div>
-        <span class="cat-thumb-pill">LEGAL</span>
+      <div class="cat-thumb thumb-legal">
+        <div class="mini mini-legal">
+          <div class="m-nav"><span class="m-logo" style="color:#fff">佐藤総合法務</span><span class="m-navdots"><i></i><i></i><i></i></span></div>
+          <div class="m-body">
+            <div class="m-goldline"></div>
+            <div class="m-title-mincho">最善の<span style="color:#C4A86A">解決</span >へ導く</div>
+            <div class="m-btn-row"><span class="m-btn" style="background:#A8884E">無料相談</span></div>
+          </div>
+        </div>
       </div>
       <div class="cat-body">
         <span class="cat-badge">士業・専門職</span>
@@ -466,11 +509,15 @@ footer{background:var(--navy);padding:40px 2rem}
       </div>
     </a>
     <a class="cat-card reveal rd2" data-cat="food" href="sample-food.html">
-      <div class="cat-thumb" style="background:linear-gradient(135deg,#1A1310,#C8633F)">
-        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
-        <div class="cat-thumb-title">Restaurant</div>
-        <div class="cat-thumb-bar"></div>
-        <span class="cat-thumb-pill">FOOD</span>
+      <div class="cat-thumb thumb-food">
+        <div class="mini mini-food">
+          <div class="m-nav"><span class="m-logo" style="color:#fff;font-style:italic">Trattoria Sole</span><span class="m-navdots"><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i></span></div>
+          <div class="m-body" style="text-align:center">
+            <div class="m-eyebrow" style="color:#D4A84B">ITALIAN · SINCE 2010</div>
+            <div class="m-title-pf">Buon<em>Appetito</em></div>
+            <div class="m-btn-row" style="justify-content:center"><span class="m-btn" style="background:#C8633F">ご予約</span></div>
+          </div>
+        </div>
       </div>
       <div class="cat-body">
         <span class="cat-badge">飲食店</span>
@@ -481,26 +528,34 @@ footer{background:var(--navy);padding:40px 2rem}
       </div>
     </a>
     <a class="cat-card reveal" data-cat="corp" href="sample-corp.html">
-      <div class="cat-thumb" style="background:linear-gradient(135deg,#2563EB,#06B6D4)">
-        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
-        <div class="cat-thumb-title">Corporate</div>
-        <div class="cat-thumb-bar"></div>
-        <span class="cat-thumb-pill">CORP</span>
+      <div class="cat-thumb thumb-edu">
+        <div class="mini mini-edu">
+          <div class="m-nav"><span class="m-logo" style="color:#2D6CDF">🅑 BRIGHT</span><span class="m-btn" style="background:#FF8A3D;font-size:6px;padding:3px 8px">体験</span></div>
+          <div class="m-body">
+            <div class="m-pill-mini">🎉 無料体験受付中</div>
+            <div class="m-title-round">英語が<span style="color:#2D6CDF">好き</span>になる</div>
+            <div class="m-btn-row"><span class="m-btn" style="background:#FF8A3D">体験申込 🎈</span></div>
+          </div>
+        </div>
       </div>
       <div class="cat-body">
-        <span class="cat-badge">企業・法人</span>
-        <h3>企業・コーポレート系</h3>
-        <p>事業内容と強みを整理して伝える王道構成。採用・IR・お知らせにも対応します。</p>
-        <div class="cat-tags"><span class="cat-tag">採用ページ</span><span class="cat-tag">お知らせ</span></div>
+        <span class="cat-badge">教育・スクール</span>
+        <h3>教育・スクール系</h3>
+        <p>明るく親しみやすいデザイン。コース紹介・無料体験・生徒の声で入会を後押しします。</p>
+        <div class="cat-tags"><span class="cat-tag">体験予約</span><span class="cat-tag">コース紹介</span></div>
         <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       </div>
     </a>
     <a class="cat-card reveal rd1" data-cat="store" href="sample-clinic.html">
-      <div class="cat-thumb" style="background:linear-gradient(135deg,#0F8A5F,#34D399)">
-        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
-        <div class="cat-thumb-title">Clinic</div>
-        <div class="cat-thumb-bar"></div>
-        <span class="cat-thumb-pill">CLINIC</span>
+      <div class="cat-thumb thumb-clinic">
+        <div class="mini mini-clinic">
+          <div class="m-nav"><span class="m-logo" style="color:#0F8A5F">🟢 そら整骨院</span><span class="m-btn" style="background:#0F8A5F;font-size:6px;padding:3px 8px">WEB予約</span></div>
+          <div class="m-body">
+            <div class="m-pill-mini" style="color:#0C6B49;border-color:#DCECE4">✓ 国家資格者が施術</div>
+            <div class="m-title-round" style="color:#1B3A2E">その<span style="color:#0F8A5F">痛み</span>、あきらめないで</div>
+            <div class="m-btn-row"><span class="m-btn" style="background:#0F8A5F">WEBで予約</span></div>
+          </div>
+        </div>
       </div>
       <div class="cat-body">
         <span class="cat-badge">店舗・サロン</span>
@@ -511,11 +566,14 @@ footer{background:var(--navy);padding:40px 2rem}
       </div>
     </a>
     <a class="cat-card reveal rd2" data-cat="corp" href="sample-creative.html">
-      <div class="cat-thumb" style="background:linear-gradient(135deg,#0A0A0A,#7B2FF7)">
-        <div class="cat-thumb-nav"><span class="ctn-dot"></span><span class="ctn-dot"></span><span class="ctn-dot"></span></div>
-        <div class="cat-thumb-title">Creative</div>
-        <div class="cat-thumb-bar"></div>
-        <span class="cat-thumb-pill">CREATIVE</span>
+      <div class="cat-thumb thumb-creative">
+        <div class="mini mini-creative">
+          <div class="m-nav"><span class="m-logo" style="color:#fff;font-family:'Anton',sans-serif;letter-spacing:.04em">STUDIO NOVA</span></div>
+          <div class="m-body">
+            <div class="m-eyebrow" style="color:#D6FF3F">CREATIVE AGENCY</div>
+            <div class="m-title-anton">We make <span style="color:#D6FF3F;font-style:italic">bold</span> ideas move.</div>
+          </div>
+        </div>
       </div>
       <div class="cat-body">
         <span class="cat-badge">企業・法人</span>
