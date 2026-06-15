@@ -7,214 +7,189 @@
 <meta name="description" content="今のホームページ、集客できていますか？プロが無料で診断し、改善ポイントと新デザイン案をご提案します。オンライン完結・全国対応。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:#0F1729;font-weight:400;line-height:1.75;font-size:16px;overflow-x:hidden}
-img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-ul{list-style:none}
+body{font-family:'Noto Sans JP',sans-serif;background:#F4F1EA;color:#15130E;line-height:1.7;font-weight:400;overflow-x:hidden;font-size:16px}
+a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
 button{font-family:inherit;cursor:pointer}
-:root{
-  --navy:#0F1729;--ink:#1E2A45;--blue:#2563EB;--cyan:#06B6D4;
-  --grad:linear-gradient(120deg,#06B6D4,#2563EB);
-  --grad-soft:linear-gradient(120deg,rgba(6,182,212,.08),rgba(37,99,235,.08));
-  --red:#DC2626;--green:#16A34A;
-  --text:#0F1729;--muted:#64748B;--faint:#94A3B8;
-  --bg:#F8FAFC;--bg2:#F1F5F9;--border:#E2E8F0;--white:#fff;
-  --r-sm:10px;--r-md:16px;--r-lg:24px;--r-full:100px;
-  --shadow-sm:0 1px 3px rgba(15,23,41,.06);
-  --shadow-md:0 12px 32px rgba(15,23,41,.08);
-  --shadow-lg:0 24px 64px rgba(15,23,41,.12);
-  --en:'Inter',sans-serif;
-}
-.inner{max-width:1080px;margin:0 auto;padding:0 2rem}
-.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;border:none;transition:all .25s cubic-bezier(.4,0,.2,1);letter-spacing:.01em}
-.btn-grad{background:var(--grad);color:#fff;padding:16px 34px;border-radius:var(--r-full);box-shadow:0 8px 24px rgba(37,99,235,.25)}
-.btn-grad:hover{transform:translateY(-2px);box-shadow:0 14px 32px rgba(37,99,235,.4)}
-.btn-ghost{background:#fff;color:var(--navy);padding:15px 32px;border-radius:var(--r-full);border:1.5px solid var(--border)}
-.btn-ghost:hover{border-color:var(--navy);background:var(--bg)}
+::selection{background:#C6F24E;color:#15130E}
+:root{--paper:#F4F1EA;--ink:#15130E;--ink2:#3A352B;--lime:#C6F24E;--clay:#E5512E;--muted:#7A7468;--line:#DCD7CB;--card:#FBFAF6;--en:'Archivo',sans-serif;--serif:'Playfair Display',serif}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(255,255,255,.85);backdrop-filter:blur(16px) saturate(1.8);border-bottom:1px solid rgba(226,232,240,.8);height:72px;display:flex;align-items:center;transition:box-shadow .3s}
-nav.scrolled{box-shadow:var(--shadow-sm)}
-.nav-inner{width:100%;max-width:1080px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:8px}
-.logo-icon{height:38px;width:auto}
-.logo-text{height:34px;width:auto}
-.nav-right{display:flex;align-items:center;gap:1.4rem}
-.nav-back{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;white-space:nowrap}
-.nav-back:hover{color:var(--navy)}
-.nav-cta{background:var(--navy);color:#fff!important;padding:11px 24px;border-radius:var(--r-full);font-size:14px!important;font-weight:700!important;transition:background .2s,transform .2s!important;white-space:nowrap}
-.nav-cta:hover{background:var(--blue);transform:translateY(-1px)}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(244,241,234,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:9px}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--lime);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:800;font-size:14px}
+.logo-txt{font-family:var(--en);font-weight:800;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-back{font-family:var(--en);font-size:13px;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
+.nav-back:hover{color:var(--ink)}
+.nav-cta{background:var(--ink);color:var(--lime)!important;padding:11px 24px;border-radius:100px;font-family:var(--en);font-size:13px!important;font-weight:700!important;white-space:nowrap}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
-.mobile-menu{display:none;flex-direction:column;position:fixed;top:72px;left:0;right:0;bottom:0;background:#fff;padding:2.4rem 1.6rem;gap:1.7rem;border-top:1px solid var(--border);z-index:299;align-items:flex-start}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-size:19px;color:var(--navy);font-weight:600}
-.mobile-menu .nav-cta{width:100%;text-align:center;justify-content:center;padding:15px;font-size:16px!important}
+.hamburger span{display:block;width:23px;height:2px;background:var(--ink);border-radius:2px}
+.mnav{display:none;position:fixed;inset:0;z-index:400;background:var(--ink);flex-direction:column;justify-content:center;padding:40px;gap:6px}
+.mnav.open{display:flex}
+.mnav a{font-family:var(--en);font-size:30px;font-weight:800;color:#fff;padding:8px 0}
+.mnav a .gr{color:var(--lime)}
+.mnav-close{position:absolute;top:28px;right:34px;background:none;border:none;color:#fff;font-size:32px}
 
 /* HERO */
-.hero{padding:140px 2rem 70px;position:relative;overflow:hidden;background:
-  radial-gradient(ellipse 700px 440px at 80% -10%,rgba(220,38,38,.06),transparent 60%),
-  radial-gradient(ellipse 600px 400px at 10% 110%,rgba(37,99,235,.06),transparent 60%),#fff}
-.hero-inner{max-width:1080px;margin:0 auto;position:relative;z-index:1;text-align:center}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--border);border-radius:var(--r-full);padding:7px 18px 7px 8px;margin-bottom:26px;box-shadow:var(--shadow-sm);font-size:13px;font-weight:500;color:var(--muted)}
-.pill-tag{background:var(--grad);color:#fff;font-size:11px;font-weight:700;padding:4px 12px;border-radius:var(--r-full);letter-spacing:.05em}
-.hero-pre{font-size:15px;color:var(--muted);font-weight:500;margin-bottom:14px}
-.hero-h1{font-size:clamp(28px,4.4vw,52px);font-weight:900;color:var(--navy);line-height:1.32;letter-spacing:-.01em;margin-bottom:22px}
-.hero-h1 .warn{color:var(--red)}
-.hero-h1 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-lead{font-size:16px;color:var(--muted);line-height:2;max-width:620px;margin:0 auto 36px}
-.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-bottom:34px}
-.hero-trust{display:flex;gap:22px;justify-content:center;flex-wrap:wrap}
-.ht-item{display:flex;align-items:center;gap:7px;font-size:13px;font-weight:600;color:var(--green)}
+.hero{background:var(--ink);color:#fff;padding:150px 40px 90px;position:relative;overflow:hidden}
+.hero-grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.06) 1px,transparent 0);background-size:4px 4px}
+.hero-in{max-width:1180px;margin:0 auto;position:relative;z-index:2}
+.hero-tag{font-family:var(--en);font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--clay);display:inline-flex;align-items:center;gap:10px;margin-bottom:30px}
+.hero-tag::before{content:'';width:36px;height:1px;background:var(--clay)}
+.hero-pre{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:18px}
+.hero-h1{font-family:var(--en);font-weight:900;font-size:clamp(34px,6vw,82px);line-height:1.02;letter-spacing:-.02em;margin-bottom:30px}
+.hero-h1 .warn{color:var(--clay)}
+.hero-h1 .it{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
+.hero-lead{font-size:16px;color:rgba(255,255,255,.7);line-height:2;max-width:600px;margin-bottom:40px}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
+.btn-lime{background:var(--lime);color:var(--ink);font-family:var(--en);font-size:15px;font-weight:700;padding:18px 38px;border-radius:100px;display:inline-flex;align-items:center;gap:10px;transition:transform .3s}
+.btn-lime:hover{transform:scale(1.04) rotate(-1deg)}
+.btn-out{background:transparent;border:1.5px solid rgba(255,255,255,.3);color:#fff;font-family:var(--en);font-size:15px;font-weight:600;padding:17px 34px;border-radius:100px;transition:border-color .3s}
+.btn-out:hover{border-color:var(--lime)}
+.hero-trust{display:flex;gap:24px;flex-wrap:wrap}
+.ht-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--lime)}
 
-/* STRIP */
-.strip{background:var(--navy);padding:16px 0;overflow:hidden;white-space:nowrap}
-.strip-track{display:inline-flex;gap:44px;animation:marquee 26s linear infinite;padding-left:44px}
-.strip-item{display:inline-flex;align-items:center;gap:9px;font-family:var(--en);font-size:12px;font-weight:600;letter-spacing:.14em;color:rgba(255,255,255,.5);text-transform:uppercase}
-.strip-dot{width:5px;height:5px;border-radius:50%;background:var(--cyan)}
-@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
-
-/* SECTIONS */
-.sec{padding:96px 2rem;position:relative}
-.sec-bg{background:var(--bg)}
-.sec-head{text-align:center;max-width:660px;margin:0 auto 60px}
-.sec-tag{display:inline-flex;align-items:center;gap:7px;background:var(--grad-soft);border:1px solid rgba(37,99,235,.15);color:var(--blue);font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:var(--r-full);margin-bottom:18px}
-.sec-h2{font-size:clamp(24px,3.2vw,38px);font-weight:900;color:var(--navy);line-height:1.4;margin-bottom:14px;letter-spacing:-.01em}
-.sec-h2 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.sec-p{font-size:15px;color:var(--muted);line-height:2}
+/* SECTION */
+.sec{padding:120px 40px;position:relative}
+.sec-head{margin-bottom:64px}
+.sec-num{font-family:var(--en);font-size:14px;font-weight:700;color:var(--clay);letter-spacing:.1em;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.sec-num::before{content:'';width:40px;height:1px;background:var(--clay)}
+.sec-title{font-family:var(--en);font-weight:800;font-size:clamp(32px,5vw,64px);line-height:1;letter-spacing:-.02em;margin-bottom:22px}
+.sec-title .it{font-family:var(--serif);font-style:italic;font-weight:400}
+.sec-lead{font-size:16px;color:var(--ink2);line-height:2;max-width:560px}
 
 /* PAIN */
-.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:32px}
-.pain-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:24px;display:flex;align-items:flex-start;gap:14px;transition:transform .25s,box-shadow .25s}
-.pain-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.pain-ic{width:42px;height:42px;border-radius:11px;background:rgba(220,38,38,.08);border:1px solid rgba(220,38,38,.15);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.pain-ic svg{width:20px;height:20px;color:var(--red)}
-.pain-text{font-size:14px;color:var(--ink);font-weight:500;line-height:1.7}
-.pain-note{background:#FEF2F2;border:1px solid #FECACA;border-radius:var(--r-md);padding:20px 24px;font-size:15px;color:#991B1B;font-weight:500;line-height:1.85;display:flex;align-items:flex-start;gap:13px;max-width:860px;margin:0 auto}
-.pain-note svg{flex-shrink:0;margin-top:3px;color:var(--red)}
+.pain{background:var(--paper)}
+.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--ink);margin-bottom:40px}
+.pain-card{padding:32px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:16px;background:var(--paper);transition:background .3s}
+.pain-card:nth-child(2n){border-right:none}
+.pain-card:nth-child(5),.pain-card:nth-child(6){border-bottom:none}
+.pain-card:hover{background:var(--card)}
+.pain-x{width:30px;height:30px;border-radius:50%;background:var(--clay);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--en);font-weight:800;font-size:15px}
+.pain-text{font-size:15px;color:var(--ink);font-weight:500;line-height:1.7;padding-top:3px}
+.pain-note{background:var(--ink);color:#fff;border-radius:14px;padding:30px 36px;font-size:16px;line-height:1.95;display:flex;align-items:flex-start;gap:16px}
+.pain-note .pn-ic{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--clay);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--en)}
+.pain-note b{color:var(--lime)}
 
 /* SOLUTION */
-.sol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.sol-card{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:36px 30px;position:relative;overflow:hidden;transition:transform .3s,box-shadow .3s}
-.sol-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--grad);opacity:0;transition:opacity .3s}
-.sol-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md)}
-.sol-card:hover::before{opacity:1}
-.sol-num{font-family:var(--en);font-size:42px;font-weight:800;color:var(--bg2);line-height:1;position:absolute;top:24px;right:26px}
-.sol-ic{width:56px;height:56px;border-radius:16px;background:var(--grad-soft);border:1px solid rgba(37,99,235,.12);display:flex;align-items:center;justify-content:center;margin-bottom:22px}
-.sol-ic svg{width:26px;height:26px;color:var(--blue)}
-.sol-h{font-size:18px;font-weight:700;color:var(--navy);margin-bottom:10px;line-height:1.5}
-.sol-p{font-size:14px;color:var(--muted);line-height:1.9;margin-bottom:18px}
-.sol-free{display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:700;color:var(--green);background:rgba(22,163,74,.08);border:1px solid rgba(22,163,74,.2);padding:5px 14px;border-radius:var(--r-full)}
+.sol{background:var(--ink);color:#fff}
+.sol .sec-title{color:#fff}
+.sol-list{border-top:1px solid rgba(255,255,255,.15)}
+.sol-row{display:grid;grid-template-columns:90px 1fr 1.1fr auto;gap:36px;align-items:center;padding:46px 0;border-bottom:1px solid rgba(255,255,255,.15);transition:padding-left .4s}
+.sol-row:hover{padding-left:18px}
+.sol-row:hover .sol-name{color:var(--lime)}
+.sol-no{font-family:var(--en);font-weight:700;font-size:15px;color:var(--lime)}
+.sol-name{font-family:var(--en);font-weight:800;font-size:clamp(22px,3vw,38px);line-height:1.05;letter-spacing:-.02em;transition:color .3s}
+.sol-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.9}
+.sol-free{font-family:var(--en);font-size:12px;font-weight:700;color:var(--ink);background:var(--lime);padding:7px 16px;border-radius:100px;white-space:nowrap}
 
 /* BEFORE/AFTER */
-.ba-wrap{max-width:920px;margin:0 auto;display:grid;grid-template-columns:1fr auto 1fr;gap:0;border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--shadow-md)}
-.ba-col{padding:34px 30px}
-.ba-before{background:#FEFAFA}
-.ba-after{background:#F7FBF9}
-.ba-arrow{display:flex;align-items:center;justify-content:center;background:var(--navy);width:56px;color:#fff}
-.ba-label{display:inline-flex;align-items:center;gap:8px;font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px;padding:6px 14px;border-radius:var(--r-full)}
-.lb-before{color:var(--red);background:rgba(220,38,38,.08)}
-.lb-after{color:var(--green);background:rgba(22,163,74,.08)}
-.ba-list{display:flex;flex-direction:column;gap:14px}
-.ba-row{display:flex;align-items:flex-start;gap:11px;font-size:14px;color:var(--ink);line-height:1.6}
-.ba-row svg{flex-shrink:0;margin-top:2px}
-.bi{color:var(--red)}.ai{color:var(--green)}
+.ba{background:var(--paper)}
+.ba-wrap{display:grid;grid-template-columns:1fr auto 1fr;border:1px solid var(--ink)}
+.ba-col{padding:40px 36px}
+.ba-before{background:var(--card)}
+.ba-after{background:var(--ink);color:#fff}
+.ba-arrow{display:flex;align-items:center;justify-content:center;background:var(--clay);width:60px;color:#fff}
+.ba-label{font-family:var(--en);font-size:13px;font-weight:700;letter-spacing:.1em;margin-bottom:24px;display:inline-flex;align-items:center;gap:8px}
+.lb-b{color:var(--clay)}.lb-a{color:var(--lime)}
+.ba-li{display:flex;align-items:flex-start;gap:11px;font-size:14px;line-height:1.7;margin-bottom:16px}
+.ba-li:last-child{margin-bottom:0}
+.ba-li .ic{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:800;font-size:12px;margin-top:1px}
+.bi-x{background:var(--clay);color:#fff}.bi-o{background:var(--lime);color:var(--ink)}
+.ba-after .ba-li{color:rgba(255,255,255,.85)}
 
 /* HOW */
-.how-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
-.how-step{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 26px;text-align:center;transition:transform .3s,box-shadow .3s}
-.how-step:hover{transform:translateY(-5px);box-shadow:var(--shadow-md)}
-.how-num{width:52px;height:52px;border-radius:16px;background:var(--grad);color:#fff;font-family:var(--en);font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;box-shadow:0 6px 16px rgba(37,99,235,.25)}
-.how-h{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:8px}
-.how-p{font-size:13px;color:var(--muted);line-height:1.8}
+.how{background:var(--ink);color:#fff}
+.how .sec-title{color:#fff}
+.how-list{border-top:2px solid rgba(255,255,255,.2)}
+.how-row{display:grid;grid-template-columns:110px 1fr 1.3fr;gap:30px;align-items:center;padding:38px 0;border-bottom:1px solid rgba(255,255,255,.12);transition:padding-left .4s}
+.how-row:hover{padding-left:16px}
+.how-no{font-family:var(--en);font-weight:800;font-size:44px;color:var(--lime);letter-spacing:-.02em;line-height:1}
+.how-name{font-family:var(--en);font-weight:700;font-size:19px}
+.how-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.85}
 
 /* CTA */
-.cta-band{max-width:1080px;margin:0 auto;background:var(--navy);border-radius:var(--r-lg);padding:72px 48px;text-align:center;position:relative;overflow:hidden}
-.cta-band::before{content:'';position:absolute;top:-120px;left:50%;transform:translateX(-50%);width:600px;height:340px;background:radial-gradient(ellipse,rgba(6,182,212,.18),transparent 65%)}
-.cta-h{font-size:clamp(24px,3.2vw,38px);font-weight:900;color:#fff;line-height:1.45;margin-bottom:16px;position:relative;z-index:1}
-.cta-h .gr{background:linear-gradient(120deg,#22D3EE,#60A5FA);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cta-p{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:36px;position:relative;z-index:1;line-height:2}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-.btn-white{background:#fff;color:var(--navy);padding:16px 36px;border-radius:var(--r-full);font-weight:700;font-size:15px}
-.btn-white:hover{transform:translateY(-2px)}
-.btn-line{background:transparent;color:#fff;padding:15px 34px;border-radius:var(--r-full);border:1.5px solid rgba(255,255,255,.25);font-weight:600;font-size:15px}
-.btn-line:hover{border-color:rgba(255,255,255,.6);background:rgba(255,255,255,.05)}
-.cta-contact{margin-top:24px;font-size:13px;color:rgba(255,255,255,.45);position:relative;z-index:1}
-.cta-contact strong{color:rgba(255,255,255,.75)}
+.cta{background:var(--lime);color:var(--ink);text-align:center;padding:140px 40px}
+.cta-h{font-family:var(--en);font-weight:900;font-size:clamp(36px,7vw,110px);line-height:.92;letter-spacing:-.03em;margin-bottom:22px}
+.cta-h .it{font-family:var(--serif);font-style:italic;font-weight:400}
+.cta-p{font-size:16px;color:var(--ink2);margin-bottom:40px;line-height:1.9}
+.cta-btn{display:inline-flex;align-items:center;gap:14px;background:var(--ink);color:#fff;font-family:var(--en);font-size:17px;font-weight:700;padding:22px 50px;border-radius:100px;transition:transform .3s}
+.cta-btn:hover{transform:scale(1.05) rotate(-1deg)}
+.cta-sub{margin-top:24px;font-family:var(--en);font-size:13px;color:var(--ink2)}
+.cta-sub b{color:var(--ink)}
 
 /* FOOTER */
-footer{background:var(--navy);padding:40px 2rem}
-.foot-inner{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
-.foot-logo{display:flex;align-items:center;gap:8px}
-.foot-links{display:flex;gap:18px;flex-wrap:wrap}
-.foot-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s}
+footer{background:var(--ink);color:#fff;padding:60px 40px 36px}
+.foot-in{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.55)}
 .foot-links a:hover{color:#fff}
-.foot-copy{font-size:12px;color:rgba(255,255,255,.3);width:100%;text-align:center;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);margin-top:8px}
+.foot-copy{max-width:1180px;margin:0 auto;padding-top:22px;font-family:var(--en);font-size:12px;color:rgba(255,255,255,.35);text-align:center}
 
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:none}
-.rd1{transition-delay:.08s}.rd2{transition-delay:.16s}.rd3{transition-delay:.24s}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}
 
 @media(max-width:960px){
-  .inner{padding:0 1.2rem}
+  .wrap{padding:0 22px}
+  .nav-in{padding:16px 22px}
   .nav-right{display:none}
   .hamburger{display:flex}
-  .hero{padding:108px 1.2rem 56px}
-  .hero-h1{font-size:clamp(24px,6.5vw,36px)}
-  .hero-lead{font-size:15px}
+  .hero{padding:120px 22px 70px}
   .hero-btns{flex-direction:column}
-  .hero-btns .btn{width:100%}
-  .sec{padding:60px 1.2rem}
+  .hero-btns a{width:100%;justify-content:center}
+  .sec{padding:70px 22px}
   .pain-grid{grid-template-columns:1fr}
-  .sol-grid{grid-template-columns:1fr}
+  .pain-card{border-right:none}
+  .pain-card:nth-child(5){border-bottom:1px solid var(--line)}
+  .sol-row{grid-template-columns:1fr;gap:12px;padding:32px 0}
+  .sol-free{justify-self:start}
   .ba-wrap{grid-template-columns:1fr}
-  .ba-arrow{display:none}
-  .ba-before{border-bottom:1px solid var(--border)}
-  .how-grid{grid-template-columns:1fr 1fr}
-  .cta-band{padding:48px 24px}
-  .foot-inner{flex-direction:column;text-align:center}
+  .ba-arrow{width:auto;height:50px;transform:rotate(90deg)}
+  .how-row{grid-template-columns:60px 1fr;gap:14px 18px;padding:26px 0}
+  .how-no{font-size:32px}
+  .how-desc{grid-column:2}
+  .foot-in{flex-direction:column;text-align:center}
 }
-@media(max-width:560px){.how-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav id="nav">
-  <div class="nav-inner">
-    <a href="index.html" class="logo">
-      <img src="logo2.png" alt="スマートWEB" class="logo-icon"/>
-      <img src="logo3.png" alt="スマートWEB" class="logo-text"/>
-    </a>
+<nav>
+  <div class="nav-in">
+    <a href="index.html" class="logo"><span class="logo-mark">SW</span><span class="logo-txt">スマートWEB</span></a>
     <div class="nav-right">
-      <a href="index.html" class="nav-back"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>トップへ戻る</a>
-      <a href="catalog.html" class="nav-back">デザインカタログ</a>
+      <a href="index.html" class="nav-back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>トップへ</a>
+      <a href="catalog.html" class="nav-back">Catalog</a>
       <a href="#cta" class="nav-cta">無料診断を申し込む</a>
     </div>
-    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
-  </div>
-  <div class="mobile-menu" id="mobile-menu">
-    <a href="index.html">← トップへ戻る</a>
-    <a href="catalog.html">デザインカタログ</a>
-    <a href="#cta" class="nav-cta">無料診断を申し込む</a>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="mnav" id="mnav">
+  <button class="mnav-close" id="mnavClose">×</button>
+  <a href="index.html">トップへ戻る</a>
+  <a href="catalog.html"><span class="gr">Catalog</span></a>
+  <a href="#cta"><span class="gr">無料診断</span></a>
+</div>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-inner">
-    <div class="hero-pill"><span class="pill-tag">FREE</span>完全無料・押し売りなし</div>
+  <div class="hero-grain"></div>
+  <div class="hero-in">
+    <div class="hero-tag">FREE DIAGNOSIS</div>
     <div class="hero-pre">御社のホームページを拝見して、ご連絡しました。</div>
-    <h1 class="hero-h1">そのホームページ、<br><span class="warn">お客様を逃しているかも</span>しれません。<br><span class="gr">無料で診断＋改善案</span>をお届けします。</h1>
-    <p class="hero-lead">御社のサイトを実際に拝見し、改善できるポイントを具体的にまとめました。ご興味があれば、お気軽にご返信ください。「話だけ聞いてみたい」も大歓迎です。</p>
+    <h1 class="hero-h1">その<span class="warn">サイト</span>、<br>お客様を<span class="it">逃して</span><br>いませんか？</h1>
+    <p class="hero-lead">御社のサイトを実際に拝見し、改善できるポイントを具体的にまとめました。完全無料・押し売りなし。「話だけ聞いてみたい」も大歓迎です。</p>
     <div class="hero-btns">
-      <a href="#cta" class="btn btn-grad">診断結果を受け取る →</a>
-      <a href="#solution" class="btn btn-ghost">診断内容を見る</a>
+      <a href="#cta" class="btn-lime">診断結果を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#solution" class="btn-out">診断内容を見る</a>
     </div>
     <div class="hero-trust">
       <div class="ht-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>完全無料</div>
@@ -225,149 +200,117 @@ footer{background:var(--navy);padding:40px 2rem}
 </header>
 
 <!-- PAIN -->
-<section class="sec">
-  <div class="inner">
+<section class="sec pain">
+  <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-tag">Current Issues</span>
-      <h2 class="sec-h2">こんな状態に<span class="gr">なっていませんか？</span></h2>
-      <p class="sec-p">現代のユーザーは、サイトを見た瞬間に「信頼できるか」を判断します。<br>古いデザインは、それだけで機会損失につながっています。</p>
+      <div class="sec-num">01 — Issues</div>
+      <h2 class="sec-title">こんな状態に<br><span class="it">なっていませんか?</span></h2>
+      <p class="sec-lead">現代のユーザーは、サイトを見た瞬間に「信頼できるか」を判断します。古いデザインは、それだけで機会損失につながっています。</p>
     </div>
-    <div class="pain-grid">
-      <div class="pain-card reveal"><div class="pain-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18"/></svg></div><div class="pain-text">スマホで見ると文字が小さく読みにくい</div></div>
-      <div class="pain-card reveal rd1"><div class="pain-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div><div class="pain-text">読み込みが遅く、途中で離脱されている</div></div>
-      <div class="pain-card reveal rd2"><div class="pain-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div><div class="pain-text">Googleで検索しても上位に表示されない</div></div>
-      <div class="pain-card reveal"><div class="pain-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></div><div class="pain-text">問い合わせボタンが目立たず連絡されない</div></div>
-      <div class="pain-card reveal rd1"><div class="pain-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div><div class="pain-text">デザインが古く競合より見劣りする</div></div>
-      <div class="pain-card reveal rd2"><div class="pain-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div><div class="pain-text">アクセス数や問い合わせ数が分からない</div></div>
+    <div class="pain-grid reveal">
+      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">スマホで見ると文字が小さく、読みにくい</span></div>
+      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">読み込みが遅く、途中で離脱されている</span></div>
+      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">Googleで検索しても上位に表示されない</span></div>
+      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">問い合わせボタンが目立たず連絡されない</span></div>
+      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">デザインが古く、競合より見劣りする</span></div>
+      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">アクセス数や問い合わせ数が分からない</span></div>
     </div>
     <div class="pain-note reveal">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-      <div>スマホからのWeb検索が全体の<strong>70%以上</strong>を占める今、スマホ対応していないサイトはGoogleの評価が下がり、<strong>検索結果に表示されにくくなっています。</strong></div>
+      <span class="pn-ic">!</span>
+      <div>スマホからのWeb検索が全体の<b>70%以上</b>を占める今、スマホ対応していないサイトはGoogleの評価が下がり、<b>検索結果に表示されにくくなっています。</b></div>
     </div>
   </div>
 </section>
 
 <!-- SOLUTION -->
-<section class="sec sec-bg" id="solution">
-  <div class="inner">
+<section class="sec sol" id="solution">
+  <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-tag">Our Offer</span>
-      <h2 class="sec-h2">スマートWEBが<span class="gr">無料でご提供</span>するもの</h2>
-      <p class="sec-p">診断から改善提案まで、すべて無料。押し売りは一切ありません。</p>
+      <div class="sec-num">02 — Free Offer</div>
+      <h2 class="sec-title">無料で<br><span class="it">ご提供</span>するもの</h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,.6)">診断から改善提案まで、すべて無料。押し売りは一切ありません。</p>
     </div>
-    <div class="sol-grid">
-      <div class="sol-card reveal">
-        <div class="sol-num">01</div>
-        <div class="sol-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="9" y1="15" x2="15" y2="15"/></svg></div>
-        <h3 class="sol-h">現状サイトの<br>無料診断レポート</h3>
-        <p class="sol-p">デザイン・スマホ対応・SEO・問い合わせ導線の4点を専門家が診断。改善ポイントを具体的にお伝えします。</p>
-        <span class="sol-free"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>完全無料</span>
-      </div>
-      <div class="sol-card reveal rd1">
-        <div class="sol-num">02</div>
-        <div class="sol-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
-        <h3 class="sol-h">新デザイン<br>改善案のご提案</h3>
-        <p class="sol-p">「こう変えると集客できる」という具体的な改善案をご提示。ご要望に応じてデモのご用意も可能です。</p>
-        <span class="sol-free"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>完全無料</span>
-      </div>
-      <div class="sol-card reveal rd2">
-        <div class="sol-num">03</div>
-        <div class="sol-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
-        <h3 class="sol-h">お見積もり・<br>ご提案資料</h3>
-        <p class="sol-p">費用・期間・制作内容を明記した見積書をご提供。ご納得いただいてから、はじめて制作を開始します。</p>
-        <span class="sol-free"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>無料・押し売りなし</span>
-      </div>
+    <div class="sol-list">
+      <div class="sol-row reveal"><div class="sol-no">01</div><div class="sol-name">現状サイトの<br>診断レポート</div><div class="sol-desc">デザイン・スマホ対応・表示速度・SEO・問い合わせ導線を専門家が診断。改善ポイントを具体的にお伝えします。</div><div class="sol-free">無料</div></div>
+      <div class="sol-row reveal"><div class="sol-no">02</div><div class="sol-name">新デザイン<br>改善案</div><div class="sol-desc">「こう変えると集客できる」という具体的な改善案をご提示。ご要望に応じてデモのご用意も可能です。</div><div class="sol-free">無料</div></div>
+      <div class="sol-row reveal"><div class="sol-no">03</div><div class="sol-name">お見積もり<br>提案資料</div><div class="sol-desc">費用・期間・制作内容を明記した見積書をご提供。ご納得いただいてから、はじめて制作を開始します。</div><div class="sol-free">押し売りなし</div></div>
     </div>
   </div>
 </section>
 
 <!-- BEFORE/AFTER -->
-<section class="sec">
-  <div class="inner">
+<section class="sec ba">
+  <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-tag">Before / After</span>
-      <h2 class="sec-h2">リニューアルで<span class="gr">ここが変わる</span></h2>
+      <div class="sec-num">03 — Before / After</div>
+      <h2 class="sec-title">リニューアルで<br><span class="it">ここが変わる</span></h2>
     </div>
     <div class="ba-wrap reveal">
       <div class="ba-col ba-before">
-        <span class="ba-label lb-before"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>Before（現状）</span>
-        <div class="ba-list">
-          <div class="ba-row"><svg class="bi" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>スマホで文字が小さく読みにくい</div>
-          <div class="ba-row"><svg class="bi" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>問い合わせボタンが目立たない</div>
-          <div class="ba-row"><svg class="bi" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>デザインが古く信頼感が薄い</div>
-          <div class="ba-row"><svg class="bi" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>サービス内容が伝わらない</div>
-          <div class="ba-row"><svg class="bi" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>読み込みが遅く離脱されやすい</div>
-        </div>
+        <div class="ba-label lb-b">BEFORE — 現状</div>
+        <div class="ba-li"><span class="ic bi-x">×</span>スマホで文字が小さく読みにくい</div>
+        <div class="ba-li"><span class="ic bi-x">×</span>問い合わせボタンが目立たない</div>
+        <div class="ba-li"><span class="ic bi-x">×</span>デザインが古く信頼感が薄い</div>
+        <div class="ba-li"><span class="ic bi-x">×</span>サービス内容が伝わらない</div>
+        <div class="ba-li"><span class="ic bi-x">×</span>読み込みが遅く離脱されやすい</div>
       </div>
-      <div class="ba-arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="ba-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
       <div class="ba-col ba-after">
-        <span class="ba-label lb-after"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>After（リニューアル後）</span>
-        <div class="ba-list">
-          <div class="ba-row"><svg class="ai" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>スマホ・PC・タブレット完全対応</div>
-          <div class="ba-row"><svg class="ai" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>「今すぐ連絡」ボタンが常に表示</div>
-          <div class="ba-row"><svg class="ai" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>プロのデザインで第一印象が変わる</div>
-          <div class="ba-row"><svg class="ai" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>強み・サービスが一目で伝わる</div>
-          <div class="ba-row"><svg class="ai" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>高速表示でストレスなく閲覧</div>
-        </div>
+        <div class="ba-label lb-a">AFTER — リニューアル後</div>
+        <div class="ba-li"><span class="ic bi-o">✓</span>スマホ・PC・タブレット完全対応</div>
+        <div class="ba-li"><span class="ic bi-o">✓</span>「今すぐ連絡」ボタンが常に表示</div>
+        <div class="ba-li"><span class="ic bi-o">✓</span>プロのデザインで第一印象が変わる</div>
+        <div class="ba-li"><span class="ic bi-o">✓</span>強み・サービスが一目で伝わる</div>
+        <div class="ba-li"><span class="ic bi-o">✓</span>高速表示でストレスなく閲覧</div>
       </div>
     </div>
   </div>
 </section>
 
 <!-- HOW -->
-<section class="sec sec-bg">
-  <div class="inner">
+<section class="sec how">
+  <div class="wrap">
     <div class="sec-head reveal">
-      <span class="sec-tag">How It Works</span>
-      <h2 class="sec-h2">ご返信から公開まで<span class="gr">4ステップ</span></h2>
+      <div class="sec-num" style="color:var(--lime)">04 — Flow</div>
+      <h2 class="sec-title">ご返信から<br><span class="it">公開まで</span></h2>
     </div>
-    <div class="how-grid">
-      <div class="how-step reveal"><div class="how-num">1</div><h3 class="how-h">ご返信・ご連絡</h3><p class="how-p">メール返信またはInstagram DMでお気軽にどうぞ。</p></div>
-      <div class="how-step reveal rd1"><div class="how-num">2</div><h3 class="how-h">診断・改善案送付</h3><p class="how-p">24時間以内に診断レポートと改善提案をお送りします。</p></div>
-      <div class="how-step reveal rd2"><div class="how-num">3</div><h3 class="how-h">お見積もり確認</h3><p class="how-p">費用・期間をご説明。ご納得後に契約書を発行します。</p></div>
-      <div class="how-step reveal rd3"><div class="how-num">4</div><h3 class="how-h">制作・公開</h3><p class="how-p">最短即日で着手。納品後1ヶ月は無料サポートします。</p></div>
+    <div class="how-list">
+      <div class="how-row reveal"><div class="how-no">01</div><div class="how-name">ご返信・ご連絡</div><div class="how-desc">メール返信またはInstagram DMでお気軽にどうぞ。</div></div>
+      <div class="how-row reveal"><div class="how-no">02</div><div class="how-name">診断・改善案の送付</div><div class="how-desc">24時間以内に診断レポートと改善提案をお送りします。</div></div>
+      <div class="how-row reveal"><div class="how-no">03</div><div class="how-name">お見積もり確認</div><div class="how-desc">費用・期間をご説明。ご納得後に契約書を発行します。</div></div>
+      <div class="how-row reveal"><div class="how-no">04</div><div class="how-name">制作・公開</div><div class="how-desc">最短即日で着手。納品後1ヶ月は無料サポートします。</div></div>
     </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="sec" id="cta">
-  <div class="cta-band reveal">
-    <h2 class="cta-h">まずは<span class="gr">無料診断</span>だけでも<br>お気軽にどうぞ。</h2>
-    <p class="cta-p">返信不要・押し売り一切なし。<br>「話だけ聞いてみたい」という方も大歓迎です。</p>
-    <div class="cta-btns">
-      <a href="mailto:info@nexia-web.jp?subject=ホームページ無料診断を希望します" class="btn-white">診断を申し込む（無料） →</a>
-      <a href="index.html#contact" class="btn-line">お問い合わせフォーム</a>
-    </div>
-    <div class="cta-contact">メール：<strong>info@nexia-web.jp</strong>　／　Instagram：<strong>@nexia.web</strong></div>
-  </div>
+<section class="cta" id="cta">
+  <h2 class="cta-h">Let's<br><span class="it">talk.</span></h2>
+  <p class="cta-p">まずは無料診断だけでも、お気軽にどうぞ。<br>返信不要・押し売り一切なし。「話だけ聞いてみたい」も大歓迎です。</p>
+  <a href="mailto:info@nexia-web.jp?subject=ホームページ無料診断を希望します" class="cta-btn">診断を申し込む（無料）<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  <div class="cta-sub">メール：<b>info@nexia-web.jp</b>　/　Instagram：<b>@nexia.web</b></div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="foot-inner">
-    <div class="foot-logo">
-      <img src="logo2.png" alt="スマートWEB" style="height:34px;width:auto;filter:brightness(0) invert(1);opacity:.85"/>
-      <img src="logo3.png" alt="スマートWEB" style="height:30px;width:auto;filter:brightness(0) invert(1);opacity:.8"/>
-    </div>
+  <div class="foot-in">
+    <a href="index.html" class="logo"><span class="logo-mark">SW</span><span class="logo-txt" style="color:#fff">スマートWEB</span></a>
     <div class="foot-links">
       <a href="index.html">トップ</a>
-      <a href="catalog.html">デザインカタログ</a>
+      <a href="catalog.html">Catalog</a>
       <a href="index.html#contact">お問い合わせ</a>
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="tokushoho.html">特定商取引法</a>
     </div>
   </div>
-  <div class="foot-copy">© 2025 スマートWEB（運営：NEXIA）. All Rights Reserved.</div>
+  <div class="foot-copy">© 2025 スマートWEB（運営：NEXIA）</div>
 </footer>
 
 <script>
-const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>20));
 const burger=document.getElementById('hamburger');
-const menu=document.getElementById('mobile-menu');
-burger.addEventListener('click',()=>menu.classList.toggle('open'));
-menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+const mnav=document.getElementById('mnav');
+document.getElementById('mnavClose').addEventListener('click',()=>mnav.classList.remove('open'));
+burger.addEventListener('click',()=>mnav.classList.add('open'));
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mnav.classList.remove('open')));
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.12});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>

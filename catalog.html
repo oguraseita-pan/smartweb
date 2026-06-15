@@ -4,175 +4,184 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>デザインカタログ | スマートWEB</title>
-<meta name="description" content="テーマ・フォント・カラーをその場で切り替え。あなたのビジネスにぴったりのデザインをカタログから選べます。"/>
+<meta name="description" content="カラー・フォント・デザインをその場で切り替え。あなたのビジネスにぴったりのデザインをカタログから選べます。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Baloo+2:wght@700;800&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Murecho:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Anton&family=Baloo+2:wght@700;800&family=Cormorant+Garamond:ital,wght@0,600;1,500&family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@300;400;500;700;900&family=Noto+Serif+JP:wght@400;600;700&family=Shippori+Mincho:wght@500;700&family=Zen+Maru+Gothic:wght@400;500;700&family=Murecho:wght@400;500;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400;1,600&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:var(--font-body,'Noto Sans JP',sans-serif);background:var(--bg,#fff);color:var(--text,#0F1729);line-height:1.75;font-size:16px;overflow-x:hidden;transition:background .4s,color .4s}
+body{font-family:var(--font-body,'Noto Sans JP',sans-serif);background:var(--page,#F4F1EA);color:var(--pink,#15130E);line-height:1.7;font-size:16px;overflow-x:hidden}
 img{max-width:100%;display:block}
-a{text-decoration:none;color:inherit}
-ul{list-style:none}
+a{text-decoration:none;color:inherit}ul{list-style:none}
 button{font-family:inherit;cursor:pointer}
+::selection{background:#C6F24E;color:#15130E}
 
-/* ===== THEME VARIABLES (default: Aqua) ===== */
-:root{
-  --accent:#2563EB;
-  --accent2:#06B6D4;
-  --grad:linear-gradient(120deg,#06B6D4,#2563EB);
-  --bg:#fff;
-  --bg2:#F8FAFC;
-  --surface:#fff;
-  --text:#0F1729;
-  --muted:#64748B;
-  --border:#E2E8F0;
-  --navy:#0F1729;
-  --font-head:'Noto Sans JP',sans-serif;
-  --font-body:'Noto Sans JP',sans-serif;
-  --radius:18px;
-  --radius-sm:10px;
-  --radius-full:100px;
-  --en:'Inter',sans-serif;
+/* page chrome (fixed editorial frame) */
+:root{--page:#F4F1EA;--ink:#15130E;--ink2:#3A352B;--lime:#C6F24E;--clay:#E5512E;--muted:#7A7468;--line:#DCD7CB;--card:#FBFAF6;--en:'Archivo',sans-serif;--serif:'Playfair Display',serif}
+
+/* ===== LIVE-PREVIEW THEME VARS (only scope the preview + catalog cards) ===== */
+.skin{
+  --accent:#2563EB;--accent2:#06B6D4;--grad:linear-gradient(120deg,#06B6D4,#2563EB);
+  --bg:#fff;--bg2:#F8FAFC;--surface:#fff;--text:#0F1729;--tmuted:#64748B;--border:#E2E8F0;--navy:#0F1729;
+  --font-head:'Noto Sans JP',sans-serif;--font-bd:'Noto Sans JP',sans-serif;
+  --radius:18px;--radius-sm:10px;--radius-full:100px;--en2:'Inter',sans-serif;
 }
+body[data-theme="aqua"] .skin{--accent:#2563EB;--accent2:#06B6D4;--grad:linear-gradient(120deg,#06B6D4,#2563EB);--bg:#fff;--bg2:#F8FAFC;--surface:#fff;--text:#0F1729;--tmuted:#64748B;--border:#E2E8F0;--navy:#0F1729}
+body[data-theme="ocean"] .skin{--accent:#0891B2;--accent2:#22D3EE;--grad:linear-gradient(120deg,#22D3EE,#0E7490);--bg:#F8FEFF;--bg2:#E8F8FB;--surface:#fff;--text:#0C2A33;--tmuted:#5A7A82;--border:#CDEAF0;--navy:#0C4A56}
+body[data-theme="forest"] .skin{--accent:#0F8A5F;--accent2:#34D399;--grad:linear-gradient(120deg,#34D399,#0F8A5F);--bg:#FBFDFB;--bg2:#EEF7F1;--surface:#fff;--text:#16261D;--tmuted:#5F7A6C;--border:#D6E8DD;--navy:#0C3D29}
+body[data-theme="sunset"] .skin{--accent:#EA580C;--accent2:#F59E0B;--grad:linear-gradient(120deg,#F59E0B,#EA580C);--bg:#FFFCF8;--bg2:#FDF3E9;--surface:#fff;--text:#3A2415;--tmuted:#9C7E63;--border:#F2E1CD;--navy:#5A3315}
+body[data-theme="sand"] .skin{--accent:#B45309;--accent2:#D97706;--grad:linear-gradient(120deg,#D97706,#92400E);--bg:#FFFDF8;--bg2:#F7F0E3;--surface:#fff;--text:#3A2E1A;--tmuted:#8A7A5F;--border:#EBE0CC;--navy:#5C4423}
+body[data-theme="sakura"] .skin{--accent:#E5557F;--accent2:#F59EB5;--grad:linear-gradient(120deg,#F59EB5,#E5557F);--bg:#FFFBFC;--bg2:#FDF1F5;--surface:#fff;--text:#3D2530;--tmuted:#9B7886;--border:#F3DCE4;--navy:#5A2A3C}
+body[data-theme="berry"] .skin{--accent:#BE185D;--accent2:#F472B6;--grad:linear-gradient(120deg,#F472B6,#BE185D);--bg:#FFFAFC;--bg2:#FCEEF4;--surface:#fff;--text:#3D1528;--tmuted:#9B6B81;--border:#F5D9E6;--navy:#831843}
+body[data-theme="royal"] .skin{--accent:#7C3AED;--accent2:#A78BFA;--grad:linear-gradient(120deg,#A78BFA,#7C3AED);--bg:#FDFCFF;--bg2:#F4F0FE;--surface:#fff;--text:#241A3D;--tmuted:#7C6F95;--border:#E5DCF7;--navy:#2E1065}
+body[data-theme="midnight"] .skin{--accent:#60A5FA;--accent2:#22D3EE;--grad:linear-gradient(120deg,#22D3EE,#60A5FA);--bg:#0B1120;--bg2:#111827;--surface:#151E31;--text:#E8EDF5;--tmuted:#94A3B8;--border:#243049;--navy:#060A14}
+body[data-theme="charcoal"] .skin{--accent:#D6FF3F;--accent2:#A3E635;--grad:linear-gradient(120deg,#D6FF3F,#84CC16);--bg:#0F0F0F;--bg2:#1A1A1A;--surface:#1C1C1C;--text:#F5F5F5;--tmuted:#A3A3A3;--border:#2E2E2E;--navy:#000}
+body[data-theme="mono"] .skin{--accent:#1A1A1A;--accent2:#525252;--grad:linear-gradient(120deg,#525252,#1A1A1A);--bg:#fff;--bg2:#F5F5F4;--surface:#fff;--text:#1A1A1A;--tmuted:#737373;--border:#E5E5E5;--navy:#0A0A0A}
 
-/* ===== THEME PRESETS ===== */
-body[data-theme="aqua"]{--accent:#2563EB;--accent2:#06B6D4;--grad:linear-gradient(120deg,#06B6D4,#2563EB);--bg:#fff;--bg2:#F8FAFC;--surface:#fff;--text:#0F1729;--muted:#64748B;--border:#E2E8F0;--navy:#0F1729}
-body[data-theme="midnight"]{--accent:#60A5FA;--accent2:#22D3EE;--grad:linear-gradient(120deg,#22D3EE,#60A5FA);--bg:#0B1120;--bg2:#111827;--surface:#151E31;--text:#E8EDF5;--muted:#94A3B8;--border:#243049;--navy:#060A14}
-body[data-theme="sakura"]{--accent:#E5557F;--accent2:#F59EB5;--grad:linear-gradient(120deg,#F59EB5,#E5557F);--bg:#FFFBFC;--bg2:#FDF1F5;--surface:#fff;--text:#3D2530;--muted:#9B7886;--border:#F3DCE4;--navy:#5A2A3C}
-body[data-theme="forest"]{--accent:#0F8A5F;--accent2:#34D399;--grad:linear-gradient(120deg,#34D399,#0F8A5F);--bg:#FBFDFB;--bg2:#EEF7F1;--surface:#fff;--text:#16261D;--muted:#5F7A6C;--border:#D6E8DD;--navy:#0C3D29}
-body[data-theme="sunset"]{--accent:#EA580C;--accent2:#F59E0B;--grad:linear-gradient(120deg,#F59E0B,#EA580C);--bg:#FFFCF8;--bg2:#FDF3E9;--surface:#fff;--text:#3A2415;--muted:#9C7E63;--border:#F2E1CD;--navy:#5A3315}
-body[data-theme="mono"]{--accent:#1A1A1A;--accent2:#525252;--grad:linear-gradient(120deg,#525252,#1A1A1A);--bg:#fff;--bg2:#F5F5F4;--surface:#fff;--text:#1A1A1A;--muted:#737373;--border:#E5E5E5;--navy:#0A0A0A}
-body[data-theme="royal"]{--accent:#7C3AED;--accent2:#A78BFA;--grad:linear-gradient(120deg,#A78BFA,#7C3AED);--bg:#FDFCFF;--bg2:#F4F0FE;--surface:#fff;--text:#241A3D;--muted:#7C6F95;--border:#E5DCF7;--navy:#2E1065}
-body[data-theme="ocean"]{--accent:#0891B2;--accent2:#22D3EE;--grad:linear-gradient(120deg,#22D3EE,#0E7490);--bg:#F8FEFF;--bg2:#E8F8FB;--surface:#fff;--text:#0C2A33;--muted:#5A7A82;--border:#CDEAF0;--navy:#0C4A56}
-body[data-theme="berry"]{--accent:#BE185D;--accent2:#F472B6;--grad:linear-gradient(120deg,#F472B6,#BE185D);--bg:#FFFAFC;--bg2:#FCEEF4;--surface:#fff;--text:#3D1528;--muted:#9B6B81;--border:#F5D9E6;--navy:#831843}
-body[data-theme="charcoal"]{--accent:#D6FF3F;--accent2:#A3E635;--grad:linear-gradient(120deg,#D6FF3F,#84CC16);--bg:#0F0F0F;--bg2:#1A1A1A;--surface:#1C1C1C;--text:#F5F5F5;--muted:#A3A3A3;--border:#2E2E2E;--navy:#000}
-body[data-theme="sand"]{--accent:#B45309;--accent2:#D97706;--grad:linear-gradient(120deg,#D97706,#92400E);--bg:#FFFDF8;--bg2:#F7F0E3;--surface:#fff;--text:#3A2E1A;--muted:#8A7A5F;--border:#EBE0CC;--navy:#5C4423}
+body[data-font="gothic"] .skin{--font-head:'Noto Sans JP',sans-serif;--font-bd:'Noto Sans JP',sans-serif}
+body[data-font="mincho"] .skin{--font-head:'Shippori Mincho',serif;--font-bd:'Noto Serif JP',serif}
+body[data-font="maru"] .skin{--font-head:'Zen Maru Gothic',sans-serif;--font-bd:'Zen Maru Gothic',sans-serif}
+body[data-font="modern"] .skin{--font-head:'Murecho',sans-serif;--font-bd:'Murecho',sans-serif}
+body[data-font="elegant"] .skin{--font-head:'Playfair Display','Shippori Mincho',serif;--font-bd:'Shippori Mincho',serif}
+body[data-font="pop"] .skin{--font-head:'Baloo 2','Zen Maru Gothic',sans-serif;--font-bd:'Zen Maru Gothic',sans-serif}
 
-/* ===== FONT PRESETS ===== */
-body[data-font="gothic"]{--font-head:'Noto Sans JP',sans-serif;--font-body:'Noto Sans JP',sans-serif}
-body[data-font="mincho"]{--font-head:'Shippori Mincho',serif;--font-body:'Noto Serif JP',serif}
-body[data-font="maru"]{--font-head:'Zen Maru Gothic',sans-serif;--font-body:'Zen Maru Gothic',sans-serif}
-body[data-font="modern"]{--font-head:'Murecho',sans-serif;--font-body:'Murecho',sans-serif}
-body[data-font="elegant"]{--font-head:'Playfair Display','Shippori Mincho',serif;--font-body:'Shippori Mincho',serif}
-body[data-font="pop"]{--font-head:'Baloo 2','Zen Maru Gothic',sans-serif;--font-body:'Zen Maru Gothic',sans-serif}
+/* style presets */
+body[data-style="standard"] .skin{--radius:18px;--radius-sm:10px}
+body[data-style="minimal"] .skin{--radius:0;--radius-sm:0}
+body[data-style="bold"] .skin{--radius:14px;--radius-sm:100px}
+body[data-style="editorial"] .skin{--radius:0;--radius-sm:0}
+body[data-style="retro"] .skin{--radius:6px;--radius-sm:6px}
 
-/* ===== MOOD PRESETS (雰囲気) — radius / shadow / spacing ===== */
-body[data-mood="clean"]{--radius:18px;--radius-sm:10px;--mood-shadow:0 12px 32px rgba(15,23,41,.08);--mood-letter:0}
-body[data-mood="sharp"]{--radius:2px;--radius-sm:2px;--mood-shadow:0 2px 0 rgba(15,23,41,.12);--mood-letter:.04em}
-body[data-mood="soft"]{--radius:32px;--radius-sm:20px;--mood-shadow:0 18px 44px rgba(15,23,41,.1);--mood-letter:0}
-body[data-mood="luxe"]{--radius:0px;--radius-sm:0px;--mood-shadow:0 20px 50px rgba(15,23,41,.14);--mood-letter:.08em}
-/* mood applies to preview + cards */
-body[data-mood] .preview-frame,body[data-mood] .pf-cards .pf-card,body[data-mood] .cat-card,body[data-mood] .mini{border-radius:var(--radius)}
-body[data-mood] .pf-btn-main,body[data-mood] .pf-btn-sub,body[data-mood] .new-btn{border-radius:var(--radius-sm)}
-body[data-mood] .preview-frame{box-shadow:var(--mood-shadow)}
-body[data-mood="luxe"] .pf-hero h3,body[data-mood="luxe"] .sec-head h2,body[data-mood="sharp"] .pf-hero h3{letter-spacing:var(--mood-letter)}
-body[data-mood="luxe"] .pf-badge,body[data-mood="luxe"] .new-badge{letter-spacing:.12em}
-
-.inner{max-width:1120px;margin:0 auto;padding:0 2rem}
-.grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.wrap{max-width:1240px;margin:0 auto;padding:0 40px}
 
 /* ===== NAV ===== */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(16px);border-bottom:1px solid var(--border);height:70px;display:flex;align-items:center}
-.nav-inner{width:100%;max-width:1120px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:8px;font-family:var(--en);font-weight:800;font-size:20px;color:var(--text)}
-.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;font-weight:800;font-size:15px;flex-shrink:0}
-.nav-links{display:flex;align-items:center;gap:1.8rem}
-.nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s}
-.nav-links a:hover{color:var(--text)}
-.nav-cta{background:var(--navy);color:#fff!important;padding:10px 22px;border-radius:var(--radius-full);font-size:14px!important;font-weight:700!important}
+nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(244,241,234,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1240px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:9px}
+.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--ink);color:var(--lime);display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:800;font-size:14px}
+.logo-txt{font-family:var(--en);font-weight:800;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
+.nav-right{display:flex;align-items:center;gap:24px}
+.nav-link{font-family:var(--en);font-size:13px;font-weight:600;color:var(--muted)}
+.nav-link:hover{color:var(--ink)}
+.nav-cta{background:var(--ink);color:var(--lime)!important;padding:11px 24px;border-radius:100px;font-family:var(--en);font-size:13px!important;font-weight:700!important}
 .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}
-.hamburger span{display:block;width:22px;height:2px;background:var(--text);border-radius:2px;transition:.3s}
+.hamburger span{display:block;width:23px;height:2px;background:var(--ink);border-radius:2px}
+.mnav{display:none;position:fixed;inset:0;z-index:400;background:var(--ink);flex-direction:column;justify-content:center;padding:40px;gap:6px}
+.mnav.open{display:flex}
+.mnav a{font-family:var(--en);font-size:30px;font-weight:800;color:#fff;padding:8px 0}
+.mnav a .gr{color:var(--lime)}
+.mnav-close{position:absolute;top:28px;right:34px;background:none;border:none;color:#fff;font-size:32px}
 
 /* ===== HERO ===== */
-.hero{padding:140px 2rem 70px;text-align:center;position:relative;overflow:hidden;background:
-  radial-gradient(ellipse 700px 400px at 50% -10%,color-mix(in srgb,var(--accent2) 14%,transparent),transparent 60%),var(--bg)}
-.hero-pill{display:inline-flex;align-items:center;gap:8px;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius-full);padding:7px 18px;margin-bottom:26px;font-size:13px;font-weight:500;color:var(--muted)}
-.pill-dot{width:7px;height:7px;border-radius:50%;background:var(--accent);animation:pulse 1.8s infinite}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
-.hero h1{font-family:var(--font-head);font-size:clamp(32px,5vw,56px);font-weight:900;color:var(--text);line-height:1.3;letter-spacing:-.01em;margin-bottom:22px}
-.hero h1 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero p{font-size:17px;color:var(--muted);line-height:1.95;max-width:600px;margin:0 auto 38px}
-.hero-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:700;font-size:15px;border:none;transition:all .25s;letter-spacing:.01em}
-.btn-grad{background:var(--grad);color:#fff;padding:15px 32px;border-radius:var(--radius-full)}
-.btn-grad:hover{transform:translateY(-2px);filter:brightness(1.05)}
-.btn-ghost{background:var(--surface);color:var(--text);padding:14px 30px;border-radius:var(--radius-full);border:1.5px solid var(--border)}
-.btn-ghost:hover{border-color:var(--accent)}
+.hero{background:var(--ink);color:#fff;padding:150px 40px 80px;position:relative;overflow:hidden}
+.hero-grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.06) 1px,transparent 0);background-size:4px 4px}
+.hero-in{max-width:1240px;margin:0 auto;position:relative;z-index:2}
+.hero-tag{font-family:var(--en);font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--clay);display:inline-flex;align-items:center;gap:10px;margin-bottom:30px}
+.hero-tag::before{content:'';width:36px;height:1px;background:var(--clay)}
+.hero-h1{font-family:var(--en);font-weight:900;font-size:clamp(40px,8vw,110px);line-height:.92;letter-spacing:-.03em;text-transform:uppercase;margin-bottom:28px}
+.hero-h1 .it{font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none;color:var(--lime)}
+.hero-lead{font-size:16px;color:rgba(255,255,255,.7);line-height:2;max-width:560px}
 
-/* ===== CUSTOMIZER BAR ===== */
-.customizer{position:sticky;top:70px;z-index:250;background:var(--surface);border-top:1px solid var(--border);border-bottom:1px solid var(--border);padding:16px 0}
-.cust-inner{max-width:1120px;margin:0 auto;padding:0 2rem;display:flex;align-items:center;gap:28px;flex-wrap:wrap}
-.cust-group{display:flex;align-items:center;gap:12px}
-.cust-label{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap}
+/* ===== CUSTOMIZER ===== */
+.customizer{position:sticky;top:69px;z-index:250;background:var(--ink);color:#fff;border-bottom:2px solid var(--lime)}
+.cust-toggle{display:none;width:100%;background:none;border:none;padding:16px 22px;align-items:center;justify-content:space-between;cursor:pointer;font-family:var(--en);font-size:14px;font-weight:700;color:#fff}
+.ct-left{display:flex;align-items:center;gap:9px;color:var(--lime)}
+.ct-chevron{transition:transform .3s;color:rgba(255,255,255,.5)}
+.customizer.collapsed .ct-chevron{transform:rotate(-90deg)}
+.cust-inner{max-width:1240px;margin:0 auto;padding:20px 40px;display:flex;align-items:center;gap:30px;flex-wrap:wrap}
+.cust-group{display:flex;align-items:center;gap:14px}
+.cust-label{font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.45);white-space:nowrap}
 .swatches{display:flex;gap:8px}
-.swatch{width:30px;height:30px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .2s,border-color .2s;position:relative}
-.swatch:hover{transform:scale(1.12)}
-.swatch.active{border-color:var(--text)}
-.swatch.active::after{content:'';position:absolute;inset:0;border-radius:50%;border:2px solid var(--bg)}
+.swatch{width:28px;height:28px;border-radius:50%;cursor:pointer;border:2px solid transparent;transition:transform .2s,border-color .2s;position:relative}
+.swatch:hover{transform:scale(1.15)}
+.swatch.active{border-color:var(--lime)}
 .sw-aqua{background:linear-gradient(120deg,#06B6D4,#2563EB)}
-.sw-midnight{background:linear-gradient(120deg,#22D3EE,#1E293B)}
-.sw-sakura{background:linear-gradient(120deg,#F59EB5,#E5557F)}
+.sw-ocean{background:linear-gradient(120deg,#22D3EE,#0E7490)}
 .sw-forest{background:linear-gradient(120deg,#34D399,#0F8A5F)}
 .sw-sunset{background:linear-gradient(120deg,#F59E0B,#EA580C)}
-.sw-mono{background:linear-gradient(120deg,#525252,#1A1A1A)}
-.sw-royal{background:linear-gradient(120deg,#A78BFA,#7C3AED)}
-.sw-ocean{background:linear-gradient(120deg,#22D3EE,#0E7490)}
-.sw-berry{background:linear-gradient(120deg,#F472B6,#BE185D)}
-.sw-charcoal{background:linear-gradient(120deg,#D6FF3F,#1A1A1A)}
 .sw-sand{background:linear-gradient(120deg,#D97706,#92400E)}
-.font-btns{display:flex;gap:6px;flex-wrap:wrap}
-.font-btn{padding:7px 16px;border-radius:var(--radius-full);border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;transition:all .2s}
-.font-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.font-btn:hover:not(.active){border-color:var(--accent);color:var(--text)}
-.cust-hint{margin-left:auto;font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px}
+.sw-sakura{background:linear-gradient(120deg,#F59EB5,#E5557F)}
+.sw-berry{background:linear-gradient(120deg,#F472B6,#BE185D)}
+.sw-royal{background:linear-gradient(120deg,#A78BFA,#7C3AED)}
+.sw-midnight{background:linear-gradient(120deg,#22D3EE,#1E293B)}
+.sw-charcoal{background:linear-gradient(120deg,#D6FF3F,#1A1A1A)}
+.sw-mono{background:linear-gradient(120deg,#525252,#1A1A1A)}
+.opt-btns{display:flex;gap:6px;flex-wrap:wrap}
+.opt-btn{padding:7px 15px;border-radius:100px;border:1.5px solid rgba(255,255,255,.2);background:transparent;color:rgba(255,255,255,.7);font-family:var(--en);font-size:12px;font-weight:600;transition:all .2s}
+.opt-btn.active{background:var(--lime);color:var(--ink);border-color:var(--lime)}
+.opt-btn:hover:not(.active){border-color:var(--lime);color:#fff}
 
-/* ===== LIVE PREVIEW CARD ===== */
-.preview-sec{padding:70px 2rem;background:var(--bg2)}
-.sec-head{text-align:center;max-width:640px;margin:0 auto 50px}
-.sec-tag{display:inline-block;background:color-mix(in srgb,var(--accent) 10%,transparent);color:var(--accent);font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:var(--radius-full);margin-bottom:18px}
-.sec-head h2{font-family:var(--font-head);font-size:clamp(24px,3.4vw,38px);font-weight:900;color:var(--text);line-height:1.4;margin-bottom:14px}
-.sec-head p{font-size:15px;color:var(--muted);line-height:1.9}
+/* ===== SECTION SHELL ===== */
+.sec{padding:110px 40px;position:relative}
+.sec-head{margin-bottom:56px}
+.sec-num{font-family:var(--en);font-size:14px;font-weight:700;color:var(--clay);letter-spacing:.1em;margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.sec-num::before{content:'';width:40px;height:1px;background:var(--clay)}
+.sec-title{font-family:var(--en);font-weight:800;font-size:clamp(32px,5vw,64px);line-height:1;letter-spacing:-.02em;margin-bottom:20px}
+.sec-title .it{font-family:var(--serif);font-style:italic;font-weight:400}
+.sec-lead{font-size:16px;color:var(--ink2);line-height:2;max-width:560px}
 
-.preview-frame{max-width:900px;margin:0 auto;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;box-shadow:0 24px 60px color-mix(in srgb,var(--navy) 10%,transparent)}
-.pf-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:12px 18px;display:flex;align-items:center;gap:10px}
+/* ===== LIVE PREVIEW ===== */
+.preview-sec{background:var(--paper)}
+.preview-frame{max-width:920px;margin:0 auto;background:var(--surface);border:1px solid var(--ink);border-radius:var(--radius);overflow:hidden;box-shadow:14px 14px 0 var(--ink);font-family:var(--font-bd)}
+.pf-bar{background:var(--bg2);border-bottom:1px solid var(--border);padding:13px 18px;display:flex;align-items:center;gap:10px}
 .pf-dots{display:flex;gap:6px}
 .pf-dot{width:11px;height:11px;border-radius:50%}
-.pf-url{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:6px 14px;font-family:var(--en);font-size:11px;color:var(--muted);text-align:center}
-
-.pf-hero{padding:48px 40px;text-align:center;background:
-  radial-gradient(ellipse 400px 200px at 50% 0%,color-mix(in srgb,var(--accent2) 12%,transparent),transparent 70%)}
-.pf-badge{display:inline-block;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:12px;font-weight:700;padding:5px 14px;border-radius:var(--radius-full);margin-bottom:18px}
-.pf-hero h3{font-family:var(--font-head);font-size:clamp(24px,3.5vw,36px);font-weight:900;color:var(--text);line-height:1.35;margin-bottom:14px}
+.pf-url{flex:1;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:7px 14px;font-family:var(--en2);font-size:11px;color:var(--tmuted);text-align:center}
+.pf-hero{padding:54px 44px;text-align:center;background:radial-gradient(ellipse 440px 220px at 50% 0%,color-mix(in srgb,var(--accent2) 13%,transparent),transparent 70%)}
+.pf-badge{display:inline-block;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:12px;font-weight:700;padding:5px 15px;border-radius:var(--radius-full);margin-bottom:20px}
+.pf-hero h3{font-family:var(--font-head);font-size:clamp(26px,3.6vw,40px);font-weight:900;color:var(--text);line-height:1.3;margin-bottom:16px}
 .pf-hero h3 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.pf-hero p{font-size:15px;color:var(--muted);line-height:1.9;max-width:480px;margin:0 auto 26px}
+.pf-hero p{font-size:15px;color:var(--tmuted);line-height:1.9;max-width:480px;margin:0 auto 28px}
 .pf-hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.pf-btn-main{background:var(--grad);color:#fff;padding:13px 28px;border-radius:var(--radius-full);font-size:14px;font-weight:700;border:none}
-.pf-btn-sub{background:var(--surface);color:var(--text);padding:12px 26px;border-radius:var(--radius-full);font-size:14px;font-weight:600;border:1.5px solid var(--border)}
-
-.pf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 40px 40px}
-.pf-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius-sm);padding:22px}
-.pf-card-ic{width:42px;height:42px;border-radius:11px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:#fff}
+.pf-btn-main{background:var(--grad);color:#fff;padding:14px 30px;border-radius:var(--radius-full);font-size:14px;font-weight:700;border:none}
+.pf-btn-sub{background:var(--surface);color:var(--text);padding:13px 28px;border-radius:var(--radius-full);font-size:14px;font-weight:600;border:1.5px solid var(--border)}
+.pf-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 44px 44px}
+.pf-card{background:var(--bg2);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.pf-card-ic{width:44px;height:44px;border-radius:12px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:14px;color:#fff}
 .pf-card h4{font-family:var(--font-head);font-size:15px;font-weight:700;color:var(--text);margin-bottom:6px}
-.pf-card p{font-size:13px;color:var(--muted);line-height:1.7}
+.pf-card p{font-size:13px;color:var(--tmuted);line-height:1.7}
+/* style overrides for preview */
+body[data-style="minimal"] .preview-frame{box-shadow:none;border:1px solid var(--text)}
+body[data-style="minimal"] .pf-hero{padding:72px 44px}
+body[data-style="minimal"] .pf-hero h3{font-weight:400;letter-spacing:.02em}
+body[data-style="minimal"] .pf-badge{background:transparent;border:1px solid var(--text);color:var(--text)}
+body[data-style="minimal"] .pf-btn-main{background:var(--text)}
+body[data-style="minimal"] .pf-card-ic{background:var(--text)}
+body[data-style="bold"] .pf-hero{background:var(--text);padding:62px 40px}
+body[data-style="bold"] .pf-badge{background:var(--accent);color:#fff}
+body[data-style="bold"] .pf-hero h3{color:#fff;font-size:clamp(30px,5vw,48px);font-weight:900;line-height:1.1;letter-spacing:-.02em}
+body[data-style="bold"] .pf-hero h3 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+body[data-style="bold"] .pf-hero p{color:rgba(255,255,255,.7)}
+body[data-style="bold"] .pf-btn-sub{background:transparent;color:#fff;border-color:rgba(255,255,255,.4)}
+body[data-style="bold"] .pf-cards{margin-top:-30px;position:relative;z-index:2}
+body[data-style="editorial"] .preview-frame{box-shadow:none;border:1px solid var(--border)}
+body[data-style="editorial"] .pf-hero{text-align:left;padding:50px 44px;border-bottom:2px solid var(--text)}
+body[data-style="editorial"] .pf-badge{background:transparent;color:var(--text);padding:0;font-size:11px;letter-spacing:.3em}
+body[data-style="editorial"] .pf-hero h3{font-family:'Playfair Display',serif;font-size:clamp(28px,5vw,46px);font-weight:700;text-align:left;line-height:1.08}
+body[data-style="editorial"] .pf-hero p{text-align:left;margin:14px 0 0;max-width:100%;border-top:1px solid var(--border);padding-top:14px}
+body[data-style="editorial"] .pf-hero-btns{justify-content:flex-start}
+body[data-style="editorial"] .pf-card{border-top:3px solid var(--text)}
+body[data-style="retro"] .preview-frame{box-shadow:10px 10px 0 var(--ink);border:2px solid var(--ink)}
+body[data-style="retro"] .pf-badge{background:var(--accent);color:#fff;border:2px solid var(--text);box-shadow:3px 3px 0 var(--text)}
+body[data-style="retro"] .pf-btn-main{border:2px solid var(--text);box-shadow:3px 3px 0 var(--text)}
+body[data-style="retro"] .pf-btn-sub{border:2px solid var(--text);box-shadow:3px 3px 0 var(--text)}
+body[data-style="retro"] .pf-card{border:2px solid var(--text);box-shadow:4px 4px 0 var(--text)}
+body[data-style="retro"] .pf-card-ic{border:2px solid var(--text)}
 
-/* ===== BEFORE/AFTER SLIDER ===== */
-.compare-sec{padding:80px 2rem;background:var(--bg)}
-.compare-wrap{max-width:860px;margin:0 auto;position:relative;border-radius:var(--radius);overflow:hidden;border:1px solid var(--border);box-shadow:0 20px 50px color-mix(in srgb,var(--navy) 10%,transparent);user-select:none}
+/* ===== BEFORE/AFTER ===== */
+.compare-sec{background:var(--ink);color:#fff}
+.compare-sec .sec-title{color:#fff}
+.compare-wrap{max-width:880px;margin:0 auto;position:relative;border-radius:14px;overflow:hidden;border:2px solid var(--lime);user-select:none;--cmp-w:880px}
 .compare-pane{height:480px;position:relative}
 .compare-before,.compare-after{position:absolute;inset:0;height:100%;overflow:hidden}
 .compare-before{z-index:1}
-.compare-after{z-index:2;width:50%;border-right:3px solid #fff}
+.compare-after{z-index:2;width:50%;border-right:3px solid var(--lime)}
 .cmp-content{width:100%;height:480px;position:absolute;top:0;left:0}
-.compare-before .cmp-content{width:var(--cmp-w,860px)}
-.compare-after{overflow:hidden}
-.compare-after .cmp-content{width:var(--cmp-w,860px)}
-.compare-wrap{--cmp-w:860px}
-.cmp-tag{position:absolute;top:18px;z-index:5;font-size:12px;font-weight:700;padding:6px 16px;border-radius:var(--radius-full);color:#fff}
+.compare-before .cmp-content,.compare-after .cmp-content{width:var(--cmp-w,880px)}
+.cmp-tag{position:absolute;top:18px;z-index:5;font-family:var(--en);font-size:12px;font-weight:700;padding:6px 16px;border-radius:100px;color:#fff;letter-spacing:.05em}
 .cmp-tag-before{left:18px;background:#94A3B8}
-.cmp-tag-after{right:18px;background:var(--accent)}
-/* BEFORE design (old/plain) */
+.cmp-tag-after{right:18px;background:var(--clay)}
 .old-site{background:#EDEDED;height:100%;font-family:'MS PGothic','Noto Sans JP',sans-serif}
 .old-header{background:#7A8B99;padding:14px 20px;color:#fff;font-size:18px;font-weight:700;border-bottom:3px solid #5A6B79}
 .old-nav{background:#dfe3e6;padding:8px 20px;display:flex;gap:16px;font-size:12px;color:#456}
@@ -181,38 +190,33 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:color-mix(in srgb
 .old-text{font-size:12px;color:#555;line-height:1.8;margin-bottom:8px}
 .old-img{width:100%;height:90px;background:repeating-linear-gradient(45deg,#ccc,#ccc 10px,#d8d8d8 10px,#d8d8d8 20px);margin:12px 0;display:flex;align-items:center;justify-content:center;color:#999;font-size:12px}
 .old-btn{display:inline-block;background:#7A8B99;color:#fff;padding:8px 18px;font-size:12px;border:2px outset #95a5b3}
-/* AFTER design (new/modern) */
 .new-site{background:var(--surface);height:100%}
-.new-hero{padding:36px;text-align:center;background:radial-gradient(ellipse 400px 200px at 50% 0%,color-mix(in srgb,var(--accent2) 14%,transparent),transparent 70%)}
-.new-badge{display:inline-block;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:11px;font-weight:700;padding:4px 13px;border-radius:var(--radius-full);margin-bottom:14px}
+.new-hero{padding:38px;text-align:center;background:radial-gradient(ellipse 400px 200px at 50% 0%,color-mix(in srgb,var(--accent2) 14%,transparent),transparent 70%)}
+.new-badge{display:inline-block;background:color-mix(in srgb,var(--accent) 12%,transparent);color:var(--accent);font-size:11px;font-weight:700;padding:4px 13px;border-radius:100px;margin-bottom:14px}
 .new-title{font-family:var(--font-head);font-size:26px;font-weight:900;color:var(--text);line-height:1.3;margin-bottom:12px}
 .new-title .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.new-text{font-size:13px;color:var(--muted);line-height:1.8;margin-bottom:20px}
-.new-btn{display:inline-block;background:var(--grad);color:#fff;padding:11px 26px;border-radius:var(--radius-full);font-size:13px;font-weight:700}
-.new-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 36px}
+.new-text{font-size:13px;color:var(--tmuted);line-height:1.8;margin-bottom:20px}
+.new-btn{display:inline-block;background:var(--grad);color:#fff;padding:11px 26px;border-radius:100px;font-size:13px;font-weight:700}
+.new-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;padding:0 38px}
 .new-card{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:left}
 .new-card-ic{width:32px;height:32px;border-radius:8px;background:var(--grad);margin-bottom:10px}
 .new-card-line{height:7px;border-radius:4px;background:var(--border);margin-bottom:6px}
 .new-card-line.short{width:60%}
-.compare-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;z-index:4;cursor:ew-resize;transform:translateX(-50%)}
-.compare-knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:#fff;box-shadow:0 4px 16px rgba(0,0,0,.25);display:flex;align-items:center;justify-content:center;cursor:ew-resize;z-index:5}
-.compare-knob svg{color:var(--navy)}
-.compare-caption{text-align:center;margin-top:24px;font-size:13px;color:var(--muted)}
+.compare-handle{position:absolute;top:0;bottom:0;left:50%;width:3px;background:var(--lime);z-index:4;cursor:ew-resize;transform:translateX(-50%)}
+.compare-knob{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:48px;height:48px;border-radius:50%;background:var(--lime);box-shadow:0 4px 16px rgba(0,0,0,.3);display:flex;align-items:center;justify-content:center;cursor:ew-resize;z-index:5;color:var(--ink)}
+.compare-caption{text-align:center;margin-top:24px;font-family:var(--en);font-size:13px;color:rgba(255,255,255,.5)}
 
 /* ===== CATALOG GRID ===== */
-.catalog-sec{padding:80px 2rem;background:var(--bg2)}
-.cat-filters{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:44px}
-.cat-filter{padding:9px 20px;border-radius:var(--radius-full);border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;transition:all .2s}
-.cat-filter.active{background:var(--navy);color:#fff;border-color:var(--navy)}
-.cat-filter:hover:not(.active){border-color:var(--accent);color:var(--text)}
-.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1120px;margin:0 auto}
-.cat-card{display:block;background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .3s,box-shadow .3s;cursor:pointer}
-.cat-card:hover{transform:translateY(-6px);box-shadow:0 20px 44px color-mix(in srgb,var(--navy) 12%,transparent)}
-.cat-view{display:flex;align-items:center;gap:7px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border);font-size:13px;font-weight:700;color:var(--accent);transition:gap .25s}
-.cat-card:hover .cat-view{gap:12px}
-.cat-thumb{height:190px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px}
-/* mini preview = scaled-down demo */
-.mini{width:100%;height:100%;border-radius:8px;overflow:hidden;box-shadow:0 8px 24px rgba(15,23,41,.18);display:flex;flex-direction:column;transform:scale(1);transition:transform .4s cubic-bezier(.22,1,.36,1)}
+.catalog-sec{background:var(--paper)}
+.cat-filters{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:44px}
+.cat-filter{padding:10px 22px;border-radius:100px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);font-family:var(--en);font-size:13px;font-weight:600;transition:all .2s}
+.cat-filter.active{background:var(--ink);color:var(--lime)}
+.cat-filter:hover:not(.active){background:var(--card)}
+.cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.cat-card{display:block;background:var(--card);border:1px solid var(--ink);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.cat-card:hover{transform:translateY(-6px);box-shadow:10px 10px 0 var(--ink)}
+.cat-thumb{height:190px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px;border-bottom:1px solid var(--ink)}
+.mini{width:100%;height:100%;border-radius:8px;overflow:hidden;box-shadow:0 8px 20px rgba(15,19,14,.16);display:flex;flex-direction:column;transition:transform .4s}
 .cat-card:hover .mini{transform:scale(1.04)}
 .m-nav{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;flex-shrink:0}
 .m-logo{font-size:11px;font-weight:800}
@@ -231,7 +235,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:color-mix(in srgb
 .m-title-pf em{font-style:italic;color:#E08B5F;display:block}
 .m-title-round{font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:800;color:#1B2A4A;line-height:1.35}
 .m-title-anton{font-family:'Anton',sans-serif;font-size:17px;color:#fff;line-height:1;text-transform:uppercase;letter-spacing:.01em}
-/* per-theme mini backgrounds (match real demos) */
 .mini-salon{background:#FBF7F4}
 .mini-salon .m-nav{background:#FBF7F4;border-bottom:1px solid #E8DDD3}
 .mini-salon .m-logo{color:#3A2E2A;font-family:'Cormorant Garamond',serif;font-weight:600}
@@ -251,111 +254,111 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:color-mix(in srgb
 .mini-clinic .m-body{background:linear-gradient(160deg,#F0F9F5,#fff)}
 .mini-creative{background:#0A0A0A}
 .mini-creative .m-body{background:radial-gradient(ellipse 70% 60% at 70% 40%,rgba(123,47,247,.4),transparent 65%)}
-.cat-body{padding:22px 24px}
-.cat-badge{display:inline-block;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent);padding:4px 11px;border-radius:6px;margin-bottom:12px}
-.cat-card h3{font-family:var(--font-head);font-size:18px;font-weight:700;color:var(--text);margin-bottom:8px}
+.cat-body{padding:24px 26px}
+.cat-badge{display:inline-block;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--clay);margin-bottom:12px}
+.cat-card h3{font-family:var(--en);font-size:20px;font-weight:800;color:var(--ink);margin-bottom:8px;letter-spacing:-.01em}
 .cat-card p{font-size:13px;color:var(--muted);line-height:1.75;margin-bottom:16px}
-.cat-tags{display:flex;gap:6px;flex-wrap:wrap}
-.cat-tag{font-size:11px;font-weight:600;color:var(--muted);background:var(--bg2);border:1px solid var(--border);padding:4px 10px;border-radius:var(--radius-full)}
+.cat-tags{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.cat-tag{font-size:11px;font-weight:600;color:var(--ink2);background:var(--paper);border:1px solid var(--line);padding:4px 10px;border-radius:100px}
+.cat-view{display:flex;align-items:center;gap:7px;padding-top:16px;border-top:1px solid var(--line);font-family:var(--en);font-size:13px;font-weight:700;color:var(--clay);transition:gap .25s}
+.cat-card:hover .cat-view{gap:12px}
 
 /* ===== CTA ===== */
-.cta-sec{padding:90px 2rem}
-.cta-band{max-width:1120px;margin:0 auto;background:var(--navy);border-radius:var(--radius);padding:64px 48px;text-align:center;position:relative;overflow:hidden}
-.cta-band::before{content:'';position:absolute;top:-100px;left:50%;transform:translateX(-50%);width:600px;height:320px;background:radial-gradient(ellipse,color-mix(in srgb,var(--accent2) 22%,transparent),transparent 65%)}
-.cta-band h2{font-family:var(--font-head);font-size:clamp(24px,3.4vw,38px);font-weight:900;color:#fff;line-height:1.4;margin-bottom:16px;position:relative;z-index:1}
-.cta-band h2 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cta-band p{font-size:15px;color:rgba(255,255,255,.65);margin-bottom:34px;line-height:1.9;position:relative;z-index:1}
-.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
-.btn-white{background:#fff;color:var(--navy);padding:15px 34px;border-radius:var(--radius-full);font-weight:700;font-size:15px;border:none}
-.btn-line2{background:transparent;color:#fff;padding:14px 32px;border-radius:var(--radius-full);border:1.5px solid rgba(255,255,255,.25);font-weight:600;font-size:15px}
+.cta{background:var(--lime);color:var(--ink);text-align:center;padding:140px 40px}
+.cta-h{font-family:var(--en);font-weight:900;font-size:clamp(36px,7vw,100px);line-height:.92;letter-spacing:-.03em;margin-bottom:24px}
+.cta-h .it{font-family:var(--serif);font-style:italic;font-weight:400}
+.cta-p{font-size:16px;color:var(--ink2);margin-bottom:38px;line-height:1.9}
+.cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.cta-btn{display:inline-flex;align-items:center;gap:12px;background:var(--ink);color:#fff;font-family:var(--en);font-size:16px;font-weight:700;padding:20px 44px;border-radius:100px;transition:transform .3s}
+.cta-btn:hover{transform:scale(1.05) rotate(-1deg)}
+.cta-btn.ghost{background:transparent;border:2px solid var(--ink);color:var(--ink)}
 
 /* ===== FOOTER ===== */
-footer{background:var(--navy);padding:40px 2rem}
-.foot-inner{max-width:1120px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px}
-.foot-logo{display:flex;align-items:center;gap:8px;font-family:var(--en);font-weight:800;font-size:18px;color:#fff}
-.foot-links{display:flex;gap:18px;flex-wrap:wrap}
-.foot-links a{font-size:13px;color:rgba(255,255,255,.55);transition:color .2s}
+footer{background:var(--ink);color:#fff;padding:60px 40px 36px}
+.foot-in{max-width:1240px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+.foot-links{display:flex;gap:22px;flex-wrap:wrap}
+.foot-links a{font-size:13px;color:rgba(255,255,255,.55)}
 .foot-links a:hover{color:#fff}
-.foot-copy{font-size:12px;color:rgba(255,255,255,.3);width:100%;text-align:center;padding-top:18px;border-top:1px solid rgba(255,255,255,.08);margin-top:8px}
+.foot-copy{max-width:1240px;margin:0 auto;padding-top:22px;font-family:var(--en);font-size:12px;color:rgba(255,255,255,.35);text-align:center}
 
-.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:none}
-.rd1{transition-delay:.08s}.rd2{transition-delay:.16s}.rd3{transition-delay:.24s}
+.rd1{transition-delay:.1s}.rd2{transition-delay:.2s}
 
 @media(max-width:960px){
-  .inner{padding:0 1.2rem}
+  .wrap{padding:0 22px}
+  .nav-in{padding:16px 22px}
+  .nav-right{display:none}
   .hamburger{display:flex}
-  .nav-links{display:none;flex-direction:column;position:fixed;top:70px;left:0;right:0;bottom:0;background:var(--bg);padding:2rem 1.6rem;gap:1.6rem;border-top:1px solid var(--border);align-items:flex-start;z-index:299}
-  .nav-links.open{display:flex}
-  .nav-links a{font-size:19px;color:var(--text)}
-  .nav-links .nav-cta{width:100%;text-align:center}
-  .hero{padding:104px 1.2rem 50px}
-  .hero h1{font-size:clamp(26px,7vw,40px)}
-  .hero-btns{flex-direction:column}
-  .hero-btns .btn{width:100%}
-  .customizer{top:70px}
-  .cust-inner{gap:16px;padding:14px 1.2rem;flex-direction:column;align-items:flex-start}
+  .hero{padding:120px 22px 60px}
+  .customizer{top:65px;padding:0}
+  .cust-toggle{display:flex}
+  .cust-inner{flex-direction:column;align-items:flex-start;gap:18px;padding:6px 22px 20px;max-height:1000px;overflow:hidden;transition:max-height .35s ease,padding .35s ease,opacity .25s ease}
+  .customizer.collapsed .cust-inner{max-height:0;padding-top:0;padding-bottom:0;opacity:0}
   .cust-group{width:100%;flex-wrap:wrap}
-  .cust-hint{display:none}
-  .swatches{gap:10px}
-  .preview-sec,.compare-sec,.catalog-sec{padding:56px 1.2rem}
-  .sec-head h2{font-size:clamp(22px,6vw,32px)}
-  .pf-hero{padding:32px 24px}
-  .pf-cards{grid-template-columns:1fr;padding:0 24px 30px}
+  .sec{padding:70px 22px}
+  .pf-cards{grid-template-columns:1fr;padding:0 24px 28px}
+  .pf-hero{padding:36px 24px}
   .compare-pane{height:380px}
-  .cmp-content,.cmp-content .old-site,.cmp-content .new-site{width:100vw;max-width:100%}
-  .compare-before .cmp-content,.compare-after .cmp-content{width:calc(100vw - 2.4rem)}
+  .cmp-content{height:380px}
   .new-cards{grid-template-columns:repeat(3,1fr);gap:8px;padding:0 20px}
   .cat-grid{grid-template-columns:1fr}
-  .cat-filters{gap:8px}
-  .cta-sec{padding:60px 1.2rem}
-  .cta-band{padding:44px 24px}
-  .cta-band h2{font-size:clamp(22px,6vw,32px)}
+  .cat-filters{overflow-x:auto;flex-wrap:nowrap;-webkit-overflow-scrolling:touch;padding-bottom:6px}
+  .cat-filter{white-space:nowrap;flex-shrink:0}
   .cta-btns{flex-direction:column}
-  .cta-btns a{width:100%;text-align:center}
-  .foot-inner{flex-direction:column;text-align:center}
+  .cta-btn{width:100%;justify-content:center}
+  .foot-in{flex-direction:column;text-align:center}
 }
 @media(max-width:560px){
-  .compare-pane{height:340px}
+  .compare-pane,.cmp-content{height:340px}
   .new-cards{grid-template-columns:1fr;gap:6px}
   .old-img{height:60px}
   .new-title{font-size:21px}
-  .cat-filters{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;-webkit-overflow-scrolling:touch;padding-bottom:6px}
-  .cat-filter{white-space:nowrap;flex-shrink:0}
 }
 </style>
 </head>
-<body data-theme="aqua" data-font="gothic" data-mood="clean">
+<body data-theme="aqua" data-font="gothic" data-style="standard">
 
 <!-- NAV -->
 <nav>
-  <div class="nav-inner">
-    <a href="index.html" class="logo"><span class="logo-mark">SW</span>スマートWEB</a>
-    <ul class="nav-links" id="nav-links">
-      <li><a href="#preview">プレビュー</a></li>
-      <li><a href="#compare">比較</a></li>
-      <li><a href="#catalog">カタログ</a></li>
-      <li><a href="index.html">トップへ戻る</a></li>
-      <li><a href="index.html#contact" class="nav-cta">お問い合わせ</a></li>
-    </ul>
-    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
+  <div class="nav-in">
+    <a href="index.html" class="logo"><span class="logo-mark">SW</span><span class="logo-txt">スマートWEB</span></a>
+    <div class="nav-right">
+      <a href="#preview" class="nav-link">Preview</a>
+      <a href="#compare" class="nav-link">Before/After</a>
+      <a href="#catalog" class="nav-link">Catalog</a>
+      <a href="index.html" class="nav-link">トップへ</a>
+      <a href="index.html#contact" class="nav-cta">お問い合わせ</a>
+    </div>
+    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
   </div>
 </nav>
+<div class="mnav" id="mnav">
+  <button class="mnav-close" id="mnavClose">×</button>
+  <a href="#preview">Preview</a>
+  <a href="#compare">Before / After</a>
+  <a href="#catalog"><span class="gr">Catalog</span></a>
+  <a href="index.html">トップへ戻る</a>
+  <a href="index.html#contact"><span class="gr">お問い合わせ</span></a>
+</div>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-pill"><span class="pill-dot"></span>Design Catalog — テーマを選んで、その場でプレビュー</div>
-  <h1>あなたのビジネスに、<br><span class="gr">ぴったりのデザイン</span>を。</h1>
-  <p>テーマ・フォント・カラーをその場で切り替えて、完成イメージを体感。下のバーから選ぶと、ページ全体がリアルタイムで変わります。</p>
-  <div class="hero-btns">
-    <a href="#preview" class="btn btn-grad">デザインを試す ↓</a>
-    <a href="#catalog" class="btn btn-ghost">カタログを見る</a>
+  <div class="hero-grain"></div>
+  <div class="hero-in">
+    <div class="hero-tag">DESIGN CATALOG</div>
+    <h1 class="hero-h1">Pick your<br><span class="it">style.</span></h1>
+    <p class="hero-lead">カラー・フォント・デザインをその場で切り替えて、完成イメージを体感。下のバーから選ぶと、プレビューがリアルタイムで変わります。</p>
   </div>
 </header>
 
 <!-- CUSTOMIZER -->
 <div class="customizer" id="customizer">
-  <div class="cust-inner">
+  <button class="cust-toggle" id="custToggle">
+    <span class="ct-left"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="13.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>デザインをカスタマイズ</span>
+    <span class="ct-chevron" id="ctChevron"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="6 9 12 15 18 9"/></svg></span>
+  </button>
+  <div class="cust-inner" id="custInner">
     <div class="cust-group">
       <span class="cust-label">Color</span>
       <div class="swatches" id="swatches">
@@ -374,334 +377,219 @@ footer{background:var(--navy);padding:40px 2rem}
     </div>
     <div class="cust-group">
       <span class="cust-label">Font</span>
-      <div class="font-btns" id="font-btns">
-        <button class="font-btn active" data-font="gothic">ゴシック</button>
-        <button class="font-btn" data-font="mincho">明朝</button>
-        <button class="font-btn" data-font="maru">丸ゴシック</button>
-        <button class="font-btn" data-font="modern">モダン</button>
-        <button class="font-btn" data-font="elegant">エレガント</button>
-        <button class="font-btn" data-font="pop">ポップ</button>
+      <div class="opt-btns" id="font-btns">
+        <button class="opt-btn active" data-font="gothic">ゴシック</button>
+        <button class="opt-btn" data-font="mincho">明朝</button>
+        <button class="opt-btn" data-font="maru">丸ゴ</button>
+        <button class="opt-btn" data-font="modern">モダン</button>
+        <button class="opt-btn" data-font="elegant">エレガント</button>
+        <button class="opt-btn" data-font="pop">ポップ</button>
       </div>
     </div>
     <div class="cust-group">
-      <span class="cust-label">雰囲気</span>
-      <div class="font-btns" id="mood-btns">
-        <button class="font-btn active" data-mood="clean">クリーン</button>
-        <button class="font-btn" data-mood="soft">やわらか</button>
-        <button class="font-btn" data-mood="sharp">シャープ</button>
-        <button class="font-btn" data-mood="luxe">高級感</button>
+      <span class="cust-label">Design</span>
+      <div class="opt-btns" id="style-btns">
+        <button class="opt-btn active" data-style="standard">スタンダード</button>
+        <button class="opt-btn" data-style="minimal">ミニマル</button>
+        <button class="opt-btn" data-style="bold">大胆</button>
+        <button class="opt-btn" data-style="editorial">雑誌風</button>
+        <button class="opt-btn" data-style="retro">レトロ</button>
       </div>
     </div>
-    <div class="cust-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>選ぶと下のページがすぐ変わります</div>
   </div>
 </div>
 
 <!-- LIVE PREVIEW -->
-<section class="preview-sec" id="preview">
-  <div class="sec-head reveal">
-    <span class="sec-tag">Live Preview</span>
-    <h2>選んだデザインを、<br>リアルタイムでプレビュー</h2>
-    <p>上のバーでテーマとフォントを切り替えると、このサンプルページの見た目が即座に変化します。納品前に完成イメージを掴めます。</p>
-  </div>
-  <div class="preview-frame reveal rd1">
-    <div class="pf-bar">
-      <div class="pf-dots"><span class="pf-dot" style="background:#FF5F57"></span><span class="pf-dot" style="background:#FEBC2E"></span><span class="pf-dot" style="background:#28C840"></span></div>
-      <div class="pf-url">https://your-business.com</div>
+<section class="sec preview-sec skin" id="preview">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num" style="color:var(--clay)">01 — Live Preview</div>
+      <h2 class="sec-title" style="color:var(--ink)">選んだデザインを、<br><span class="it">その場で</span>。</h2>
+      <p class="sec-lead">上のバーでカラー・フォント・デザインを切り替えると、このサンプルの見た目が即座に変化します。</p>
     </div>
-    <div class="pf-hero">
-      <span class="pf-badge">YOUR BUSINESS</span>
-      <h3>選ばれる理由がある、<br><span class="gr">わたしたちのサービス。</span></h3>
-      <p>お客様一人ひとりに寄り添い、確かな品質とまごころでお応えします。まずはお気軽にご相談ください。</p>
-      <div class="pf-hero-btns">
-        <span class="pf-btn-main">お問い合わせ →</span>
-        <span class="pf-btn-sub">サービスを見る</span>
+    <div class="preview-frame reveal rd1">
+      <div class="pf-bar">
+        <div class="pf-dots"><span class="pf-dot" style="background:#FF5F57"></span><span class="pf-dot" style="background:#FEBC2E"></span><span class="pf-dot" style="background:#28C840"></span></div>
+        <div class="pf-url">https://your-business.com</div>
       </div>
-    </div>
-    <div class="pf-cards">
-      <div class="pf-card">
-        <div class="pf-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div>
-        <h4>スピード対応</h4>
-        <p>お問い合わせには迅速に対応。お待たせしません。</p>
+      <div class="pf-hero">
+        <span class="pf-badge">YOUR BUSINESS</span>
+        <h3>選ばれる理由がある、<br><span class="gr">わたしたちのサービス。</span></h3>
+        <p>お客様一人ひとりに寄り添い、確かな品質とまごころでお応えします。まずはお気軽にご相談ください。</p>
+        <div class="pf-hero-btns">
+          <span class="pf-btn-main">お問い合わせ →</span>
+          <span class="pf-btn-sub">サービスを見る</span>
+        </div>
       </div>
-      <div class="pf-card">
-        <div class="pf-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div>
-        <h4>確かな品質</h4>
-        <p>経験豊富なスタッフが高品質をお約束します。</p>
-      </div>
-      <div class="pf-card">
-        <div class="pf-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
-        <h4>安心サポート</h4>
-        <p>アフターフォローも充実。末永くお付き合いします。</p>
+      <div class="pf-cards">
+        <div class="pf-card"><div class="pf-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><h4>スピード対応</h4><p>お問い合わせには迅速に対応します。</p></div>
+        <div class="pf-card"><div class="pf-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3 7h7l-5.5 4 2 7L12 16l-6.5 4 2-7L2 9h7z"/></svg></div><h4>確かな品質</h4><p>経験豊富なスタッフが高品質をお約束。</p></div>
+        <div class="pf-card"><div class="pf-card-ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div><h4>安心サポート</h4><p>アフターフォローも充実しています。</p></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- BEFORE / AFTER COMPARE -->
-<section class="compare-sec" id="compare">
-  <div class="sec-head reveal">
-    <span class="sec-tag">Before / After</span>
-    <h2>古いサイトが、こう変わる。</h2>
-    <p>中央のつまみを左右にドラッグすると、リニューアル前後を比較できます。<br>右側のデザインは、上のバーで選んだテーマが反映されます。</p>
-  </div>
-  <div class="compare-wrap reveal rd1" id="compareWrap">
-    <span class="cmp-tag cmp-tag-before">BEFORE</span>
-    <span class="cmp-tag cmp-tag-after">AFTER</span>
-    <div class="compare-pane">
-      <!-- BEFORE (old site) -->
-      <div class="compare-before">
-        <div class="cmp-content" style="padding:0">
-          <div class="old-site">
-            <div class="old-header">◆ 株式会社サンプル商店</div>
-            <div class="old-nav"><span>ホーム</span><span>会社案内</span><span>事業内容</span><span>お問い合わせ</span></div>
-            <div class="old-body">
-              <div class="old-title">ようこそ当社のホームページへ</div>
-              <p class="old-text">当社は創業以来、地域に密着したサービスを提供してまいりました。お客様のご要望にお応えいたします。</p>
-              <div class="old-img">画像はこちら</div>
-              <p class="old-text">詳しくは下記までお問い合わせください。TEL：000-0000-0000</p>
-              <div class="old-btn">お問い合わせはこちら</div>
+<!-- BEFORE/AFTER -->
+<section class="sec compare-sec skin" id="compare">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num" style="color:var(--lime)">02 — Before / After</div>
+      <h2 class="sec-title">古いサイトが、<br><span class="it">こう変わる。</span></h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,.6)">中央のつまみを左右にドラッグして比較。右側は上のバーで選んだデザインが反映されます。</p>
+    </div>
+    <div class="compare-wrap reveal rd1" id="compareWrap">
+      <span class="cmp-tag cmp-tag-before">BEFORE</span>
+      <span class="cmp-tag cmp-tag-after">AFTER</span>
+      <div class="compare-pane">
+        <div class="compare-before">
+          <div class="cmp-content">
+            <div class="old-site">
+              <div class="old-header">◆ 株式会社サンプル商店</div>
+              <div class="old-nav"><span>ホーム</span><span>会社案内</span><span>事業内容</span><span>お問い合わせ</span></div>
+              <div class="old-body">
+                <div class="old-title">ようこそ当社のホームページへ</div>
+                <p class="old-text">当社は創業以来、地域に密着したサービスを提供してまいりました。お客様のご要望にお応えいたします。</p>
+                <div class="old-img">画像はこちら</div>
+                <p class="old-text">詳しくは下記までお問い合わせください。TEL：000-0000-0000</p>
+                <div class="old-btn">お問い合わせはこちら</div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <!-- AFTER (new site) -->
-      <div class="compare-after" id="compareAfter">
-        <div class="cmp-content" style="padding:0">
-          <div class="new-site">
-            <div class="new-hero">
-              <span class="new-badge">SAMPLE SHOTEN</span>
-              <div class="new-title">地域に愛されて、<br><span class="gr">創業60年。</span></div>
-              <p class="new-text">確かな品質とまごころのサービスで、<br>お客様の暮らしに寄り添います。</p>
-              <span class="new-btn">お問い合わせ →</span>
-            </div>
-            <div class="new-cards">
-              <div class="new-card"><div class="new-card-ic"></div><div class="new-card-line"></div><div class="new-card-line short"></div></div>
-              <div class="new-card"><div class="new-card-ic"></div><div class="new-card-line"></div><div class="new-card-line short"></div></div>
-              <div class="new-card"><div class="new-card-ic"></div><div class="new-card-line"></div><div class="new-card-line short"></div></div>
+        <div class="compare-after" id="compareAfter">
+          <div class="cmp-content">
+            <div class="new-site">
+              <div class="new-hero">
+                <span class="new-badge">SAMPLE SHOTEN</span>
+                <div class="new-title">地域に愛されて、<br><span class="gr">創業60年。</span></div>
+                <p class="new-text">確かな品質とまごころのサービスで、<br>お客様の暮らしに寄り添います。</p>
+                <span class="new-btn">お問い合わせ →</span>
+              </div>
+              <div class="new-cards">
+                <div class="new-card"><div class="new-card-ic"></div><div class="new-card-line"></div><div class="new-card-line short"></div></div>
+                <div class="new-card"><div class="new-card-ic"></div><div class="new-card-line"></div><div class="new-card-line short"></div></div>
+                <div class="new-card"><div class="new-card-ic"></div><div class="new-card-line"></div><div class="new-card-line short"></div></div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="compare-handle" id="compareHandle">
-        <div class="compare-knob">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 3 12 9 6" transform="translate(12 0)"/></svg>
+        <div class="compare-handle" id="compareHandle">
+          <div class="compare-knob"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"/><polyline points="9 18 3 12 9 6" transform="translate(12 0)"/></svg></div>
         </div>
       </div>
     </div>
+    <p class="compare-caption">← つまみをドラッグして比較 →</p>
   </div>
-  <p class="compare-caption">← つまみをドラッグして比較 →</p>
 </section>
 
 <!-- CATALOG -->
-<section class="catalog-sec" id="catalog">
-  <div class="sec-head reveal">
-    <span class="sec-tag">Design Catalog</span>
-    <h2>業種別 デザインカタログ</h2>
-    <p>業種・目的に合わせたデザインテンプレートをご用意。<br>気になるものを選んで、そのイメージで制作を進められます。</p>
-  </div>
-  <div class="cat-filters reveal" id="catFilters">
-    <button class="cat-filter active" data-cat="all">すべて</button>
-    <button class="cat-filter" data-cat="store">店舗・サロン</button>
-    <button class="cat-filter" data-cat="pro">士業・専門職</button>
-    <button class="cat-filter" data-cat="food">飲食店</button>
-    <button class="cat-filter" data-cat="corp">教育・スクール</button>
-  </div>
-  <div class="cat-grid" id="catGrid">
-    <a class="cat-card reveal" data-cat="store" href="sample-salon.html">
-      <div class="cat-thumb thumb-salon">
-        <div class="mini mini-salon">
-          <div class="m-nav"><span class="m-logo">Salon Luné</span><span class="m-navdots"><i></i><i></i><i></i></span></div>
-          <div class="m-body">
-            <div class="m-eyebrow">TOTAL BEAUTY SALON</div>
-            <div class="m-title-serif">あなたの<em>美しさ</em>に</div>
-            <div class="m-btn-row"><span class="m-btn" style="background:#A67C52">WEB予約</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="cat-body">
-        <span class="cat-badge">店舗・サロン</span>
-        <h3>サロン・美容系</h3>
-        <p>やわらかな色使いと余白で、上質感と清潔感を演出。予約導線を重視した設計です。</p>
-        <div class="cat-tags"><span class="cat-tag">予約フォーム</span><span class="cat-tag">Instagram連携</span></div>
-        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-      </div>
-    </a>
-    <a class="cat-card reveal rd1" data-cat="pro" href="sample-legal.html">
-      <div class="cat-thumb thumb-legal">
-        <div class="mini mini-legal">
-          <div class="m-nav"><span class="m-logo" style="color:#fff">佐藤総合法務</span><span class="m-navdots"><i></i><i></i><i></i></span></div>
-          <div class="m-body">
-            <div class="m-goldline"></div>
-            <div class="m-title-mincho">最善の<span style="color:#C4A86A">解決</span >へ導く</div>
-            <div class="m-btn-row"><span class="m-btn" style="background:#A8884E">無料相談</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="cat-body">
-        <span class="cat-badge">士業・専門職</span>
-        <h3>士業・コンサル系</h3>
-        <p>信頼感と誠実さを伝える端正なデザイン。問い合わせのハードルを下げる構成です。</p>
-        <div class="cat-tags"><span class="cat-tag">相談予約</span><span class="cat-tag">取扱業務</span></div>
-        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-      </div>
-    </a>
-    <a class="cat-card reveal rd2" data-cat="food" href="sample-food.html">
-      <div class="cat-thumb thumb-food">
-        <div class="mini mini-food">
-          <div class="m-nav"><span class="m-logo" style="color:#fff;font-style:italic">Trattoria Sole</span><span class="m-navdots"><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i></span></div>
-          <div class="m-body" style="text-align:center">
-            <div class="m-eyebrow" style="color:#D4A84B">ITALIAN · SINCE 2010</div>
-            <div class="m-title-pf">Buon<em>Appetito</em></div>
-            <div class="m-btn-row" style="justify-content:center"><span class="m-btn" style="background:#C8633F">ご予約</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="cat-body">
-        <span class="cat-badge">飲食店</span>
-        <h3>飲食・カフェ系</h3>
-        <p>料理の魅力を引き立てる写真主役のレイアウト。メニュー・地図・予約を分かりやすく。</p>
-        <div class="cat-tags"><span class="cat-tag">メニュー表</span><span class="cat-tag">Google Maps</span></div>
-        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-      </div>
-    </a>
-    <a class="cat-card reveal" data-cat="corp" href="sample-corp.html">
-      <div class="cat-thumb thumb-edu">
-        <div class="mini mini-edu">
-          <div class="m-nav"><span class="m-logo" style="color:#2D6CDF">🅑 BRIGHT</span><span class="m-btn" style="background:#FF8A3D;font-size:6px;padding:3px 8px">体験</span></div>
-          <div class="m-body">
-            <div class="m-pill-mini">🎉 無料体験受付中</div>
-            <div class="m-title-round">英語が<span style="color:#2D6CDF">好き</span>になる</div>
-            <div class="m-btn-row"><span class="m-btn" style="background:#FF8A3D">体験申込 🎈</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="cat-body">
-        <span class="cat-badge">教育・スクール</span>
-        <h3>教育・スクール系</h3>
-        <p>明るく親しみやすいデザイン。コース紹介・無料体験・生徒の声で入会を後押しします。</p>
-        <div class="cat-tags"><span class="cat-tag">体験予約</span><span class="cat-tag">コース紹介</span></div>
-        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-      </div>
-    </a>
-    <a class="cat-card reveal rd1" data-cat="store" href="sample-clinic.html">
-      <div class="cat-thumb thumb-clinic">
-        <div class="mini mini-clinic">
-          <div class="m-nav"><span class="m-logo" style="color:#0F8A5F">🟢 そら整骨院</span><span class="m-btn" style="background:#0F8A5F;font-size:6px;padding:3px 8px">WEB予約</span></div>
-          <div class="m-body">
-            <div class="m-pill-mini" style="color:#0C6B49;border-color:#DCECE4">✓ 国家資格者が施術</div>
-            <div class="m-title-round" style="color:#1B3A2E">その<span style="color:#0F8A5F">痛み</span>、あきらめないで</div>
-            <div class="m-btn-row"><span class="m-btn" style="background:#0F8A5F">WEBで予約</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="cat-body">
-        <span class="cat-badge">店舗・サロン</span>
-        <h3>整体・クリニック系</h3>
-        <p>安心感を与える清潔なデザイン。症状・施術・アクセスを分かりやすく整理します。</p>
-        <div class="cat-tags"><span class="cat-tag">WEB予約</span><span class="cat-tag">症状別ページ</span></div>
-        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-      </div>
-    </a>
-    <a class="cat-card reveal rd2" data-cat="corp" href="sample-creative.html">
-      <div class="cat-thumb thumb-creative">
-        <div class="mini mini-creative">
-          <div class="m-nav"><span class="m-logo" style="color:#fff;font-family:'Anton',sans-serif;letter-spacing:.04em">STUDIO NOVA</span></div>
-          <div class="m-body">
-            <div class="m-eyebrow" style="color:#D6FF3F">CREATIVE AGENCY</div>
-            <div class="m-title-anton">We make <span style="color:#D6FF3F;font-style:italic">bold</span> ideas move.</div>
-          </div>
-        </div>
-      </div>
-      <div class="cat-body">
-        <span class="cat-badge">企業・法人</span>
-        <h3>クリエイティブ系</h3>
-        <p>個性と世界観を前面に出した大胆なデザイン。作品・ポートフォリオを魅せます。</p>
-        <div class="cat-tags"><span class="cat-tag">ギャラリー</span><span class="cat-tag">アニメーション</span></div>
-        <div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-      </div>
-    </a>
+<section class="sec catalog-sec" id="catalog">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-num">03 — Industry Catalog</div>
+      <h2 class="sec-title">業種別<br><span class="it">デザイン集</span></h2>
+      <p class="sec-lead">業種・目的に合わせたサンプルをご用意。クリックで実物のデモをご覧いただけます。</p>
+    </div>
+    <div class="cat-filters reveal" id="catFilters">
+      <button class="cat-filter active" data-cat="all">すべて</button>
+      <button class="cat-filter" data-cat="store">店舗・サロン</button>
+      <button class="cat-filter" data-cat="pro">士業・専門職</button>
+      <button class="cat-filter" data-cat="food">飲食店</button>
+      <button class="cat-filter" data-cat="corp">教育・スクール</button>
+    </div>
+    <div class="cat-grid" id="catGrid">
+      <a class="cat-card reveal" data-cat="store" href="sample-salon.html">
+        <div class="cat-thumb"><div class="mini mini-salon"><div class="m-nav"><span class="m-logo">Salon Luné</span><span class="m-navdots"><i></i><i></i><i></i></span></div><div class="m-body"><div class="m-eyebrow">TOTAL BEAUTY SALON</div><div class="m-title-serif">あなたの<em>美しさ</em>に</div><div class="m-btn-row"><span class="m-btn" style="background:#A67C52">WEB予約</span></div></div></div></div>
+        <div class="cat-body"><span class="cat-badge">店舗・サロン</span><h3>サロン・美容系</h3><p>やわらかな色使いと余白で、上質感と清潔感を演出。予約導線を重視した設計です。</p><div class="cat-tags"><span class="cat-tag">予約フォーム</span><span class="cat-tag">Instagram連携</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a class="cat-card reveal rd1" data-cat="pro" href="sample-legal.html">
+        <div class="cat-thumb"><div class="mini mini-legal"><div class="m-nav"><span class="m-logo" style="color:#fff">佐藤総合法務</span><span class="m-navdots"><i></i><i></i><i></i></span></div><div class="m-body"><div class="m-goldline"></div><div class="m-title-mincho">最善の<span style="color:#C4A86A">解決</span>へ導く</div><div class="m-btn-row"><span class="m-btn" style="background:#A8884E">無料相談</span></div></div></div></div>
+        <div class="cat-body"><span class="cat-badge">士業・専門職</span><h3>士業・コンサル系</h3><p>信頼感と誠実さを伝える端正なデザイン。問い合わせのハードルを下げる構成です。</p><div class="cat-tags"><span class="cat-tag">相談予約</span><span class="cat-tag">取扱業務</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a class="cat-card reveal rd2" data-cat="food" href="sample-food.html">
+        <div class="cat-thumb"><div class="mini mini-food"><div class="m-nav"><span class="m-logo" style="color:#fff;font-style:italic">Trattoria Sole</span><span class="m-navdots"><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i></span></div><div class="m-body" style="text-align:center"><div class="m-eyebrow" style="color:#D4A84B">ITALIAN · SINCE 2010</div><div class="m-title-pf">Buon<em>Appetito</em></div><div class="m-btn-row" style="justify-content:center"><span class="m-btn" style="background:#C8633F">ご予約</span></div></div></div></div>
+        <div class="cat-body"><span class="cat-badge">飲食店</span><h3>飲食・カフェ系</h3><p>料理の魅力を引き立てる写真主役のレイアウト。メニュー・地図・予約を分かりやすく。</p><div class="cat-tags"><span class="cat-tag">メニュー表</span><span class="cat-tag">Google Maps</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a class="cat-card reveal" data-cat="corp" href="sample-corp.html">
+        <div class="cat-thumb"><div class="mini mini-edu"><div class="m-nav"><span class="m-logo" style="color:#2D6CDF">🅑 BRIGHT</span><span class="m-btn" style="background:#FF8A3D;font-size:6px;padding:3px 8px">体験</span></div><div class="m-body"><div class="m-pill-mini">🎉 無料体験受付中</div><div class="m-title-round">英語が<span style="color:#2D6CDF">好き</span>になる</div><div class="m-btn-row"><span class="m-btn" style="background:#FF8A3D">体験申込 🎈</span></div></div></div></div>
+        <div class="cat-body"><span class="cat-badge">教育・スクール</span><h3>教育・スクール系</h3><p>明るく親しみやすいデザイン。コース紹介・無料体験・生徒の声で入会を後押しします。</p><div class="cat-tags"><span class="cat-tag">体験予約</span><span class="cat-tag">コース紹介</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a class="cat-card reveal rd1" data-cat="store" href="sample-clinic.html">
+        <div class="cat-thumb"><div class="mini mini-clinic"><div class="m-nav"><span class="m-logo" style="color:#0F8A5F">🟢 そら整骨院</span><span class="m-btn" style="background:#0F8A5F;font-size:6px;padding:3px 8px">WEB予約</span></div><div class="m-body"><div class="m-pill-mini" style="color:#0C6B49;border-color:#DCECE4">✓ 国家資格者が施術</div><div class="m-title-round" style="color:#1B3A2E">その<span style="color:#0F8A5F">痛み</span>、あきらめないで</div><div class="m-btn-row"><span class="m-btn" style="background:#0F8A5F">WEBで予約</span></div></div></div></div>
+        <div class="cat-body"><span class="cat-badge">店舗・サロン</span><h3>整体・クリニック系</h3><p>安心感を与える清潔なデザイン。症状・施術・アクセスを分かりやすく整理します。</p><div class="cat-tags"><span class="cat-tag">WEB予約</span><span class="cat-tag">症状別ページ</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+      <a class="cat-card reveal rd2" data-cat="corp" href="sample-creative.html">
+        <div class="cat-thumb"><div class="mini mini-creative"><div class="m-nav"><span class="m-logo" style="color:#fff;font-family:'Anton',sans-serif;letter-spacing:.04em">STUDIO NOVA</span></div><div class="m-body"><div class="m-eyebrow" style="color:#D6FF3F">CREATIVE AGENCY</div><div class="m-title-anton">We make <span style="color:#D6FF3F;font-style:italic">bold</span> ideas move.</div></div></div></div>
+        <div class="cat-body"><span class="cat-badge">企業・法人</span><h3>クリエイティブ系</h3><p>個性と世界観を前面に出した大胆なデザイン。作品・ポートフォリオを魅せます。</p><div class="cat-tags"><span class="cat-tag">ギャラリー</span><span class="cat-tag">アニメーション</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
+      </a>
+    </div>
   </div>
 </section>
 
 <!-- CTA -->
-<section class="cta-sec">
-  <div class="cta-band reveal">
-    <h2>気に入ったデザインで、<br><span class="gr">あなたのサイトを作りませんか？</span></h2>
-    <p>選んだテーマ・フォント・カタログをそのまま制作に反映できます。<br>まずはお気軽にご相談ください。</p>
-    <div class="cta-btns">
-      <a href="index.html#contact" class="btn-white">このデザインで相談する →</a>
-      <a href="diagnosis.html" class="btn-line2">無料ホームページ診断</a>
-    </div>
+<section class="cta">
+  <h2 class="cta-h">Build<br><span class="it">yours.</span></h2>
+  <p class="cta-p">気に入ったデザインで、あなたのサイトをつくりませんか？<br>選んだイメージはそのまま制作に反映できます。</p>
+  <div class="cta-btns">
+    <a href="index.html#contact" class="cta-btn">このデザインで相談する →</a>
+    <a href="diagnosis.html" class="cta-btn ghost">無料ホームページ診断</a>
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="foot-inner">
-    <div class="foot-logo"><span class="logo-mark">SW</span>スマートWEB</div>
+  <div class="foot-in">
+    <a href="index.html" class="logo"><span class="logo-mark">SW</span><span class="logo-txt" style="color:#fff">スマートWEB</span></a>
     <div class="foot-links">
       <a href="index.html">トップ</a>
-      <a href="#preview">プレビュー</a>
-      <a href="#catalog">カタログ</a>
+      <a href="#preview">Preview</a>
+      <a href="#catalog">Catalog</a>
       <a href="diagnosis.html">無料診断</a>
       <a href="index.html#contact">お問い合わせ</a>
     </div>
   </div>
-  <div class="foot-copy">© 2025 スマートWEB（運営：NEXIA）. All Rights Reserved.</div>
+  <div class="foot-copy">© 2025 スマートWEB（運営：NEXIA）</div>
 </footer>
 
 <script>
 const body=document.body;
-// theme swatches
 document.querySelectorAll('.swatch').forEach(sw=>{
   sw.addEventListener('click',()=>{
     document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));
-    sw.classList.add('active');
-    body.setAttribute('data-theme',sw.dataset.theme);
+    sw.classList.add('active');body.setAttribute('data-theme',sw.dataset.theme);
   });
 });
-// font buttons
-document.querySelectorAll('#font-btns .font-btn').forEach(fb=>{
+document.querySelectorAll('#font-btns .opt-btn').forEach(fb=>{
   fb.addEventListener('click',()=>{
-    document.querySelectorAll('#font-btns .font-btn').forEach(f=>f.classList.remove('active'));
-    fb.classList.add('active');
-    body.setAttribute('data-font',fb.dataset.font);
+    document.querySelectorAll('#font-btns .opt-btn').forEach(f=>f.classList.remove('active'));
+    fb.classList.add('active');body.setAttribute('data-font',fb.dataset.font);
   });
 });
-// mood buttons
-document.querySelectorAll('#mood-btns .font-btn').forEach(mb=>{
-  mb.addEventListener('click',()=>{
-    document.querySelectorAll('#mood-btns .font-btn').forEach(m=>m.classList.remove('active'));
-    mb.classList.add('active');
-    body.setAttribute('data-mood',mb.dataset.mood);
+document.querySelectorAll('#style-btns .opt-btn').forEach(sb=>{
+  sb.addEventListener('click',()=>{
+    document.querySelectorAll('#style-btns .opt-btn').forEach(s=>s.classList.remove('active'));
+    sb.classList.add('active');body.setAttribute('data-style',sb.dataset.style);
   });
 });
+// collapse
+const customizer=document.getElementById('customizer');
+document.getElementById('custToggle').addEventListener('click',()=>customizer.classList.toggle('collapsed'));
+if(window.matchMedia('(max-width:960px)').matches){customizer.classList.add('collapsed');}
 // catalog filter
 document.querySelectorAll('.cat-filter').forEach(cf=>{
   cf.addEventListener('click',()=>{
     document.querySelectorAll('.cat-filter').forEach(c=>c.classList.remove('active'));
-    cf.classList.add('active');
-    const cat=cf.dataset.cat;
-    document.querySelectorAll('.cat-card').forEach(card=>{
-      card.style.display=(cat==='all'||card.dataset.cat===cat)?'':'none';
-    });
+    cf.classList.add('active');const cat=cf.dataset.cat;
+    document.querySelectorAll('.cat-card').forEach(card=>{card.style.display=(cat==='all'||card.dataset.cat===cat)?'':'none';});
   });
 });
 // before/after slider
 (function(){
-  const wrap=document.getElementById('compareWrap');
-  const after=document.getElementById('compareAfter');
-  const handle=document.getElementById('compareHandle');
+  const wrap=document.getElementById('compareWrap'),after=document.getElementById('compareAfter'),handle=document.getElementById('compareHandle');
   function syncW(){wrap.style.setProperty('--cmp-w',wrap.getBoundingClientRect().width+'px')}
   syncW();window.addEventListener('resize',syncW);
   let dragging=false;
-  function setPos(x){
-    const rect=wrap.getBoundingClientRect();
-    let pct=((x-rect.left)/rect.width)*100;
-    pct=Math.max(6,Math.min(94,pct));
-    after.style.width=pct+'%';
-    handle.style.left=pct+'%';
-  }
+  function setPos(x){const r=wrap.getBoundingClientRect();let p=((x-r.left)/r.width)*100;p=Math.max(6,Math.min(94,p));after.style.width=p+'%';handle.style.left=p+'%';}
   handle.addEventListener('mousedown',()=>dragging=true);
   window.addEventListener('mouseup',()=>dragging=false);
   window.addEventListener('mousemove',e=>{if(dragging)setPos(e.clientX)});
@@ -710,11 +598,11 @@ document.querySelectorAll('.cat-filter').forEach(cf=>{
   window.addEventListener('touchmove',e=>{if(dragging)setPos(e.touches[0].clientX)},{passive:true});
   wrap.addEventListener('click',e=>{if(e.target.closest('.compare-handle'))return;setPos(e.clientX)});
 })();
-// hamburger
-const burger=document.getElementById('hamburger');
-const links=document.getElementById('nav-links');
-burger.addEventListener('click',()=>links.classList.toggle('open'));
-links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+// nav
+const burger=document.getElementById('hamburger'),mnav=document.getElementById('mnav');
+burger.addEventListener('click',()=>mnav.classList.add('open'));
+document.getElementById('mnavClose').addEventListener('click',()=>mnav.classList.remove('open'));
+mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mnav.classList.remove('open')));
 // reveal
 const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
