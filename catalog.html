@@ -45,12 +45,30 @@ body[data-theme="forest"]{--accent:#0F8A5F;--accent2:#34D399;--grad:linear-gradi
 body[data-theme="sunset"]{--accent:#EA580C;--accent2:#F59E0B;--grad:linear-gradient(120deg,#F59E0B,#EA580C);--bg:#FFFCF8;--bg2:#FDF3E9;--surface:#fff;--text:#3A2415;--muted:#9C7E63;--border:#F2E1CD;--navy:#5A3315}
 body[data-theme="mono"]{--accent:#1A1A1A;--accent2:#525252;--grad:linear-gradient(120deg,#525252,#1A1A1A);--bg:#fff;--bg2:#F5F5F4;--surface:#fff;--text:#1A1A1A;--muted:#737373;--border:#E5E5E5;--navy:#0A0A0A}
 body[data-theme="royal"]{--accent:#7C3AED;--accent2:#A78BFA;--grad:linear-gradient(120deg,#A78BFA,#7C3AED);--bg:#FDFCFF;--bg2:#F4F0FE;--surface:#fff;--text:#241A3D;--muted:#7C6F95;--border:#E5DCF7;--navy:#2E1065}
+body[data-theme="ocean"]{--accent:#0891B2;--accent2:#22D3EE;--grad:linear-gradient(120deg,#22D3EE,#0E7490);--bg:#F8FEFF;--bg2:#E8F8FB;--surface:#fff;--text:#0C2A33;--muted:#5A7A82;--border:#CDEAF0;--navy:#0C4A56}
+body[data-theme="berry"]{--accent:#BE185D;--accent2:#F472B6;--grad:linear-gradient(120deg,#F472B6,#BE185D);--bg:#FFFAFC;--bg2:#FCEEF4;--surface:#fff;--text:#3D1528;--muted:#9B6B81;--border:#F5D9E6;--navy:#831843}
+body[data-theme="charcoal"]{--accent:#D6FF3F;--accent2:#A3E635;--grad:linear-gradient(120deg,#D6FF3F,#84CC16);--bg:#0F0F0F;--bg2:#1A1A1A;--surface:#1C1C1C;--text:#F5F5F5;--muted:#A3A3A3;--border:#2E2E2E;--navy:#000}
+body[data-theme="sand"]{--accent:#B45309;--accent2:#D97706;--grad:linear-gradient(120deg,#D97706,#92400E);--bg:#FFFDF8;--bg2:#F7F0E3;--surface:#fff;--text:#3A2E1A;--muted:#8A7A5F;--border:#EBE0CC;--navy:#5C4423}
 
 /* ===== FONT PRESETS ===== */
 body[data-font="gothic"]{--font-head:'Noto Sans JP',sans-serif;--font-body:'Noto Sans JP',sans-serif}
 body[data-font="mincho"]{--font-head:'Shippori Mincho',serif;--font-body:'Noto Serif JP',serif}
 body[data-font="maru"]{--font-head:'Zen Maru Gothic',sans-serif;--font-body:'Zen Maru Gothic',sans-serif}
 body[data-font="modern"]{--font-head:'Murecho',sans-serif;--font-body:'Murecho',sans-serif}
+body[data-font="elegant"]{--font-head:'Playfair Display','Shippori Mincho',serif;--font-body:'Shippori Mincho',serif}
+body[data-font="pop"]{--font-head:'Baloo 2','Zen Maru Gothic',sans-serif;--font-body:'Zen Maru Gothic',sans-serif}
+
+/* ===== MOOD PRESETS (雰囲気) — radius / shadow / spacing ===== */
+body[data-mood="clean"]{--radius:18px;--radius-sm:10px;--mood-shadow:0 12px 32px rgba(15,23,41,.08);--mood-letter:0}
+body[data-mood="sharp"]{--radius:2px;--radius-sm:2px;--mood-shadow:0 2px 0 rgba(15,23,41,.12);--mood-letter:.04em}
+body[data-mood="soft"]{--radius:32px;--radius-sm:20px;--mood-shadow:0 18px 44px rgba(15,23,41,.1);--mood-letter:0}
+body[data-mood="luxe"]{--radius:0px;--radius-sm:0px;--mood-shadow:0 20px 50px rgba(15,23,41,.14);--mood-letter:.08em}
+/* mood applies to preview + cards */
+body[data-mood] .preview-frame,body[data-mood] .pf-cards .pf-card,body[data-mood] .cat-card,body[data-mood] .mini{border-radius:var(--radius)}
+body[data-mood] .pf-btn-main,body[data-mood] .pf-btn-sub,body[data-mood] .new-btn{border-radius:var(--radius-sm)}
+body[data-mood] .preview-frame{box-shadow:var(--mood-shadow)}
+body[data-mood="luxe"] .pf-hero h3,body[data-mood="luxe"] .sec-head h2,body[data-mood="sharp"] .pf-hero h3{letter-spacing:var(--mood-letter)}
+body[data-mood="luxe"] .pf-badge,body[data-mood="luxe"] .new-badge{letter-spacing:.12em}
 
 .inner{max-width:1120px;margin:0 auto;padding:0 2rem}
 .grad-text{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
@@ -100,6 +118,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;background:color-mix(in srgb
 .sw-sunset{background:linear-gradient(120deg,#F59E0B,#EA580C)}
 .sw-mono{background:linear-gradient(120deg,#525252,#1A1A1A)}
 .sw-royal{background:linear-gradient(120deg,#A78BFA,#7C3AED)}
+.sw-ocean{background:linear-gradient(120deg,#22D3EE,#0E7490)}
+.sw-berry{background:linear-gradient(120deg,#F472B6,#BE185D)}
+.sw-charcoal{background:linear-gradient(120deg,#D6FF3F,#1A1A1A)}
+.sw-sand{background:linear-gradient(120deg,#D97706,#92400E)}
 .font-btns{display:flex;gap:6px;flex-wrap:wrap}
 .font-btn{padding:7px 16px;border-radius:var(--radius-full);border:1.5px solid var(--border);background:var(--surface);color:var(--muted);font-size:13px;font-weight:600;transition:all .2s}
 .font-btn.active{background:var(--navy);color:#fff;border-color:var(--navy)}
@@ -303,7 +325,7 @@ footer{background:var(--navy);padding:40px 2rem}
 }
 </style>
 </head>
-<body data-theme="aqua" data-font="gothic">
+<body data-theme="aqua" data-font="gothic" data-mood="clean">
 
 <!-- NAV -->
 <nav>
@@ -335,14 +357,18 @@ footer{background:var(--navy);padding:40px 2rem}
 <div class="customizer" id="customizer">
   <div class="cust-inner">
     <div class="cust-group">
-      <span class="cust-label">Theme</span>
+      <span class="cust-label">Color</span>
       <div class="swatches" id="swatches">
         <div class="swatch sw-aqua active" data-theme="aqua" title="アクア"></div>
-        <div class="swatch sw-midnight" data-theme="midnight" title="ミッドナイト"></div>
-        <div class="swatch sw-sakura" data-theme="sakura" title="サクラ"></div>
+        <div class="swatch sw-ocean" data-theme="ocean" title="オーシャン"></div>
         <div class="swatch sw-forest" data-theme="forest" title="フォレスト"></div>
         <div class="swatch sw-sunset" data-theme="sunset" title="サンセット"></div>
+        <div class="swatch sw-sand" data-theme="sand" title="サンド"></div>
+        <div class="swatch sw-sakura" data-theme="sakura" title="サクラ"></div>
+        <div class="swatch sw-berry" data-theme="berry" title="ベリー"></div>
         <div class="swatch sw-royal" data-theme="royal" title="ロイヤル"></div>
+        <div class="swatch sw-midnight" data-theme="midnight" title="ミッドナイト"></div>
+        <div class="swatch sw-charcoal" data-theme="charcoal" title="チャコール"></div>
         <div class="swatch sw-mono" data-theme="mono" title="モノクロ"></div>
       </div>
     </div>
@@ -353,6 +379,17 @@ footer{background:var(--navy);padding:40px 2rem}
         <button class="font-btn" data-font="mincho">明朝</button>
         <button class="font-btn" data-font="maru">丸ゴシック</button>
         <button class="font-btn" data-font="modern">モダン</button>
+        <button class="font-btn" data-font="elegant">エレガント</button>
+        <button class="font-btn" data-font="pop">ポップ</button>
+      </div>
+    </div>
+    <div class="cust-group">
+      <span class="cust-label">雰囲気</span>
+      <div class="font-btns" id="mood-btns">
+        <button class="font-btn active" data-mood="clean">クリーン</button>
+        <button class="font-btn" data-mood="soft">やわらか</button>
+        <button class="font-btn" data-mood="sharp">シャープ</button>
+        <button class="font-btn" data-mood="luxe">高級感</button>
       </div>
     </div>
     <div class="cust-hint"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>選ぶと下のページがすぐ変わります</div>
@@ -624,11 +661,19 @@ document.querySelectorAll('.swatch').forEach(sw=>{
   });
 });
 // font buttons
-document.querySelectorAll('.font-btn').forEach(fb=>{
+document.querySelectorAll('#font-btns .font-btn').forEach(fb=>{
   fb.addEventListener('click',()=>{
-    document.querySelectorAll('.font-btn').forEach(f=>f.classList.remove('active'));
+    document.querySelectorAll('#font-btns .font-btn').forEach(f=>f.classList.remove('active'));
     fb.classList.add('active');
     body.setAttribute('data-font',fb.dataset.font);
+  });
+});
+// mood buttons
+document.querySelectorAll('#mood-btns .font-btn').forEach(mb=>{
+  mb.addEventListener('click',()=>{
+    document.querySelectorAll('#mood-btns .font-btn').forEach(m=>m.classList.remove('active'));
+    mb.classList.add('active');
+    body.setAttribute('data-mood',mb.dataset.mood);
   });
 });
 // catalog filter
