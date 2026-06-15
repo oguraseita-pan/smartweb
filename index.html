@@ -64,10 +64,12 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 .logo{display:flex;align-items:center;gap:8px}
 .logo-icon{height:38px;width:auto}
 .logo-text{height:34px;width:auto}
-.nav-links{display:flex;align-items:center;gap:2.2rem}
+.nav-links{display:flex;align-items:center;gap:1.7rem}
 .nav-links a{font-size:14px;font-weight:500;color:var(--muted);transition:color .2s;white-space:nowrap}
 .nav-links a:hover{color:var(--navy)}
 .nav-diag{color:var(--blue)!important;font-weight:700!important}
+.nav-catalog{display:inline-flex;align-items:center;color:var(--blue)!important;font-weight:700!important;background:var(--grad-soft);border:1px solid rgba(37,99,235,.18);padding:7px 15px;border-radius:var(--r-full)}
+.nav-catalog:hover{background:rgba(37,99,235,.1)}
 .nav-cta{background:var(--navy);color:#fff!important;padding:11px 24px;border-radius:var(--r-full);font-size:14px!important;font-weight:700!important;transition:background .2s,transform .2s!important}
 .nav-cta:hover{background:var(--blue);transform:translateY(-1px)}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:6px}
@@ -181,6 +183,36 @@ nav.scrolled{box-shadow:var(--shadow-sm)}
 .pc-check{width:19px;height:19px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .pc-btn{width:100%;text-align:center;justify-content:center}
 
+/* ============ CATALOG PROMO ============ */
+.catalog-promo{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:0;overflow:hidden;display:grid;grid-template-columns:1fr 1fr;box-shadow:var(--shadow-md)}
+.cp-left{padding:54px 48px}
+.cp-tag{display:inline-flex;align-items:center;gap:7px;background:var(--grad-soft);border:1px solid rgba(37,99,235,.15);color:var(--blue);font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:6px 16px;border-radius:var(--r-full);margin-bottom:20px}
+.cp-h{font-size:clamp(24px,2.8vw,32px);font-weight:900;color:var(--navy);line-height:1.4;margin-bottom:16px;letter-spacing:-.01em}
+.cp-h .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.cp-p{font-size:15px;color:var(--muted);line-height:2;margin-bottom:24px}
+.cp-feats{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:30px}
+.cp-feat{display:flex;align-items:center;gap:9px;font-size:13px;font-weight:600;color:var(--ink)}
+.cp-feat-ic{width:22px;height:22px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+.cp-right{background:linear-gradient(135deg,#0F1729,#1E3A8A);padding:40px;display:flex;flex-direction:column;gap:18px;justify-content:center;position:relative;overflow:hidden}
+.cp-right::before{content:'';position:absolute;top:-80px;right:-80px;width:260px;height:260px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.2),transparent 65%)}
+.cp-swatches{display:flex;gap:10px;justify-content:center;position:relative;z-index:1}
+.cps{width:32px;height:32px;border-radius:50%;border:2px solid rgba(255,255,255,.25);cursor:default;animation:swPulse 3s ease-in-out infinite}
+.cps:nth-child(2){animation-delay:.4s}.cps:nth-child(3){animation-delay:.8s}.cps:nth-child(4){animation-delay:1.2s}.cps:nth-child(5){animation-delay:1.6s}.cps:nth-child(6){animation-delay:2s}
+@keyframes swPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.12)}}
+.cp-preview{background:#fff;border-radius:var(--r-md);overflow:hidden;box-shadow:var(--shadow-lg);position:relative;z-index:1}
+.cpp-bar{background:var(--bg);padding:9px 14px;display:flex;gap:6px;border-bottom:1px solid var(--border)}
+.cpp-dot{width:9px;height:9px;border-radius:50%}
+.cpp-body{padding:18px}
+.cpp-hero{text-align:center;padding:14px 10px 18px}
+.cpp-badge{width:60px;height:14px;border-radius:7px;background:var(--grad-soft);margin:0 auto 12px}
+.cpp-title-line{height:12px;border-radius:6px;background:var(--navy);width:80%;margin:0 auto 7px}
+.cpp-title-line.short{width:55%;background:var(--grad)}
+.cpp-btn{width:90px;height:28px;border-radius:var(--r-full);background:var(--grad);margin:14px auto 0}
+.cpp-cards{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-top:4px}
+.cpp-card{height:46px;border-radius:8px;background:var(--bg);border:1px solid var(--border)}
+.cp-fonts{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1}
+.cpf{font-size:12px;font-weight:600;color:rgba(255,255,255,.7);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);padding:6px 14px;border-radius:var(--r-full)}
+
 /* ============ PROCESS ============ */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;position:relative}
 .step{background:#fff;border:1px solid var(--border);border-radius:var(--r-lg);padding:32px 26px;position:relative;transition:transform .3s,box-shadow .3s}
@@ -289,6 +321,11 @@ footer{background:var(--navy);margin-top:110px}
   .sec{padding:64px 1.2rem}
   .feat-grid{grid-template-columns:1fr}
   .ai-band{grid-template-columns:1fr;padding:40px 26px;gap:2.4rem}
+  .catalog-promo{grid-template-columns:1fr}
+  .cp-left{padding:36px 24px}
+  .cp-right{padding:32px 24px}
+  .cp-feats{grid-template-columns:1fr}
+  .cp-left .btn{width:100%}
   .price-grid{grid-template-columns:1fr}
   .steps{grid-template-columns:1fr 1fr}
   .guarantee{flex-direction:column;text-align:center;padding:36px 24px}
@@ -318,7 +355,7 @@ footer{background:var(--navy);margin-top:110px}
       <li><a href="#pricing">料金</a></li>
       <li><a href="#process">制作の流れ</a></li>
       <li><a href="#faq">FAQ</a></li>
-      <li><a href="catalog.html">デザインカタログ</a></li>
+      <li><a href="catalog.html" class="nav-catalog"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="vertical-align:-2px;margin-right:4px"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="13.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>デザインを選ぶ</a></li>
       <li><a href="diagnosis.html" class="nav-diag">無料診断</a></li>
       <li><a href="#contact" class="nav-cta">お問い合わせ</a></li>
     </ul>
@@ -345,7 +382,7 @@ footer{background:var(--navy);margin-top:110px}
       </p>
       <div class="hero-btns">
         <a href="#contact" class="btn btn-grad">無料で相談する →</a>
-        <a href="diagnosis.html" class="btn btn-ghost">無料ホームページ診断</a>
+        <a href="catalog.html" class="btn btn-ghost"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" style="margin-right:2px"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="13.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>デザインを選んでみる</a>
       </div>
       <div class="hero-points">
         <div class="hp-item"><span class="hp-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>追加費用なし</div>
@@ -524,8 +561,55 @@ footer{background:var(--navy);margin-top:110px}
   </div>
 </section>
 
+<!-- CATALOG SHOWCASE -->
+<section class="sec sec-bg" id="catalog-promo">
+  <div class="inner">
+    <div class="catalog-promo reveal">
+      <div class="cp-left">
+        <span class="cp-tag"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="13.5" cy="6.5" r="2.5"/><circle cx="6.5" cy="13.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>Design Catalog</span>
+        <h2 class="cp-h">デザインを<span class="gr">その場で選べる</span>カタログ</h2>
+        <p class="cp-p">テーマ・フォント・カラーをクリックひとつで切り替え、完成イメージをリアルタイムでプレビュー。Before / After 比較や業種別テンプレートも体験できます。「どんな見た目になるか不安」を、その場で解消します。</p>
+        <div class="cp-feats">
+          <div class="cp-feat"><span class="cp-feat-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg></span>7種類のカラーテーマ</div>
+          <div class="cp-feat"><span class="cp-feat-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg></span>4種類の日本語フォント</div>
+          <div class="cp-feat"><span class="cp-feat-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg></span>Before / After 比較スライダー</div>
+          <div class="cp-feat"><span class="cp-feat-ic"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg></span>業種別デザインカタログ</div>
+        </div>
+        <a href="catalog.html" class="btn btn-grad" style="margin-top:8px">デザインカタログを試す →</a>
+      </div>
+      <div class="cp-right">
+        <div class="cp-swatches">
+          <span class="cps" style="background:linear-gradient(120deg,#06B6D4,#2563EB)"></span>
+          <span class="cps" style="background:linear-gradient(120deg,#F59EB5,#E5557F)"></span>
+          <span class="cps" style="background:linear-gradient(120deg,#34D399,#0F8A5F)"></span>
+          <span class="cps" style="background:linear-gradient(120deg,#F59E0B,#EA580C)"></span>
+          <span class="cps" style="background:linear-gradient(120deg,#A78BFA,#7C3AED)"></span>
+          <span class="cps" style="background:linear-gradient(120deg,#525252,#1A1A1A)"></span>
+        </div>
+        <div class="cp-preview">
+          <div class="cpp-bar"><span class="cpp-dot" style="background:#FF5F57"></span><span class="cpp-dot" style="background:#FEBC2E"></span><span class="cpp-dot" style="background:#28C840"></span></div>
+          <div class="cpp-body">
+            <div class="cpp-hero">
+              <div class="cpp-badge"></div>
+              <div class="cpp-title-line"></div>
+              <div class="cpp-title-line short"></div>
+              <div class="cpp-btn"></div>
+            </div>
+            <div class="cpp-cards">
+              <div class="cpp-card"></div><div class="cpp-card"></div><div class="cpp-card"></div>
+            </div>
+          </div>
+        </div>
+        <div class="cp-fonts">
+          <span class="cpf">ゴシック</span><span class="cpf">明朝</span><span class="cpf">丸ゴシック</span><span class="cpf">モダン</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- PROCESS -->
-<section class="sec sec-bg" id="process">
+<section class="sec" id="process">
   <div class="inner">
     <div class="sec-head reveal">
       <span class="sec-tag">Process</span>
@@ -562,7 +646,7 @@ footer{background:var(--navy);margin-top:110px}
 </section>
 
 <!-- FAQ -->
-<section class="sec" id="faq">
+<section class="sec sec-bg" id="faq">
   <div class="inner">
     <div class="sec-head reveal">
       <span class="sec-tag">FAQ</span>
@@ -700,7 +784,7 @@ footer{background:var(--navy);margin-top:110px}
       <a href="#pricing">ホームページ制作</a>
       <a href="#pricing">LP・ランディングページ</a>
       <a href="#pricing">EC・ネットショップ構築</a>
-      <a href="#pricing">保守・運用サポート</a>
+      <a href="catalog.html">デザインカタログ</a>
       <a href="diagnosis.html">無料ホームページ診断</a>
     </div>
     <div class="foot-col">
