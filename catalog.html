@@ -58,7 +58,7 @@ body[data-style="retro"] .skin{--radius:6px;--radius-sm:6px}
 nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
 .nav-in{max-width:1180px;margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between}
 .logo{display:flex;align-items:center;gap:10px}
-.logo-mark{width:38px;height:38px;border-radius:10px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:800;font-size:15px}
+.logo-mark{width:38px;height:38px;border-radius:9px;object-fit:contain;display:block;flex-shrink:0}
 .logo-txt{font-weight:900;font-size:19px;letter-spacing:-.01em}
 .nav-links{display:flex;gap:30px;align-items:center}
 .nav-links a{font-size:14px;font-weight:500;color:var(--muted)}
@@ -326,7 +326,7 @@ footer{background:var(--navy);color:#fff;padding:56px 40px 30px}
 <!-- NAV -->
 <nav>
   <div class="nav-in">
-    <a href="index.html" class="logo"><span class="logo-mark">SW</span><span class="logo-txt">スマートWEB</span></a>
+    <a href="index.html" class="logo"><img src="assets/logo-mark-square.png" class="logo-mark" alt="スマートWEB"><span class="logo-txt">スマートWEB</span></a>
     <div class="nav-links">
       <a href="#preview">ライブプレビュー</a>
       <a href="#compare">Before / After</a>
@@ -542,7 +542,7 @@ footer{background:var(--navy);color:#fff;padding:56px 40px 30px}
 
 <footer>
   <div class="foot-in">
-    <a href="index.html" class="logo"><span class="logo-mark">SW</span><span class="logo-txt" style="color:#fff">スマートWEB</span></a>
+    <a href="index.html" class="logo"><img src="assets/logo-mark-square.png" class="logo-mark" alt="スマートWEB"><span class="logo-txt" style="color:#fff">スマートWEB</span></a>
     <div class="foot-links">
       <a href="index.html">トップ</a>
       <a href="#preview">プレビュー</a>
