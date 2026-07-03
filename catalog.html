@@ -211,45 +211,14 @@ body[data-style="retro"] .pf-card-ic{border:2px solid var(--stext)}
 .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
 .cat-card{display:block;background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:transform .3s,box-shadow .3s}
 .cat-card:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(15,23,41,.12)}
-.cat-thumb{height:186px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px;background:var(--bg2);border-bottom:1px solid var(--line)}
-.mini{width:100%;height:100%;border-radius:10px;overflow:hidden;box-shadow:0 10px 26px rgba(15,23,41,.16);display:flex;flex-direction:column;transition:transform .4s}
-.cat-card:hover .mini{transform:scale(1.04)}
-.m-nav{display:flex;align-items:center;justify-content:space-between;padding:8px 12px;flex-shrink:0}
-.m-logo{font-size:11px;font-weight:800}
-.m-navdots{display:flex;gap:4px}
-.m-navdots i{width:5px;height:5px;border-radius:50%;background:rgba(0,0,0,.2);display:block}
-.m-body{flex:1;padding:14px 16px;display:flex;flex-direction:column;justify-content:center;gap:7px}
-.m-eyebrow{font-size:6px;font-weight:700;letter-spacing:.18em}
-.m-pill-mini{font-size:6.5px;font-weight:700;background:#fff;border:1px solid rgba(0,0,0,.08);border-radius:100px;padding:3px 9px;width:fit-content;color:#2D6CDF}
-.m-btn-row{display:flex;gap:6px;margin-top:3px}
-.m-btn{font-size:6.5px;font-weight:700;color:#fff;padding:4px 11px;border-radius:100px;display:inline-block}
-.m-goldline{width:24px;height:2px;background:#C4A86A}
-.m-title-serif{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:600;color:#3A2E2A;line-height:1.2}
-.m-title-serif em{font-style:italic;color:#A67C52}
-.m-title-mincho{font-family:'Shippori Mincho',serif;font-size:15px;font-weight:700;color:#fff;line-height:1.4}
-.m-title-pf{font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:#F5EDE3;line-height:1}
-.m-title-pf em{font-style:italic;color:#E08B5F;display:block}
-.m-title-round{font-family:'Baloo 2',sans-serif;font-size:14px;font-weight:800;color:#1B2A4A;line-height:1.35}
-.m-title-anton{font-family:'Anton',sans-serif;font-size:17px;color:#fff;line-height:1;text-transform:uppercase;letter-spacing:.01em}
-.mini-salon{background:#FBF7F4}
-.mini-salon .m-nav{background:#FBF7F4;border-bottom:1px solid #E8DDD3}
-.mini-salon .m-logo{color:#3A2E2A;font-family:'Cormorant Garamond',serif;font-weight:600}
-.mini-salon .m-body{background:linear-gradient(160deg,#fff,#F3EBE3)}
-.mini-salon .m-eyebrow{color:#A67C52}
-.mini-legal{background:linear-gradient(120deg,#1A2332,#2C3A52)}
-.mini-legal .m-nav{border-bottom:1px solid rgba(255,255,255,.1)}
-.mini-legal .m-navdots i{background:rgba(255,255,255,.3)}
-.mini-food{background:#1A1310}
-.mini-food .m-body{background:radial-gradient(ellipse 80% 70% at 50% 50%,rgba(200,99,63,.3),transparent 70%)}
-.mini-edu{background:#fff}
-.mini-edu .m-nav{background:#F4F8FF;border-bottom:1px solid #E8EDF6}
-.mini-edu .m-body{background:linear-gradient(160deg,#F4F8FF,#fff)}
-.mini-edu .m-eyebrow{color:#2D6CDF}
-.mini-clinic{background:#fff}
-.mini-clinic .m-nav{background:#F0F9F5;border-bottom:1px solid #DCECE4}
-.mini-clinic .m-body{background:linear-gradient(160deg,#F0F9F5,#fff)}
-.mini-creative{background:#0A0A0A}
-.mini-creative .m-body{background:radial-gradient(ellipse 70% 60% at 70% 40%,rgba(123,47,247,.4),transparent 65%)}
+.cat-thumb{height:280px;position:relative;overflow:hidden;display:flex;align-items:center;justify-content:center;padding:18px;background:linear-gradient(165deg,var(--bg2),#fff);border-bottom:1px solid var(--line)}
+.cphone{width:130px;height:270px;background:var(--navy);border-radius:24px;padding:6px;box-shadow:0 16px 36px rgba(15,23,41,.2);position:relative;transition:transform .4s}
+.cat-card:hover .cphone{transform:scale(1.045) translateY(-2px)}
+.cphone::before{content:'';position:absolute;top:10px;left:50%;transform:translateX(-50%);width:38px;height:8px;background:var(--navy);border-radius:100px;z-index:3}
+.cphone-screen{width:100%;height:100%;border-radius:18px;overflow:hidden;background:#fff;position:relative}
+.cphone-screen::after{content:'';position:absolute;inset:0;border-radius:18px;box-shadow:inset 0 0 0 1px rgba(15,23,41,.1);pointer-events:none;z-index:4}
+.cphone-stage{position:absolute;top:0;left:0;transform-origin:top left;overflow:hidden;pointer-events:none}
+.cphone-stage iframe{display:block;border:none;pointer-events:none}
 .cat-body{padding:22px 24px}
 .cat-badge{display:inline-block;font-family:var(--en);font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
 .cat-card h3{font-size:18px;font-weight:800;margin-bottom:7px}
@@ -308,6 +277,8 @@ footer{background:var(--navy);color:#fff;padding:56px 40px 30px}
   .compare-pane,.cmp-content{height:380px}
   .new-cards{grid-template-columns:repeat(3,1fr);gap:8px;padding:0 20px}
   .cat-grid{grid-template-columns:1fr}
+  .cat-thumb{height:300px}
+  .cphone{width:150px;height:300px}
   .cat-filters{overflow-x:auto;flex-wrap:nowrap;justify-content:flex-start;-webkit-overflow-scrolling:touch;padding-bottom:8px;margin:0 -20px 36px;padding-left:20px;padding-right:20px}
   .cat-filter{white-space:nowrap;flex-shrink:0}
   .cta-btns{flex-direction:column;align-items:center}
@@ -503,27 +474,27 @@ footer{background:var(--navy);color:#fff;padding:56px 40px 30px}
     </div>
     <div class="cat-grid" id="catGrid">
       <a class="cat-card reveal" data-cat="store" href="sample-salon.html">
-        <div class="cat-thumb"><div class="mini mini-salon"><div class="m-nav"><span class="m-logo">Salon Luné</span><span class="m-navdots"><i></i><i></i><i></i></span></div><div class="m-body"><div class="m-eyebrow">TOTAL BEAUTY SALON</div><div class="m-title-serif">髪と、心を、<em>ほどく</em>時間。</div><div class="m-btn-row"><span class="m-btn" style="background:#A67C52">WEB予約</span></div></div></div></div>
+        <div class="cat-thumb"><div class="cphone"><div class="cphone-screen"><div class="cphone-stage" data-fw="390" data-fh="900"><iframe src="sample-salon.html?embed=1" loading="lazy" tabindex="-1" title="美容室サンプル プレビュー" width="390" height="900"></iframe></div></div></div></div>
         <div class="cat-body"><span class="cat-badge">店舗・サロン</span><h3>サロン・美容系</h3><p>やわらかな色使いと余白で、上質感と清潔感を演出。予約導線を重視した設計です。</p><div class="cat-tags"><span class="cat-tag">予約フォーム</span><span class="cat-tag">Instagram連携</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </a>
       <a class="cat-card reveal rd1" data-cat="pro" href="sample-legal.html">
-        <div class="cat-thumb"><div class="mini mini-legal"><div class="m-nav"><span class="m-logo" style="color:#fff">佐藤総合法務</span><span class="m-navdots"><i></i><i></i><i></i></span></div><div class="m-body"><div class="m-goldline"></div><div class="m-title-mincho">最善の<span style="color:#C4A86A">解決</span>へ導く</div><div class="m-btn-row"><span class="m-btn" style="background:#A8884E">無料相談</span></div></div></div></div>
+        <div class="cat-thumb"><div class="cphone"><div class="cphone-screen"><div class="cphone-stage" data-fw="390" data-fh="900"><iframe src="sample-legal.html?embed=1" loading="lazy" tabindex="-1" title="士業サンプル プレビュー" width="390" height="900"></iframe></div></div></div></div>
         <div class="cat-body"><span class="cat-badge">士業・専門職</span><h3>士業・コンサル系</h3><p>信頼感と誠実さを伝える端正なデザイン。問い合わせのハードルを下げる構成です。</p><div class="cat-tags"><span class="cat-tag">相談予約</span><span class="cat-tag">取扱業務</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </a>
       <a class="cat-card reveal rd2" data-cat="food" href="sample-food.html">
-        <div class="cat-thumb"><div class="mini mini-food"><div class="m-nav"><span class="m-logo" style="color:#fff;font-style:italic">Trattoria Sole</span><span class="m-navdots"><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i><i style="background:#D4A84B"></i></span></div><div class="m-body" style="text-align:center"><div class="m-eyebrow" style="color:#D4A84B">ITALIAN · SINCE 2010</div><div class="m-title-pf">Buon<em>Appetito</em></div><div class="m-btn-row" style="justify-content:center"><span class="m-btn" style="background:#C8633F">ご予約</span></div></div></div></div>
+        <div class="cat-thumb"><div class="cphone"><div class="cphone-screen"><div class="cphone-stage" data-fw="390" data-fh="900"><iframe src="sample-food.html?embed=1" loading="lazy" tabindex="-1" title="飲食店サンプル プレビュー" width="390" height="900"></iframe></div></div></div></div>
         <div class="cat-body"><span class="cat-badge">飲食店</span><h3>飲食・カフェ系</h3><p>料理の魅力を引き立てる写真主役のレイアウト。メニュー・地図・予約を分かりやすく。</p><div class="cat-tags"><span class="cat-tag">メニュー表</span><span class="cat-tag">Google Maps</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </a>
       <a class="cat-card reveal" data-cat="corp" href="sample-corp.html">
-        <div class="cat-thumb"><div class="mini mini-edu"><div class="m-nav"><span class="m-logo" style="color:#2D6CDF">🅑 BRIGHT</span><span class="m-btn" style="background:#FF8A3D;font-size:6px;padding:3px 8px">体験</span></div><div class="m-body"><div class="m-pill-mini">🎉 無料体験受付中</div><div class="m-title-round">英語が<span style="color:#2D6CDF">好き</span>になる</div><div class="m-btn-row"><span class="m-btn" style="background:#FF8A3D">体験申込 🎈</span></div></div></div></div>
+        <div class="cat-thumb"><div class="cphone"><div class="cphone-screen"><div class="cphone-stage" data-fw="390" data-fh="900"><iframe src="sample-corp.html?embed=1" loading="lazy" tabindex="-1" title="スクールサンプル プレビュー" width="390" height="900"></iframe></div></div></div></div>
         <div class="cat-body"><span class="cat-badge">教育・スクール</span><h3>教育・スクール系</h3><p>明るく親しみやすいデザイン。コース紹介・無料体験・生徒の声で入会を後押しします。</p><div class="cat-tags"><span class="cat-tag">体験予約</span><span class="cat-tag">コース紹介</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </a>
       <a class="cat-card reveal rd1" data-cat="store" href="sample-clinic.html">
-        <div class="cat-thumb"><div class="mini mini-clinic"><div class="m-nav"><span class="m-logo" style="color:#0F8A5F">🟢 そら整骨院</span><span class="m-btn" style="background:#0F8A5F;font-size:6px;padding:3px 8px">WEB予約</span></div><div class="m-body"><div class="m-pill-mini" style="color:#0C6B49;border-color:#DCECE4">✓ 国家資格者が施術</div><div class="m-title-round" style="color:#1B3A2E">その<span style="color:#0F8A5F">痛み</span>、あきらめないで</div><div class="m-btn-row"><span class="m-btn" style="background:#0F8A5F">WEBで予約</span></div></div></div></div>
+        <div class="cat-thumb"><div class="cphone"><div class="cphone-screen"><div class="cphone-stage" data-fw="390" data-fh="900"><iframe src="sample-clinic.html?embed=1" loading="lazy" tabindex="-1" title="整体院サンプル プレビュー" width="390" height="900"></iframe></div></div></div></div>
         <div class="cat-body"><span class="cat-badge">店舗・サロン</span><h3>整体・クリニック系</h3><p>安心感を与える清潔なデザイン。症状・施術・アクセスを分かりやすく整理します。</p><div class="cat-tags"><span class="cat-tag">WEB予約</span><span class="cat-tag">症状別ページ</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </a>
       <a class="cat-card reveal rd2" data-cat="corp" href="sample-creative.html">
-        <div class="cat-thumb"><div class="mini mini-creative"><div class="m-nav"><span class="m-logo" style="color:#fff;font-family:'Anton',sans-serif;letter-spacing:.04em">STUDIO NOVA</span></div><div class="m-body"><div class="m-eyebrow" style="color:#D6FF3F">CREATIVE AGENCY</div><div class="m-title-anton">We make <span style="color:#D6FF3F;font-style:italic">bold</span> ideas move.</div></div></div></div>
+        <div class="cat-thumb"><div class="cphone"><div class="cphone-screen"><div class="cphone-stage" data-fw="390" data-fh="900"><iframe src="sample-creative.html?embed=1" loading="lazy" tabindex="-1" title="クリエイティブサンプル プレビュー" width="390" height="900"></iframe></div></div></div></div>
         <div class="cat-body"><span class="cat-badge">クリエイティブ</span><h3>クリエイティブ系</h3><p>個性と世界観を前面に出した大胆なデザイン。作品・ポートフォリオを魅せます。</p><div class="cat-tags"><span class="cat-tag">ギャラリー</span><span class="cat-tag">アニメーション</span></div><div class="cat-view">サンプルを見る <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div></div>
       </a>
     </div>
@@ -556,6 +527,23 @@ footer{background:var(--navy);color:#fff;padding:56px 40px 30px}
 
 <script>
 const body=document.body;
+// scale the real-page previews inside the industry catalog phone mockups
+function fitCardPhones(){
+  document.querySelectorAll('.cphone-stage[data-fw]').forEach(el=>{
+    const screen=el.closest('.cphone-screen');
+    const cw=screen.clientWidth;
+    const iframe=el.querySelector('iframe');
+    const fw=parseFloat(el.dataset.fw),fh=parseFloat(el.dataset.fh);
+    if(!cw||!iframe||!fw)return;
+    const scale=cw/fw;
+    el.style.width=fw+'px';
+    el.style.height=fh+'px';
+    el.style.transform='scale('+scale+')';
+  });
+}
+window.addEventListener('load',fitCardPhones);
+window.addEventListener('resize',fitCardPhones);
+setTimeout(fitCardPhones,300);
 document.querySelectorAll('.swatch').forEach(sw=>{
   sw.addEventListener('click',()=>{
     document.querySelectorAll('.swatch').forEach(s=>s.classList.remove('active'));
