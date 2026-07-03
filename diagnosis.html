@@ -4,162 +4,181 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>ホームページ無料診断 | スマートWEB</title>
-<meta name="description" content="今のホームページ、集客できていますか？プロが無料で診断し、改善ポイントと新デザイン案をご提案します。オンライン完結・全国対応。"/>
+<meta name="description" content="今のホームページ、お客様を逃していませんか？プロが無料で診断し、改善ポイントと新しいホームページ案をお届けします。月々4,980円からリニューアル可能。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800;900&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;500;700;900&family=Playfair+Display:ital@0;1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Noto Sans JP',sans-serif;background:#FBFCFE;color:#0F1729;line-height:1.7;font-weight:400;overflow-x:hidden;font-size:16px}
+body{font-family:'Noto Sans JP',sans-serif;background:#fff;color:#0F1729;line-height:1.85;font-weight:400;overflow-x:hidden;font-size:16px}
 a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
-button{font-family:inherit;cursor:pointer}
-::selection{background:#3B82F6;color:#fff}
-:root{--paper:#FBFCFE;--ink:#0F1729;--ink2:#3A4458;--lime:#3B82F6;--lime2:#22D3EE;--grad:linear-gradient(120deg,#06B6D4,#2563EB);--clay:#2563EB;--muted:#69748C;--line:#E4E9F1;--card:#fff;--en:'Archivo',sans-serif;--serif:'Playfair Display',serif}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+::selection{background:#2563EB;color:#fff}
+:root{
+  --blue:#2563EB;--blue-d:#1D4ED8;--cyan:#06B6D4;--navy:#0F1729;
+  --grad:linear-gradient(120deg,#06B6D4,#2563EB);
+  --bg:#fff;--bg2:#F6F9FD;--line:#E4E9F1;--muted:#5B6B84;--amber:#F59E0B;
+  --en:'Inter',sans-serif;
+}
 .wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+.en{font-family:var(--en)}
 
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:300;background:rgba(244,241,234,.85);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
-.nav-in{max-width:1180px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:9px}
-.logo-mark{width:34px;height:34px;border-radius:9px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:800;font-size:14px}
-.logo-txt{font-family:var(--en);font-weight:800;font-size:18px;letter-spacing:-.01em;color:var(--ink)}
-.nav-right{display:flex;align-items:center;gap:24px}
-.nav-back{font-family:var(--en);font-size:13px;font-weight:600;color:var(--muted);display:inline-flex;align-items:center;gap:6px}
-.nav-back:hover{color:var(--ink)}
-.nav-cta{background:var(--ink);color:#fff!important;padding:11px 24px;border-radius:100px;font-family:var(--en);font-size:13px!important;font-weight:700!important;white-space:nowrap}
-.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;padding:6px}
-.hamburger span{display:block;width:23px;height:2px;background:var(--ink);border-radius:2px}
-.mnav{display:none;position:fixed;inset:0;z-index:400;background:var(--ink);flex-direction:column;justify-content:center;padding:40px;gap:6px}
+nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav-in{max-width:1180px;margin:0 auto;padding:0 40px;height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px}
+.logo-mark{width:38px;height:38px;border-radius:10px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:800;font-size:15px}
+.logo-txt{font-weight:900;font-size:19px;letter-spacing:-.01em}
+.nav-links{display:flex;gap:26px;align-items:center}
+.nav-links a{font-size:14px;font-weight:500;color:var(--muted)}
+.nav-links a:hover{color:var(--navy)}
+.nav-cta{background:var(--grad);color:#fff!important;padding:12px 24px;border-radius:100px;font-size:14px!important;font-weight:700!important;box-shadow:0 6px 18px rgba(37,99,235,.25);transition:transform .2s}
+.nav-cta:hover{transform:translateY(-2px)}
+.hamburger{display:none;flex-direction:column;gap:5px;padding:8px}
+.hamburger span{display:block;width:24px;height:2px;background:var(--navy);border-radius:2px}
+.mnav{display:none;position:fixed;inset:0;z-index:600;background:#fff;flex-direction:column;padding:90px 32px 40px;gap:4px}
 .mnav.open{display:flex}
-.mnav a{font-family:var(--en);font-size:30px;font-weight:800;color:#fff;padding:8px 0}
-.mnav a .gr{color:var(--lime)}
-.mnav-close{position:absolute;top:28px;right:34px;background:none;border:none;color:#fff;font-size:32px}
+.mnav a{font-size:20px;font-weight:700;color:var(--navy);padding:14px 0;border-bottom:1px solid var(--line)}
+.mnav .m-cta{background:var(--grad);color:#fff;text-align:center;border-radius:100px;margin-top:20px;padding:16px;border-bottom:none}
+.mnav-close{position:absolute;top:20px;right:24px;font-size:32px;color:var(--navy);font-weight:300}
 
 /* HERO */
-.hero{background:var(--ink);color:#fff;padding:150px 40px 90px;position:relative;overflow:hidden}
-.hero-grain{position:absolute;inset:0;opacity:.5;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.06) 1px,transparent 0);background-size:4px 4px}
-.hero-in{max-width:1180px;margin:0 auto;position:relative;z-index:2}
-.hero-tag{font-family:var(--en);font-size:13px;font-weight:600;letter-spacing:.08em;color:var(--clay);display:inline-flex;align-items:center;gap:10px;margin-bottom:30px}
-.hero-tag::before{content:'';width:36px;height:1px;background:var(--clay)}
-.hero-pre{font-size:15px;color:rgba(255,255,255,.6);margin-bottom:18px}
-.hero-h1{font-family:var(--en);font-weight:900;font-size:clamp(34px,6vw,82px);line-height:1.02;letter-spacing:-.02em;margin-bottom:30px}
-.hero-h1 .warn{color:var(--clay)}
-.hero-h1 .it{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--lime)}
-.hero-lead{font-size:16px;color:rgba(255,255,255,.7);line-height:2;max-width:600px;margin-bottom:40px}
-.hero-btns{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:30px}
-.btn-lime{background:var(--grad);color:#fff;font-family:var(--en);font-size:15px;font-weight:700;padding:18px 38px;border-radius:100px;display:inline-flex;align-items:center;gap:10px;transition:transform .3s}
-.btn-lime:hover{transform:scale(1.04) rotate(-1deg)}
-.btn-out{background:transparent;border:1.5px solid rgba(255,255,255,.3);color:#fff;font-family:var(--en);font-size:15px;font-weight:600;padding:17px 34px;border-radius:100px;transition:border-color .3s}
-.btn-out:hover{border-color:var(--lime)}
-.hero-trust{display:flex;gap:24px;flex-wrap:wrap}
-.ht-item{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600;color:var(--lime)}
+.hero{padding:140px 40px 70px;background:linear-gradient(170deg,#F0F6FF 0%,#fff 62%);position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-200px;right:-160px;width:620px;height:620px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.12),transparent 65%)}
+.hero-in{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1.08fr .92fr;gap:52px;align-items:center;position:relative;z-index:2}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:1px solid var(--line);border-radius:100px;padding:8px 18px;font-size:13px;font-weight:700;color:var(--blue);margin-bottom:22px;box-shadow:0 4px 14px rgba(15,23,41,.05)}
+.hero-h1{font-size:clamp(28px,4.4vw,48px);font-weight:900;line-height:1.5;margin-bottom:18px}
+.hero-h1 .warn{color:#E11D48}
+.hero-h1 .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.hero-lead{font-size:15.5px;color:var(--muted);line-height:2.05;margin-bottom:28px;max-width:500px}
+.hero-trust{display:flex;gap:18px;flex-wrap:wrap}
+.ht-item{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700}
+.ht-check{width:20px;height:20px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0}
 
-/* SECTION */
-.sec{padding:120px 40px;position:relative}
-.sec-head{margin-bottom:64px}
-.sec-num{font-family:var(--en);font-size:14px;font-weight:700;color:var(--clay);letter-spacing:.1em;margin-bottom:18px;display:flex;align-items:center;gap:12px}
-.sec-num::before{content:'';width:40px;height:1px;background:var(--clay)}
-.sec-title{font-family:var(--en);font-weight:800;font-size:clamp(32px,5vw,64px);line-height:1;letter-spacing:-.02em;margin-bottom:22px}
-.sec-title .it{font-family:var(--serif);font-style:italic;font-weight:400}
-.sec-lead{font-size:16px;color:var(--ink2);line-height:2;max-width:560px}
+/* offer card */
+.offer-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:30px 28px 28px;box-shadow:0 34px 80px rgba(15,23,41,.14);text-align:center;width:100%;max-width:440px;justify-self:center}
+.oc-limit{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:.04em}
+.oc-limit b{color:#E11D48;font-family:var(--en);font-size:19px}
+.oc-slash{color:#E11D48;font-weight:900}
+.oc-title{font-size:23px;font-weight:900;line-height:1.45;margin-bottom:8px}
+.oc-title .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.oc-sub{font-size:12.5px;color:var(--muted);line-height:1.9;margin-bottom:18px}
+.oc-mock{position:relative;margin-bottom:20px;padding-right:60px}
+.oc-desktop{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 14px 36px rgba(15,23,41,.12)}
+.oc-d-bar{background:var(--bg2);border-bottom:1px solid var(--line);padding:8px 12px;display:flex;gap:5px}
+.b-dot{width:9px;height:9px;border-radius:50%;display:block}
+.oc-d-screen{height:196px;overflow:hidden}
+.oc-d-screen iframe{width:1100px;height:680px;border:none;transform:scale(.29);transform-origin:top left;pointer-events:none}
+.oc-phone{position:absolute;right:0;bottom:-12px;width:98px;height:200px;background:var(--navy);border-radius:19px;padding:5px;box-shadow:0 18px 40px rgba(15,23,41,.28)}
+.oc-phone::before{content:'';position:absolute;top:9px;left:50%;transform:translateX(-50%);width:32px;height:8px;background:var(--navy);border-radius:100px;z-index:3}
+.oc-p-screen{width:100%;height:100%;border-radius:14px;overflow:hidden;background:#fff}
+.oc-p-screen iframe{width:390px;height:830px;border:none;transform:scale(.2256);transform-origin:top left;pointer-events:none}
+.oc-badge{display:inline-block;background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;padding:6px 16px;border-radius:100px;margin-bottom:12px;position:relative}
+.oc-badge::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--navy);border-bottom:none}
+.btn-main{display:inline-flex;align-items:center;gap:10px;background:var(--grad);color:#fff;font-size:15px;font-weight:700;padding:17px 30px;border-radius:100px;box-shadow:0 14px 30px rgba(37,99,235,.3);transition:transform .25s;justify-content:center}
+.btn-main:hover{transform:translateY(-3px)}
+.oc-btn{width:100%}
+.oc-note{margin-top:12px;font-size:11.5px;color:var(--muted)}
 
-/* PAIN */
-.pain{background:var(--paper)}
-.pain-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border:1px solid var(--ink);margin-bottom:40px}
-.pain-card{padding:32px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:flex;align-items:flex-start;gap:16px;background:var(--paper);transition:background .3s}
-.pain-card:nth-child(2n){border-right:none}
-.pain-card:nth-child(5),.pain-card:nth-child(6){border-bottom:none}
-.pain-card:hover{background:var(--card)}
-.pain-x{width:30px;height:30px;border-radius:50%;background:#0F1729;color:var(--lime2);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--en);font-weight:800;font-size:15px}
-.pain-text{font-size:15px;color:var(--ink);font-weight:500;line-height:1.7;padding-top:3px}
-.pain-note{background:var(--ink);color:#fff;border-radius:14px;padding:30px 36px;font-size:16px;line-height:1.95;display:flex;align-items:flex-start;gap:16px}
+/* sections */
+.sec{padding:100px 40px}
+.sec-alt{background:var(--bg2)}
+.sec-head{text-align:center;max-width:680px;margin:0 auto 54px}
+.sec-tag{display:inline-block;font-family:var(--en);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);background:rgba(37,99,235,.08);padding:7px 18px;border-radius:100px;margin-bottom:18px}
+.sec-h{font-size:clamp(25px,3.4vw,38px);font-weight:900;line-height:1.5;margin-bottom:14px}
+.sec-h .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.sec-p{font-size:14.5px;color:var(--muted);line-height:2.05}
+
+/* pain */
+.pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:1000px;margin:0 auto 40px}
+.pain-card{background:#fff;border:1px solid var(--line);border-radius:18px;padding:28px 24px;display:flex;gap:15px;align-items:flex-start;box-shadow:0 6px 20px rgba(15,23,41,.04)}
+.pain-ic{width:38px;height:38px;border-radius:12px;background:#FEF2F2;color:#DC2626;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-weight:800}
+.pain-t{font-size:14.5px;font-weight:700;line-height:1.75;padding-top:5px}
+.pain-note{max-width:820px;margin:0 auto;background:var(--navy);color:#fff;border-radius:18px;padding:28px 32px;font-size:15px;line-height:2;display:flex;align-items:flex-start;gap:16px}
 .pain-note .pn-ic{flex-shrink:0;width:32px;height:32px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;font-weight:800;font-family:var(--en)}
-.pain-note b{color:var(--lime)}
+.pain-note b{color:#7DD3FC}
 
-/* SOLUTION */
-.sol{background:var(--ink);color:#fff}
-.sol .sec-title{color:#fff}
-.sol-list{border-top:1px solid rgba(255,255,255,.15)}
-.sol-row{display:grid;grid-template-columns:90px 1fr 1.1fr auto;gap:36px;align-items:center;padding:46px 0;border-bottom:1px solid rgba(255,255,255,.15);transition:padding-left .4s}
-.sol-row:hover{padding-left:18px}
-.sol-row:hover .sol-name{color:var(--lime)}
-.sol-no{font-family:var(--en);font-weight:700;font-size:15px;color:var(--lime)}
-.sol-name{font-family:var(--en);font-weight:800;font-size:clamp(22px,3vw,38px);line-height:1.05;letter-spacing:-.02em;transition:color .3s}
-.sol-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.9}
-.sol-free{font-family:var(--en);font-size:12px;font-weight:700;color:#fff;background:var(--grad);padding:7px 16px;border-radius:100px;white-space:nowrap}
+/* gifts */
+.gift-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:1020px;margin:0 auto}
+.gift-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:36px 30px;text-align:center;position:relative;transition:transform .3s,box-shadow .3s}
+.gift-card:hover{transform:translateY(-6px);box-shadow:0 26px 60px rgba(37,99,235,.1)}
+.gift-free{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:#E11D48;color:#fff;font-size:12px;font-weight:800;padding:5px 18px;border-radius:100px;box-shadow:0 6px 16px rgba(225,29,72,.3)}
+.gift-ic{width:60px;height:60px;border-radius:18px;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;margin:0 auto 20px}
+.gift-h{font-size:18px;font-weight:800;margin-bottom:10px}
+.gift-d{font-size:13.5px;color:var(--muted);line-height:1.95}
 
-/* BEFORE/AFTER */
-.ba{background:var(--paper)}
-.ba-wrap{display:grid;grid-template-columns:1fr auto 1fr;border:1px solid var(--ink)}
-.ba-col{padding:40px 36px}
-.ba-before{background:var(--card)}
-.ba-after{background:var(--ink);color:#fff}
-.ba-arrow{display:flex;align-items:center;justify-content:center;background:var(--grad);width:60px;color:#fff}
-.ba-label{font-family:var(--en);font-size:13px;font-weight:700;letter-spacing:.1em;margin-bottom:24px;display:inline-flex;align-items:center;gap:8px}
-.lb-b{color:var(--clay)}.lb-a{color:var(--lime)}
-.ba-li{display:flex;align-items:flex-start;gap:11px;font-size:14px;line-height:1.7;margin-bottom:16px}
+/* before/after */
+.ba-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:0;max-width:920px;margin:0 auto;align-items:stretch}
+.ba-col{background:#fff;border:1px solid var(--line);padding:34px 32px}
+.ba-col.before{border-radius:20px 0 0 20px;border-right:none}
+.ba-col.after{border-radius:0 20px 20px 0;border-left:none;background:var(--navy);color:#fff;border-color:var(--navy)}
+.ba-arrow{display:flex;align-items:center;justify-content:center;background:var(--grad);width:52px;color:#fff}
+.ba-label{font-family:var(--en);font-size:12px;font-weight:800;letter-spacing:.1em;margin-bottom:20px;display:inline-block;padding:5px 14px;border-radius:100px}
+.lb-b{background:#F1F5F9;color:#64748B}
+.lb-a{background:rgba(6,182,212,.2);color:#7DD3FC}
+.ba-li{display:flex;align-items:flex-start;gap:11px;font-size:14px;line-height:1.75;margin-bottom:14px}
 .ba-li:last-child{margin-bottom:0}
-.ba-li .ic{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--en);font-weight:800;font-size:12px;margin-top:1px}
-.bi-x{background:#94A3B8;color:#fff}.bi-o{background:var(--lime);color:var(--ink)}
-.ba-after .ba-li{color:rgba(255,255,255,.85)}
+.ba-li .ic{flex-shrink:0;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;margin-top:3px}
+.bi-x{background:#FEE2E2;color:#DC2626}
+.bi-o{background:var(--grad);color:#fff}
 
-/* HOW */
-.how{background:var(--ink);color:#fff}
-.how .sec-title{color:#fff}
-.how-list{border-top:2px solid rgba(255,255,255,.2)}
-.how-row{display:grid;grid-template-columns:110px 1fr 1.3fr;gap:30px;align-items:center;padding:38px 0;border-bottom:1px solid rgba(255,255,255,.12);transition:padding-left .4s}
-.how-row:hover{padding-left:16px}
-.how-no{font-family:var(--en);font-weight:800;font-size:44px;color:var(--lime);letter-spacing:-.02em;line-height:1}
-.how-name{font-family:var(--en);font-weight:700;font-size:19px}
-.how-desc{font-size:14px;color:rgba(255,255,255,.6);line-height:1.85}
+/* flow */
+.flow-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;max-width:1080px;margin:0 auto}
+.flow-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 22px;text-align:center}
+.flow-no{width:50px;height:50px;border-radius:15px;background:var(--grad);color:#fff;font-family:var(--en);font-size:19px;font-weight:800;display:flex;align-items:center;justify-content:center;margin:0 auto 16px}
+.flow-h{font-size:15.5px;font-weight:800;margin-bottom:8px}
+.flow-d{font-size:13px;color:var(--muted);line-height:1.85}
 
-/* CTA */
-.cta{background:var(--ink);color:#fff;text-align:center;padding:140px 40px}
-.cta-h{font-family:var(--en);font-weight:900;font-size:clamp(36px,7vw,110px);line-height:.92;letter-spacing:-.03em;margin-bottom:22px}
-.cta-h .it{font-family:var(--serif);font-style:italic;font-weight:400;background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.cta-p{font-size:16px;color:rgba(255,255,255,.7);margin-bottom:40px;line-height:1.9}
-.cta-btn{display:inline-flex;align-items:center;gap:14px;background:var(--grad);color:#fff;font-family:var(--en);font-size:17px;font-weight:700;padding:22px 50px;border-radius:100px;transition:transform .3s}
-.cta-btn:hover{transform:scale(1.05) rotate(-1deg)}
-.cta-sub{margin-top:24px;font-family:var(--en);font-size:13px;color:rgba(255,255,255,.55)}
-.cta-sub b{color:#fff}
+/* cta */
+.cta{background:linear-gradient(135deg,#0F1729,#173764);color:#fff;text-align:center;padding:110px 40px;position:relative;overflow:hidden}
+.cta::before{content:'';position:absolute;top:-160px;left:50%;transform:translateX(-50%);width:700px;height:700px;border-radius:50%;background:radial-gradient(circle,rgba(6,182,212,.16),transparent 60%)}
+.cta-h{font-size:clamp(25px,3.8vw,40px);font-weight:900;line-height:1.5;margin-bottom:14px;position:relative;z-index:1}
+.cta-h .hl{color:#7DD3FC}
+.cta-p{font-size:15px;color:rgba(255,255,255,.75);margin-bottom:36px;position:relative;z-index:1;line-height:2}
+.cta-btns{position:relative;z-index:1}
+.cta-note{margin-top:22px;font-size:12.5px;color:rgba(255,255,255,.5);position:relative;z-index:1}
 
-/* FOOTER */
-footer{background:var(--ink);color:#fff;padding:60px 40px 36px}
-.foot-in{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-bottom:30px;border-bottom:1px solid rgba(255,255,255,.12)}
+footer{background:var(--navy);color:#fff;padding:56px 40px 30px}
+.foot-in{max-width:1180px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.1)}
 .foot-links{display:flex;gap:22px;flex-wrap:wrap}
 .foot-links a{font-size:13px;color:rgba(255,255,255,.55)}
 .foot-links a:hover{color:#fff}
-.foot-copy{max-width:1180px;margin:0 auto;padding-top:22px;font-family:var(--en);font-size:12px;color:rgba(255,255,255,.35);text-align:center}
+.foot-copy{max-width:1180px;margin:0 auto;padding-top:20px;font-family:var(--en);font-size:12px;color:rgba(255,255,255,.35);text-align:center}
 
-.reveal{opacity:0;transform:translateY(28px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .8s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)}
 .reveal.visible{opacity:1;transform:none}
 .rd1{transition-delay:.1s}.rd2{transition-delay:.2s}
 
-@media(max-width:960px){
-  .hero-h1{font-size:clamp(30px,9vw,60px)}
-  .cta-h{font-size:clamp(40px,14vw,84px)}
-  .sec-title{font-size:clamp(28px,8vw,50px)}
-  .wrap{padding:0 22px}
-  .nav-in{padding:16px 22px}
-  .nav-right{display:none}
-  .hamburger{display:flex}
-  .hero{padding:120px 22px 70px}
-  .hero-btns{flex-direction:column}
-  .hero-btns a{width:100%;justify-content:center}
-  .sec{padding:70px 22px}
-  .pain-grid{grid-template-columns:1fr}
-  .pain-card{border-right:none}
-  .pain-card:nth-child(5){border-bottom:1px solid var(--line)}
-  .sol-row{grid-template-columns:1fr;gap:12px;padding:32px 0}
-  .sol-free{justify-self:start}
-  .ba-wrap{grid-template-columns:1fr}
-  .ba-arrow{width:auto;height:50px;transform:rotate(90deg)}
-  .how-row{grid-template-columns:60px 1fr;gap:14px 18px;padding:26px 0}
-  .how-no{font-size:32px}
-  .how-desc{grid-column:2}
-  .foot-in{flex-direction:column;text-align:center}
+@media(max-width:1024px){
+  .wrap,.nav-in{padding-left:28px;padding-right:28px}
+  .hero{padding:126px 28px 60px}
+  .hero-in{gap:36px}
+  .sec{padding:80px 28px}
+  .gift-grid,.pain-grid{gap:16px}
 }
+@media(max-width:760px){
+  .wrap,.nav-in{padding-left:20px;padding-right:20px}
+  .nav-links{display:none}
+  .hamburger{display:flex}
+  .hero{padding:104px 20px 54px}
+  .hero-in{grid-template-columns:1fr;gap:44px}
+  .offer-card{max-width:100%}
+  .oc-mock{padding-right:52px}
+  .oc-d-screen{height:170px}
+  .oc-d-screen iframe{transform:scale(.25)}
+  .oc-phone{width:88px;height:180px}
+  .oc-p-screen iframe{transform:scale(.2)}
+  .sec{padding:64px 20px}
+  .pain-grid,.gift-grid{grid-template-columns:1fr}
+  .ba-grid{grid-template-columns:1fr}
+  .ba-col.before{border-radius:20px 20px 0 0;border-right:1px solid var(--line);border-bottom:none}
+  .ba-col.after{border-radius:0 0 20px 20px;border-left:1px solid var(--navy)}
+  .ba-arrow{width:auto;height:48px}
+  .ba-arrow svg{transform:rotate(90deg)}
+  .flow-grid{grid-template-columns:1fr 1fr}
+  .cta-btns a{width:100%;max-width:380px}
+}
+@media(max-width:560px){.flow-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -167,131 +186,156 @@ footer{background:var(--ink);color:#fff;padding:60px 40px 36px}
 <nav>
   <div class="nav-in">
     <a href="index.html" class="logo"><span class="logo-mark">SW</span><span class="logo-txt">スマートWEB</span></a>
-    <div class="nav-right">
-      <a href="index.html" class="nav-back"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="15 18 9 12 15 6"/></svg>トップへ</a>
-      <a href="catalog.html" class="nav-back">Catalog</a>
-      <a href="#cta" class="nav-cta">無料診断を申し込む</a>
+    <div class="nav-links">
+      <a href="#gift">無料でもらえるもの</a>
+      <a href="#change">Before / After</a>
+      <a href="#flow">流れ</a>
+      <a href="index.html">トップへ</a>
+      <a href="#cta" class="nav-cta">無料診断を受け取る</a>
     </div>
-    <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
   </div>
 </nav>
 <div class="mnav" id="mnav">
   <button class="mnav-close" id="mnavClose">×</button>
+  <a href="#gift">無料でもらえるもの</a>
+  <a href="#change">Before / After</a>
+  <a href="#flow">ご相談の流れ</a>
   <a href="index.html">トップへ戻る</a>
-  <a href="catalog.html"><span class="gr">Catalog</span></a>
-  <a href="#cta"><span class="gr">無料診断</span></a>
+  <a href="#cta" class="m-cta">無料診断を受け取る</a>
 </div>
 
 <!-- HERO -->
 <header class="hero">
-  <div class="hero-grain"></div>
   <div class="hero-in">
-    <div class="hero-tag">FREE DIAGNOSIS</div>
-    <div class="hero-pre">御社のホームページを拝見して、ご連絡しました。</div>
-    <h1 class="hero-h1">その<span class="warn">サイト</span>、<br>お客様を<span class="it">逃して</span><br>いませんか？</h1>
-    <p class="hero-lead">御社のサイトを実際に拝見し、改善できるポイントを具体的にまとめました。リニューアルは月々4,980円から、制作も更新もまるごとお任せいただけます。完全無料・押し売りなし。「話だけ聞いてみたい」も大歓迎です。</p>
-    <div class="hero-btns">
-      <a href="#cta" class="btn-lime">診断結果を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="#solution" class="btn-out">診断内容を見る</a>
+    <div>
+      <div class="hero-badge">御社のホームページを拝見してご連絡しました</div>
+      <h1 class="hero-h1">そのホームページ、<br>お客様を<span class="warn">逃して</span>いるかも<br>しれません。</h1>
+      <p class="hero-lead">プロの視点で御社のサイトを無料診断。改善ポイントと、リニューアル後の完成イメージまで、まとめて無料でお届けします。見るだけでもOK、押し売りは一切ありません。</p>
+      <div class="hero-trust">
+        <div class="ht-item"><span class="ht-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>完全無料</div>
+        <div class="ht-item"><span class="ht-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>契約不要</div>
+        <div class="ht-item"><span class="ht-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>押し売りなし</div>
+      </div>
     </div>
-    <div class="hero-trust">
-      <div class="ht-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>完全無料</div>
-      <div class="ht-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>返信不要</div>
-      <div class="ht-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>押し売りなし</div>
+    <div class="offer-card">
+      <div class="oc-limit"><span class="oc-slash">＼</span>　毎月 <b>10件</b> 限定　<span class="oc-slash">／</span></div>
+      <div class="oc-title">診断＋新ホームページ案を<br><span class="gr">無料でお届け</span></div>
+      <p class="oc-sub">1営業日以内に、御社専用の完成イメージをご提案します。</p>
+      <div class="oc-mock">
+        <div class="oc-desktop">
+          <div class="oc-d-bar"><span class="b-dot" style="background:#FF5F57"></span><span class="b-dot" style="background:#FEBC2E"></span><span class="b-dot" style="background:#28C840"></span></div>
+          <div class="oc-d-screen"><iframe src="sample-clinic.html?embed=1" loading="lazy" tabindex="-1" title="リニューアルイメージ（PC）"></iframe></div>
+        </div>
+        <div class="oc-phone">
+          <div class="oc-p-screen"><iframe src="sample-salon.html?embed=1" loading="lazy" tabindex="-1" title="リニューアルイメージ（スマホ）"></iframe></div>
+        </div>
+      </div>
+      <div class="oc-badge">契約不要・オンラインで完結</div>
+      <a href="#cta" class="btn-main oc-btn">【無料】診断＆HP案を受け取る</a>
+      <p class="oc-note">メール1通でお申し込み完了。しつこい営業はいたしません。</p>
     </div>
   </div>
 </header>
 
 <!-- PAIN -->
-<section class="sec pain">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num">01 — Issues</div>
-      <h2 class="sec-title">こんな状態に<br><span class="it">なっていませんか?</span></h2>
-      <p class="sec-lead">現代のユーザーは、サイトを見た瞬間に「信頼できるか」を判断します。古いデザインは、それだけで機会損失につながっています。</p>
-    </div>
-    <div class="pain-grid reveal">
-      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">スマホで見ると文字が小さく、読みにくい</span></div>
-      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">読み込みが遅く、途中で離脱されている</span></div>
-      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">Googleで検索しても上位に表示されない</span></div>
-      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">問い合わせボタンが目立たず連絡されない</span></div>
-      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">デザインが古く、競合より見劣りする</span></div>
-      <div class="pain-card"><span class="pain-x">!</span><span class="pain-text">アクセス数や問い合わせ数が分からない</span></div>
-    </div>
-    <div class="pain-note reveal">
-      <span class="pn-ic">!</span>
-      <div>スマホからのWeb検索が全体の<b>70%以上</b>を占める今、スマホ対応していないサイトはGoogleの評価が下がり、<b>検索結果に表示されにくくなっています。</b></div>
-    </div>
+<section class="sec">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Check</span>
+    <h2 class="sec-h">こんな状態に、<br>なっていませんか？</h2>
+  </div>
+  <div class="pain-grid reveal">
+    <div class="pain-card"><span class="pain-ic">!</span><span class="pain-t">スマホで見ると文字が小さく、読みにくい</span></div>
+    <div class="pain-card"><span class="pain-ic">!</span><span class="pain-t">デザインが古く、競合のお店より見劣りする</span></div>
+    <div class="pain-card"><span class="pain-ic">!</span><span class="pain-t">Googleで検索しても、上位に出てこない</span></div>
+    <div class="pain-card"><span class="pain-ic">!</span><span class="pain-t">問い合わせや予約のボタンが目立たない</span></div>
+    <div class="pain-card"><span class="pain-ic">!</span><span class="pain-t">情報が古いまま、何年も更新できていない</span></div>
+    <div class="pain-card"><span class="pain-ic">!</span><span class="pain-t">誰に相談すればいいのか、分からない</span></div>
+  </div>
+  <div class="pain-note reveal">
+    <span class="pn-ic">!</span>
+    <div>いま、Web検索の<b>7割以上はスマホから</b>。スマホで見づらいサイトはGoogleの評価も下がり、<b>検索結果にも表示されにくく</b>なっています。「古いまま」は、静かに機会損失が続いている状態です。</div>
   </div>
 </section>
 
-<!-- SOLUTION -->
-<section class="sec sol" id="solution">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num">02 — Free Offer</div>
-      <h2 class="sec-title">無料で<br><span class="it">ご提供</span>するもの</h2>
-      <p class="sec-lead" style="color:rgba(255,255,255,.6)">診断から改善提案まで、すべて無料。押し売りは一切ありません。</p>
+<!-- GIFT -->
+<section class="sec sec-alt" id="gift">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Free</span>
+    <h2 class="sec-h">無料で、<span class="gr">ここまで</span>お届けします</h2>
+    <p class="sec-p">すべて無料・契約不要。受け取って終わりでも、まったく問題ありません。</p>
+  </div>
+  <div class="gift-grid">
+    <div class="gift-card reveal">
+      <span class="gift-free">無料</span>
+      <div class="gift-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg></div>
+      <h3 class="gift-h">現状サイトの診断レポート</h3>
+      <p class="gift-d">スマホ対応・表示速度・デザイン・問い合わせ導線をプロが診断。改善ポイントを分かりやすくお伝えします。</p>
     </div>
-    <div class="sol-list">
-      <div class="sol-row reveal"><div class="sol-no">01</div><div class="sol-name">現状サイトの<br>診断レポート</div><div class="sol-desc">デザイン・スマホ対応・表示速度・SEO・問い合わせ導線を専門家が診断。改善ポイントを具体的にお伝えします。</div><div class="sol-free">無料</div></div>
-      <div class="sol-row reveal"><div class="sol-no">02</div><div class="sol-name">新デザイン<br>改善案</div><div class="sol-desc">「こう変えると集客できる」が一目で分かる、御社専用の新デザイン案を無料で制作。実物を見てからご判断いただけます。</div><div class="sol-free">無料</div></div>
-      <div class="sol-row reveal"><div class="sol-no">03</div><div class="sol-name">お見積もり<br>提案資料</div><div class="sol-desc">月々4,980円〜の定額プランと一括プランをご用意。費用・期間を明記した見積書をご提供し、ご納得いただいてから制作を開始します。</div><div class="sol-free">押し売りなし</div></div>
+    <div class="gift-card reveal rd1">
+      <span class="gift-free">無料</span>
+      <div class="gift-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+      <h3 class="gift-h">新ホームページ案</h3>
+      <p class="gift-d">「こう変わる」が一目で分かる、御社専用のリニューアル案を制作。実物を見てから判断できます。</p>
+    </div>
+    <div class="gift-card reveal rd2">
+      <span class="gift-free">押し売りなし</span>
+      <div class="gift-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="13" y2="17"/></svg></div>
+      <h3 class="gift-h">明朗なお見積もり</h3>
+      <p class="gift-d">月々4,980円〜の定額プランと一括プランをご用意。金額はすべて明記、追加費用は一切ありません。</p>
     </div>
   </div>
 </section>
 
 <!-- BEFORE/AFTER -->
-<section class="sec ba">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num">03 — Before / After</div>
-      <h2 class="sec-title">リニューアルで<br><span class="it">ここが変わる</span></h2>
+<section class="sec" id="change">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Before / After</span>
+    <h2 class="sec-h">リニューアルで、<span class="gr">ここが変わる</span></h2>
+  </div>
+  <div class="ba-grid reveal">
+    <div class="ba-col before">
+      <span class="ba-label lb-b">BEFORE — 現状</span>
+      <div class="ba-li"><span class="ic bi-x">×</span>スマホで文字が小さく読みにくい</div>
+      <div class="ba-li"><span class="ic bi-x">×</span>問い合わせボタンが目立たない</div>
+      <div class="ba-li"><span class="ic bi-x">×</span>デザインが古く信頼感が薄い</div>
+      <div class="ba-li"><span class="ic bi-x">×</span>強み・サービスが伝わらない</div>
+      <div class="ba-li"><span class="ic bi-x">×</span>更新されず情報が古いまま</div>
     </div>
-    <div class="ba-wrap reveal">
-      <div class="ba-col ba-before">
-        <div class="ba-label lb-b">BEFORE — 現状</div>
-        <div class="ba-li"><span class="ic bi-x">×</span>スマホで文字が小さく読みにくい</div>
-        <div class="ba-li"><span class="ic bi-x">×</span>問い合わせボタンが目立たない</div>
-        <div class="ba-li"><span class="ic bi-x">×</span>デザインが古く信頼感が薄い</div>
-        <div class="ba-li"><span class="ic bi-x">×</span>サービス内容が伝わらない</div>
-        <div class="ba-li"><span class="ic bi-x">×</span>読み込みが遅く離脱されやすい</div>
-      </div>
-      <div class="ba-arrow"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
-      <div class="ba-col ba-after">
-        <div class="ba-label lb-a">AFTER — リニューアル後</div>
-        <div class="ba-li"><span class="ic bi-o">✓</span>スマホ・PC・タブレット完全対応</div>
-        <div class="ba-li"><span class="ic bi-o">✓</span>「今すぐ連絡」ボタンが常に表示</div>
-        <div class="ba-li"><span class="ic bi-o">✓</span>プロのデザインで第一印象が変わる</div>
-        <div class="ba-li"><span class="ic bi-o">✓</span>強み・サービスが一目で伝わる</div>
-        <div class="ba-li"><span class="ic bi-o">✓</span>高速表示でストレスなく閲覧</div>
-      </div>
+    <div class="ba-arrow"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+    <div class="ba-col after">
+      <span class="ba-label lb-a">AFTER — リニューアル後</span>
+      <div class="ba-li"><span class="ic bi-o">✓</span>スマホ・タブレット完全対応</div>
+      <div class="ba-li"><span class="ic bi-o">✓</span>「予約・問い合わせ」ボタンが常に見える</div>
+      <div class="ba-li"><span class="ic bi-o">✓</span>プロのデザインで第一印象が変わる</div>
+      <div class="ba-li"><span class="ic bi-o">✓</span>強みが一目で伝わる構成</div>
+      <div class="ba-li"><span class="ic bi-o">✓</span>更新はお任せ。いつでも最新の状態</div>
     </div>
   </div>
 </section>
 
-<!-- HOW -->
-<section class="sec how">
-  <div class="wrap">
-    <div class="sec-head reveal">
-      <div class="sec-num" style="color:var(--lime)">04 — Flow</div>
-      <h2 class="sec-title">ご返信から<br><span class="it">公開まで</span></h2>
-    </div>
-    <div class="how-list">
-      <div class="how-row reveal"><div class="how-no">01</div><div class="how-name">ご返信・ご連絡</div><div class="how-desc">メール返信またはInstagram DMでお気軽にどうぞ。</div></div>
-      <div class="how-row reveal"><div class="how-no">02</div><div class="how-name">診断・改善案の送付</div><div class="how-desc">24時間以内に診断レポートと改善提案をお送りします。</div></div>
-      <div class="how-row reveal"><div class="how-no">03</div><div class="how-name">お見積もり確認</div><div class="how-desc">費用・期間をご説明。ご納得後に契約書を発行します。</div></div>
-      <div class="how-row reveal"><div class="how-no">04</div><div class="how-name">制作・公開</div><div class="how-desc">最短即日で着手。納品後1ヶ月は無料サポートします。</div></div>
-    </div>
+<!-- FLOW -->
+<section class="sec sec-alt" id="flow">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Flow</span>
+    <h2 class="sec-h">受け取りまでの<span class="gr">流れ</span></h2>
+  </div>
+  <div class="flow-grid">
+    <div class="flow-card reveal"><div class="flow-no">1</div><div class="flow-h">メールで返信</div><div class="flow-d">「診断希望」とご返信いただくだけでOKです。</div></div>
+    <div class="flow-card reveal rd1"><div class="flow-no">2</div><div class="flow-h">診断＆HP案が届く</div><div class="flow-d">1営業日以内に、レポートと完成イメージをお届け。</div></div>
+    <div class="flow-card reveal rd2"><div class="flow-no">3</div><div class="flow-h">ゆっくり検討</div><div class="flow-d">気に入ったらご相談を。合わなければそのままでOK。</div></div>
+    <div class="flow-card reveal"><div class="flow-no">4</div><div class="flow-h">制作・公開</div><div class="flow-d">最短即日で着手。公開後の更新もお任せください。</div></div>
   </div>
 </section>
 
 <!-- CTA -->
 <section class="cta" id="cta">
-  <h2 class="cta-h">Let's<br><span class="it">talk.</span></h2>
-  <p class="cta-p">まずは無料診断だけでも、お気軽にどうぞ。<br>返信不要・押し売り一切なし。「話だけ聞いてみたい」も大歓迎です。</p>
-  <a href="mailto:info@nexia-web.jp?subject=ホームページ無料診断を希望します" class="cta-btn">診断を申し込む（無料）<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-  <div class="cta-sub">メール：<b>info@nexia-web.jp</b>　/　Instagram：<b>@nexia.web</b></div>
+  <h2 class="cta-h">まずは<span class="hl">無料診断</span>から、<br>お気軽にどうぞ。</h2>
+  <p class="cta-p">メール1通で申し込み完了。1営業日以内に、診断結果と新しいホームページ案をお届けします。</p>
+  <div class="cta-btns">
+    <a href="mailto:info@nexia-web.jp?subject=無料診断＆ホームページ案の希望&body=お店・会社名：%0D%0A現在のホームページURL：%0D%0Aご担当者名：%0D%0Aメモ（任意）：" class="btn-main">【無料】診断＆ホームページ案を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+  <p class="cta-note">メール：info@nexia-web.jp　/　Instagram：@nexia.web　/　しつこい営業は一切いたしません</p>
 </section>
 
 <footer>
@@ -299,8 +343,8 @@ footer{background:var(--ink);color:#fff;padding:60px 40px 36px}
     <a href="index.html" class="logo"><span class="logo-mark">SW</span><span class="logo-txt" style="color:#fff">スマートWEB</span></a>
     <div class="foot-links">
       <a href="index.html">トップ</a>
-      <a href="catalog.html">Catalog</a>
-      <a href="index.html#contact">お問い合わせ</a>
+      <a href="catalog.html">デザインカタログ</a>
+      <a href="index.html#price">料金プラン</a>
       <a href="privacy.html">プライバシーポリシー</a>
       <a href="tokushoho.html">特定商取引法</a>
     </div>
@@ -309,12 +353,11 @@ footer{background:var(--ink);color:#fff;padding:60px 40px 36px}
 </footer>
 
 <script>
-const burger=document.getElementById('hamburger');
-const mnav=document.getElementById('mnav');
-document.getElementById('mnavClose').addEventListener('click',()=>mnav.classList.remove('open'));
+const burger=document.getElementById('hamburger'),mnav=document.getElementById('mnav');
 burger.addEventListener('click',()=>mnav.classList.add('open'));
+document.getElementById('mnavClose').addEventListener('click',()=>mnav.classList.remove('open'));
 mnav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>mnav.classList.remove('open')));
-const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.12});
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
 </body>

@@ -4,9 +4,9 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0"/>
 <title>スマートWEB | 月々4,980円からのホームページ制作・運用代行</title>
-<meta name="description" content="制作もその後の運用も、まるごとお任せ。プロ品質のホームページが月々4,980円から。契約前に無料でデザイン案をお届けします。全国オンライン対応。"/>
+<meta name="description" content="制作もその後の運用も、まるごとお任せ。プロ品質のホームページが月々4,980円から。契約前に無料でホームページ案をお届けします。全国オンライン対応。"/>
 <meta property="og:title" content="スマートWEB | 月々4,980円からのホームページ制作"/>
-<meta property="og:description" content="制作も運用もまるごとお任せ。契約前に無料でデザイン案をお届け。"/>
+<meta property="og:description" content="制作も運用もまるごとお任せ。契約前に無料でホームページ案をお届け。"/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet"/>
@@ -67,31 +67,45 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(255,255,255,
 .hero-points{display:flex;gap:18px;flex-wrap:wrap;margin-top:26px}
 .hp-item{display:flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700}
 .hp-check{width:20px;height:20px;border-radius:50%;background:var(--grad);display:flex;align-items:center;justify-content:center;flex-shrink:0}
-/* hero visual */
-.hero-visual{position:relative}
-.browser{background:#fff;border-radius:16px;box-shadow:0 40px 90px rgba(15,23,41,.16);overflow:hidden;border:1px solid var(--line)}
-.b-bar{background:var(--bg2);padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid var(--line)}
-.b-dots{display:flex;gap:6px}
+/* hero visual — Propagate-style offer card */
 .b-dot{width:10px;height:10px;border-radius:50%;display:block}
-.b-url{flex:1;background:#fff;border:1px solid var(--line);border-radius:6px;padding:6px 14px;font-family:var(--en);font-size:11px;color:var(--muted);text-align:center}
-.b-body{padding:34px 30px;text-align:center;background:radial-gradient(ellipse 300px 160px at 50% 0%,rgba(6,182,212,.08),transparent 70%)}
-.b-badge{display:inline-block;background:rgba(37,99,235,.08);color:var(--blue);font-size:11px;font-weight:700;padding:5px 14px;border-radius:100px;margin-bottom:14px}
-.b-title{font-size:24px;font-weight:900;line-height:1.4;margin-bottom:10px}
-.b-title .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
-.b-text{font-size:12.5px;color:var(--muted);margin-bottom:18px}
-.b-btn{display:inline-block;background:var(--grad);color:#fff;font-size:12px;font-weight:700;padding:10px 24px;border-radius:100px}
-.b-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;padding:0 30px 30px}
-.b-card{background:var(--bg2);border:1px solid var(--line);border-radius:12px;padding:14px}
-.b-card-ic{width:30px;height:30px;border-radius:8px;background:var(--grad);margin-bottom:8px}
-.b-line{height:6px;border-radius:3px;background:var(--line);margin-bottom:5px}
-.b-line.s{width:60%}
-.float-tag{position:absolute;background:#fff;border-radius:14px;padding:13px 18px;box-shadow:0 18px 44px rgba(15,23,41,.14);display:flex;align-items:center;gap:11px;z-index:3}
-.ft1{top:-18px;left:-24px;animation:float 5s ease-in-out infinite}
-.ft2{bottom:-16px;right:-18px;animation:float 5s ease-in-out infinite 1.6s}
-@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
-.ft-ic{width:38px;height:38px;border-radius:11px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.ft-t{font-size:13px;font-weight:800}
-.ft-s{font-size:11px;color:var(--muted)}
+.hero-visual{position:relative;display:flex;justify-content:center}
+.offer-card{background:#fff;border:1px solid var(--line);border-radius:24px;padding:32px 30px 30px;box-shadow:0 34px 80px rgba(15,23,41,.14);text-align:center;width:100%;max-width:460px;position:relative}
+.oc-limit{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:6px;letter-spacing:.04em}
+.oc-limit b{color:#E11D48;font-family:var(--en);font-size:19px}
+.oc-slash{color:#E11D48;font-weight:900}
+.oc-title{font-size:25px;font-weight:900;line-height:1.4;margin-bottom:8px}
+.oc-title .gr{background:var(--grad);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.oc-sub{font-size:12.5px;color:var(--muted);line-height:1.9;margin-bottom:20px}
+.oc-mock{position:relative;margin-bottom:22px;padding-right:64px}
+.oc-desktop{background:#fff;border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 14px 36px rgba(15,23,41,.12)}
+.oc-d-bar{background:var(--bg2);border-bottom:1px solid var(--line);padding:8px 12px;display:flex;gap:5px}
+.oc-d-screen{height:210px;overflow:hidden;position:relative}
+.oc-d-screen iframe{width:1100px;height:700px;border:none;transform:scale(.302);transform-origin:top left;pointer-events:none}
+.oc-phone{position:absolute;right:0;bottom:-14px;width:104px;height:212px;background:var(--navy);border-radius:20px;padding:5px;box-shadow:0 18px 40px rgba(15,23,41,.28)}
+.oc-phone::before{content:'';position:absolute;top:9px;left:50%;transform:translateX(-50%);width:34px;height:8px;background:var(--navy);border-radius:100px;z-index:3}
+.oc-p-screen{width:100%;height:100%;border-radius:15px;overflow:hidden;background:#fff}
+.oc-p-screen iframe{width:390px;height:840px;border:none;transform:scale(.2410);transform-origin:top left;pointer-events:none}
+.oc-badge{display:inline-block;background:var(--navy);color:#fff;font-size:11.5px;font-weight:700;padding:6px 16px;border-radius:100px;margin-bottom:12px;position:relative}
+.oc-badge::after{content:'';position:absolute;bottom:-5px;left:50%;transform:translateX(-50%);border:5px solid transparent;border-top-color:var(--navy);border-bottom:none}
+.oc-btn{width:100%;justify-content:center;font-size:15px;padding:17px 20px}
+.oc-link{display:inline-block;margin-top:14px;font-size:12.5px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.oc-link:hover{color:var(--blue)}
+
+/* ============ PHONE SHOWCASE ============ */
+.phone-row{display:flex;flex-wrap:wrap;gap:34px 26px;justify-content:center;max-width:1080px;margin:0 auto}
+.phone-item{display:flex;flex-direction:column;align-items:center;gap:16px}
+.phone{width:224px;height:462px;background:var(--navy);border-radius:36px;padding:9px;box-shadow:0 26px 60px rgba(15,23,41,.2);position:relative}
+.phone::before{content:'';position:absolute;top:17px;left:50%;transform:translateX(-50%);width:64px;height:14px;background:var(--navy);border-radius:100px;z-index:3}
+.phone-screen{width:100%;height:100%;border-radius:28px;overflow:hidden;background:#fff;position:relative}
+.phone-screen::after{content:'';position:absolute;inset:0;border-radius:28px;box-shadow:inset 0 0 0 1px rgba(15,23,41,.08);pointer-events:none}
+.phone-screen iframe{width:390px;height:1700px;border:none;transform:scale(.5282);transform-origin:top left;pointer-events:none;animation:phonescroll 14s ease-in-out infinite alternate}
+@keyframes phonescroll{0%,12%{transform:scale(.5282) translateY(0)}88%,100%{transform:scale(.5282) translateY(-860px)}}
+@keyframes phonescroll-m{0%,12%{transform:scale(.4718) translateY(0)}88%,100%{transform:scale(.4718) translateY(-860px)}}
+.phone-label{text-align:center;line-height:1.6}
+.phone-label b{display:block;font-size:14.5px;font-weight:800}
+.phone-label span{font-size:12px;color:var(--muted);font-family:var(--en)}
+.phone-note{text-align:center;font-size:12.5px;color:var(--muted);margin-top:36px}
 
 /* ============ TRUST BAND ============ */
 .trust{background:var(--navy)}
@@ -268,6 +282,9 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
 /* ============ TABLET (641-1024) ============ */
 @media(max-width:1024px){
   .wrap,.nav-in{padding-left:28px;padding-right:28px}
+  .offer-card{max-width:420px;padding:26px 22px 24px}
+  .oc-d-screen iframe{transform:scale(.288)}
+  .phone-row{gap:28px 20px}
   .hero{padding:130px 28px 60px}
   .hero-in{gap:40px}
   .sec{padding:84px 28px}
@@ -284,6 +301,16 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
 /* ============ MOBILE (<=640 core, <=760 layout) ============ */
 @media(max-width:760px){
   .wrap,.nav-in{padding-left:20px;padding-right:20px}
+  .offer-card{max-width:100%;padding:26px 20px 24px}
+  .oc-mock{padding-right:56px}
+  .oc-d-screen{height:180px}
+  .oc-d-screen iframe{transform:scale(.26);width:1100px}
+  .oc-phone{width:92px;height:188px}
+  .oc-p-screen iframe{transform:scale(.2128)}
+  .phone-row{flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;-webkit-overflow-scrolling:touch;padding:6px 20px 18px;margin:0 -20px;scroll-snap-type:x mandatory}
+  .phone-item{scroll-snap-align:center;flex-shrink:0}
+  .phone{width:200px;height:414px}
+  .phone-screen iframe{transform:scale(.4718);animation:phonescroll-m 14s ease-in-out infinite alternate}
   .nav-links{display:none}
   .hamburger{display:flex}
   .hero{padding:108px 20px 54px}
@@ -329,7 +356,7 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
       <a href="#flow">ご利用の流れ</a>
       <a href="#faq">FAQ</a>
       <a href="catalog.html">カタログ</a>
-      <a href="#contact" class="nav-cta">無料デザイン案をもらう</a>
+      <a href="#contact" class="nav-cta">無料でHP案をもらう</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="メニュー"><span></span><span></span><span></span></button>
   </div>
@@ -342,21 +369,21 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
   <a href="#flow">ご利用の流れ</a>
   <a href="#faq">よくある質問</a>
   <a href="catalog.html">デザインカタログ</a>
-  <a href="#contact" class="m-cta">無料デザイン案をもらう</a>
+  <a href="#contact" class="m-cta">無料でHP案をもらう</a>
 </div>
 
 <!-- HERO -->
 <header class="hero" id="top">
   <div class="hero-in">
     <div>
-      <div class="hero-badge"><span class="dot"></span>契約前に、完成イメージが見られます</div>
+      <div class="hero-badge"><span class="dot"></span>契約前に、あなた専用の完成イメージが見られます</div>
       <h1 class="hero-h1">プロがつくる<br>集客できるホームページが<br><span class="gr">月々<span class="price en">4,980</span>円</span>から。</h1>
-      <p class="hero-lead">制作も、公開後の更新も、まるごとお任せ。「よく分からない」「高そう」を、ぜんぶ解決します。まずは無料のデザイン案から、お気軽にどうぞ。</p>
+      <p class="hero-lead">制作も、公開後の更新も、まるごとお任せ。「よく分からない」「高そう」を、ぜんぶ解決します。まずは無料のホームページ案から、お気軽にどうぞ。</p>
       <div class="hero-btns">
-        <a href="#contact" class="btn-main">【無料】デザイン案を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+        <a href="#contact" class="btn-main">【無料】ホームページ案を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
         <a href="#price" class="btn-sub">料金プランを見る</a>
       </div>
-      <div class="hero-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>無理な営業は一切ありません。デザイン案を見てから、ゆっくりご検討ください。</div>
+      <div class="hero-note"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>無理な営業は一切ありません。ホームページ案を見てから、ゆっくりご検討ください。</div>
       <div class="hero-points">
         <div class="hp-item"><span class="hp-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>追加費用なし</div>
         <div class="hp-item"><span class="hp-check"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>全国オンライン対応</div>
@@ -364,24 +391,22 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
       </div>
     </div>
     <div class="hero-visual">
-      <div class="float-tag ft1"><div class="ft-ic" style="background:rgba(6,182,212,.12);color:var(--cyan)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg></div><div><div class="ft-t">最短即日</div><div class="ft-s">スピード対応</div></div></div>
-      <div class="float-tag ft2"><div class="ft-ic" style="background:rgba(245,158,11,.12);color:var(--amber)"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l2.4 7.4H22l-6 4.6 2.3 7.4-6.3-4.6L5.7 21l2.3-7.4-6-4.6h7.6z"/></svg></div><div><div class="ft-t">スマホ完全対応</div><div class="ft-s">見やすさ重視</div></div></div>
-      <div class="browser">
-        <div class="b-bar">
-          <div class="b-dots"><span class="b-dot" style="background:#FF5F57"></span><span class="b-dot" style="background:#FEBC2E"></span><span class="b-dot" style="background:#28C840"></span></div>
-          <div class="b-url">https://your-shop.com</div>
+      <div class="offer-card">
+        <div class="oc-limit"><span class="oc-slash">＼</span>　毎月 <b>10件</b> 限定　<span class="oc-slash">／</span></div>
+        <div class="oc-title">ホームページ案を<span class="gr">無料作成</span></div>
+        <p class="oc-sub">1営業日以内に、あなたのお店専用の<br>完成イメージをご提案します。</p>
+        <div class="oc-mock">
+          <div class="oc-desktop">
+            <div class="oc-d-bar"><span class="b-dot" style="background:#FF5F57"></span><span class="b-dot" style="background:#FEBC2E"></span><span class="b-dot" style="background:#28C840"></span></div>
+            <div class="oc-d-screen"><iframe src="sample-clinic.html?embed=1" loading="lazy" tabindex="-1" title="制作イメージ（PC）"></iframe></div>
+          </div>
+          <div class="oc-phone">
+            <div class="oc-p-screen"><iframe src="sample-salon.html?embed=1" loading="lazy" tabindex="-1" title="制作イメージ（スマホ）"></iframe></div>
+          </div>
         </div>
-        <div class="b-body">
-          <span class="b-badge">あなたのお店</span>
-          <div class="b-title">選ばれる理由がある、<br><span class="gr">私たちのサービス。</span></div>
-          <p class="b-text">お客様に、想いがきちんと伝わるホームページを。</p>
-          <span class="b-btn">お問い合わせ →</span>
-        </div>
-        <div class="b-cards">
-          <div class="b-card"><div class="b-card-ic"></div><div class="b-line"></div><div class="b-line s"></div></div>
-          <div class="b-card"><div class="b-card-ic"></div><div class="b-line"></div><div class="b-line s"></div></div>
-          <div class="b-card"><div class="b-card-ic"></div><div class="b-line"></div><div class="b-line s"></div></div>
-        </div>
+        <div class="oc-badge">契約不要・オンラインで完結</div>
+        <a href="#contact" class="btn-main oc-btn">【無料】ホームページ案を受け取る</a>
+        <a href="#price" class="oc-link">料金プランはこちら</a>
       </div>
     </div>
   </div>
@@ -450,22 +475,22 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
 <section class="sec draft" id="draft">
   <div class="draft-in">
     <div class="reveal">
-      <div class="draft-label">✦ スマートWEBだけの安心ポイント</div>
-      <h2 class="draft-h">契約の前に、<br><span class="hl">無料でデザイン案</span>を<br>お作りします。</h2>
-      <p class="draft-p">「イメージと違ったらどうしよう」という不安をなくすため、ご契約前にあなたのお店専用のトップページ案を無料で制作。実際に見て、納得してから決められます。</p>
+      <div class="draft-label">✦ 毎月10件限定・スマートWEBの安心ポイント</div>
+      <h2 class="draft-h">契約の前に、<br><span class="hl">無料でホームページ案</span>を<br>お作りします。</h2>
+      <p class="draft-p">「イメージと違ったらどうしよう」という不安をなくすため、ご契約前にあなたのお店専用のホームページ案を無料で制作。実際に見て、納得してから決められます。</p>
       <div class="draft-steps">
         <div class="ds-item"><span class="ds-no">1</span><span class="ds-t"><b>お店の名前と業種</b>を、フォームから送るだけ（1分で完了）</span></div>
-        <div class="ds-item"><span class="ds-no">2</span><span class="ds-t">担当者があなたのお店に合わせた<b>デザイン案</b>を制作</span></div>
+        <div class="ds-item"><span class="ds-no">2</span><span class="ds-t">担当者があなたのお店に合わせた<b>ホームページ案</b>を制作</span></div>
         <div class="ds-item"><span class="ds-no">3</span><span class="ds-t"><b>実物を見てから</b>、進めるかどうかゆっくり判断</span></div>
       </div>
-      <a href="#contact" class="btn-main">【無料】デザイン案を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      <a href="#contact" class="btn-main">【無料】ホームページ案を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
     <div class="draft-visual reveal rd1">
       <div class="dv-stamp">無料<br>0円</div>
       <div class="dv-card">
         <div class="dv-bar"><span class="b-dot" style="background:#FF5F57"></span><span class="b-dot" style="background:#FEBC2E"></span><span class="b-dot" style="background:#28C840"></span></div>
         <div class="dv-body">
-          <span class="dv-tag">あなたのお店専用デザイン案</span>
+          <span class="dv-tag">あなたのお店専用ホームページ案</span>
           <div class="dv-title">〇〇美容室さま<br>ご提案デザイン</div>
           <p class="dv-text">実際のお店の情報をもとに、雰囲気に合わせてお作りします</p>
           <span class="dv-btn">こんな感じで届きます</span>
@@ -511,6 +536,42 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
   <div class="work-more reveal">
     <a href="catalog.html" class="btn-sub">カタログで色・フォントを試しながら選ぶ →</a>
   </div>
+</section>
+
+<!-- MOBILE SHOWCASE -->
+<section class="sec sec-alt" id="mobile">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Mobile Ready</span>
+    <h2 class="sec-h">スマホでも、<span class="gr">美しく。</span></h2>
+    <p class="sec-p">お客様の7割以上はスマホから見ています。実際のデモサイトのスマホ画面を、そのまま操作イメージでご覧ください。</p>
+  </div>
+  <div class="phone-row reveal">
+    <div class="phone-item">
+      <div class="phone"><div class="phone-screen"><iframe src="sample-salon.html?embed=1" loading="lazy" tabindex="-1" title="美容室サンプル スマホ表示"></iframe></div></div>
+      <div class="phone-label"><b>美容室・サロン</b><span>Salon Luné</span></div>
+    </div>
+    <div class="phone-item">
+      <div class="phone"><div class="phone-screen"><iframe src="sample-food.html?embed=1" loading="lazy" tabindex="-1" title="飲食店サンプル スマホ表示"></iframe></div></div>
+      <div class="phone-label"><b>飲食店・カフェ</b><span>Trattoria Sole</span></div>
+    </div>
+    <div class="phone-item">
+      <div class="phone"><div class="phone-screen"><iframe src="sample-clinic.html?embed=1" loading="lazy" tabindex="-1" title="整体院サンプル スマホ表示"></iframe></div></div>
+      <div class="phone-label"><b>整体・クリニック</b><span>そら整骨院</span></div>
+    </div>
+    <div class="phone-item">
+      <div class="phone"><div class="phone-screen"><iframe src="sample-corp.html?embed=1" loading="lazy" tabindex="-1" title="スクールサンプル スマホ表示"></iframe></div></div>
+      <div class="phone-label"><b>教室・スクール</b><span>BRIGHT English</span></div>
+    </div>
+    <div class="phone-item">
+      <div class="phone"><div class="phone-screen"><iframe src="sample-legal.html?embed=1" loading="lazy" tabindex="-1" title="士業サンプル スマホ表示"></iframe></div></div>
+      <div class="phone-label"><b>士業・専門職</b><span>佐藤総合法務事務所</span></div>
+    </div>
+    <div class="phone-item">
+      <div class="phone"><div class="phone-screen"><iframe src="sample-creative.html?embed=1" loading="lazy" tabindex="-1" title="クリエイティブサンプル スマホ表示"></iframe></div></div>
+      <div class="phone-label"><b>クリエイティブ</b><span>STUDIO NOVA</span></div>
+    </div>
+  </div>
+  <p class="phone-note reveal">※ 画面は実際のデモサイトです。各カードをタップすると実物をご覧いただけます。</p>
 </section>
 
 <!-- PRICING -->
@@ -645,7 +706,7 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
     <p class="sec-p">すべてオンラインで完結。パソコンが苦手でも大丈夫です。</p>
   </div>
   <div class="flow-grid">
-    <div class="flow-card reveal"><div class="flow-no">1</div><div class="flow-h">無料デザイン案</div><div class="flow-d">フォームから1分でお申し込み。お店に合わせた案をお届けします。</div><span class="flow-day">無料</span></div>
+    <div class="flow-card reveal"><div class="flow-no">1</div><div class="flow-h">無料ホームページ案</div><div class="flow-d">フォームから1分でお申し込み。お店に合わせた完成イメージをお届けします。</div><span class="flow-day">無料</span></div>
     <div class="flow-card reveal rd1"><div class="flow-no">2</div><div class="flow-h">ご相談・お申し込み</div><div class="flow-d">案を見て気に入ったら、プランを選んでお申し込み。契約書を発行します。</div><span class="flow-day">オンライン完結</span></div>
     <div class="flow-card reveal rd2"><div class="flow-no">3</div><div class="flow-h">制作・ご確認</div><div class="flow-d">写真や文章はお任せOK。途中経過を確認しながら仕上げます。</div><span class="flow-day">最短即日</span></div>
     <div class="flow-card reveal"><div class="flow-no">4</div><div class="flow-h">公開・運用スタート</div><div class="flow-d">公開後の更新や修正も、ご連絡いただくだけ。ずっと寄り添います。</div><span class="flow-day">更新お任せ</span></div>
@@ -659,7 +720,7 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
     <h2 class="sec-h">ご利用者さまの<span class="gr">声</span></h2>
   </div>
   <div class="voice-grid">
-    <div class="voice-card reveal"><div class="voice-stars">★★★★★</div><p class="voice-txt">見積もりを頼んだ制作会社の半額以下。正直不安でしたが、先にデザイン案を見られたので安心して決められました。仕上がりも大満足です。</p><div class="voice-who"><div class="voice-av">👩</div><div><div class="voice-name">美容室オーナー N様</div><div class="voice-role">スタンダードプラン</div></div></div></div>
+    <div class="voice-card reveal"><div class="voice-stars">★★★★★</div><p class="voice-txt">見積もりを頼んだ制作会社の半額以下。正直不安でしたが、先に完成イメージを見られたので安心して決められました。仕上がりも大満足です。</p><div class="voice-who"><div class="voice-av">👩</div><div><div class="voice-name">美容室オーナー N様</div><div class="voice-role">スタンダードプラン</div></div></div></div>
     <div class="voice-card reveal rd1"><div class="voice-stars">★★★★★</div><p class="voice-txt">パソコンが本当に苦手で、更新なんて絶対無理だと思っていました。今はLINEで「これ載せて」と送るだけ。もっと早く頼めばよかった。</p><div class="voice-who"><div class="voice-av">👨</div><div><div class="voice-name">整体院 院長 T様</div><div class="voice-role">スタンダードプラン</div></div></div></div>
     <div class="voice-card reveal rd2"><div class="voice-stars">★★★★★</div><p class="voice-txt">開業したばかりで予算がなく、月々プランはありがたかったです。ホームページを見て来たというお客様が少しずつ増えています。</p><div class="voice-who"><div class="voice-av">🧑</div><div><div class="voice-name">カフェ経営 S様</div><div class="voice-role">ライトプラン</div></div></div></div>
   </div>
@@ -672,10 +733,10 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
     <h2 class="sec-h">よくある<span class="gr">ご質問</span></h2>
   </div>
   <div class="faq-list reveal">
-    <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">なぜこの価格でできるのですか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">広告費や営業コストをかけず、制作の工程も徹底的に効率化しているためです。少人数で運営している分、無駄なコストを価格に乗せていません。品質面はサンプルやデザイン案で必ずご確認いただけます。</div></div>
+    <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">なぜこの価格でできるのですか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">広告費や営業コストをかけず、制作の工程も徹底的に効率化しているためです。少人数で運営している分、無駄なコストを価格に乗せていません。品質面はサンプルや無料のホームページ案で必ずご確認いただけます。</div></div>
     <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">写真や文章がなくても頼めますか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">はい、大丈夫です。ヒアリングをもとに文章はこちらで作成し、写真はご提供いただけるものと高品質な素材を組み合わせて制作します。お手元に写真が多いほど、お店の雰囲気がより伝わるサイトになります。</div></div>
     <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">月々プランを途中でやめたらどうなりますか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">最低利用期間（12ヶ月）以降は、いつでも解約いただけます。解約後はサイトの公開が終了となります。長くお使いいただく予定の方には、買い切りの一括プランもご用意しています。</div></div>
-    <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">今あるホームページのリニューアルもできますか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">はい、リニューアルのご依頼も多くいただいています。現在のサイトURLをお送りいただければ、無料で改善点の診断と新デザイン案をお作りします。ドメインの引き継ぎも無料で代行します。</div></div>
+    <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">今あるホームページのリニューアルもできますか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">はい、リニューアルのご依頼も多くいただいています。現在のサイトURLをお送りいただければ、無料で改善点の診断と新しいホームページ案をお作りします。ドメインの引き継ぎも無料で代行します。</div></div>
     <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">サーバーやドメインが何か分かりません…</span></div><span class="faq-tog">+</span></div><div class="faq-a">ご安心ください。ほとんどのお客様が同じ状態からスタートしています。必要な契約（目安：月1,000〜2,000円程度）のご案内から設定まで、すべて無料でサポートします。</div></div>
     <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">地方でも対応してもらえますか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">はい、全国どこでも対応可能です。やり取りはメール・LINE・オンライン通話で完結するため、地域による差は一切ありません。</div></div>
   </div>
@@ -683,10 +744,10 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
 
 <!-- CTA -->
 <section class="cta" id="contact">
-  <h2 class="cta-h">まずは<span class="hl">無料のデザイン案</span>から、<br>はじめませんか？</h2>
-  <p class="cta-p">お店の名前と業種を送るだけ。あなたのお店専用のデザイン案をお届けします。<br>見てから決められるので、リスクはありません。</p>
+  <h2 class="cta-h">まずは<span class="hl">無料のホームページ案</span>から、<br>はじめませんか？</h2>
+  <p class="cta-p">お店の名前と業種を送るだけ。あなたのお店専用のホームページ案をお届けします。<br>見てから決められるので、リスクはありません。</p>
   <div class="cta-btns">
-    <a href="mailto:info@nexia-web.jp?subject=無料デザイン案の申し込み&body=お店・会社名：%0D%0A業種：%0D%0A現在のホームページ（あれば）：%0D%0Aご希望・メモ：" class="btn-main">【無料】デザイン案を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="mailto:info@nexia-web.jp?subject=無料ホームページ案の申し込み&body=お店・会社名：%0D%0A業種：%0D%0A現在のホームページ（あれば）：%0D%0Aご希望・メモ：" class="btn-main">【無料】ホームページ案を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     <a href="diagnosis.html" class="btn-sub">今のホームページを無料診断する</a>
   </div>
   <p class="cta-note">メール：info@nexia-web.jp　/　Instagram：@nexia.web　/　無理な営業は一切いたしません</p>
