@@ -11,9 +11,14 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:'Space Grotesk','Noto Sans JP',sans-serif;background:#0A0A0A;color:#fff;line-height:1.7;overflow-x:hidden;font-size:16px}
+body{font-family:'Space Grotesk','Noto Sans JP',sans-serif;background:#0A0A0A;color:#fff;line-height:1.7;overflow-x:hidden;font-size:16px;position:relative}
 a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;display:block}
-:root{--bg:#0A0A0A;--ink:#fff;--muted:#8B8B8B;--line:rgba(255,255,255,.12);--accent:#D6FF3F;--accent2:#FF4D6D}
+button{font-family:inherit;cursor:pointer}
+::selection{background:#D6FF3F;color:#0A0A0A}
+:root{--bg:#0A0A0A;--ink:#fff;--muted:#8B8B8B;--line:rgba(255,255,255,.12);--accent:#D6FF3F;--accent2:#FF4D6D;--accent3:#3F6BFF}
+
+/* film grain overlay for premium texture */
+body::before{content:'';position:fixed;inset:0;z-index:2000;pointer-events:none;opacity:.045;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 
 /* sample banner */
 .samplebar{position:fixed;top:0;left:0;right:0;z-index:999;background:#fff;color:#0A0A0A;font-family:'Noto Sans JP',sans-serif;font-size:13px;font-weight:700;padding:9px 18px;display:flex;align-items:center;justify-content:center;gap:14px;text-align:center}
@@ -23,63 +28,100 @@ a{text-decoration:none;color:inherit}ul{list-style:none}img{max-width:100%;displ
 /* nav */
 nav{position:fixed;top:37px;left:0;right:0;z-index:500;mix-blend-mode:difference}
 .nav-in{max-width:1280px;margin:0 auto;padding:24px 40px;display:flex;align-items:center;justify-content:space-between}
-.logo{font-family:'Anton',sans-serif;font-size:24px;letter-spacing:.04em;color:#fff}
+.logo{font-family:'Anton',sans-serif;font-size:24px;letter-spacing:.04em;color:#fff;display:flex;align-items:center;gap:9px}
+.logo-dot{width:9px;height:9px;border-radius:50%;background:var(--accent);display:inline-block}
 .nav-links{display:flex;gap:36px}
-.nav-links a{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#fff}
+.nav-links a{font-size:13px;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:#fff;position:relative}
+.nav-links a::after{content:'';position:absolute;left:0;bottom:-5px;width:0;height:1px;background:#fff;transition:width .3s}
+.nav-links a:hover::after{width:100%}
 .menu-btn{display:none;font-size:13px;letter-spacing:.1em;text-transform:uppercase;background:none;border:none;color:#fff;cursor:pointer}
 
 /* hero */
 .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:140px 40px 80px;position:relative;overflow:hidden}
-.hero-eyebrow{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:30px;display:flex;align-items:center;gap:12px}
+.hero-grid{position:absolute;inset:0;z-index:-2;background-image:linear-gradient(rgba(255,255,255,.035) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px);background-size:64px 64px;mask-image:radial-gradient(ellipse 70% 60% at 50% 40%,#000,transparent)}
+.hero-eyebrow{font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);margin-bottom:28px;display:flex;align-items:center;gap:12px}
 .hero-eyebrow::before{content:'';width:50px;height:1px;background:var(--accent)}
-.hero-title{font-family:'Anton',sans-serif;font-size:clamp(56px,13vw,200px);line-height:.92;letter-spacing:-.01em;text-transform:uppercase;margin-bottom:36px}
+.hero-title{font-family:'Anton',sans-serif;font-size:clamp(52px,12.6vw,196px);line-height:.9;letter-spacing:-.01em;text-transform:uppercase;margin-bottom:36px}
 .hero-title .out{-webkit-text-stroke:2px #fff;color:transparent}
-.hero-title .it{font-style:italic;color:var(--accent)}
+.hero-title .it{font-style:italic;color:var(--accent);position:relative}
 .hero-foot{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:24px}
-.hero-desc{font-family:'Noto Sans JP',sans-serif;font-size:17px;color:var(--muted);max-width:420px;line-height:1.9}
+.hero-desc{font-family:'Noto Sans JP',sans-serif;font-size:17px;color:var(--muted);max-width:420px;line-height:2}
 .hero-scroll{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:10px}
-.hero-blob{position:absolute;border-radius:50%;filter:blur(80px);opacity:.5;z-index:-1}
-.blob1{width:500px;height:500px;background:#FF4D6D;top:-100px;right:-100px;animation:drift 14s ease-in-out infinite}
-.blob2{width:400px;height:400px;background:#3F6BFF;bottom:-80px;left:10%;animation:drift 18s ease-in-out infinite reverse}
+.hero-scroll svg{animation:bob 1.6s ease-in-out infinite}
+@keyframes bob{0%,100%{transform:translateY(0)}50%{transform:translateY(5px)}}
+.hero-blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.42;z-index:-1}
+.blob1{width:520px;height:520px;background:#FF4D6D;top:-120px;right:-120px;animation:drift 15s ease-in-out infinite}
+.blob2{width:420px;height:420px;background:#3F6BFF;bottom:-100px;left:6%;animation:drift 19s ease-in-out infinite reverse}
 @keyframes drift{0%,100%{transform:translate(0,0)}50%{transform:translate(40px,-30px)}}
+/* rotating badge — signature detail */
+.hero-badge{position:absolute;top:150px;right:64px;width:118px;height:118px;z-index:3}
+.hero-badge svg{width:100%;height:100%;animation:spin 16s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.hero-badge-core{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:46px;height:46px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;color:#0A0A0A}
 
 /* marquee headline */
-.bigmarq{padding:50px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap}
-.bigmarq-track{display:inline-flex;gap:40px;animation:scroll 24s linear infinite}
-.bigmarq span{font-family:'Anton',sans-serif;font-size:clamp(40px,7vw,90px);text-transform:uppercase;letter-spacing:.02em}
+.bigmarq{padding:46px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;white-space:nowrap;position:relative}
+.bigmarq-track{display:inline-flex;gap:40px;animation:scroll 26s linear infinite}
+.bigmarq span{font-family:'Anton',sans-serif;font-size:clamp(38px,6.6vw,84px);text-transform:uppercase;letter-spacing:.02em}
 .bigmarq .ghost{-webkit-text-stroke:1.5px var(--muted);color:transparent}
+.bigmarq .fill{color:var(--accent)}
 @keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
 
+/* client strip */
+.clients{padding:56px 40px;border-bottom:1px solid var(--line)}
+.clients-label{text-align:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);margin-bottom:32px}
+.clients-row{display:flex;justify-content:center;align-items:center;gap:56px;flex-wrap:wrap;opacity:.55}
+.clients-row span{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:19px;letter-spacing:.02em}
+
 /* work grid */
-.sec{padding:120px 40px;position:relative}
-.sec-label{font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
-.sec-h{font-family:'Anton',sans-serif;font-size:clamp(40px,6vw,80px);text-transform:uppercase;line-height:1;margin-bottom:60px}
+.sec{padding:130px 40px;position:relative}
+.sec-label{font-size:13px;letter-spacing:.25em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:flex;align-items:center;gap:12px}
+.sec-label::before{content:'';width:32px;height:1px;background:var(--accent)}
+.sec-h{font-family:'Anton',sans-serif;font-size:clamp(38px,5.6vw,76px);text-transform:uppercase;line-height:1;margin-bottom:60px}
 .works{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.work{position:relative;border-radius:8px;overflow:hidden;cursor:pointer;aspect-ratio:4/3}
+.work{position:relative;border-radius:10px;overflow:hidden;cursor:pointer;aspect-ratio:4/3;isolation:isolate}
 .work:nth-child(3){margin-top:-80px}.work:nth-child(4){margin-top:-80px}
-.work-bg{position:absolute;inset:0;transition:transform .8s cubic-bezier(.22,1,.36,1)}
-.work:hover .work-bg{transform:scale(1.06)}
-.work-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7),transparent 60%);display:flex;flex-direction:column;justify-content:flex-end;padding:36px}
-.work-num{font-size:13px;letter-spacing:.2em;color:var(--accent);margin-bottom:10px}
+.work-bg{position:absolute;inset:0;transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.work-bg::after{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");mix-blend-mode:overlay;opacity:.5}
+.work-bg::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 75% 20%,rgba(255,255,255,.28),transparent 55%)}
+.work:hover .work-bg{transform:scale(1.07)}
+.work-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.78),transparent 62%);display:flex;flex-direction:column;justify-content:flex-end;padding:36px;z-index:2}
+.work-num{font-size:13px;letter-spacing:.2em;color:var(--accent);margin-bottom:10px;font-family:'Space Grotesk',sans-serif}
 .work-title{font-family:'Anton',sans-serif;font-size:32px;text-transform:uppercase;line-height:1.05;margin-bottom:8px}
-.work-tag{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:rgba(255,255,255,.7)}
-.work-arrow{position:absolute;top:30px;right:30px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.3);display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s}
-.work:hover .work-arrow{background:var(--accent);transform:rotate(45deg)}
+.work-tag{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:rgba(255,255,255,.72)}
+.work-arrow{position:absolute;top:28px;right:28px;width:48px;height:48px;border-radius:50%;border:1px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s;z-index:3;background:rgba(0,0,0,.2);backdrop-filter:blur(6px)}
+.work:hover .work-arrow{background:var(--accent);transform:rotate(45deg);border-color:var(--accent)}
 .work:hover .work-arrow svg{color:#0A0A0A}
 
+/* process (new, adds substance) */
+.proc-sec{background:#0D0D0D;padding:130px 40px;border-top:1px solid var(--line)}
+.proc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.proc-card{background:#0A0A0A;padding:44px 30px}
+.proc-no{font-family:'Anton',sans-serif;font-size:52px;color:var(--accent);line-height:1;margin-bottom:22px;-webkit-text-stroke:1px var(--accent);color:transparent}
+.proc-h{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:18px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:12px}
+.proc-d{font-family:'Noto Sans JP',sans-serif;font-size:13px;color:var(--muted);line-height:1.9}
+
 /* services */
-.serv-sec{background:#111;padding:120px 40px}
+.serv-sec{background:#111;padding:130px 40px}
 .serv-list{border-top:1px solid var(--line)}
-.serv-row{display:grid;grid-template-columns:80px 1fr auto;gap:30px;align-items:center;padding:36px 0;border-bottom:1px solid var(--line);transition:padding-left .4s,background .4s;cursor:pointer}
+.serv-row{display:grid;grid-template-columns:80px 1fr auto;gap:30px;align-items:center;padding:38px 0;border-bottom:1px solid var(--line);transition:padding-left .4s,background .4s;cursor:pointer}
 .serv-row:hover{padding-left:24px}
 .serv-row:hover .serv-name{color:var(--accent)}
 .serv-no{font-size:14px;color:var(--muted);font-family:'Space Grotesk'}
-.serv-name{font-family:'Anton',sans-serif;font-size:clamp(28px,4vw,52px);text-transform:uppercase;transition:color .3s;line-height:1}
+.serv-name{font-family:'Anton',sans-serif;font-size:clamp(26px,3.8vw,50px);text-transform:uppercase;transition:color .3s;line-height:1}
 .serv-desc{font-family:'Noto Sans JP',sans-serif;font-size:14px;color:var(--muted);max-width:280px;text-align:right}
 
+/* about / stats */
+.about-sec{padding:130px 40px}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+.about-txt p{font-family:'Noto Sans JP',sans-serif;font-size:16px;color:var(--muted);line-height:2.1;margin-bottom:20px}
+.about-stats{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.stat-num{font-family:'Anton',sans-serif;font-size:clamp(36px,5vw,58px);color:var(--accent);line-height:1}
+.stat-lbl{font-family:'Noto Sans JP',sans-serif;font-size:12.5px;color:var(--muted);margin-top:8px}
+
 /* cta */
-.cta{padding:160px 40px;text-align:center;position:relative;overflow:hidden}
-.cta-h{font-family:'Anton',sans-serif;font-size:clamp(48px,11vw,160px);text-transform:uppercase;line-height:.9;margin-bottom:40px}
+.cta{padding:170px 40px;text-align:center;position:relative;overflow:hidden}
+.cta-h{font-family:'Anton',sans-serif;font-size:clamp(46px,10.6vw,154px);text-transform:uppercase;line-height:.9;margin-bottom:40px}
 .cta-h .it{font-style:italic;color:var(--accent)}
 .cta-btn{display:inline-flex;align-items:center;gap:14px;font-family:'Noto Sans JP',sans-serif;background:var(--accent);color:#0A0A0A;font-size:17px;font-weight:700;padding:22px 50px;border-radius:100px;transition:transform .3s}
 .cta-btn:hover{transform:scale(1.05)}
@@ -88,17 +130,28 @@ footer{padding:60px 40px;border-top:1px solid var(--line);display:flex;justify-c
 .foot-logo{font-family:'Anton',sans-serif;font-size:22px}
 .foot-copy{font-family:'Noto Sans JP',sans-serif;font-size:12px;color:var(--muted)}
 
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform .9s cubic-bezier(.22,1,.36,1)}
+.reveal.visible{opacity:1;transform:none}
+
 @media(max-width:860px){
+  .samplebar{font-size:10.5px;padding:8px 12px;gap:8px;line-height:1.4}
+  .samplebar a{padding:4px 11px;font-size:10px}
   .wrap,.nav-in{padding-left:20px;padding-right:20px}
   .nav-links{display:none}.menu-btn{display:block}
   .hero{padding:120px 20px 60px}
-  .sec,.serv-sec,.cta{padding:70px 20px}
+  .hero-badge{display:none}
+  .sec,.serv-sec,.cta,.proc-sec,.about-sec{padding:74px 20px}
   .works{grid-template-columns:1fr;gap:20px}
   .work:nth-child(n){margin-top:0}
-  .serv-row{grid-template-columns:40px 1fr;gap:14px}
+  .proc-grid{grid-template-columns:1fr 1fr}
+  .serv-row{grid-template-columns:40px 1fr}
   .serv-desc{display:none}
   .hero-foot{flex-direction:column;align-items:flex-start}
+  .about-grid{grid-template-columns:1fr;gap:40px}
+  .clients-row{gap:30px}
+  .clients-row span{font-size:15px}
 }
+@media(max-width:560px){.proc-grid{grid-template-columns:1fr}.about-stats{grid-template-columns:1fr 1fr}}
 </style>
 </head>
 <body>
@@ -109,37 +162,49 @@ footer{padding:60px 40px;border-top:1px solid var(--line);display:flex;justify-c
 
 <nav>
   <div class="nav-in">
-    <div class="logo">STUDIO NOVA</div>
+    <div class="logo"><span class="logo-dot"></span>STUDIO NOVA</div>
     <div class="nav-links">
       <a href="#work">Work</a><a href="#services">Services</a><a href="#about">About</a><a href="#contact">Contact</a>
     </div>
-    <button class="menu-btn">Menu</button>
+    <button class="menu-btn" onclick="alert('サンプルのためメニューは省略しています')">Menu</button>
   </div>
 </nav>
 
 <header class="hero">
+  <div class="hero-grid"></div>
   <div class="hero-blob blob1"></div>
   <div class="hero-blob blob2"></div>
+  <div class="hero-badge">
+    <svg viewBox="0 0 120 120"><defs><path id="circlePath" d="M60,60 m-46,0 a46,46 0 1,1 92,0 a46,46 0 1,1 -92,0"/></defs><text font-family="Space Grotesk" font-size="10.5" letter-spacing="3" fill="#fff"><textPath href="#circlePath">STUDIO NOVA • CREATIVE AGENCY • EST 2015 • </textPath></text></svg>
+    <div class="hero-badge-core"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
+  </div>
   <div class="hero-eyebrow">Creative Agency / Tokyo</div>
   <h1 class="hero-title">We make<br><span class="it">bold</span> <span class="out">ideas</span><br>move.</h1>
   <div class="hero-foot">
-    <p class="hero-desc">ブランドの世界観を、感性とテクノロジーで形にする。私たちは、見る人の心を動かすクリエイティブを生み出すデザインスタジオです。</p>
-    <div class="hero-scroll">Scroll ↓</div>
+    <p class="hero-desc">ブランドの世界観を、感性とテクノロジーで形にする。見る人の心を動かすクリエイティブを、戦略から映像まで一貫して生み出すデザインスタジオです。</p>
+    <div class="hero-scroll">Scroll <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></div>
   </div>
 </header>
 
 <div class="bigmarq">
   <div class="bigmarq-track">
-    <span>Branding</span><span class="ghost">●</span><span>Web Design</span><span class="ghost">●</span><span>Motion</span><span class="ghost">●</span>
-    <span>Branding</span><span class="ghost">●</span><span>Web Design</span><span class="ghost">●</span><span>Motion</span><span class="ghost">●</span>
+    <span>Branding</span><span class="fill">✱</span><span>Web Design</span><span class="ghost">✱</span><span>Motion</span><span class="fill">✱</span><span>Strategy</span><span class="ghost">✱</span>
+    <span>Branding</span><span class="fill">✱</span><span>Web Design</span><span class="ghost">✱</span><span>Motion</span><span class="fill">✱</span><span>Strategy</span><span class="ghost">✱</span>
+  </div>
+</div>
+
+<div class="clients">
+  <div class="clients-label">Trusted by ambitious brands</div>
+  <div class="clients-row">
+    <span>AURORA</span><span>FLUX</span><span>PULSE</span><span>MONO</span><span>KESHIKI</span><span>NORTHLAND</span>
   </div>
 </div>
 
 <section class="sec" id="work">
-  <div class="sec-label">Selected Work</div>
-  <h2 class="sec-h">Projects</h2>
+  <div class="sec-label reveal">Selected Work</div>
+  <h2 class="sec-h reveal">Projects</h2>
   <div class="works">
-    <div class="work">
+    <div class="work reveal">
       <div class="work-bg" style="background:linear-gradient(135deg,#FF4D6D,#7B2FF7)"></div>
       <div class="work-overlay">
         <div class="work-num">01 — Branding</div>
@@ -148,7 +213,7 @@ footer{padding:60px 40px;border-top:1px solid var(--line);display:flex;justify-c
       </div>
       <div class="work-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
     </div>
-    <div class="work">
+    <div class="work reveal rd1">
       <div class="work-bg" style="background:linear-gradient(135deg,#3F6BFF,#00D9C0)"></div>
       <div class="work-overlay">
         <div class="work-num">02 — Web</div>
@@ -157,7 +222,7 @@ footer{padding:60px 40px;border-top:1px solid var(--line);display:flex;justify-c
       </div>
       <div class="work-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
     </div>
-    <div class="work">
+    <div class="work reveal">
       <div class="work-bg" style="background:linear-gradient(135deg,#D6FF3F,#00B894)"></div>
       <div class="work-overlay">
         <div class="work-num">03 — Motion</div>
@@ -166,7 +231,7 @@ footer{padding:60px 40px;border-top:1px solid var(--line);display:flex;justify-c
       </div>
       <div class="work-arrow"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></div>
     </div>
-    <div class="work">
+    <div class="work reveal rd1">
       <div class="work-bg" style="background:linear-gradient(135deg,#FFA84D,#FF4D6D)"></div>
       <div class="work-overlay">
         <div class="work-num">04 — Branding</div>
@@ -178,10 +243,21 @@ footer{padding:60px 40px;border-top:1px solid var(--line);display:flex;justify-c
   </div>
 </section>
 
+<section class="proc-sec">
+  <div class="sec-label reveal">How We Work</div>
+  <h2 class="sec-h reveal">Process</h2>
+  <div class="proc-grid reveal">
+    <div class="proc-card"><div class="proc-no">01</div><div class="proc-h">Discover</div><div class="proc-d">ブランドの核となる価値を、対話を通じて言語化します。</div></div>
+    <div class="proc-card"><div class="proc-no">02</div><div class="proc-h">Define</div><div class="proc-d">コンセプトとビジュアルの方向性を明確に定義します。</div></div>
+    <div class="proc-card"><div class="proc-no">03</div><div class="proc-h">Design</div><div class="proc-d">世界観を細部まで作り込み、体験として磨き上げます。</div></div>
+    <div class="proc-card"><div class="proc-no">04</div><div class="proc-h">Deliver</div><div class="proc-d">公開後の運用まで見据えて、実装・納品します。</div></div>
+  </div>
+</section>
+
 <section class="serv-sec" id="services">
-  <div class="sec-label">What We Do</div>
-  <h2 class="sec-h">Services</h2>
-  <div class="serv-list">
+  <div class="sec-label reveal">What We Do</div>
+  <h2 class="sec-h reveal">Services</h2>
+  <div class="serv-list reveal">
     <div class="serv-row"><div class="serv-no">01</div><div class="serv-name">Branding</div><div class="serv-desc">ロゴ・VI・ブランド戦略の策定からトータルで設計します。</div></div>
     <div class="serv-row"><div class="serv-no">02</div><div class="serv-name">Web Design</div><div class="serv-desc">体験価値を最大化するUI/UX設計とサイト制作。</div></div>
     <div class="serv-row"><div class="serv-no">03</div><div class="serv-name">Motion</div><div class="serv-desc">映像・アニメーションで世界観を動かします。</div></div>
@@ -189,8 +265,28 @@ footer{padding:60px 40px;border-top:1px solid var(--line);display:flex;justify-c
   </div>
 </section>
 
+<section class="about-sec" id="about">
+  <div class="about-grid">
+    <div class="reveal">
+      <div class="sec-label">About Studio</div>
+      <h2 class="sec-h" style="margin-bottom:26px">Studio<br>Nova.</h2>
+      <div class="about-txt">
+        <p>2015年の創業以来、業界を超えた40以上のブランドと共に、感性とロジックの両輪でクリエイティブを作り続けてきました。</p>
+        <p>「かっこいいだけ」で終わらせない。ブランドの本質を見極め、事業成果につながる表現にこだわります。</p>
+      </div>
+    </div>
+    <div class="about-stats reveal rd1">
+      <div><div class="stat-num">40<span style="font-size:.5em">+</span></div><div class="stat-lbl">BRANDS SUPPORTED</div></div>
+      <div><div class="stat-num">9</div><div class="stat-lbl">YEARS IN BUSINESS</div></div>
+      <div><div class="stat-num">120<span style="font-size:.5em">+</span></div><div class="stat-lbl">PROJECTS DELIVERED</div></div>
+      <div><div class="stat-num">6</div><div class="stat-lbl">CREATIVE AWARDS</div></div>
+    </div>
+  </div>
+</section>
+
 <section class="cta" id="contact">
-  <div class="hero-blob blob1" style="opacity:.3"></div>
+  <div class="hero-blob blob1" style="opacity:.28"></div>
+  <div class="hero-blob blob2" style="opacity:.28"></div>
   <h2 class="cta-h">Let's <span class="it">talk.</span></h2>
   <a href="#" class="cta-btn">プロジェクトを相談する →</a>
 </section>
@@ -199,6 +295,10 @@ footer{padding:60px 40px;border-top:1px solid var(--line);display:flex;justify-c
   <div class="foot-logo">STUDIO NOVA</div>
   <div class="foot-copy">© 2025 STUDIO NOVA（サンプル） — Designed by スマートWEB</div>
 </footer>
-<script>if(location.search.indexOf('embed')>-1){document.querySelectorAll('.samplebar,nav').forEach(function(e){e.style.display='none'});document.body.classList.add('embedded');var st=document.createElement('style');st.textContent='.embedded .hero{padding-top:40px!important}.embedded header.hero{padding-top:48px!important}';document.head.appendChild(st);}</script>
+<script>
+const obs=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+(function(){var isEmbed=location.search.indexOf("embed")>-1;var bar=document.querySelector(".samplebar");var navEl=document.querySelector("nav");var hero=document.querySelector(".hero");if(isEmbed){if(bar)bar.style.display="none";if(navEl)navEl.style.display="none";document.body.classList.add("embedded");}function sync(){if(!hero)return;var bh=(bar&&!isEmbed)?bar.offsetHeight:0;var nh=(navEl&&!isEmbed)?navEl.offsetHeight:0;if(navEl&&!isEmbed)navEl.style.top=bh+"px";hero.style.paddingTop=(bh+nh+(isEmbed?20:36))+"px";}sync();window.addEventListener("load",sync);window.addEventListener("resize",sync);setTimeout(sync,300);})();
+</script>
 </body>
 </html>

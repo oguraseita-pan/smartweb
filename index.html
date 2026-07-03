@@ -873,42 +873,34 @@ function fitEmbeds(){
     iframe.style.transform='scale('+scale+')';
     el.style.height=Math.round(fh*scale)+'px';
   });
-  // phone showcase
+  // phone showcase — always render content at its true width (390px) then
+  // visually scale it down like a screenshot, so text/line-breaks are always
+  // correctly proportioned. This is true for both desktop AND smartphone.
   document.querySelectorAll('.phone-stage[data-fw]').forEach(el=>{
     const screen=el.closest('.phone-screen');
     const cw=screen.clientWidth;
     const iframe=el.querySelector('iframe');
-    if(!cw||!iframe)return;
-    if(isTouchDevice){
-      // smartphone: real, natural, manually-scrollable page (no scale trick)
-      el.style.position='static';
-      el.style.width='100%';
-      el.style.height='auto';
-      el.style.transform='none';
-      iframe.style.transform='none';
-      iframe.style.width='100%';
-      if(!iframe.dataset.autoHeight){
-        iframe.style.height='2600px';
-        iframe.addEventListener('load',()=>{
-          try{
-            const doc=iframe.contentDocument;
-            const h=doc&&doc.body?Math.max(doc.body.scrollHeight,doc.documentElement.scrollHeight):0;
-            if(h)iframe.style.height=h+'px';
-          }catch(e){}
-        });
-        iframe.dataset.autoHeight='1';
-      }
-    } else {
-      // desktop: static preview, scaled to fit like a screenshot
-      const fw=parseFloat(el.dataset.fw),fh=parseFloat(el.dataset.fh);
-      const scale=cw/fw;
-      el.style.position='absolute';
-      el.style.width=fw+'px';
-      el.style.height=fh+'px';
-      el.style.transform='scale('+scale+')';
-      iframe.style.transform='none';
-      iframe.style.width=fw+'px';
-      iframe.style.height=fh+'px';
+    const fw=parseFloat(el.dataset.fw),fh=parseFloat(el.dataset.fh);
+    if(!cw||!iframe||!fw)return;
+    const scale=cw/fw;
+    el.style.position='absolute';
+    el.style.width=fw+'px';
+    el.style.height=fh+'px';
+    el.style.transform='scale('+scale+')';
+    iframe.style.transform='none';
+    iframe.style.width=fw+'px';
+    iframe.style.height=fh+'px';
+    // fetch the real page height once loaded, so the scrollable area
+    // (used for manual touch-scrolling on smartphone) matches exactly
+    if(!iframe.dataset.autoHeight){
+      iframe.addEventListener('load',()=>{
+        try{
+          const doc=iframe.contentDocument;
+          const h=doc&&doc.body?Math.max(doc.body.scrollHeight,doc.documentElement.scrollHeight):0;
+          if(h){el.dataset.fh=h;el.style.height=h+'px';iframe.style.height=h+'px';}
+        }catch(e){}
+      });
+      iframe.dataset.autoHeight='1';
     }
   });
 }
