@@ -241,14 +241,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(255,255,255,
 .flow-day{display:inline-block;margin-top:12px;font-family:var(--en);font-size:11px;font-weight:700;color:var(--cyan);background:rgba(6,182,212,.1);padding:4px 12px;border-radius:100px}
 
 /* ============ VOICE ============ */
-.voice-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.voice-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:30px 28px}
-.voice-stars{color:var(--amber);font-size:15px;letter-spacing:2px;margin-bottom:14px}
-.voice-txt{font-size:14px;line-height:2;margin-bottom:18px}
-.voice-who{display:flex;align-items:center;gap:12px;padding-top:16px;border-top:1px solid var(--line)}
-.voice-av{width:42px;height:42px;border-radius:50%;background:var(--bg2);display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0}
-.voice-name{font-size:13.5px;font-weight:700}
-.voice-role{font-size:11.5px;color:var(--muted)}
 
 /* ============ FAQ ============ */
 .faq-list{max-width:780px;margin:0 auto;display:flex;flex-direction:column;gap:12px}
@@ -272,6 +264,24 @@ nav{position:fixed;top:0;left:0;right:0;z-index:500;background:rgba(255,255,255,
 .cta .btn-sub{background:transparent;border-color:rgba(255,255,255,.3);color:#fff}
 .cta .btn-sub:hover{border-color:#7DD3FC}
 .cta-note{margin-top:24px;font-size:12.5px;color:rgba(255,255,255,.5);position:relative;z-index:1}
+
+/* contact form */
+.contact-box{max-width:560px;margin:0 auto;position:relative;z-index:1}
+.contact-form{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);border-radius:22px;padding:34px 30px;backdrop-filter:blur(6px)}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px}
+.contact-form input,.contact-form textarea{width:100%;background:rgba(255,255,255,.95);border:1.5px solid transparent;border-radius:12px;padding:14px 16px;font-family:inherit;font-size:14px;color:var(--navy);transition:border-color .2s}
+.contact-form input::placeholder,.contact-form textarea::placeholder{color:#94A3B8}
+.contact-form input:focus,.contact-form textarea:focus{outline:none;border-color:var(--cyan)}
+.contact-form textarea{margin-bottom:18px;resize:vertical;min-height:80px}
+.cf-submit{width:100%;justify-content:center;font-size:15.5px;padding:17px}
+.form-success{background:rgba(255,255,255,.06);border:1px solid rgba(125,211,252,.4);border-radius:22px;padding:46px 30px;text-align:center}
+.form-success svg{color:#7DD3FC;margin-bottom:14px}
+.form-success p{font-size:15px;color:#fff;line-height:1.9}
+.cta-alt{display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;margin-top:26px;position:relative;z-index:1}
+.cta-alt-btn{display:inline-flex;align-items:center;gap:9px;background:transparent;border:1.5px solid rgba(255,255,255,.3);color:#fff;font-size:14px;font-weight:700;padding:13px 26px;border-radius:100px;transition:border-color .25s}
+.cta-alt-btn:hover{border-color:#7DD3FC}
+.cta-alt-link{font-size:13px;color:rgba(255,255,255,.6);text-decoration:underline;text-underline-offset:3px}
+.cta-alt-link:hover{color:#fff}
 
 /* ============ FOOTER ============ */
 footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px solid rgba(255,255,255,.08)}
@@ -302,11 +312,12 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
   .price-card{padding:32px 24px}
   .pc-price{font-size:38px}
   .flow-grid{grid-template-columns:repeat(2,1fr)}
-  .voice-grid{grid-template-columns:repeat(2,1fr)}
   .draft-in{gap:40px}
 }
 /* ============ MOBILE (<=640 core, <=760 layout) ============ */
 @media(max-width:760px){
+  .cf-row{grid-template-columns:1fr}
+  .contact-form{padding:26px 22px}
   .wrap,.nav-in{padding-left:20px;padding-right:20px}
   .offer-card{max-width:100%;padding:26px 20px 24px}
   .oc-mock{padding-right:56px}
@@ -338,7 +349,6 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
   .cmp-row{grid-template-columns:110px 90px 100px 90px;min-width:400px}
   .cmp-wrap-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0 20px}
   .flow-grid{grid-template-columns:1fr}
-  .voice-grid{grid-template-columns:1fr}
   .cta-btns{flex-direction:column;align-items:center}
   .cta-btns a{width:100%;max-width:380px;justify-content:center}
   .foot-top{grid-template-columns:1fr;gap:32px}
@@ -745,19 +755,6 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
   </div>
 </section>
 
-<!-- VOICE -->
-<section class="sec">
-  <div class="sec-head reveal">
-    <span class="sec-tag">Voice</span>
-    <h2 class="sec-h">ご利用者さまの<span class="gr">声</span></h2>
-  </div>
-  <div class="voice-grid">
-    <div class="voice-card reveal"><div class="voice-stars">★★★★★</div><p class="voice-txt">見積もりを頼んだ制作会社の半額以下。正直不安でしたが、先に完成イメージを見られたので安心して決められました。仕上がりも大満足です。</p><div class="voice-who"><div class="voice-av">👩</div><div><div class="voice-name">美容室オーナー N様</div><div class="voice-role">スタンダードプラン</div></div></div></div>
-    <div class="voice-card reveal rd1"><div class="voice-stars">★★★★★</div><p class="voice-txt">パソコンが本当に苦手で、更新なんて絶対無理だと思っていました。今はLINEで「これ載せて」と送るだけ。もっと早く頼めばよかった。</p><div class="voice-who"><div class="voice-av">👨</div><div><div class="voice-name">整体院 院長 T様</div><div class="voice-role">スタンダードプラン</div></div></div></div>
-    <div class="voice-card reveal rd2"><div class="voice-stars">★★★★★</div><p class="voice-txt">開業したばかりで予算がなく、月々プランはありがたかったです。ホームページを見て来たというお客様が少しずつ増えています。</p><div class="voice-who"><div class="voice-av">🧑</div><div><div class="voice-name">カフェ経営 S様</div><div class="voice-role">ライトプラン</div></div></div></div>
-  </div>
-</section>
-
 <!-- FAQ -->
 <section class="sec sec-alt" id="faq">
   <div class="sec-head reveal">
@@ -779,12 +776,33 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
 <!-- CTA -->
 <section class="cta" id="contact">
   <h2 class="cta-h">まずは<span class="hl">無料のホームページ案</span>から、<br>はじめませんか？</h2>
-  <p class="cta-p">お店の名前と業種を送るだけ。あなたのお店専用のホームページ案をお届けします。<br>見てから決められるので、リスクはありません。</p>
-  <div class="cta-btns">
-    <a href="mailto:info@nexia-web.jp?subject=無料ホームページ案の申し込み&body=お店・会社名：%0D%0A業種：%0D%0A現在のホームページ（あれば）：%0D%0Aご希望・メモ：" class="btn-main">【無料】ホームページ案を受け取る<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-    <a href="diagnosis.html" class="btn-sub">今のホームページを無料診断する</a>
+  <p class="cta-p">下のフォームに、お店の名前と業種を入力するだけ。あなたのお店専用のホームページ案をお届けします。<br>見てから決められるので、リスクはありません。</p>
+
+  <div class="contact-box">
+    <form id="contactForm" class="contact-form" action="https://formspree.io/f/xvzjdbek" method="POST">
+      <input type="hidden" name="_subject" value="【スマートWEB】無料ホームページ案の申し込み">
+      <div class="cf-row">
+        <input type="text" name="お店・会社名" placeholder="お店・会社名" required>
+        <input type="text" name="業種" placeholder="業種（例：美容室）" required>
+      </div>
+      <div class="cf-row">
+        <input type="url" name="現在のホームページURL" placeholder="現在のサイトURL（あれば）">
+        <input type="email" name="email" placeholder="返信用メールアドレス" required>
+      </div>
+      <textarea name="ご希望・メモ" placeholder="ご希望・メモ（任意）" rows="3"></textarea>
+      <button type="submit" class="btn-main cf-submit">【無料】ホームページ案を申し込む<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+    </form>
+    <div id="formSuccess" class="form-success" style="display:none">
+      <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
+      <p>送信ありがとうございます！<br>1営業日以内に、担当よりご連絡いたします。</p>
+    </div>
   </div>
-  <p class="cta-note">メール：info@nexia-web.jp　/　Instagram：@nexia.web　/　無理な営業は一切いたしません</p>
+
+  <div class="cta-alt">
+    <a href="https://instagram.com/nexia.web" target="_blank" rel="noopener" class="cta-alt-btn"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>Instagramで相談する</a>
+    <a href="diagnosis.html" class="cta-alt-btn">今のホームページを無料診断する</a>
+  </div>
+  <p class="cta-note">またはメールで直接送る：<a href="mailto:info@nexia-works.jp?subject=無料ホームページ案の申し込み&body=お店・会社名：%0D%0A業種：%0D%0A現在のホームページ（あれば）：%0D%0Aご希望・メモ：" style="color:rgba(255,255,255,.75);text-decoration:underline">info@nexia-works.jp</a>　/　無理な営業は一切いたしません</p>
 </section>
 
 <!-- FOOTER -->
@@ -818,6 +836,31 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
 
 <script>
 // mobile nav
+// contact form (Formspree) — AJAX submit, no page reload
+(function(){
+  const form=document.getElementById('contactForm');
+  if(!form)return;
+  form.addEventListener('submit',async e=>{
+    e.preventDefault();
+    const btn=form.querySelector('.cf-submit');
+    const orig=btn.innerHTML;
+    btn.disabled=true;btn.style.opacity='.7';btn.innerHTML='送信中…';
+    try{
+      const res=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}});
+      if(res.ok){
+        form.style.display='none';
+        document.getElementById('formSuccess').style.display='block';
+      }else{
+        alert('送信に失敗しました。お手数ですが、メールまたはInstagramからご連絡ください。');
+        btn.disabled=false;btn.style.opacity='1';btn.innerHTML=orig;
+      }
+    }catch(err){
+      alert('送信に失敗しました。お手数ですが、メールまたはInstagramからご連絡ください。');
+      btn.disabled=false;btn.style.opacity='1';btn.innerHTML=orig;
+    }
+  });
+})();
+
 const burger=document.getElementById('hamburger'),mnav=document.getElementById('mnav');
 burger.addEventListener('click',()=>mnav.classList.add('open'));
 document.getElementById('mnavClose').addEventListener('click',()=>mnav.classList.remove('open'));
