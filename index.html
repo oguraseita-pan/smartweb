@@ -299,6 +299,30 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
 .reveal.visible{opacity:1;transform:none}
 .rd1{transition-delay:.1s}.rd2{transition-delay:.2s}
 
+/* ============ OPTIONS ============ */
+.opt-grid{max-width:1000px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:26px}
+.opt-card{background:#fff;border:1.5px solid var(--line);border-radius:22px;padding:38px 32px 32px;display:flex;flex-direction:column;box-shadow:0 12px 36px rgba(15,23,41,.06);transition:transform .25s,box-shadow .25s}
+.opt-card:hover{transform:translateY(-4px);box-shadow:0 20px 46px rgba(37,99,235,.12)}
+.opt-ic{width:52px;height:52px;border-radius:14px;background:var(--grad);display:flex;align-items:center;justify-content:center;margin-bottom:18px;box-shadow:0 8px 20px rgba(37,99,235,.25)}
+.opt-name{font-size:20px;font-weight:900;line-height:1.5;margin-bottom:8px}
+.opt-tag{align-self:flex-start;font-size:11.5px;font-weight:700;color:var(--blue);background:rgba(37,99,235,.08);border-radius:100px;padding:5px 14px;margin-bottom:16px}
+.opt-catch{font-size:14.5px;font-weight:700;color:var(--navy);line-height:1.9;margin-bottom:8px}
+.opt-d{font-size:13.5px;color:var(--muted);line-height:2;margin-bottom:20px}
+.opt-list{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1}
+.opt-li{display:flex;align-items:flex-start;gap:10px;font-size:13.5px;line-height:1.7}
+.opt-li .ock{width:19px;height:19px;border-radius:50%;background:var(--grad);color:#fff;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:3px}
+.opt-price-row{display:flex;align-items:baseline;gap:4px;margin-bottom:4px}
+.opt-yen{font-size:17px;font-weight:800;color:var(--navy)}
+.opt-price{font-size:36px;font-weight:800;letter-spacing:-.02em;color:var(--navy)}
+.opt-unit{font-size:12.5px;color:var(--muted);font-weight:500}
+.opt-init{font-size:12.5px;color:var(--muted);margin-bottom:20px}
+.opt-set{max-width:1000px;margin:30px auto 0;display:flex;align-items:center;gap:16px;background:linear-gradient(120deg,rgba(6,182,212,.07),rgba(37,99,235,.07));border:1.5px solid rgba(37,99,235,.18);border-radius:18px;padding:20px 26px}
+.opt-set-badge{flex-shrink:0;background:var(--grad);color:#fff;font-size:12px;font-weight:800;border-radius:100px;padding:8px 18px;box-shadow:0 6px 16px rgba(37,99,235,.25)}
+.opt-set-t{font-size:14px;font-weight:700;line-height:1.9}
+.opt-set-t b{color:var(--blue)}
+.opt-more{display:block;text-align:center;margin-top:12px;font-size:12.5px;color:var(--muted);text-decoration:underline;text-underline-offset:3px}
+.opt-more:hover{color:var(--blue)}
+
 /* ============ TABLET (641-1024) ============ */
 @media(max-width:1024px){
   .wrap,.nav-in{padding-left:28px;padding-right:28px}
@@ -314,6 +338,8 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
   .price-card{padding:32px 24px}
   .pc-price{font-size:38px}
   .flow-grid{grid-template-columns:repeat(2,1fr)}
+  .opt-grid{gap:18px}
+  .opt-card{padding:32px 26px 28px}
   .draft-in{gap:40px}
 }
 /* ============ MOBILE (<=640 core, <=760 layout) ============ */
@@ -351,6 +377,8 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
   .cmp-row{grid-template-columns:110px 90px 100px 90px;min-width:400px}
   .cmp-wrap-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:0 -20px;padding:0 20px}
   .flow-grid{grid-template-columns:1fr}
+  .opt-grid{grid-template-columns:1fr;gap:20px}
+  .opt-set{flex-direction:column;align-items:flex-start;gap:12px;padding:20px}
   .cta-btns{flex-direction:column;align-items:center}
   .cta-btns a{width:100%;max-width:380px;justify-content:center}
   .foot-top{grid-template-columns:1fr;gap:32px}
@@ -368,6 +396,7 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
       <a href="#features">特徴</a>
       <a href="#work">制作事例</a>
       <a href="#price">料金</a>
+      <a href="#options">集客オプション</a>
       <a href="#flow">ご利用の流れ</a>
       <a href="#faq">FAQ</a>
       <a href="catalog.html">カタログ</a>
@@ -381,6 +410,7 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
   <a href="#features">特徴</a>
   <a href="#work">制作事例</a>
   <a href="#price">料金</a>
+  <a href="#options">集客オプション</a>
   <a href="#flow">ご利用の流れ</a>
   <a href="#faq">よくある質問</a>
   <a href="catalog.html">デザインカタログ</a>
@@ -694,6 +724,59 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
   <p class="price-foot reveal">※ ページ数は「トップ・サービス紹介・お問い合わせ」など内容ページの数です。特定商取引法・プライバシーポリシー等の法務ページは無料で別途お付けするため、カウントに含みません。<br>※ 月々プランの最低利用期間は12ヶ月です。以降はいつでも解約できます。<br>※ 一括プランは納品後1ヶ月間の無料サポート付き。年間サポートは2年目以降任意です。<br>※ サーバー・ドメイン費用（目安：月1,000〜2,000円程度）は別途お客様名義でのご契約となります。取得や設定は無料で代行します。</p>
 </section>
 
+<!-- OPTIONS -->
+<section class="sec" id="options">
+  <div class="sec-head reveal">
+    <span class="sec-tag">Option</span>
+    <h2 class="sec-h">ホームページと一緒に、<span class="gr">集客もまるごと</span></h2>
+    <p class="sec-p">作って終わりにせず、お客様を集める仕組みまでお手伝いします。<br>ホームページとセットでも、どちらか単体でもご利用いただけます。</p>
+  </div>
+  <div class="opt-grid">
+    <div class="opt-card reveal">
+      <div class="opt-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></div>
+      <div class="opt-name">Googleマップ集客サポート</div>
+      <span class="opt-tag">口コミ・お店情報の運用代行（MEO）</span>
+      <p class="opt-catch">「地域名＋業種」で探しているお客様に、お店を見つけてもらう。</p>
+      <p class="opt-d">Googleマップ・検索に表示されるお店の情報を、毎月きちんと整えて育てます。放置されがちな口コミへの対応も、すべてお任せください。</p>
+      <div class="opt-list">
+        <div class="opt-li"><span class="ock"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>口コミへの返信を代行（低い評価にも丁寧に対応）</div>
+        <div class="opt-li"><span class="ock"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>週1回の最新情報・写真の投稿</div>
+        <div class="opt-li"><span class="ock"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>営業時間・メニューなどの情報を常に最新に</div>
+        <div class="opt-li"><span class="ock"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>閲覧数・電話数の変化がわかる月次レポート</div>
+      </div>
+      <div class="opt-price-row"><span class="opt-yen">¥</span><span class="opt-price en">4,980</span><span class="opt-unit">〜/月（税込5,478円〜）</span></div>
+      <div class="opt-init">選べる3プラン ／ 最低利用期間なし・いつでも解約OK</div>
+      <a href="#contact" class="pc-btn">このサービスを相談する</a>
+      <a href="services.html#meo" class="opt-more">サービスの詳細・プラン比較を見る →</a>
+    </div>
+    <div class="opt-card reveal rd1">
+      <div class="opt-ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <div class="opt-name">AIチャット受付</div>
+      <span class="opt-tag">24時間の自動応答窓口</span>
+      <p class="opt-catch">営業時間外のお問い合わせも、もう逃さない。</p>
+      <p class="opt-d">よくあるご質問にその場で自動回答するチャット窓口を、ホームページに設置します。深夜や定休日でも、お客様を待たせません。</p>
+      <div class="opt-list">
+        <div class="opt-li"><span class="ock"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>営業時間・メニュー・アクセスなどに24時間自動回答</div>
+        <div class="opt-li"><span class="ock"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>答えられない質問は、お電話・フォームへ自然にご案内</div>
+        <div class="opt-li"><span class="ock"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>「お客様によく聞かれること」がわかる月次レポート</div>
+        <div class="opt-li"><span class="ock"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3.4"><polyline points="20 6 9 17 4 12"/></svg></span>回答内容の更新・調整もお任せ</div>
+      </div>
+      <div class="opt-price-row"><span class="opt-yen">¥</span><span class="opt-price en">2,980</span><span class="opt-unit">〜/月（税込3,278円〜）</span></div>
+      <div class="opt-init">選べる3プラン ／ 最低利用期間なし・いつでも解約OK</div>
+      <a href="#contact" class="pc-btn">このサービスを相談する</a>
+      <a href="services.html#chat" class="opt-more">サービスの詳細・プラン比較を見る →</a>
+    </div>
+  </div>
+  <div class="opt-set reveal">
+    <span class="opt-set-badge">セット割</span>
+    <p class="opt-set-t">ホームページの月々プランとセットでお申し込みの場合、各サービスの<b>初期費用が0円</b>になります。</p>
+  </div>
+  <div style="text-align:center;margin-top:34px" class="reveal">
+    <a href="services.html" class="btn-sub">集客オプションを詳しく見る<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+  </div>
+  <p class="price-foot reveal">※ どちらのサービスも、当社以外で制作されたホームページ・すでにお持ちのお店情報でもご利用いただけます。<br>※ 表示順位や集客数を保証するものではありません。掲載内容の充実と反応数の改善に取り組みます。</p>
+</section>
+
 <!-- COMPARE -->
 <section class="sec">
   <div class="sec-head reveal">
@@ -771,6 +854,7 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
     <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">サーバーやドメインが何か分かりません…</span></div><span class="faq-tog">+</span></div><div class="faq-a">ご安心ください。ほとんどのお客様が同じ状態からスタートしています。必要な契約（目安：月1,000〜2,000円程度）のご案内から設定まで、すべて無料でサポートします。</div></div>
     <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">納品後、自分（WordPressのように）で編集できますか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">いいえ、ご自身で編集いただく形ではなく、「変更したい内容をご連絡いただければ、当方が更新作業を代行する」スタイルです。WordPressのような管理画面の学習や操作は一切不要で、メールやLINEで「ここをこう変えてください」とお伝えいただくだけで反映します。パソコンが苦手な方にこそ選ばれている理由です。</div></div>
     <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">「お知らせ・ブログ機能」とは具体的に何ですか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">最新情報やブログ記事を掲載できるページのことです。投稿は「更新・修正代行」の回数枠内で当方が反映しますので、難しい操作は不要です。頻繁に更新される方には、内容に応じて別途ご案内する場合がございます。</div></div>
+    <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">ホームページを作らなくても、集客オプションだけ頼めますか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">はい、Googleマップ集客サポートもAIチャット受付も、単体でご利用いただけます。すでにホームページをお持ちの方や、まずは集客まわりだけ整えたい方にも選ばれています。ホームページの月々プランとセットの場合は、初期費用が0円になる割引がございます。詳しくは<a href="services.html" style="color:var(--blue);text-decoration:underline;text-underline-offset:3px">集客オプションの詳細ページ</a>をご覧ください。</div></div>
     <div class="faq-item"><div class="faq-q"><div class="faq-q-l"><span class="faq-q-ic">Q</span><span class="faq-q-t">地方でも対応してもらえますか？</span></div><span class="faq-tog">+</span></div><div class="faq-a">はい、全国どこでも対応可能です。やり取りはメール・LINE・オンライン通話で完結するため、地域による差は一切ありません。</div></div>
   </div>
 </section>
@@ -819,6 +903,7 @@ footer{background:var(--navy);color:#fff;padding:64px 40px 32px;border-top:1px s
       <a href="#features">選ばれる理由</a>
       <a href="#work">制作事例</a>
       <a href="#price">料金プラン</a>
+      <a href="services.html">集客オプション</a>
       <a href="catalog.html">デザインカタログ</a>
       <a href="diagnosis.html">無料ホームページ診断</a>
     </div>
