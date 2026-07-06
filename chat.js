@@ -1,4 +1,4 @@
-// スマートWEB チャット受付 — Vercel Serverless Function (Groq API)
+// スマートWEB チャット受付 — Vercel Serverless Function (Groq API / CommonJS版)
 // 環境変数 GROQ_API_KEY が必要です（Vercel: Settings → Environment Variables）
 
 const SYSTEM_PROMPT = `あなたは「スマートWEB」の受付チャットです。スマートWEBは、中小のお店・事業者向けにホームページ制作と集客支援を提供するサービスです（運営：NEXIA、全国オンライン対応）。
@@ -47,7 +47,7 @@ const SYSTEM_PROMPT = `あなたは「スマートWEB」の受付チャットで
 - 完全オンライン対応・全国対応。追加費用なし（サイト記載の金額がすべて）。
 - 連絡先：smartweb@nexia-works.jp ／ Instagram @nexia.web`;
 
-export default async function handler(req, res) {
+module.exports = async function handler(req, res) {
   res.setHeader('Cache-Control', 'no-store');
 
   if (req.method !== 'POST') {

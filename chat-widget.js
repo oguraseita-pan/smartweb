@@ -1,20 +1,23 @@
-/* スマートWEB チャット受付ウィジェット
-   設置方法：</body> の直前に <script defer src="/chat-widget.js"></script> を1行追加するだけ */
+/* スマートWEB チャット受付ウィジェット v2
+   - ボタンをドラッグで自由に移動可能（位置は記憶されます）
+   - 設置方法：</body> の直前に <script defer src="/chat-widget.js"></script> を1行追加するだけ */
 (function () {
   'use strict';
   if (window.__swChatLoaded) return;
   window.__swChatLoaded = true;
 
   var API = '/api/chat';
-  var MAX_TURNS = 20; // ユーザー発言の上限（API費暴走防止）
+  var MAX_TURNS = 20;
+  var BTN = 60, GAP = 12;
 
   /* ---------- styles ---------- */
   var css = ''
-    + '.swc-btn{position:fixed;right:20px;bottom:20px;z-index:9990;width:60px;height:60px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(120deg,#06B6D4,#2563EB);box-shadow:0 10px 28px rgba(37,99,235,.4);display:flex;align-items:center;justify-content:center;transition:transform .2s}'
-    + '.swc-btn:hover{transform:translateY(-3px)}'
-    + '.swc-btn svg{width:28px;height:28px}'
-    + '.swc-badge{position:absolute;top:-4px;right:-4px;background:#F59E0B;color:#fff;font-size:10px;font-weight:800;border-radius:100px;padding:2px 7px;font-family:sans-serif}'
-    + '.swc-panel{position:fixed;right:20px;bottom:92px;z-index:9991;width:370px;max-width:calc(100vw - 24px);height:540px;max-height:calc(100vh - 120px);background:#fff;border-radius:18px;box-shadow:0 24px 70px rgba(15,23,41,.28);display:none;flex-direction:column;overflow:hidden;font-family:"Noto Sans JP",-apple-system,sans-serif}'
+    + '.swc-btn{position:fixed;z-index:9990;width:' + BTN + 'px;height:' + BTN + 'px;border-radius:50%;border:none;cursor:grab;background:linear-gradient(120deg,#06B6D4,#2563EB);box-shadow:0 10px 28px rgba(37,99,235,.4);display:flex;align-items:center;justify-content:center;transition:box-shadow .2s;touch-action:none;user-select:none;-webkit-user-select:none}'
+    + '.swc-btn:hover{box-shadow:0 14px 34px rgba(37,99,235,.5)}'
+    + '.swc-btn.dragging{cursor:grabbing;transition:none;opacity:.9}'
+    + '.swc-btn svg{width:28px;height:28px;pointer-events:none}'
+    + '.swc-badge{position:absolute;top:-4px;right:-4px;background:#F59E0B;color:#fff;font-size:10px;font-weight:800;border-radius:100px;padding:2px 7px;font-family:sans-serif;pointer-events:none}'
+    + '.swc-panel{position:fixed;z-index:9991;width:370px;max-width:calc(100vw - 24px);height:540px;max-height:calc(100vh - 40px);background:#fff;border-radius:18px;box-shadow:0 24px 70px rgba(15,23,41,.28);display:none;flex-direction:column;overflow:hidden;font-family:"Noto Sans JP",-apple-system,sans-serif}'
     + '.swc-panel.open{display:flex}'
     + '.swc-head{background:linear-gradient(120deg,#06B6D4,#2563EB);color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px;flex-shrink:0}'
     + '.swc-dot{width:9px;height:9px;border-radius:50%;background:#4ADE80;box-shadow:0 0 0 3px rgba(74,222,128,.3);flex-shrink:0}'
@@ -26,21 +29,20 @@
     + '.swc-msg.u{align-self:flex-end;background:#2563EB;color:#fff;border-bottom-right-radius:4px}'
     + '.swc-msg.b{align-self:flex-start;background:#fff;border:1px solid #E4E9F1;color:#0F1729;border-bottom-left-radius:4px}'
     + '.swc-chips{display:flex;flex-wrap:wrap;gap:6px}'
-    + '.swc-chip{background:#fff;border:1.5px solid #CFE0F5;color:#2563EB;font-size:11.5px;font-weight:700;border-radius:100px;padding:7px 13px;cursor:pointer;transition:background .2s}'
+    + '.swc-chip{background:#fff;border:1.5px solid #CFE0F5;color:#2563EB;font-size:11.5px;font-weight:700;border-radius:100px;padding:7px 13px;cursor:pointer;transition:background .2s;font-family:inherit}'
     + '.swc-chip:hover{background:#EFF6FF}'
     + '.swc-typing{align-self:flex-start;background:#fff;border:1px solid #E4E9F1;border-radius:15px;border-bottom-left-radius:4px;padding:12px 16px;display:flex;gap:5px}'
     + '.swc-typing i{width:7px;height:7px;border-radius:50%;background:#93A5C1;animation:swcB 1.2s infinite}'
     + '.swc-typing i:nth-child(2){animation-delay:.15s}.swc-typing i:nth-child(3){animation-delay:.3s}'
     + '@keyframes swcB{0%,60%,100%{transform:translateY(0);opacity:.5}30%{transform:translateY(-5px);opacity:1}}'
     + '.swc-input{display:flex;gap:8px;padding:12px;border-top:1px solid #E4E9F1;background:#fff;flex-shrink:0}'
-    + '.swc-input input{flex:1;border:1.5px solid #E4E9F1;border-radius:100px;padding:11px 16px;font-size:13px;font-family:inherit;outline:none}'
+    + '.swc-input input{flex:1;border:1.5px solid #E4E9F1;border-radius:100px;padding:11px 16px;font-size:13px;font-family:inherit;outline:none;min-width:0}'
     + '.swc-input input:focus{border-color:#2563EB}'
     + '.swc-send{width:42px;height:42px;border-radius:50%;border:none;cursor:pointer;background:linear-gradient(120deg,#06B6D4,#2563EB);display:flex;align-items:center;justify-content:center;flex-shrink:0}'
     + '.swc-send:disabled{opacity:.5;cursor:default}'
     + '.swc-foot{text-align:center;padding:7px 10px;background:#fff;flex-shrink:0}'
     + '.swc-foot a{font-size:10.5px;color:#5B6B84;text-decoration:underline;text-underline-offset:2px}'
-    + '.swc-note{font-size:9.5px;color:#9AA6B8;text-align:center;padding:0 14px 8px;background:#F6F9FD}'
-    + '@media(max-width:480px){.swc-panel{right:12px;bottom:84px;height:70vh}.swc-btn{right:14px;bottom:14px}}';
+    + '.swc-note{font-size:9.5px;color:#9AA6B8;text-align:center;padding:0 14px 8px;background:#F6F9FD}';
   var st = document.createElement('style');
   st.textContent = css;
   document.head.appendChild(st);
@@ -67,11 +69,86 @@
   var input = panel.querySelector('input');
   var send = panel.querySelector('.swc-send');
 
+  /* ---------- ボタン位置（ドラッグ可能・記憶） ---------- */
+  function clampPos(x, y) {
+    var mx = window.innerWidth - BTN - 8;
+    var my = window.innerHeight - BTN - 8;
+    return { x: Math.min(Math.max(8, x), mx), y: Math.min(Math.max(8, y), my) };
+  }
+  function defaultPos() {
+    return clampPos(window.innerWidth - BTN - 20, window.innerHeight - BTN - 20);
+  }
+  var pos = defaultPos();
+  try {
+    var saved = JSON.parse(localStorage.getItem('swc-pos') || 'null');
+    if (saved && typeof saved.x === 'number') pos = clampPos(saved.x, saved.y);
+  } catch (e) {}
+
+  function applyPos() {
+    btn.style.left = pos.x + 'px';
+    btn.style.top = pos.y + 'px';
+    if (panel.classList.contains('open')) placePanel();
+  }
+
+  /* パネルはボタンの位置に応じて上下左右に自動配置 */
+  function placePanel() {
+    var pw = Math.min(370, window.innerWidth - 24);
+    var ph = Math.min(540, window.innerHeight - 40);
+    var cx = pos.x + BTN / 2;
+
+    // 横：ボタンが画面右寄りなら右端を揃え、左寄りなら左端を揃える
+    var left = (cx > window.innerWidth / 2) ? (pos.x + BTN - pw) : pos.x;
+    left = Math.min(Math.max(12, left), window.innerWidth - pw - 12);
+
+    // 縦：上に空きがあれば上に、なければ下に開く
+    var top;
+    if (pos.y >= ph + GAP + 10) top = pos.y - ph - GAP;
+    else if (window.innerHeight - (pos.y + BTN) >= ph + GAP + 10) top = pos.y + BTN + GAP;
+    else top = Math.max(20, (window.innerHeight - ph) / 2);
+
+    panel.style.left = left + 'px';
+    panel.style.top = top + 'px';
+    panel.style.right = 'auto';
+    panel.style.bottom = 'auto';
+  }
+
+  var dragging = false, moved = false, offX = 0, offY = 0;
+  btn.addEventListener('pointerdown', function (e) {
+    dragging = true; moved = false;
+    offX = e.clientX - pos.x; offY = e.clientY - pos.y;
+    btn.classList.add('dragging');
+    btn.setPointerCapture(e.pointerId);
+  });
+  btn.addEventListener('pointermove', function (e) {
+    if (!dragging) return;
+    var nx = e.clientX - offX, ny = e.clientY - offY;
+    if (!moved && Math.abs(nx - pos.x) + Math.abs(ny - pos.y) > 6) moved = true;
+    if (moved) { pos = clampPos(nx, ny); applyPos(); }
+  });
+  btn.addEventListener('pointerup', function (e) {
+    dragging = false;
+    btn.classList.remove('dragging');
+    if (moved) {
+      try { localStorage.setItem('swc-pos', JSON.stringify(pos)); } catch (err) {}
+    } else {
+      togglePanel();
+    }
+  });
+  btn.addEventListener('pointercancel', function () {
+    dragging = false;
+    btn.classList.remove('dragging');
+  });
+  window.addEventListener('resize', function () {
+    pos = clampPos(pos.x, pos.y);
+    applyPos();
+  });
+  applyPos();
+
   /* ---------- state ---------- */
   var history = [];
   try {
-    var saved = sessionStorage.getItem('swc-history');
-    if (saved) history = JSON.parse(saved);
+    var h = sessionStorage.getItem('swc-history');
+    if (h) history = JSON.parse(h);
   } catch (e) {}
 
   function persist() {
@@ -107,6 +184,7 @@
 
   /* ---------- send ---------- */
   var busy = false;
+  var FALLBACK = 'すみません、うまくお答えできませんでした。お問い合わせフォームからご相談ください。';
   function submit() {
     var text = input.value.trim();
     if (!text || busy) return;
@@ -136,16 +214,26 @@
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ messages: history.slice(-12) }),
     })
-      .then(function (r) { return r.json(); })
-      .then(function (data) {
-        typing.remove();
-        var reply = (data && data.reply) || 'すみません、うまくお答えできませんでした。お問い合わせフォームからご相談ください。';
-        addMsg('bot', reply);
-        history.push({ role: 'assistant', content: reply });
-        persist();
+      .then(function (r) {
+        return r.json().then(
+          function (data) { return { status: r.status, data: data }; },
+          function () { return { status: r.status, data: null }; }
+        );
       })
-      .catch(function () {
+      .then(function (res) {
         typing.remove();
+        if (res.data && res.data.reply) {
+          addMsg('bot', res.data.reply);
+          history.push({ role: 'assistant', content: res.data.reply });
+          persist();
+        } else {
+          console.error('SWChat: サーバー応答エラー HTTP', res.status, '(/api/chat が正しくデプロイされているか、環境変数 GROQ_API_KEY を確認してください)');
+          addMsg('bot', FALLBACK + '（メール：smartweb@nexia-works.jp）');
+        }
+      })
+      .catch(function (err) {
+        typing.remove();
+        console.error('SWChat: 通信エラー', err);
         addMsg('bot', '通信エラーが発生しました。お手数ですが、ページ下部のお問い合わせフォームまたはメール（smartweb@nexia-works.jp）からご連絡ください。');
       })
       .finally(function () {
@@ -162,9 +250,10 @@
 
   /* ---------- open/close ---------- */
   var opened = false;
-  btn.addEventListener('click', function () {
+  function togglePanel() {
     panel.classList.toggle('open');
     if (panel.classList.contains('open')) {
+      placePanel();
       if (!opened) {
         opened = true;
         if (history.length === 0) {
@@ -175,7 +264,7 @@
       }
       input.focus();
     }
-  });
+  }
   panel.querySelector('.swc-close').addEventListener('click', function () {
     panel.classList.remove('open');
   });
